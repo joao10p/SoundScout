@@ -10343,3 +10343,21 @@ body {
 .footer {
   padding: 5rem 0;
 }
+
+#sound_banner{
+	width: 759px;
+	height: 750px;
+	float: left;
+	padding: 0;
+	border: none;
+	z-index: 1;
+}
+
+#scout_banner{
+	width: 760px;
+	height: 750px;
+	float: right;
+	padding: 0;
+	border: none;
+	z-index: 1;
+}
