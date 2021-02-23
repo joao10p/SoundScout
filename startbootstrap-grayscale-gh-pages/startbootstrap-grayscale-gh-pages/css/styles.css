@@ -10249,50 +10249,50 @@ body {
   }
 }
 
-.about-section {
+.sobre-section {
   padding-top: 10rem;
   background: linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
 }
-.about-section p {
+.sobre-section p {
   margin-bottom: 5rem;
 }
 
-.projects-section {
+.aplicacao-section {
   padding: 10rem 0;
 }
-.projects-section .featured-text {
+.aplicacao-section .featured-text {
   padding: 2rem;
 }
 @media (min-width: 992px) {
-  .projects-section .featured-text {
+  .aplicacao-section .featured-text {
     padding: 0 0 0 2rem;
     border-left: 0.5rem solid #64a19d;
   }
 }
-.projects-section .project-text {
+.aplicacao-section .project-text {
   padding: 3rem;
   font-size: 90%;
 }
 @media (min-width: 992px) {
-  .projects-section .project-text {
+  .aplicacao-section .project-text {
     padding: 5rem;
   }
-  .projects-section .project-text hr {
+  .aplicacao-section .project-text hr {
     border-color: #64a19d;
     border-width: 0.25rem;
     width: 30%;
   }
 }
 
-.signup-section {
+.contatos-section {
   padding: 10rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000000 100%), url("../assets/img/bg-signup.jpg");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000000 100%), url("../assets/img/bg-contatos.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
 }
-.signup-section .form-inline input {
+.contatos-section .form-inline input {
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   padding: 1.25rem 2rem;
   height: auto;
@@ -10342,4 +10342,27 @@ body {
 
 .footer {
   padding: 5rem 0;
+}
+
+#sound_banner{
+	width: 655px;
+	height: 640px;
+	float: left;
+	padding: 0;
+	border: 1px solid #d8d8d8;
+	z-index: 1;
+  top: 20rem;
+  position: absolute;
+}
+
+#scout_banner{
+	width: 655px;
+	height: 640px;
+	float: right;
+	padding: 0;
+	border: 1px solid #d8d8d8;
+	z-index: 1;
+  top: 20rem;
+  position: absolute;
+  right: 0rem;
 }
