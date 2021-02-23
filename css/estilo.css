@@ -49,7 +49,7 @@ body{
 	float: left;
 	padding: 0;
 	border: 1px solid #d8d8d8;
-	opacity: 2.5;
+	z-index: 1;
 }
 
 #scout_banner{
@@ -58,7 +58,7 @@ body{
 	float: right;
 	padding: 0;
 	border: 1px solid #d8d8d8;
-	opacity: 2.5;
+	z-index: 1;
 }
 
 /*Menu*/
@@ -94,10 +94,10 @@ a{
 
 	#titulo_banner{
 		color: #fff;
-		position: absolute;
-		top: 1000;
-		left: 50%;
-		  color: #fff;
-		  font-family: "Myriad Pro";
-		  z-index: 10;
+		position: relative;
+		top: 400;
+		left: 400;
+		color: #fff;
+		font-family: "Myriad Pro";
+		z-index: 10;
 	}
