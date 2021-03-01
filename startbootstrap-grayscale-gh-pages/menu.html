@@ -24,7 +24,7 @@
   <body>
 
     <!-- Barra navegação -->
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" style="position: fixed; width: 100%;">
       <div class="container">
         
         <div class="navbar-header">
@@ -35,17 +35,21 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="#" class="navbar-brand">SoundScout</a>
+          <a href="#" class="navbar-brand js-scroll-trigger">SoundScout</a>
         </div>
 
         <div class="collapse navbar-collapse" id="barra-navegacao">
-
+          <style>
+            html {
+              scroll-behavior: smooth;
+            }
+            </style>
           <ul class="nav navbar-nav navbar-right">
-            <li> <a class="nav-link js-scroll-trigger" href="#">Galeria</a> </li>
-            <li> <a class="nav-link js-scroll-trigger" href="#">Textos</a> </li>
-            <li> <a class="nav-link js-scroll-trigger" href="#">Playlists</a> </li>
-            <li> <a class="nav-link js-scroll-trigger" href="#">Apostas</a> </li>
-            <li> <a class="nav-link js-scroll-trigger" href="index.html">Logout </a> </li>
+            <li> <a href="#galeria">Galeria</a> </li>
+            <li> <a  href="#textos">Textos</a> </li>
+            <li> <a href="#playlists">Playlists</a> </li>
+            <li> <a  href="#apostas">Apostas</a> </li>
+            <li> <a href="index.html">Logout </a> </li>
 
           </ul>
 
@@ -56,6 +60,9 @@
 
 
     <br>
+    <br>
+    <br>
+    <br>
     
 
    	<div class="container">
@@ -63,14 +70,36 @@
    			<h1>Área Reservada</h1>
    		</div>
             <hr>
+       <label>ID:</label>
+       <label>100</label> <br> <br>
+
+       <label>Nome:</label>
+       <label>João Pedro Oliveira Lemos</label> <br> <br>
+
+       <label>Cargo Principal:</label>
+       <label>Designer Gráfico</label> <br> <br>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="joao10lemos10@gmail.com">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Telemóvel</label>
+      <input type="email" class="form-control" id="email" placeholder="935946600">
+  </div>
+
+  <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+  <button type="submit" style="float: right;" class="btn btn-primary">Editar</button>
+
+  
+
    	</div>
 
 
-       <br>
-
-
     <div class="container">
-        <div>
+        <div id="galeria">
+          <br><br><br>
             <h1>Galeria</h1>
         </div>
             <hr>
@@ -116,10 +145,12 @@
 
 
     <br>
+    <br>
 
 
     <div class="container">
-        <div>
+        <div id="textos">
+          <br><br><br>
             <h1>Textos</h1>
         </div>
             <hr>
@@ -151,10 +182,12 @@
 
 
     <br>
+    <br>
 
 
     <div class="container">
-        <div>
+        <div id="playlists">
+          <br><br><br>
             <h1>Playlists</h1>
         </div>
             <hr>
@@ -162,16 +195,19 @@
 
 
     <br>
+    <br>
 
 
     <div class="container">
-        <div>
+        <div id="apostas">
+          <br><br><br>
             <h1>Apostas</h1>
         </div>
             <hr>
     </div>
 
 
+    <br>
     <br>
 
 
