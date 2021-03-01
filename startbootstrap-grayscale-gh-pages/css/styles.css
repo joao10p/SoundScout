@@ -10205,9 +10205,7 @@ body {
   position: relative;
   width: 100%;
   height: auto;
-  min-height: 35rem;
-  padding: 15rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url("../assets/img/bg-masthead.jpg");
+  background: black;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10217,11 +10215,12 @@ body {
   font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 2.5rem;
   line-height: 2.5rem;
+  position: absolute;
+  top: 40%;
+  text-shadow:2px 2px 20px black;
+  left: 20%;
   letter-spacing: 0.8rem;
-  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-          background-clip: text;
+  color: #e9ecef;
 }
 .masthead h2 {
   max-width: 20rem;
@@ -10250,15 +10249,16 @@ body {
 }
 
 .about-section {
-  padding-top: 10rem;
-  background: linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
+  padding-top: 7%;
+  background: white;
 }
 .about-section p {
   margin-bottom: 5rem;
 }
 
 .projects-section {
-  padding: 10rem 0;
+  background-color: #f8f9fa !important;
+  padding: 5rem 0;
 }
 .projects-section .featured-text {
   padding: 2rem;
@@ -10286,7 +10286,7 @@ body {
 
 .signup-section {
   padding: 10rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000000 100%), url("../assets/img/bg-signup.jpg");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 80%, #000000 100%), url("../imagens/fundo.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10343,3 +10343,4 @@ body {
 .footer {
   padding: 5rem 0;
 }
+
