@@ -10234,7 +10234,6 @@ body {
 }
 @media (min-width: 992px) {
   .masthead {
-    height: 100vh;
     padding: 0;
   }
   .masthead h1 {
@@ -10344,3 +10343,12 @@ body {
   padding: 5rem 0;
 }
 
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
