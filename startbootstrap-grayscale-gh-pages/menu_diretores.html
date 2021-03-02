@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>SoundSout - HomePage</title>
+        <link rel="icon" type="images/x-icon" href="imagens/favicon.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css_backoffice/bootstrap.min.css" rel="stylesheet" />
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <!-- Barra navegação -->
+    <nav class="navbar navbar-default" style="position: fixed; width: 100%;">
+      <div class="container">
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" 
+                  data-toggle="collapse" data-target="#barra-navegacao">
+            <span class="sr-only">Alternar Menu</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand js-scroll-trigger">SoundScout</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="barra-navegacao">
+          <style>
+            html {
+              scroll-behavior: smooth;
+            }
+            </style>
+          <ul class="nav navbar-nav navbar-right">
+            <li> <a href="#banner">Banner</a> </li>
+            <li> <a href="#galeria">Galeria</a> </li>
+            <li> <a  href="#redes_sociais">Redes Sociais</a> </li>
+            <li> <a href="#playlists">Playlists</a> </li>
+            <li> <a  href="#apostas">Apostas</a> </li>
+            <li> <a  href="#staff">Staff</a> </li>
+            <li> <a href="index.html">Logout </a> </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    
+
+   	<div class="container">
+   		<div>
+   			<h1>Área Reservada</h1>
+   		</div>
+            <hr>
+       <label>ID:</label>
+       <label>100</label> <br> <br>
+
+       <label>Nome:</label>
+       <label>João Pedro Oliveira Lemos</label> <br> <br>
+
+       <label>Cargo Principal:</label>
+       <label>Designer Gráfico</label> <br> <br>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="joao10lemos10@gmail.com">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Telemóvel</label>
+      <input type="email" class="form-control" id="email" placeholder="935946600">
+  </div>
+
+  <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+  <button type="submit" style="float: right;" class="btn btn-primary">Editar</button>
+
+  
+
+   	</div>
+
+     <div class="container">
+      <div id="galeria">
+        <br><br><br>
+          <h1>Galeria</h1>
+      </div>
+          <hr>
+
+          <form>
+
+            <div class="form-group">
+              <select class="form-control form-control-lg">
+                <option value="" disabled selected hidden>Escolha a revista</option>
+                    <option value="sound">Revista Sound </option>
+                    <option value="scout">Revista Scout</option>
+              </select>
+          </div>
+          
+
+         
+
+              <div class="form-group">
+                  <label for="titulo">Título</label>
+                  <input type="text" class="form-control" id="titulo">
+              </div>
+
+              <div class="form-group">
+                  <label for="data">Data</label>
+                  <input type="date" class="form-control" id="data">
+              </div>
+
+              <div class="form-group">
+                  <label for="autor">Fotógrafo</label>
+                  <input type="text" class="form-control" id="autor">
+              </div>
+
+              <div class="form-group">
+                  <label for="capa">Capa</label>
+
+                  <button type="button" class="btn btn-default"
+                  data-toggle="tooltip" title="1280x720px" data-placement="right">
+            <span class="fas fa-lightbulb"></span> Dica
+          </button><!-- Colocar Dimensões-->
+
+          <form>
+            <div class="form-group">
+              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+          </form> <!-- Upload de fotos-->
+              </div>
+
+              <div class="form-group">
+                  <label for="fotos">Fotografias</label>
+                  <input type="text" class="form-control" id="fotos"> <!-- Upload de fotos-->
+              </div>
+
+              <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button>
+
+          </form>
+
+  </div>
+
+
+    <div class="container">
+        <div id="redes_sociais">
+          <br><br><br>
+            <h1>Redes Sociais</h1>
+        </div>
+            <hr>
+
+            <form>
+
+              <div class="form-group">
+                <select class="form-control form-control-lg">
+                  <option value="" disabled selected hidden>Escolha a revista</option>
+                      <option value="sound">Revista Sound </option>
+                      <option value="scout">Revista Scout</option>
+                </select>
+            </div>
+            
+
+           
+
+                <div class="form-group">
+                    <label for="titulo">Título</label>
+                    <input type="text" class="form-control" id="titulo">
+                </div>
+
+                <div class="form-group">
+                    <label for="data">Data</label>
+                    <input type="date" class="form-control" id="data">
+                </div>
+
+                <div class="form-group">
+                    <label for="autor">Fotógrafo</label>
+                    <input type="text" class="form-control" id="autor">
+                </div>
+
+                <div class="form-group">
+                    <label for="capa">Capa</label>
+
+                    <button type="button" class="btn btn-default"
+                    data-toggle="tooltip" title="1280x720px" data-placement="right">
+              <span class="fas fa-lightbulb"></span> Dica
+            </button><!-- Colocar Dimensões-->
+
+            <form>
+              <div class="form-group">
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+              </div>
+            </form> <!-- Upload de fotos-->
+                </div>
+
+                <div class="form-group">
+                    <label for="fotos">Fotografias</label>
+                    <input type="text" class="form-control" id="fotos"> <!-- Upload de fotos-->
+                </div>
+
+                <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button>
+
+            </form>
+
+    </div>
+
+
+    <br>
+    <br>
+
+
+    <div class="container">
+        <div id="redes_sociais">
+          <br><br><br>
+            <h1>Redes Sociais</h1>
+        </div>
+            <hr>
+
+
+            <form>
+
+              <div class="form-group">
+                <select class="form-control form-control-lg">
+                  <option value="" disabled selected hidden>Escolha a revista</option>
+                      <option value="sound">Revista Sound </option>
+                      <option value="scout">Revista Scout</option>
+                </select>
+            </div>
+
+                <div class="form-group">
+                    <label for="autor">Autor</label>
+                    <input type="text" class="form-control" id="autor">
+                </div>
+
+                <div class="form-group">
+                    <label for="cargo">Cargo</label>
+                    <input type="text" class="form-control" id="cargo">
+                </div>
+
+                <div class="form-group">
+                    <label for="texto">Texto</label>
+                    <textarea class="form-control" id="texto" placeholder="Escreve aqui..." style="height: 100px;"></textarea>
+                </div>
+
+                <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button>
+
+            </form>
+
+
+    </div>
+
+
+    <br>
+    <br>
+
+
+    <div class="container">
+        <div id="playlists">
+          <br><br><br>
+            <h1>Playlists</h1>
+        </div>
+            <hr>
+    </div>
+
+
+    <br>
+    <br>
+
+
+    <div class="container">
+        <div id="apostas">
+          <br><br><br>
+            <h1>Apostas</h1>
+        </div>
+            <hr>
+    </div>
+
+
+    <br>
+    <br>
+
+
+
+    <script type="text/javascript">
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+          $('[data-toggle="popover"]').popover()
+        })
+      </script>
+
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+ <script type="text/javascript">
+   $(function () {
+     $('[data-toggle="tooltip"]').tooltip()
+     $('[data-toggle="popover"]').popover()
+   })
+ </script>
+
+ <!-- Include all compiled plugins (below), or include individual files as needed -->
+ <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
