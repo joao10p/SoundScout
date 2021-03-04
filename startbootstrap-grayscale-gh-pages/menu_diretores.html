@@ -47,6 +47,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li> <a href="#banner">Banner</a> </li>
             <li> <a href="#sliders">Sliders</a> </li>
+            <li> <a href="#textos">Texto</a> </li>
             <li> <a href="#galeria">Galeria</a> </li>
             <li> <a  href="#redes_sociais">Redes Sociais</a> </li>
             <li> <a href="#playlists">Playlists</a> </li>
@@ -180,70 +181,164 @@
 <br>
 
 
-    <div class="container">
-        <div id="galeria">
-          <br><br><br>
-            <h1>Galeria</h1>
+
+<div class="container">
+  <div id="galeria">
+    <br><br><br>
+      <h1>Galeria</h1>
+  </div>
+      <hr>
+
+      <form>
+
+        <div class="form-group">
+          <select class="form-control form-control-lg">
+            <option value="" disabled selected hidden>Escolha a revista</option>
+                <option value="sound">Revista Sound </option>
+                <option value="scout">Revista Scout</option>
+          </select>
+      </div>
+      
+
+     
+
+          <div class="form-group">
+              <label for="titulo">Título</label>
+              <input type="text" class="form-control" id="titulo">
+          </div>
+
+          
+          <div class="form-group">
+              <label for="data">Data</label>
+              <input type="date" class="form-control" id="data">
+          </div>
+
+          <div class="form-group">
+              <label for="autor">Fotógrafo</label>
+              <input type="text" class="form-control" id="autor">
+          </div>
+
+          <div class="form-group">
+              <label for="capa">Capa</label>
+
+              <button type="button" class="btn btn-default"
+              data-toggle="tooltip" title="1280x720px" data-placement="right">
+        <span class="fas fa-lightbulb"></span> Dica
+      </button><!-- Colocar Dimensões-->
+
+      <form>
+        <div class="form-group">
+          <input type="file" class="form-control-file" id="exampleFormControlFile1">
         </div>
-            <hr>
+      </form> <!-- Upload de fotos-->
+          </div>
 
-            <form>
+          <div class="form-group">
+              <label for="fotos">Fotografias</label>
+              <input type="text" class="form-control" id="fotos"> <!-- Upload de fotos-->
+          </div>
 
-              <div class="form-group">
-                <select class="form-control form-control-lg">
-                  <option value="" disabled selected hidden>Escolha a revista</option>
-                      <option value="sound">Revista Sound </option>
-                      <option value="scout">Revista Scout</option>
-                </select>
-            </div>
-            
+          <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button>
 
-           
+      </form>
 
-                <div class="form-group">
-                    <label for="titulo">Título</label>
-                    <input type="text" class="form-control" id="titulo">
-                </div>
-
-                <div class="form-group">
-                    <label for="data">Data</label>
-                    <input type="date" class="form-control" id="data">
-                </div>
-
-                <div class="form-group">
-                    <label for="autor">Fotógrafo</label>
-                    <input type="text" class="form-control" id="autor">
-                </div>
-
-                <div class="form-group">
-                    <label for="capa">Capa</label>
-
-                    <button type="button" class="btn btn-default"
-                    data-toggle="tooltip" title="1280x720px" data-placement="right">
-              <span class="fas fa-lightbulb"></span> Dica
-            </button><!-- Colocar Dimensões-->
-
-            <form>
-              <div class="form-group">
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-              </div>
-            </form> <!-- Upload de fotos-->
-                </div>
-
-                <div class="form-group">
-                    <label for="fotos">Fotografias</label>
-                    <input type="text" class="form-control" id="fotos"> <!-- Upload de fotos-->
-                </div>
-
-                <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button>
-
-            </form>
-
-    </div>
+</div>
 
 
-    <br>
-    <br>
+<br>
+<br>
+
+
+<div class="container">
+  <div id="textos">
+    <br><br><br>
+      <h1>Texto</h1>
+  </div>
+      <hr>
+
+      <form>
+
+        <div class="form-group">
+          <select class="form-control form-control-lg">
+            <option value="" disabled selected hidden>Escolha a revista</option>
+                <option value="sound">Revista Sound </option>
+                <option value="scout">Revista Scout</option>
+          </select>
+      </div>
+      
+
+     
+
+          <div class="form-group">
+              <label for="titulo">Título</label>
+              <input type="text" class="form-control" id="titulo">
+          </div>
+          <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+<button type="submit" style="float: right;" class="btn btn-default">Editar</button>
+<br>
+
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" id="titulo">
+        </div>
+        <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+<button type="submit" style="float: right;" class="btn btn-default">Editar</button>
+<br>
+
+        <div class="form-group">
+          <label for="cargo">Cargo</label>
+          <input type="text" class="form-control" id="titulo">
+      </div>
+      <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+<button type="submit" style="float: right;" class="btn btn-default">Editar</button>
+<br>
+
+
+          <div class="form-group">
+              <label for="texto">Texto</label>
+              <input type="text" class="form-control" id="titulo">
+          </div>
+          <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+<button type="submit" style="float: right;" class="btn btn-default">Editar</button>
+<br>
+
+
+          <div class="form-group">
+              <label for="imagem_texto">Imagem</label>
+
+              <button type="button" class="btn btn-default"
+              data-toggle="tooltip" title="1280x720px" data-placement="right">
+        <span class="fas fa-lightbulb"></span> Dica
+      </button><!-- Colocar Dimensões-->
+
+      <form>
+        <div class="form-group">
+          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+      </form> <!-- Upload de fotos-->
+          </div>
+
+         
+          <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button>
+
+          <br>
+          <div class="form-group">
+            <label for="link_spotify">Link de Spotify</label>
+            <input type="text" class="form-control" id="autor">
+        </div>
+        <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+<button type="submit" style="float: right;" class="btn btn-default">Editar</button>
+
+<br>
+      </form>
+
+</div>
+
+
+<br>
+<br>
+
+
 
 
     <div class="container">
