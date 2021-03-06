@@ -93,7 +93,7 @@ app.use(function(req, res, next) {
   });
   
   app.use(passport.initialize());
-  app.use(passport.session()); // persistent login sessions
+  app.use(passport.session()); // persisent login sessions
   //require('./routes/auth.routes.js')(app, passport);
   //require('./config/passport/passport.js')(passport, models.user);
   //Sync Database
