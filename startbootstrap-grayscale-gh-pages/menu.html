@@ -82,83 +82,75 @@
     <div class="form-group">
         <label for="email">Email</label>
         <input type="email" class="form-control" id="email" placeholder="joao10lemos10@gmail.com">
+      
     </div>
 
+ 
+
+<br>
+
     <div class="form-group">
-      <label for="email">Telemóvel</label>
-      <input type="email" class="form-control" id="email" placeholder="935946600">
+      <label for="telemovel">Telemóvel</label>
+      <input type="telemovel" class="form-control" id="email" placeholder="935946600">
   </div>
-
+  <br>
   <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
-  <button type="submit" style="float: right;" class="btn btn-primary">Editar</button>
-
+ 
   
 
    	</div>
 
 
-    <div class="container">
-        <div id="galeria">
-          <br><br><br>
-            <h1>Galeria</h1>
-        </div>
-            <hr>
-
-            <form>
-
-              <div class="form-group">
-                <select class="form-control form-control-lg">
-                  <option value="" disabled selected hidden>Escolha a revista</option>
-                      <option value="sound">Revista Sound </option>
-                      <option value="scout">Revista Scout</option>
-                </select>
-            </div>
-            
-
-           
-
-                <div class="form-group">
-                    <label for="titulo">Título</label>
-                    <input type="text" class="form-control" id="titulo">
-                </div>
-
-                <div class="form-group">
-                    <label for="data">Data</label>
-                    <input type="date" class="form-control" id="data">
-                </div>
-
-                <div class="form-group">
-                    <label for="autor">Fotógrafo</label>
-                    <input type="text" class="form-control" id="autor">
-                </div>
-
-                <div class="form-group">
-                    <label for="capa">Capa</label>
-
-                    <button type="button" class="btn btn-default"
-                    data-toggle="tooltip" title="1280x720px" data-placement="right">
-              <span class="fas fa-lightbulb"></span> Dica
-            </button><!-- Colocar Dimensões-->
-
-            <form>
-              <div class="form-group">
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-              </div>
-            </form> <!-- Upload de fotos-->
-                </div>
-
-                <div class="form-group">
-                    <label for="fotos">Fotografias</label>
-                    <input type="text" class="form-control" id="fotos"> <!-- Upload de fotos-->
-                </div>
-
-                <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button>
-
-            </form>
-
-    </div>
-
-
+     <div class="container">
+      <div id="galeria">
+        <br><br><br>
+          <h1>Galeria</h1>
+      </div>
+          <hr>
+    
+          <form>
+    
+            <div class="form-group">
+              <select class="form-control form-control-lg">
+                <option value="" disabled selected hidden>Escolha a revista</option>
+                    <option value="sound">Revista Sound </option>
+                    <option value="scout">Revista Scout</option>
+              </select>
+          </div>
+      
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Titulo</th>
+          <th scope="col">Data</th>
+          <th scope="col">Fotógrafo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"></th>
+          <td>x</td>
+          <td input type="date">y</td>
+          <td>z</td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td >x</td>
+          <td input type="date">y</td>
+          <td>z</td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td >x</td>
+          <td input type="date">y</td>
+          <td >z</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    
     <br>
     <br>
 
@@ -180,6 +172,11 @@
                       <option value="scout">Revista Scout</option>
                 </select>
             </div>
+            
+            
+
+            <br>
+            <br>
 
                 <div class="form-group">
                     <label for="autor">Autor</label>
@@ -192,19 +189,40 @@
                 </div>
 
                 <div class="form-group">
+                  <label for="imagem_texto">Imagem</label>
+    
+                  <button type="button" class="btn btn-default"
+                  data-toggle="tooltip" title="1280x720px" data-placement="right">
+            <span class="fas fa-lightbulb"></span> Dica
+          </button><!-- Colocar Dimensões-->
+    
+          <form>
+            <div class="form-group">
+              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+          </form> <!-- Upload de fotos-->
+              </div>
+
+           
+
+              <br>
+
+                <div class="form-group">
                     <label for="texto">Texto</label>
                     <textarea class="form-control" id="texto" placeholder="Escreve aqui..." style="height: 100px;"></textarea>
                 </div>
 
-                <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button>
-
+                <br>
+                <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
             </form>
 
 
     </div>
+  
+    
 
 
-    <br>
+    
     <br>
 
 
