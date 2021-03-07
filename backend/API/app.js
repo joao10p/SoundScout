@@ -75,7 +75,7 @@ app.use(function(req, res, next) {
 
 app.use(function(req, res, next) {
   for (var item in req.body) {
-    //req.sanitize(item).escape();  // FALAR COM O STOR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //req.sanitize(item).escape();  
   }
   next();
 });
