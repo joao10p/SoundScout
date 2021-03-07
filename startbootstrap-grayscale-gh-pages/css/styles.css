@@ -10370,6 +10370,12 @@ body {
 	right:10px;
 }
 
+#descer{
+	position:fixed;
+	bottom:10px;
+	right:40px;
+}
+
 #mag{
   display: block;
 }
