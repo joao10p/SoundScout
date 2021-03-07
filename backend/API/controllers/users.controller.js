@@ -66,7 +66,7 @@ exports.save = function(req, res) {
 
         ];
          
-        query = con.query('INSERT INTO galeria SET titulo=?, data=?, fotografo=?, imagem=?', post, function(err, rows, fields) {
+        query = con.query('INSERT INTO users SET codigo=?, nome=?, email=?, numero=?', post, function(err, rows, fields) {
             console.log(query.sql);
             if (!err) {
                 res.status(200).location(rows.insertId).send({
@@ -89,23 +89,23 @@ exports.save = function(req, res) {
 
 
 exports.update = function(req, res) {
-    const titulo =req.params.id;
-    const data = req.body.data;
-    const fotografo = req.body.fotografo;
-    const imagem = req.body.imagem;
+    const codigo =req.params.id;
+    const nome = req.body.nome;
+    const email = req.body.email;
+    const numero = req.body.numero;
  
     var query = "";
     
 
         var update = [
-            data,
-            fotografo,
-            imagem,
-            titulo,
+            nome,
+            email,
+            numero,
+            codigo,
             
         ];
          
-        query = con.query('UPDATE galeria SET data =?, fotografo=? where titulo=?', update, function(err, rows,
+        query = con.query('UPDATE users SET nome=?, email=?, numero=? where codigo=?', update, function(err, rows,
             fields) {
             console.log(query.sql);
             if (!err) {
@@ -125,9 +125,9 @@ exports.update = function(req, res) {
 
 
 exports.deleteID = function(req, res) {
-    const titulo = req.params.id;
+    const codigo = req.params.id;
 
-    con.query('DELETE from galeria where titulo= ?', [titulo], function(err, rows, fields) {
+    con.query('DELETE from users where codigo= ?', [codigo], function(err, rows, fields) {
         if (!err) {
             if (rows.length == 0) {
                 res.status(404).send({
