@@ -66,7 +66,7 @@ exports.save = function(req, res) {
 
         ];
          
-        query = con.query('INSERT INTO Auditors SET id_auditor=?, password=?, name=?, age=?, genre=?, address=?, cellphone=?, email=?', post, function(err, rows, fields) {
+        query = con.query('INSERT INTO galeria SET titulo=?, data=?, fotografo=?, imagem=?', post, function(err, rows, fields) {
             console.log(query.sql);
             if (!err) {
                 res.status(200).location(rows.insertId).send({
@@ -89,29 +89,23 @@ exports.save = function(req, res) {
 
 
 exports.update = function(req, res) {
-    const id_auditor =req.params.id;
-    const pass = req.body.password;
-    const name = req.body.name;
-    const age = req.body.age;
-    const genre = req.body.genre;
-    const adress = req.body.adress;
-    const cellphone = req.body.cellphone;
-    const email = req.body.email;
+    const titulo =req.params.id;
+    const data = req.body.data;
+    const fotografo = req.body.fotografo;
+    const imagem = req.body.imagem;
+ 
     var query = "";
     
 
         var update = [
-            pass,
-            name,
-            age,
-            genre,
-            adress,
-            cellphone,
-            email,
-            id_auditor
+            data,
+            fotografo,
+            imagem,
+            titulo,
+            
         ];
          
-        query = con.query('UPDATE Auditors SET password =?, name=?, age=?,   genre=?,   address=?, cellphone=?,  email=? where id_auditor=?', update, function(err, rows,
+        query = con.query('UPDATE galeria SET data =?, fotografo=? where titulo=?', update, function(err, rows,
             fields) {
             console.log(query.sql);
             if (!err) {
@@ -131,9 +125,9 @@ exports.update = function(req, res) {
 
 
 exports.deleteID = function(req, res) {
-    const id_aud = req.params.id;
+    const titulo = req.params.id;
 
-    con.query('DELETE from Auditors where id_auditor= ?', [id_aud], function(err, rows, fields) {
+    con.query('DELETE from galeria where titulo= ?', [titulo], function(err, rows, fields) {
         if (!err) {
             if (rows.length == 0) {
                 res.status(404).send({
