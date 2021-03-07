@@ -10373,3 +10373,18 @@ body {
 #mag{
   display: block;
 }
+
+.masthead1 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: #f8f9fa;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+#galeria {
+  filter: brightness(60%)
+}
