@@ -6,7 +6,7 @@ var mysql = require('mysql');
 exports.read = function(req, res) {
 
 
-    con.query('SELECT * from galeria', function(err, rows, fields) {
+    con.query('SELECT * from users', function(err, rows, fields) {
         if (!err) {
 
             if (rows.length == 0) {
@@ -23,10 +23,10 @@ exports.read = function(req, res) {
 
 exports.readID = function(req, res) {
 
-    const titulo = req.params.id;
+    const codigo = req.params.id;
 
 
-    con.query('SELECT * from galeria where titulo=?', [titulo], function(err, rows, fields) {
+    con.query('SELECT * from users where codigo=?', [codigo], function(err, rows, fields) {
         if (!err) {
 
             if (rows.length == 0) {
@@ -48,20 +48,20 @@ exports.readID = function(req, res) {
 
 
 exports.save = function(req, res) {
-    const titulo = req.body.titulo;
-    const data = req.body.data;
-    const fotografo = req.body.fotografo;
-    const imagem = req.body.imagem;
+    const codigo = req.body.codigo;
+    const nome = req.body.nome;
+    const email = req.body.email;
+    const numero = req.body.numero;
     
     var query = "";
    
 
         // Store hash in your password DB.
         var post = [
-            titulo,
-            data,
-            fotografo,
-            imagem,
+            codigo,
+            nome,
+            email,
+            numero,
             
 
         ];
