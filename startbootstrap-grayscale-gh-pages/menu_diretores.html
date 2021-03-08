@@ -48,8 +48,8 @@
             <li> <a href="#revista">Revistas</a> </li>
             <li> <a href="#banner">Banner</a> </li>
             <li> <a href="#sliders">Sliders</a> </li>
-            <li> <a href="#textos">Texto</a> </li>
             <li> <a href="#galeria">Galeria</a> </li>
+            <li> <a href="#textos">Texto</a> </li>
             <li> <a  href="#redes_sociais">Redes Sociais</a> </li>
             <li> <a href="#playlists">Playlists</a> </li>
             <li> <a  href="#apostas">Apostas</a> </li>
@@ -86,7 +86,7 @@
 
     <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="joao10lemos10@gmail.com">
+        <input type="email" class="form-control" id="email" >
     </div>
 
     
@@ -94,7 +94,7 @@
 
     <div class="form-group">
       <label for="email">Telemóvel</label>
-      <input type="email" class="form-control" id="email" placeholder="935946600">
+      <input type="email" class="form-control" id="email" >
   </div>
 
   <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
@@ -300,13 +300,7 @@
 
       <form>
 
-        <div class="form-group">
-          <select class="form-control form-control-lg">
-            <option value="" disabled selected hidden>Escolha a revista</option>
-                <option value="sound">Revista Sound </option>
-                <option value="scout">Revista Scout</option>
-          </select>
-      </div>
+      
   
 
 <table class="table">
@@ -343,6 +337,15 @@
 <button type="button" style="float: right;" class="btn btn-primary">Adicionar</button> <span style="float: right;">&nbsp;</span>
 <br>
 <br>
+<br>
+
+<div class="form-group">
+  <select class="form-control form-control-lg">
+    <option value="" disabled selected hidden>Escolha a revista</option>
+        <option value="sound">Revista Sound </option>
+        <option value="scout">Revista Scout</option>
+  </select>
+</div>
 
 <div id="nome">
   <label class="titulo">Titulo</label>
@@ -385,7 +388,7 @@
 
 
 
-<label class="fotografo">Repositório</label>
+<label class="fotografo">Álbum</label>
 <div class="form-group">
   <input type="file" class="form-control-file" id="exampleFormControlFile1">
 </div>
@@ -476,9 +479,14 @@
 
           <br>
           <div class="form-group">
-            <label for="link_spotify">Link de Spotify</label>
-            <input type="text" class="form-control" id="autor">
+            <label for="link_spotify" style= "display: none">Link de Spotify</label>
+            <input type="text" style= "display: none" class="form-control" id="autor">
         </div>
+
+        <div class="form-group">
+          <label for="aposta_betano" style= "display: none">Aposta Betano</label>
+          <input type="text" style= "display: none" class="form-control" id="autor">
+      </div>
         
 
 <br>
@@ -589,26 +597,30 @@
                 <th scope="col">Id</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Cargo</th>
+                <th scope="col">Nº Telemóvel</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <th scope="row"></th>
                 <td>x</td>
-                <td input type="date">y</td>
+                <td >y</td>
                 <td>z</td>
+                <td>w</td>
               </tr>
               <tr>
                 <th scope="row"></th>
                 <td >x</td>
-                <td input type="date">y</td>
+                <td >y</td>
                 <td>z</td>
+                <td>w</td>
               </tr>
               <tr>
                 <th scope="row"></th>
                 <td >x</td>
-                <td input type="date">y</td>
+                <td >y</td>
                 <td >z</td>
+                <td >w</td>
               </tr>
             </tbody>
           </table>
