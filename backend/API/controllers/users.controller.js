@@ -10,7 +10,7 @@ exports.read = function(req, res) {
         if (!err) {
 
             if (rows.length == 0) {
-                res.status(404).send("Galeria not found");
+                res.status(404).send("User not found");
             }
             else {
                 res.status(200).send(rows);
@@ -31,7 +31,7 @@ exports.readID = function(req, res) {
 
             if (rows.length == 0) {
                 res.status(404).send({
-                    "msg": "galeria nao encontrada"
+                    "msg": "user nao encontrado"
                 });
             }
             else {

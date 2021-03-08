@@ -9,18 +9,31 @@ const passport = require('passport');
 //const models = require('./models/');
 const flash = require('express-flash');
 const host = 'localhost';
-const port = 8000;
+const port = 3001;
 const session = require('express-session');
-//const mainRoutes = require('./routes/main.routes.js');
+const mainRoutes = require('./routes/main.routes.js');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const requestListener = function (req, res) {};
 
-const server = http.createServer(requestListener);
+/*const server = http.createServer(requestListener);
 server.listen(port, host, () => {
     console.log(`Server a correr em http://${host}:${port}`);
 });
+
+*/
+app.get('/', function(req, res) {
+  res.json({status: 'Server is running!'})
+})
+app.listen(port, function() {
+  console.log(`Server is running at localhost:${port}`)
+})
+
+var server = http.createServer(function(request, response) {
+  console.log('Request!')
+})
+server.listen(3000)
 app.set('view-engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 app.use(flash())
@@ -38,7 +51,7 @@ app.use(session({
 app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }));
 //app.use(expressSanitizer());
 
-//app.use('/', mainRoutes);
+app.use('/', mainRoutes);
 app.use(
     contentSecurityPolicy({
       defaultSrc: ["'self'"],
