@@ -153,8 +153,6 @@ module.exports = function(passport, user) {
             password: userPassword,
             nome: req.body.name,
             numero: req.body.numero,
-         
-            especialidade:req.body.especialidade
             
           };
           User.create(data).then(function(newUser, created) {
