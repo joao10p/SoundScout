@@ -108,11 +108,96 @@
       </div>
         <hr>
         <div class="form-group">
-          <select class="form-control form-control-lg">
-            <option value="" disabled selected hidden>Escolha a revista</option>
-                <option value="sound">Revista Sound </option>
-                <option value="scout">Revista Scout</option>
-          </select>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Nome</th>
+                <th scope="col">Nº de Edição</th>
+                <th scope="col">Revista</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"></th>
+                <td>x</td>
+                <td >y</td>
+                <td>z</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td >x</td>
+                <td> y</td>
+                <td>z</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td >x</td>
+                <td >y</td>
+                <td >z</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <button type="button" style="float: right;" class="btn btn-primary">Adicionar</button> <span style="float: right;">&nbsp;</span>
+<br>
+<br>
+
+<div id="nome">
+  <label class="titulo">Nome</label>
+  <div class="box">
+    <div class="form-group">
+      
+      <input type="text" class="form-control" id="autor">
+  </div>
+  </div>
+</div>
+
+      <div id="email">
+  <label class="data">Nº de Edição </label>
+  <div class="box">
+    <div class="form-group">
+      
+      <input type="text" class="form-control" id="autor">
+  </div>
+  </div>
+
+</div>
+
+<br>
+ 
+  <div class="box">
+    <select class="form-control form-control-lg">
+      <option value="" disabled selected hidden>Escolha a revista</option>
+          <option value="sound">Revista Sound </option>
+          <option value="scout">Revista Scout</option>
+    </select>
+  </div>
+
+
+ <br>
+  <label class="fotografo">Revista</label>
+  <div class="form-group">
+    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+  </div>
+
+
+  <br>
+  <label class="fotografo">Capa</label>
+  <div class="form-group">
+    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+  </div>
+
+</div>
+
+
+
+<button type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+
+<button type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+
+
       </div>
       </div>
 
@@ -143,7 +228,7 @@
               <input type="text" class="form-control" id="cargo">
           </div>
 
-          <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+          <button type="button" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
 
 
 
@@ -237,48 +322,79 @@
     <tr>
       <th scope="row"></th>
       <td>x</td>
-      <td input type="date">y</td>
+      <td >y</td>
       <td>z</td>
     </tr>
     <tr>
       <th scope="row"></th>
       <td >x</td>
-      <td input type="date">y</td>
+      <td  > y</td>
       <td>z</td>
     </tr>
     <tr>
       <th scope="row"></th>
       <td >x</td>
-      <td input type="date">y</td>
+      <td >y</td>
       <td >z</td>
     </tr>
   </tbody>
 </table>
 
+<button type="button" style="float: right;" class="btn btn-primary">Adicionar</button> <span style="float: right;">&nbsp;</span>
+<br>
+<br>
+
 <div id="nome">
-  <label class="titulo">Título</label>
+  <label class="titulo">Titulo</label>
   <div class="box">
-  <input class="texto_perfil" type="text" id="titulo_menu" name="nome" placeholder= "Wolfgang Mozart" required disabled="true" ></input>
+    <div class="form-group">
+      
+      <input type="text" class="form-control" id="autor">
+  </div>
   </div>
 </div>
 
       <div id="email">
   <label class="data">Data</label>
   <div class="box">
-  <input class="texto_perfil" type="date" id="data_menu" name="email" placeholder= "wolgangMozart@gmail.com" required disabled="true" ></input>
+    <div class="form-group">
+      
+      <input type="text" class="form-control" id="autor">
+  </div>
   </div>
 
 </div>
 
-      <div id="morada">
-  <label class="fotografo">Fotógrafo</label>
+<div id="email">
+  <label class="data">Fotógrafo</label>
   <div class="box">
-  <input class="texto_perfil" type="text" id="fotografo_menu" name="morada" placeholder= "Rua Clássica de Viena" required disabled="true" ></input>
+    <div class="form-group">
+      
+      <input type="text" class="form-control" id="autor">
+  </div>
   </div>
 
 </div>
 
 
+
+<label class="fotografo">Capa</label>
+<div class="form-group">
+  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+</div>
+
+
+
+<label class="fotografo">Repositório</label>
+<div class="form-group">
+  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+</div>
+
+
+<button type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+
+<button type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+</div>
 
 <div class="container">
   <div id="textos">
@@ -411,7 +527,7 @@
 
                 <br>
 
-                <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+                <button type="button" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
 
 
 
@@ -457,7 +573,7 @@
           <div class="form-group">
             <span>
             <label for="pesquisar">Membro Desejado</label>
-            <input type="number" class="form-control" id="selecionarTable" placeholder="Pesquisar nº da Ocorrência">
+            <input type="number" class="form-control" id="selecionarTable">
             
         </input>
       </span>
@@ -496,6 +612,48 @@
               </tr>
             </tbody>
           </table>
+
+          <button type="button" style="float: right;" class="btn btn-primary">Adicionar</button> <span style="float: right;">&nbsp;</span>
+<br>
+<br>
+
+<div id="nome">
+  <label class="titulo">Id</label>
+  <div class="box">
+    <div class="form-group">
+      
+      <input type="text" class="form-control" id="autor">
+  </div>
+  </div>
+</div>
+
+      <div id="email">
+  <label class="data">Nome</label>
+  <div class="box">
+    <div class="form-group">
+      
+      <input type="text" class="form-control" id="autor">
+  </div>
+  </div>
+
+</div>
+
+<div id="email">
+  <label class="data">Cargo</label>
+  <div class="box">
+    <div class="form-group">
+      
+      <input type="text" class="form-control" id="autor">
+  </div>
+  </div>
+
+</div>
+
+  <button type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+
+<button type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+
+</div>
 
 
 
