@@ -107,16 +107,16 @@ app.use(function(req, res, next) {
   
   app.use(passport.initialize());
   app.use(passport.session()); // persisent login sessions
-  //require('./routes/auth.routes.js')(app, passport);
-  //require('./config/passport/passport.js')(passport, models.user);
+  require('./routes/auth.routes.js')(app, passport);
+  require('./config/passport/passport.js')(passport, models.user);
   //Sync Database
   
-  /*models.sequelize.sync().then(function() {
+  models.sequelize.sync().then(function() {
     console.log('Nice! Database looks fine');
   
   }).catch(function(err) {
     console.log(err, "Something went wrong with the Database Update!");
   });
-  */
+
   module.exports = app;
   
