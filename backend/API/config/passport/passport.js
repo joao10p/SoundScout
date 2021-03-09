@@ -40,16 +40,8 @@ module.exports = function(passport, user) {
             email: email,
             password: userPassword,
             nome: req.body.name,
-            tipo: req.body.type,
-            sobre: req.body.about,
             username: req.body.username,
-            idade: req.body.idade,
-            genero: req.body.genero,
-            morada: req.body.morada,
-            telemovel: req.body.telemovel,
-            NIF: req.body.NIF,
-            NIB:req.body.NIB,
-            especialidade:req.body.especialidade
+            numero: req.body.numero,
             
           };
           User.create(data).then(function(newUser, created) {
