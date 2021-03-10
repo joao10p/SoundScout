@@ -1376,6 +1376,12 @@ a.text-danger:focus {
   color: #fff;
   background-color: #337ab7;
 }
+
+.bg-cor {
+  color: #fff;
+  background-color: #2b5a8a;
+
+}
 a.bg-primary:hover,
 a.bg-primary:focus {
   background-color: #286090;
@@ -4171,7 +4177,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
+
 }
+
 @media (min-width: 768px) {
   .navbar {
     border-radius: 4px;
