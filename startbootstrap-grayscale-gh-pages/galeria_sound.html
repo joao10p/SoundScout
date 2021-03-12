@@ -16,8 +16,10 @@
         <link href="css/styles.css" rel="stylesheet" />
         
     </head>
-    <body id="page-top"  onload="myFunction()">
+    <body id="page-top" onload="myFunction1()">
         <!-- Navigation-->
+
+       
         <nav class="navbar navbar-custom navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container" >
                 <a class="navbar-brand js-scroll-trigger" href="#page-top">SoundScout</a>
@@ -53,7 +55,7 @@
 
                     <div class="row">
                    
-          <div class="col-lg-4" style="padding:2%;"><a href="galeria_id.html"> <img src="imagens/galeria_sound1.jpg" class="img-responsive" id="galeria"><div id="x" class="centered1">Á JANELA</div><div class="centered2">Beatriz Pequeno</div><div class="centered3">01Fev2021</div>
+          <div class="col-lg-4" style="padding:2%;"><a href="galeria_id.html"> <img src="imagens/galeria_sound1.jpg" class="img-responsive" id="galeria"><div id="x1" class="centered1">Á JANELA</div><div id="x2" class="centered2">Beatriz Pequeno</div><div class="centered3">01Fev2021</div>
                   </a>
                  </div>
                   <div class="col-lg-4" style="padding:2%;"><a href="galeria_id.html"><img src="imagens/galeria_sound2.jpg" class="img-responsive" id="galeria"><div class="centered1">ANIMA-TE</div><div class="centered2">João Lemos</div><div class="centered3">21Jul2020</div>
@@ -65,15 +67,30 @@
         </div>  
 
         <script>
-            function myFunction() {
-            var z= document.getElementById("x").innerHTML;
+            function myFunction1() {
+            var z= document.getElementById("x1").innerHTML;
               var s= z.length;
+              console.log(z);
+              console.log(s);
 
-              if (s > 4) {
-                x.style.fontSize = "0.5rem";
+              if (s > 5) {
+                x1.style.fontSize = "0.5rem";
   }
 }
             </script>
+
+<script>
+    function myFunction2() {
+    var z= document.getElementById("x2").innerHTML;
+      var s= z.length;
+      console.log(z);
+      console.log(s);
+
+      if (s > 5) {
+        x2.style.fontSize = "0.5rem";
+}
+}
+    </script>
 
         <div class="row"> 
             <div class="col-lg-4" style="padding:2%;"><a href="galeria_id.html"> <img src="imagens/galeria_sound4.jpg" class="img-responsive" id="galeria"><div class="centered1">FESTIVAL BOREAL</div><div class="centered2">Nélson Oliveira</div><div class="centered3">06Fev2020</div>
