@@ -1,1 +1,42 @@
-spotify
+<div id="cadEquipInsp" class="col-md-6 ">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Cadastro de
+            Equipamentos/Instrumentos </div>
+
+        <div class="panel-body">
+            <form novalidate name="frmCliente" id="formCadastro" role="form">
+
+                <div class="row">
+
+                    <div class="form-group col-md-12">
+                        <label>* Descrição:</label> <input name="inpDescricao"
+                            maxlength="60" required="required" type="text"
+                            class="form-control" ng-model="cliente.empresa" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>* Data da Inspeção:</label> <input
+                            name="inpDataEquipamento" maxlength="16" required="required"
+                            type="date" class="form-control" ng-model="cliente.cnpj" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>* Próxima Inspeção:</label> <input
+                            name="inpProximaInspecao" maxlength="60" required="required"
+                            type="date" class="form-control" ng-model="cliente.endereco" />
+                    </div>
+
+                    <div></div>
+                </div>
+            </form>
+            <div class="pull-right">
+                <button type="button" id="btnSalvar" class="btn btn-default"
+                    ng-click="salvarClientes()">Salvar</button>
+
+                <!-- ou ng-disabled="frmCliente.inpNome.$invalid"  -->
+                <button type="button" class="btn btn-default"
+                    ng-click="cancelarAlteracaoClientes(cli)">Cancelar
+                    Edição</button>
+            </div>
+
+        </div>
+    </div>
+</div> 
