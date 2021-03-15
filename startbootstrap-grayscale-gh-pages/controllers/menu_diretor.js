@@ -8,10 +8,10 @@ window.onload = function() {
 
     function saveperfil() {
         //alert();
-        const id = document.getElementById("nome1").value;
+        const codigo = document.getElementById("nome1").value;
         console.log(id);
         var data = {};
-        data.email = document.getElementById("email1").value;
+        data.email = document.getElementById("email_diretores").value;
         data.address = document.getElementById("morada1").value;
         data.cellphone = document.getElementById("nif1").value;
         data.password = document.getElementById("password1").value;
