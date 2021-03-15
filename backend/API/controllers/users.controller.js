@@ -52,6 +52,7 @@ exports.save = function(req, res) {
     const nome = req.body.nome;
     const email = req.body.email;
     const numero = req.body.numero;
+    const password =req.body.password;
     
     var query = "";
    
@@ -62,11 +63,12 @@ exports.save = function(req, res) {
             nome,
             email,
             numero,
+            password,
             
 
         ];
          
-        query = con.query('INSERT INTO users SET codigo=?, nome=?, email=?, numero=?', post, function(err, rows, fields) {
+        query = con.query('INSERT INTO users SET codigo=?, nome=?, email=?, numero=?,password=?', post, function(err, rows, fields) {
             console.log(query.sql);
             if (!err) {
                 res.status(200).location(rows.insertId).send({
@@ -93,6 +95,7 @@ exports.update = function(req, res) {
     const nome = req.body.nome;
     const email = req.body.email;
     const numero = req.body.numero;
+    const password =req.body.password;
  
     var query = "";
     
@@ -102,10 +105,11 @@ exports.update = function(req, res) {
             email,
             numero,
             codigo,
+            password,
             
         ];
          
-        query = con.query('UPDATE users SET nome=?, email=?, numero=? where codigo=?', update, function(err, rows,
+        query = con.query('UPDATE users SET nome=?, email=?, numero=?,password=? where codigo=?', update, function(err, rows,
             fields) {
             console.log(query.sql);
             if (!err) {

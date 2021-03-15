@@ -5,7 +5,7 @@ window.onload = function() {
 		data.password = document.getElementById("senha").value;
 		console.log(data); //debugging para ver os dados que foram enviados
 		//chamada fetch para envio dos dados para o servior via POST
-		fetch('https://127.0.0.1:3000/signin', {
+		fetch('http://127.0.0.1:3001/signin', {
 			headers: { 'Content-Type': 'application/json' },
 			method: 'POST',
 			body: JSON.stringify(data)
@@ -20,10 +20,10 @@ window.onload = function() {
 			else {
 				login();
 				async function login() {
-					const res = await fetch('https://127.0.0.1:3000/signinSuccess');
+					const res = await fetch('http://localhost:3001/signinSuccess');
 					const data = await res.json();
 					alert("Autenticação feita com sucesso!");
-					window.location.href = "../startbootstrap-grayscale-gh-pages/menu.html";
+					window.location.href = "../menu.html";
 					return response.json();
 				}
 			}
@@ -31,7 +31,7 @@ window.onload = function() {
 			console.log(result);
 		}).catch(function(err) {
 			console.error(err);
-			setpopup();
+			//setpopup();
 		});
 	}
 
