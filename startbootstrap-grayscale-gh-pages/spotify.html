@@ -11,6 +11,7 @@
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/spotify.css" rel="stylesheet">
+    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -75,10 +76,10 @@
             <div class="row albuns">
               
               <div class="col-md-6">
-                <button style="background: none; border: none"><img src="imagens/img1.jpg" class="img-responsive"></button>
+                <button onclick="spotify()" style="background: none; border: none"><img src="imagens/img1.jpg" class="img-responsive"></button>
               </div>
               <div class="col-md-6">
-                <button style="background: none; border: none"><img src="imagens/img2.jpg" class="img-responsive"></button>
+                <button onclick="spotify()" style="background: none; border: none"><img src="imagens/img2.jpg" class="img-responsive"></button>
               </div>
 
             </div><!-- /row -->
@@ -86,10 +87,10 @@
             <div class="row albuns">
               
               <div class="col-md-6">
-                <button style="background: none; border: none"><img src="imagens/img3.jpg" class="img-responsive"></button>
+                <button onclick="spotify()" style="background: none; border: none"><img src="imagens/img3.jpg" class="img-responsive"></button>
               </div>
               <div class="col-md-6">
-                <button style="background: none; border: none"><img src="imagens/img4.jpg" class="img-responsive"></button>
+                <button onclick="spotify()" style="background: none; border: none"><img src="imagens/img4.jpg" class="img-responsive"></button>
               </div>
 
             </div><!-- /row -->
@@ -98,10 +99,10 @@
              <div class="row albuns">
               
               <div class="col-md-6">
-                <button onclick="spotify();" style="background: none; border: none"><img src="imagens/img3.jpg" class="img-responsive"></button>
+                <button onclick="spotify()" style="background: none; border: none"><img src="imagens/img3.jpg" class="img-responsive"></button>
               </div>
               <div class="col-md-6">
-                <button style="background: none; border: none"><img src="imagens/img4.jpg" class="img-responsive"></button>
+                <button onclick="spotify()" style="background: none; border: none"><img src="imagens/img4.jpg" class="img-responsive"></button>
               </div>
 
             </div><!-- /row -->
@@ -123,38 +124,41 @@
             <p id="spotifyin4">Escute os novos lançamentos de singles e álbuns da semana e veja o que está bombando no Top 50.</p>
 
 
-           <iframe id="spotify" style="padding-top: 10px;"src="https://open.spotify.com/embed/playlist/5HOasUbjSeftO0Kt2ukFJF" frameborder="0" allowtransparency="true" height="500px" allow="encrypted-media"></iframe>
+           <iframe id="spotify" style="padding-top: 10px;"src="https://open.spotify.com/embed/playlist/5HOasUbjSeftO0Kt2ukFJF" frameborder="0" allowtransparency="true" height="2px" allow="encrypted-media"></iframe>
 
           </div>
 
-          <script>
-  function spotify(){
-  var w = window.innerWidth;
-  var r = w * 0.715;  
-  var y = r/2;
-  document.getElementById("spotify").style.width = y+"px";
-
-document.getElementById("spotify").style.visibility = "visible";
-
-
-  var myobj = document.getElementById("spotifyin");
-  myobj.remove();
-  var myobj1 = document.getElementById("spotifyin1");
-  myobj1.remove();
-  var myobj2 = document.getElementById("spotifyin2");
-  myobj2.remove();
-  var myobj3 = document.getElementById("spotifyin3");
-  myobj3.remove();
-  var myobj4 = document.getElementById("spotifyin4");
-  myobj4.remove();
-
-
-          }
-</script>
+ 
 
         </div>
       </div>
-    </section>
+    </section>        
+    
+    <script>
+      function spotify(){
+      var w = window.innerWidth;
+      var r = w * 0.715;  
+      var y = r/2;
+      document.getElementById("spotify").style.width = y+"px";
+      document.getElementById("spotify").style.height = "300px";
+    
+    document.getElementById("spotify").style.visibility = "visible";
+    
+    
+      var myobj = document.getElementById("spotifyin");
+      myobj.remove();
+      var myobj1 = document.getElementById("spotifyin1");
+      myobj1.remove();
+      var myobj2 = document.getElementById("spotifyin2");
+      myobj2.remove();
+      var myobj3 = document.getElementById("spotifyin3");
+      myobj3.remove();
+      var myobj4 = document.getElementById("spotifyin4");
+      myobj4.remove();
+    
+    
+              }
+    </script>
 
      <section id="recursos">
       <div class="container">
@@ -177,13 +181,27 @@ document.getElementById("spotify").style.visibility = "visible";
       <div class="container">
         <div class="row">
           
-
+          <div class="col-xl-6 col-lg-6 col-md-6"><img class="img-fluid mb-3 mb-lg-0" src="imagens/2019.jpg" alt="" /></div>
+          <div class="col-xl-6 col-lg-6 col-md-6">
+              <div class="featured-text text-lg-left">
+                  <h2 id="titulo_album">Igor</h2>
+                  <h3 id="musico_album">Tyler, the Creator</h3>
+                  <h4>João Lemos</h4>
+                  <h4>Diretor</h4>
+                  <h5 id="texto_album" class="text-black-50 mb-0">As saudades do público eram já muitas... Marcada pelo intimismo e invulgares condições, esta foi a primeira performance na qual a Sound esteve presente pós quarentena. Elaborado em colaboração com Centro Cultural Vila Flor, este concerto do Benjamim provou que a música ao vivo faz muita falta, não só pela sua espectacularidade mas também pela capacidade de unir e animar o público.</h5>
+                  <br>
+                  <iframe class="col-xl-6" src="https://open.spotify.com/embed/album/5zi7WsKlIiUXv09tbGLKsE" width="320" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              </div>
+              
+          </div>
+      </div>
         </div><!-- /row -->
       </div>
-    </footer>
+    </section>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
