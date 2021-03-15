@@ -86,7 +86,7 @@
 
     <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" >
+        <input type="email" class="form-control" id="email_diretores" >
     </div>
 
     
@@ -94,10 +94,10 @@
 
     <div class="form-group">
       <label for="email">Telemóvel</label>
-      <input type="email" class="form-control" id="email" >
+      <input type="email" class="form-control" id="telemovel_diretores" >
   </div>
 
-  <button type="submit" style="float: right;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Confirmar</button> <span style="float: right;">&nbsp;</span>
+  <button id="confirmar_diretores" type="submit" style="float: right;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Confirmar</button> <span style="float: right;">&nbsp;</span>
   
 </div>
   
@@ -109,7 +109,7 @@
         <hr>
         <div class="form-group">
 
-          <table class="table">
+          <table id="table_revistas" class="table">
             <thead>
               <tr>
                 <th scope="col"></th>
@@ -161,7 +161,7 @@
   <div class="box">
     <div class="form-group">
       
-      <input type="text" class="form-control" id="autor">
+      <input type="text" class="form-control" id="nome_revistas">
   </div>
   </div>
 </div>
@@ -171,7 +171,7 @@
   <div class="box">
     <div class="form-group">
       
-      <input type="text" class="form-control" id="autor">
+      <input type="text" class="form-control" id="numero_revistas">
   </div>
   </div>
 
@@ -180,7 +180,7 @@
 <br>
  
   <div class="box">
-    <select class="form-control form-control-lg">
+    <select id="select_revistas" class="form-control form-control-lg">
       <option value="" disabled selected hidden>Escolha a revista</option>
           <option value="sound">Revista Sound </option>
           <option value="scout">Revista Scout</option>
@@ -191,23 +191,23 @@
  <br>
   <label for="myfile" class="fotografo">Revista</label>
   <div class="form-group">
-    <input type="file" class="form-control-file" id="myfile" name="myfile" multiple>
+    <input id="revista_revistas" type="file" class="form-control-file" name="myfile" multiple>
   </div>
 
 
   <br>
   <label class="fotografo">Capa</label>
   <div class="form-group">
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    <input id="capa_revistas" type="file" class="form-control-file">
   </div>
 
 </div>
 
 
 
-<button type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+<button id="adicionar_revistas" type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
 
-<button type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+<button id="editar_revistas" type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
 
 
       </div>
@@ -230,17 +230,17 @@
 
             <div class="form-group">
               <label for="imagem_sound">Banner da Sound</label>
-              <input type="text" class="form-control" id="autor">
+              <input id="sound_banner" type="file" class="form-control-file">
           </div>
 
 
 <br>
           <div class="form-group">
               <label for="imagem_scout">Banner da Scout</label>
-              <input type="text" class="form-control" id="cargo">
+              <input id="scout_banner" type="file" class="form-control-file">
           </div>
 
-          <button type="button" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+          <button id="confirmar_banner"type="button" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
 
 
 
@@ -258,7 +258,7 @@
       <hr>
 
       <div class="form-group">
-        <select class="form-control form-control-lg">
+        <select id="select_sliders" class="form-control form-control-lg">
           <option value="" disabled selected hidden>Escolha a revista</option>
               <option value="sound">Revista Sound </option>
               <option value="scout">Revista Scout</option>
@@ -270,7 +270,7 @@
 
         <div class="form-group">
           <label for="imagem_um">Primeira imagem</label>
-          <input type="text" class="form-control" id="autor">
+          <input id="primeira_sliders" type="file" class="form-control-file">
       </div>
 
 
@@ -278,7 +278,7 @@
 <br>
       <div class="form-group">
           <label for="imagem_dois">Segunda Imagem</label>
-          <input type="text" class="form-control" id="cargo">
+          <input id="segunda_sliders" type="file" class="form-control-file">
       </div>
 
 
@@ -287,11 +287,11 @@
 <br>
       <div class="form-group">
           <label for="imagem_tres">Terceira Imagem</label>
-          <input type="text" class="form-control" id="cargo">
+          <input id="terceira_sliders" type="file" class="form-control-file">
       </div>
 
       <br>
-      <button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+      <button id="confirmar_sliders" type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
 
 
 
@@ -315,7 +315,7 @@
       
   
 
-<table class="table">
+<table id="table_galeria_diretores" class="table">
   <thead>
     <tr>
       <th scope="col"></th>
@@ -370,7 +370,7 @@
 <br>
 
 <div class="form-group">
-  <select class="form-control form-control-lg">
+  <select id="select_galeria_diretores" class="form-control form-control-lg">
     <option value="" disabled selected hidden>Escolha a revista</option>
         <option value="sound">Revista Sound </option>
         <option value="scout">Revista Scout</option>
@@ -382,7 +382,7 @@
   <div class="box">
     <div class="form-group">
       
-      <input type="text" class="form-control" id="autor">
+      <input type="text" class="form-control" id="titulo_galeria_diretores">
   </div>
   </div>
 </div>
@@ -392,7 +392,7 @@
   <div class="box">
     <div class="form-group">
       
-      <input type="text" class="form-control" id="autor">
+      <input type="text" class="form-control" id="data_galeria_diretores">
   </div>
   </div>
 
@@ -403,7 +403,7 @@
   <div class="box">
     <div class="form-group">
       
-      <input type="text" class="form-control" id="autor">
+      <input type="text" class="form-control" id="fotografo_galeria_diretores">
   </div>
   </div>
 
@@ -413,20 +413,20 @@
 
 <label class="fotografo">Capa</label>
 <div class="form-group">
-  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+  <input type="file" class="form-control-file" id="capa_galeria_diretores">
 </div>
 
 
 
 <label class="fotografo">Álbum</label>
 <div class="form-group">
-  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+  <input type="file" class="form-control-file" id="album_galeria_diretores">
 </div>
 
 
-<button type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+<button id="adicionar_galeria_diretores" type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
 
-<button type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+<button id="editar_galeria_diretores" type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
 </div>
 
 <div class="container">
@@ -439,7 +439,7 @@
       <form>
 
         <div class="form-group">
-          <select class="form-control form-control-lg">
+          <select id="select_textos_diretores" class="form-control form-control-lg">
             <option value="" disabled selected hidden>Escolha a revista</option>
                 <option value="sound">Revista Sound </option>
                 <option value="scout">Revista Scout</option>
@@ -455,21 +455,21 @@
 
           <div class="form-group">
               <label for="titulo">Título</label>
-              <input type="text" class="form-control" id="titulo">
+              <input type="text" class="form-control" id="titulo_textos_diretores">
           </div>
           
 <br>
 
           <div class="form-group">
             <label for="nome">Nome</label>
-            <input type="text" class="form-control" id="titulo">
+            <input type="text" class="form-control" id="nome_textos_diretores">
         </div>
        
 <br>
 
         <div class="form-group">
           <label for="cargo">Cargo</label>
-          <input type="text" class="form-control" id="titulo">
+          <input type="text" class="form-control" id="cargo_textos_diretores">
       </div>
      
 <br>
@@ -477,7 +477,7 @@
 
 <div class="form-group">
   <label for="texto">Texto</label>
-  <textarea class="form-control" id="texto" placeholder="Escreve aqui..." style="height: 100px;"></textarea>
+  <textarea class="form-control" id="texto_textos_diretores" placeholder="Escreve aqui..." style="height: 100px;"></textarea>
 </div>
 
 
@@ -499,7 +499,7 @@
 
       <form>
         <div class="form-group">
-          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+          <input type="file" class="form-control-file" id="imagem_textos_diretores">
         </div>
        <!-- Upload de fotos-->
           </div>
@@ -507,16 +507,8 @@
          
           
 
-          <br>
-          <div class="form-group">
-            <label for="link_spotify" style= "display: none">Link de Spotify</label>
-            <input type="text" style= "display: none" class="form-control" id="autor">
-        </div>
-
-        <div class="form-group">
-          <label for="aposta_betano" style= "display: none">Aposta Betano</label>
-          <input type="text" style= "display: none" class="form-control" id="autor">
-      </div>
+          
+        
         
 
 <br>
@@ -524,7 +516,7 @@
 
 </div>
 
-<button type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+<button id="confirmar_textos_diretores" type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
 
 </form>
 <br>
@@ -544,7 +536,7 @@
             <form>
 
               <div class="form-group">
-                <select class="form-control form-control-lg">
+                <select id="select_redes" class="form-control form-control-lg">
                   <option value="" disabled selected hidden>Escolha a revista</option>
                       <option value="sound">Revista Sound </option>
                       <option value="scout">Revista Scout</option>
@@ -553,19 +545,19 @@
 
                 <div class="form-group">
                     <label for="link_youtube">Link de Youtube</label>
-                    <input type="text" class="form-control" id="autor">
+                    <input type="text" class="form-control" id="youtube_redes">
                 </div>
                 
 
   <br>
                 <div class="form-group">
                     <label for="imagem_instagram">Imagem do Instagram</label>
-                    <input type="text" class="form-control" id="cargo">
+                    <input type="text" class="form-control" id="instagram_redes">
                 </div>
 
                 <br>
 
-                <button type="button" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+                <button id="confirmar_redes" type="button" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
 
 
 
@@ -620,7 +612,7 @@
         
 
 
-          <table class="table">
+          <table id="table_staff" class="table">
             <thead>
               <tr>
                 <th scope="col"></th>
@@ -692,7 +684,7 @@
   <div class="box">
     <div class="form-group">
       
-      <input type="text" class="form-control" id="autor">
+      <input type="text" class="form-control" id="id_staff">
   </div>
   </div>
 </div>
@@ -702,7 +694,7 @@
   <div class="box">
     <div class="form-group">
       
-      <input type="text" class="form-control" id="autor">
+      <input type="text" class="form-control" id="nome_staff">
   </div>
   </div>
 
@@ -713,15 +705,15 @@
   <div class="box">
     <div class="form-group">
       
-      <input type="text" class="form-control" id="autor">
+      <input type="text" class="form-control" id="cargo_staff">
   </div>
   </div>
 
 </div>
 
-  <button type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+  <button id="adicionar_staff" type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
 
-<button type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+<button id="editar_staff" type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
 
 </div>
 
