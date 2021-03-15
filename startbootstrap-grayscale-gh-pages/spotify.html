@@ -1,42 +1,191 @@
-<div id="cadEquipInsp" class="col-md-6 ">
-    <div class="panel panel-primary">
-        <div class="panel-heading">Cadastro de
-            Equipamentos/Instrumentos </div>
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <div class="panel-body">
-            <form novalidate name="frmCliente" id="formCadastro" role="form">
+    <title>SpotSound</title>
+    <link rel="icon" href="imagens/favicon.png">
 
-                <div class="row">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/spotify.css" rel="stylesheet">
 
-                    <div class="form-group col-md-12">
-                        <label>* Descrição:</label> <input name="inpDescricao"
-                            maxlength="60" required="required" type="text"
-                            class="form-control" ng-model="cliente.empresa" />
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label>* Data da Inspeção:</label> <input
-                            name="inpDataEquipamento" maxlength="16" required="required"
-                            type="date" class="form-control" ng-model="cliente.cnpj" />
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label>* Próxima Inspeção:</label> <input
-                            name="inpProximaInspecao" maxlength="60" required="required"
-                            type="date" class="form-control" ng-model="cliente.endereco" />
-                    </div>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
 
-                    <div></div>
-                </div>
-            </form>
-            <div class="pull-right">
-                <button type="button" id="btnSalvar" class="btn btn-default"
-                    ng-click="salvarClientes()">Salvar</button>
+  <body>
 
-                <!-- ou ng-disabled="frmCliente.inpNome.$invalid"  -->
-                <button type="button" class="btn btn-default"
-                    ng-click="cancelarAlteracaoClientes(cli)">Cancelar
-                    Edição</button>
-            </div>
+
+    <nav class="navbar navbar-fixed-top navbar-inverse navbar-transparente">
+      <div class="container">
+        
+        <!-- header -->
+        <div class="navbar-header">
+          
+          <!-- botao toggle -->
+          <button type="button" class="navbar-toggle collapsed"
+                  data-toggle="collapse" data-target="#barra-navegacao">
+            <span class="sr-only">alternar navegação</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a href="index.html" class="navbar-brand">
+            <span class="img-logo">Sound</span>
+          </a>
 
         </div>
+
+        <!-- navbar -->
+        <div class="collapse navbar-collapse" id="barra-navegacao">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="">Revista</a></li>
+            <li><a href="">Galeria</a></li>
+            <li><a href="">Spotify</a></li>
+            <li><a href="">Equipa</a></li>
+          </ul>
+        </div>
+      </div><!-- /container -->
+    </nav><!-- /nav -->
+
+    <div class="capa">
+      <div class="texto-capa">
+        <h1>Música para todos</h1>
+        <a href="" class="btn btn-custom btn-roxo btn-lg">Spotify - As nossas playlists</a>
+        <a href="" class="btn btn-custom btn-branco btn-lg">A sound recomenda</a>
+      </div>
     </div>
-</div> 
+
+    <!-- Conteudos -->
+    <section id="servicos">
+      <div class="container" >
+        <div class="row">
+
+          <!-- albuns -->
+          <div class="col-md-6">
+            
+            <div class="row albuns">
+              
+              <div class="col-md-6">
+                <button style="background: none; border: none"><img src="imagens/img1.jpg" class="img-responsive"></button>
+              </div>
+              <div class="col-md-6">
+                <button style="background: none; border: none"><img src="imagens/img2.jpg" class="img-responsive"></button>
+              </div>
+
+            </div><!-- /row -->
+
+            <div class="row albuns">
+              
+              <div class="col-md-6">
+                <button style="background: none; border: none"><img src="imagens/img3.jpg" class="img-responsive"></button>
+              </div>
+              <div class="col-md-6">
+                <button style="background: none; border: none"><img src="imagens/img4.jpg" class="img-responsive"></button>
+              </div>
+
+            </div><!-- /row -->
+
+
+             <div class="row albuns">
+              
+              <div class="col-md-6">
+                <button onclick="spotify();" style="background: none; border: none"><img src="imagens/img3.jpg" class="img-responsive"></button>
+              </div>
+              <div class="col-md-6">
+                <button style="background: none; border: none"><img src="imagens/img4.jpg" class="img-responsive"></button>
+              </div>
+
+            </div><!-- /row -->
+
+          </div>
+
+          <!-- servicos -->
+          <div class="col-md-6">
+            <iframe src="https://open.spotify.com/follow/1/?uri=spotify:user:my0v58fi48y8yepmoma7pct3g&size=detail&theme=light" width="300" height="76" scrolling="no" frameborder="0" style="border:none; overflow:hidden; padding: 10px;" allowtransparency="true"></iframe>
+            <h2 id="titulo">O que o Spotify tem?</h2>
+
+            <h3 id="spotifyin">Músicas</h3>
+            <p id="descricao">O Spotify tem milhões de músicas. Escute seus sons favoritos, descubra novas músicas e reúna seus favoritos em um só lugar.</p>
+
+            <h3 id ="spotifyin1">Playlists</h3>
+            <p id="spotifyin2">No Spotify você encontra uma playlist para cada momento. Todas feitas por fanáticos e especialistas da música.</p>
+
+            <h3 id="spotifyin3">Novos lançamentos</h3>
+            <p id="spotifyin4">Escute os novos lançamentos de singles e álbuns da semana e veja o que está bombando no Top 50.</p>
+
+
+           <iframe id="spotify" style="padding-top: 10px;"src="https://open.spotify.com/embed/playlist/5HOasUbjSeftO0Kt2ukFJF" frameborder="0" allowtransparency="true" height="500px" allow="encrypted-media"></iframe>
+
+          </div>
+
+          <script>
+  function spotify(){
+  var w = window.innerWidth;
+  var r = w * 0.715;  
+  var y = r/2;
+  document.getElementById("spotify").style.width = y+"px";
+
+document.getElementById("spotify").style.visibility = "visible";
+
+
+  var myobj = document.getElementById("spotifyin");
+  myobj.remove();
+  var myobj1 = document.getElementById("spotifyin1");
+  myobj1.remove();
+  var myobj2 = document.getElementById("spotifyin2");
+  myobj2.remove();
+  var myobj3 = document.getElementById("spotifyin3");
+  myobj3.remove();
+  var myobj4 = document.getElementById("spotifyin4");
+  myobj4.remove();
+
+
+          }
+</script>
+
+        </div>
+      </div>
+    </section>
+
+     <section id="recursos">
+      <div class="container">
+        <div class="row">
+          
+              <div class="col-md-12">
+                <img src="imagens/spotify-logotipo.png" class="img-responsive">
+              </div>
+
+            </div><!-- /row -->
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Rodape -->
+    <section id="album">
+      <div class="container">
+        <div class="row">
+          
+
+        </div><!-- /row -->
+      </div>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
