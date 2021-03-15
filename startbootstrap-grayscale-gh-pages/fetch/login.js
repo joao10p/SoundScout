@@ -20,10 +20,10 @@ window.onload = function() {
 			else {
 				login();
 				async function login() {
-					const res = await fetch('https://127.0.0.1:3000//signinSuccess');
+					const res = await fetch('https://127.0.0.1:3000/signinSuccess');
 					const data = await res.json();
 					alert("Autenticação feita com sucesso!");
-					window.location.href = "menu.html";
+					window.location.href = "../startbootstrap-grayscale-gh-pages/menu.html";
 					return response.json();
 				}
 			}
