@@ -11,9 +11,16 @@
       <!-- Bootstrap -->
       <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
       <link href="css/betano.css" rel="stylesheet">
+      
+       <!-- Font Awesome icons (free version)-->
+       <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+       <!-- Google fonts-->
+       <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+       <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
       <link href="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css" rel="stylesheet">
   
   <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
+  
   
       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -170,6 +177,139 @@
   
           </div><!-- /row -->
         </div>
+
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <section class="signup-section" id="signup">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-10 col-lg-8 mx-auto text-center">
+                      <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                      <h2 class="text-white mb-5">Subscreve para receber novidades!</h2>
+                      <form class="form-inline d-flex">
+                          <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Digite o seu endereço de email..." />
+                          <button class="btn btn-primary mx-auto" type="submit">Subscrever</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!-- Contact-->
+      <section class="contact-section bg-black">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-4 mb-3 mb-md-0">
+                      <div class="card py-4 h-100">
+                          <div class="card-body text-center">
+                              <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                              <h4 class="text-uppercase m-0">Sede</h4>
+                              <hr class="my-4" />
+                              <div class="small text-black-50">Guimarães, Braga, Portugal</div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="col-md-4 mb-3 mb-md-0">
+                      <a href="mailto:soundscoutoficial@gmail.com">
+                      <div class="card py-4 h-100">
+                          <div class="card-body text-center">
+                              <i class="fas fa-envelope text-primary mb-2"></i>
+                              <h4 class="text-uppercase m-0">Email</h4>
+                              <hr class="my-4" />
+                              <div class="small text-black-50">soundscoutoficial@gmail.com</div>
+                          </div>
+                      </div>
+                      </a>
+                  </div>
+                  <div class="col-md-4 mb-3 mb-md-0">
+                      <a href="tel:935946600">
+                      <div class="card py-4 h-100">
+                          <div class="card-body text-center">
+                              <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                              <h4 class="text-uppercase m-0">Telemóvel</h4>
+                              <hr class="my-4" />
+                              <div class="small text-black-50">935946600</div>
+                          </div>
+                      </div>
+                  </a>
+                  </div>
+              </div>
+              <div class="social d-flex justify-content-center">
+                  <a class="mx-2" href="https://www.instagram.com/revistasound/" target="_blank"><i class="fab fa-instagram"></i>Sound</a>
+                  <a class="mx-2" href="https://www.youtube.com/channel/UC7DH0jBsR8skp8CRsP221mA" target="_blank"><i class="fab fa-youtube"></i></a>
+                  <a class="mx-2" href="https://open.spotify.com/user/my0v58fi48y8yepmoma7pct3g?si=Zc9Tv8koS0KcIg5_CL6auQ" target="_blank"><i class="fab fa-spotify"></i></a>
+                  <a class="mx-2" href="https://www.instagram.com/revistascout/" target="_blank"><i class="fab fa-instagram"></i>Scout</a>
+              </div>
+          </div>
+
+
+      </section>
+      <!-- Footer-->
+      <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © SoundScout 2020</div>
+
+
+          <button type="button" class="btn btn-link" style="float: right;" data-toggle="modal" data-target="#janela">
+      Área Reservada
+    </button>
+
+    <button type="button" style="float: left; background: none; border: none; margin-left: 1%;">
+      <img src="imagens/ingles.png">
+    </button>
+
+    <button type="button" style="float: left; background: none; border: none;">
+      <img src="imagens/portugues.png">
+    </button>
+
+    <!-- Janela -->
+    <form class="modal fade" id="janela">
+      
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          
+          <!-- cabecalho -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+
+          <!-- corpo -->
+          <div class="modal-body">
+
+            <div class="form-group">
+              <input type="email" class="form-control" id="email" placeholder="Digite o seu e-mail">
+            </div>
+
+            <div class="form-group">
+              <input type="password" class="form-control" id="senha" placeholder="Digite a sua password">
+            </div>
+
+          </div>
+
+          <!-- rodape -->
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Cancelar
+            </button>
+
+          
+            <button type="button" class="btn btn-primary" id="login_but"> <!--Mudar para submit, meti em button para tornar visual-->
+              Logar
+            </button>
+          
+
+          </div>
+
+        </div>
+      </div>
+
+    </form>
       </footer>
   
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
