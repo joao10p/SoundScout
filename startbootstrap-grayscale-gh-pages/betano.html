@@ -120,14 +120,17 @@
     </thead>
     <tbody>
     <tr>
-      <th><input type="checkbox" name=""></th>
+      <th><input type="checkbox" name="" id="chkPrint" onclick="odds1()"></th>
       <th data-field="name"><img src="imagens/liga.png" class="img-responsive" height="30px" width="30px"></th>
       <th data-field="jogo">Cagliari x Juventus</th>
       <th data-field="bet">Juventus</th>
                 <th data-field="data">14/03, 16h40</th>
-      <th data-field="odd">1,44</th>
+      <th data-field="odd"> <class="oddds" id="odd_1">1,44</th>
   
       </tr>
+
+
+     
       <tr>
       <th><input type="checkbox" name=""></th>
       <th data-field="name"><img src="imagens/prem.png" class="img-responsive" height="30px" width="30px"></th>
@@ -167,12 +170,39 @@
     </tbody>
   </table>
   
-  <label style="float: right;">&emsp;&emsp;&emsp;&emsp;</label>
-  <label style="float: right;">Ganhos:</label>
-  <input  style="float: right;" type="" name=""> </input>
-  <label style="float: right;">Aposta:</label>
+  <script>
+
+    function odds1() {
+      var chkPrint = document.getElementById("chkPrint");
+chkPrint.value = chkPrint.checked;
+console.log('value', chkPrint.value);
+        if (chkPrint.checked == true) {
+          
+        }
+      }
+
+    </script>
+
   
   
+  <div class="form-row">
+    
+    <div class="form-group col-md-6">
+      
+      <label for="inputaposta">Aposta</label>
+      <input type="text" class="form-control" id="quantia_aposta">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputodd">Odd</label>
+      <input type="text" id="odd_aposta" class="form-control" placeholder="" disabled>
+      
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputTotal">Final</label>
+      <input type="text" id="total" class="form-control" placeholder="0" disabled>
+    </div>
+  </div>
+
   
   
           </div><!-- /row -->
