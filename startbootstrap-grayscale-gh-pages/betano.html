@@ -125,7 +125,7 @@
       <th data-field="jogo">Cagliari x Juventus</th>
       <th data-field="bet">Juventus</th>
                 <th data-field="data">14/03, 16h40</th>
-      <th data-field="odd"> <class="oddds" id="odd_1">1,44</th>
+      <th data-field="odd"><id="odd_1">1,44</th>
   
       </tr>
 
@@ -175,33 +175,54 @@
     function odds1() {
       var chkPrint = document.getElementById("chkPrint");
 chkPrint.value = chkPrint.checked;
-console.log('value', chkPrint.value);
+console.log(chkPrint.value);
         if (chkPrint.checked == true) {
-          
-        }
+          var odd_atual = document.getElementById('odd_aposta');
+          var primeira_odd= document.getElementById('odd_1');
+
+          console.log(odd_atual.value);
+          console.log(primeira_odd);
+
+          if (odd_atual == 0) {
+            document.getElementById('odd_aposta').innerHTML = "&emsp;&emsp;" primeira_odd "&emsp;&emsp;";
+          } else{
+            var x= odd_atual * primeira_odd;
+            console.log(x);
+
+
+            document.getElementById('odd_aposta').innerHTML = "&emsp;&emsp;" x "&emsp;&emsp;" ;
+
+          }  
+      }else{
+
+        var odd_atual = document.getElementById('odd_aposta');
+          var primeira_odd= document.getElementById('odd_1');
+
+          console.log(odd_atual.value);
+          console.log(primeira_odd);
+
+          var x= odd_atual / primeira_odd;
+          console.log(x);
+
+          document.getElementById('odd_aposta').innerHTML = "&emsp;&emsp;" x "&emsp;&emsp;" ;
+
       }
+    }
+  }
 
     </script>
 
   
+<label style="float: right;" id="ganhos">&emsp;&emsp;0 </label>
+<label style="float: right;">Ganhos:</label>
+<label class="label label-default" id="odd_aposta" style="float: right;" >&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;0 </label>
+<label style="float: right;" >Odd:</label>
+<input  id="aposta_quantia" style="float: right;" type="" name=""> </input>
+<label style="float: right;">Aposta:</label>
+
+
   
-  <div class="form-row">
-    
-    <div class="form-group col-md-6">
-      
-      <label for="inputaposta">Aposta</label>
-      <input type="text" class="form-control" id="quantia_aposta">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputodd">Odd</label>
-      <input type="text" id="odd_aposta" class="form-control" placeholder="" disabled>
-      
-    </div>
-    <div class="form-group col-md-2">
-      <label for="inputTotal">Final</label>
-      <input type="text" id="total" class="form-control" placeholder="0" disabled>
-    </div>
-  </div>
+  
 
   
   
@@ -354,4 +375,5 @@ console.log('value', chkPrint.value);
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script> 
     </body>
-  </html>
+
+    </html>
