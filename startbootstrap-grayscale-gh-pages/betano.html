@@ -120,12 +120,12 @@
     </thead>
     <tbody>
     <tr>
-      <th><input type="checkbox" name="" id="chkPrint" onclick="odds1()"></th>
+      <th><input type="checkbox" name="" id="chkPrint" onclick="n()"></th>
       <th data-field="name"><img src="imagens/liga.png" class="img-responsive" height="30px" width="30px"></th>
       <th data-field="jogo">Cagliari x Juventus</th>
       <th data-field="bet">Juventus</th>
                 <th data-field="data">14/03, 16h40</th>
-      <th data-field="odd"><id="odd_1">1,44</th>
+      <th data-field="odd" id="odd_1" value="1">1,44</th>
   
       </tr>
 
@@ -172,25 +172,25 @@
   
   <script>
 
-    function odds1() {
+    function n() {
       var chkPrint = document.getElementById("chkPrint");
 chkPrint.value = chkPrint.checked;
 console.log(chkPrint.value);
         if (chkPrint.checked == true) {
-          var odd_atual = document.getElementById('odd_aposta');
-          var primeira_odd= document.getElementById('odd_1');
+          var odd_atual = document.getElementById('odd_aposta').value;
+          var primeira_odd= document.getElementById('odd_1').value; 
 
           console.log(odd_atual.value);
           console.log(primeira_odd);
 
           if (odd_atual == 0) {
-            document.getElementById('odd_aposta').innerHTML = "&emsp;&emsp;" primeira_odd "&emsp;&emsp;";
+            document.getElementById('odd_aposta').innerHTML = primeira_odd;
           } else{
             var x= odd_atual * primeira_odd;
             console.log(x);
 
 
-            document.getElementById('odd_aposta').innerHTML = "&emsp;&emsp;" x "&emsp;&emsp;" ;
+            document.getElementById('odd_aposta').innerHTML = x;
 
           }  
       }else{
@@ -204,11 +204,11 @@ console.log(chkPrint.value);
           var x= odd_atual / primeira_odd;
           console.log(x);
 
-          document.getElementById('odd_aposta').innerHTML = "&emsp;&emsp;" x "&emsp;&emsp;" ;
+          document.getElementById('odd_aposta').innerHTML = x ;
 
       }
     }
-  }
+  
 
     </script>
 
