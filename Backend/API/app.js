@@ -120,10 +120,12 @@ app.use(function(req, res, next) {
 
   module.exports = app;
   */
+  const hostname = process.env.HOST || '127.0.0.1';
+  const port = process.env.PORT || 3000;
  
   const express = require('express');
   const app = express();
-  const port = 3000
+  //const port = 3000
   const cors = require('cors');
   const cookieParser = require('cookie-parser');
   const bodyParser = require('body-parser');
@@ -153,6 +155,15 @@ app.use(function(req, res, next) {
       httpOnly: true
     }
   }));
+
+  app.listen(port, function(err){
+    if (!err) {
+        console.log(`Server running at http://${hostname}:${port}/`);
+    }
+    else {
+        console.log(err);
+    }
+});
   
   app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }));
   app.use(expressSanitizer());
@@ -176,12 +187,12 @@ app.use(function(req, res, next) {
   );
   
   
-  app.listen(port, function() {
+  /*app.listen(port, function() {
     console.log('Example app listening on port ' + port + '!');
   });
   app.get('/', function(req, res) {
     res.json({status: 'Server is running!'})
-  })
+  })*/
   //app.use(expressValidator());
   app.use(cors());
   app.use(cookieParser());
