@@ -192,7 +192,7 @@ app.use(function(req, res, next) {
   });
   app.get('/', function(req, res) {
     res.json({status: 'Server is running!'})
-  })*/
+  })
   //app.use(expressValidator());
   app.use(cors());
   app.use(cookieParser());
@@ -248,4 +248,4 @@ app.use(function(req, res, next) {
   });
   
   module.exports = app;
-  
+ */ 
