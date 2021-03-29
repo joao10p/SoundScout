@@ -122,7 +122,7 @@ app.use(function(req, res, next) {
   */
   const hostname = process.env.HOST || '127.0.0.1';
   const port = process.env.PORT || 3000;
-  //const homepage = require('../index.html');
+  //const homepage = require('../../startbootstrap-grayscale-gh-pages/index.html');
   const express = require('express');
   const app = express();
   //const port = 3000
@@ -142,6 +142,18 @@ app.use(function(req, res, next) {
   const models = require('./models/');
   const flash = require('express-flash');
   
+  const server = http.createServer(function(req,res){
+    res.writeHead(200,{ 'Content-Type': 'text/html'})
+    fs.readFile('index.html',function(error,data){
+      if(error){
+        res.writeHead(404)
+        res.write('Error: File Not Found')
+      }else {
+        res.write(data);
+      }
+      res.end();
+    })
+  });
   app.set('view-engine', 'ejs')
   app.use(express.urlencoded({ extended: false }))
   app.use(flash())
@@ -164,10 +176,7 @@ app.use(function(req, res, next) {
         console.log(err);
     }
 });
-  app.get('/',(req,res) => {
-    res.render("index.html");
 
-  });
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
