@@ -24,6 +24,7 @@
     "http": "0.0.1-security",
     "http-server": "^0.12.3",
     "mysql": "^2.18.1",
-    "passport": "^0.4.1"
+    "passport": "^0.4.1",
+    "server": "^1.0.32"
   }
 }
