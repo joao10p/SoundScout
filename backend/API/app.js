@@ -122,7 +122,7 @@ app.use(function(req, res, next) {
   */
   const hostname = process.env.HOST || '127.0.0.1';
   const port = process.env.PORT || 3000;
- 
+  //const homepage = require('../index.html');
   const express = require('express');
   const app = express();
   //const port = 3000
@@ -164,6 +164,10 @@ app.use(function(req, res, next) {
         console.log(err);
     }
 });
+  app.get('/',(req,res) => {
+    res.render(index);
+
+  });
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -174,6 +178,7 @@ app.use(function(req, res, next) {
   app.use(expressSanitizer());
   
   app.use('/', mainRoutes);
+  
   
   
   
