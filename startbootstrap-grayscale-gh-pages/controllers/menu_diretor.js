@@ -74,7 +74,7 @@ window.onload = function() {
         data.password = document.getElementById("id_staff").value;
         console.log(data); //debugging para ver os dados que foram enviados
         //chamada fetch para envio dos dados para o servior via POST
-        fetch('http://localhost:3000/users/', {
+        fetch('localhost:3000/users/', {
             headers: { 'Content-Type': 'application/json' },
             method: 'POST',
             body: JSON.stringify(data)
