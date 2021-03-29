@@ -34,6 +34,7 @@ app.use(session({
     httpOnly: true
   }
 }));
+app.use(express.static(__dirname + '/public'));
  /*const server = http.createServer(function(req,res){
     res.writeHead(200,{ 'Content-Type': 'text/html'})
     fs.readFile('../../startbootstrap-grayscale-gh-pages/index.html',function(error,data){
@@ -47,16 +48,21 @@ app.use(session({
       res.end();
     })
   });*/
-  server.listen(port, function() {
+  app.listen(port, function() {
     console.log('Example app listening on port ' + port + '!');
   });
-
+  app.use(express.static(__dirname, { index: '../../startbootstrap-grayscale-gh-pages/index.html' }));
+    
 app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }));
 app.use(expressSanitizer());
 
 app.use('/', mainRoutes);
 
-
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 app.use(
   contentSecurityPolicy({
@@ -77,6 +83,10 @@ app.use(
 
 //app.use(expressValidator());
 app.use(cors());
+var corsOptions = {
+  origin: 'http://example.com',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
 app.use(cookieParser());
 
 app.use(function(req, res, next) {
