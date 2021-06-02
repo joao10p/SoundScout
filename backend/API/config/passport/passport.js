@@ -6,11 +6,11 @@ module.exports = function(passport, user) {
   var User = user;
   var LocalStrategy = require('passport-local').Strategy;
   passport.serializeUser(function(user, done) {
-    done(null, user.id);
+    done(null, user.codigo);
   });
   // used to deserialize the user
-  passport.deserializeUser(function(id, done) {
-    User.findById(id).then(function(user) {
+  passport.deserializeUser(function(codigo, done) {
+    User.findById(codigo).then(function(user) {
       if (user) {
         done(null, user.get());
       }
@@ -39,9 +39,10 @@ module.exports = function(passport, user) {
           var data = {
             email: email,
             password: userPassword,
-            nome: req.body.name,
+            nome: req.body.nome,
             username: req.body.username,
             numero: req.body.numero,
+            cargo: req.body.cargo,
             
           };
           User.create(data).then(function(newUser, created) {
@@ -102,7 +103,7 @@ module.exports = function(passport, user) {
     }
   ));
 }
-var bCrypt = require('bcrypt-nodejs');
+/*var bCrypt = require('bcrypt-nodejs');
 //const jsonMessagesPath = __dirname + "/../../assets/jsonMessages/";
 var jsonMessages = require(jsonMessagesPath + "login");
 
@@ -110,11 +111,11 @@ module.exports = function(passport, user) {
   var User = user;
   var LocalStrategy = require('passport-local').Strategy;
   passport.serializeUser(function(user, done) {
-    done(null, user.id);
+    done(null, user.codigo);
   });
   // used to deserialize the user
-  passport.deserializeUser(function(id, done) {
-    User.findById(id).then(function(user) {
+  passport.deserializeUser(function(codigo, done) {
+    User.findById(codigo).then(function(user) {
       if (user) {
         done(null, user.get());
       }
@@ -204,4 +205,4 @@ module.exports = function(passport, user) {
       });
     }
   ));
-}
+}*/
