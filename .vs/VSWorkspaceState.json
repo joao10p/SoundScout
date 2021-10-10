@@ -5,10 +5,8 @@
     "\\Backend\\API",
     "\\Backend\\API\\config",
     "\\Backend\\API\\controllers",
-    "\\Backend\\API\\models",
-    "\\css",
-    "\\startbootstrap-grayscale-gh-pages"
+    "\\Backend\\API\\models"
   ],
-  "SelectedNode": "\\Backend\\API\\models\\index.js",
+  "SelectedNode": "\\Backend",
   "PreviewInSolutionExplorer": false
 }
