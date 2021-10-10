@@ -10522,6 +10522,39 @@ button:hover, a:hover {
 }
 
 
+#ingles{
+
+position:relative;
+  
+  left: 47%;
+  padding: none;
+  background-color: none;
+  border: none;
+  width: 30px;
+  height: 30px;
+
+}
+
+#portugues{
+    position:relative;
+     
+      left: 48%;
+      padding: none;
+      background-color: none;
+      border: none;
+      width: 30px;
+      height: 30px;
+      
+
+}
+
+#area{
+float: right;
+width: 20%;
+
+
+}
+
 
 
 
