@@ -67,7 +67,8 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
+  
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -4030,6 +4031,7 @@ input[type=button].btn-block {
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  
 }
 .navbar .container,
 .navbar .container-fluid,
@@ -4081,6 +4083,13 @@ input[type=button].btn-block {
   flex-basis: 100%;
   flex-grow: 1;
   align-items: center;
+  
+  
+}
+
+#navbarResponsive{
+
+  text-align: right;
 }
 
 .navbar-toggler {
@@ -4090,6 +4099,8 @@ input[type=button].btn-block {
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 0.25rem;
+  
+
 }
 .navbar-toggler:hover, .navbar-toggler:focus {
   text-decoration: none;
@@ -10556,8 +10567,12 @@ width: 20%;
 }
 
 
-
-
+#isto{
+  float:left;
+  right:0px;
+  top:0px;
+  width:100px;
+}
 
 
 
