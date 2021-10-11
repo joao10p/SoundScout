@@ -10366,6 +10366,10 @@ body {
   display: block;
   max-width: 100%;
   height: auto;
+  width: 50vw;
+  object-fit: cover;
+  height: 100vh;
+  border: 1px solid red;
 }
 
 .responsive-iframe {
