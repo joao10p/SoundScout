@@ -1,4 +1,4 @@
-var bCrypt = require('bcrypt-nodejs');
+/*var bCrypt = require('bcrypt-nodejs');
 const jsonMessagesPath = __dirname + "/../../assets/jsonMessages/";
 var jsonMessages = require(jsonMessagesPath + "login");
 
@@ -102,9 +102,13 @@ module.exports = function(passport, user) {
       });
     }
   ));
-}
-/*var bCrypt = require('bcrypt-nodejs');
-//const jsonMessagesPath = __dirname + "/../../assets/jsonMessages/";
+}*/
+
+//FUNCIONA
+var bCrypt = require('bcrypt-nodejs');
+const { authenticate } = require('passport');
+const passport = require('passport');
+const jsonMessagesPath = __dirname + "/../../assets/jsonMessages/";
 var jsonMessages = require(jsonMessagesPath + "login");
 
 module.exports = function(passport, user) {
@@ -144,8 +148,9 @@ module.exports = function(passport, user) {
           var data = {
             email: email,
             password: userPassword,
-            nome: req.body.name,
+            nome: req.body.nome,
             numero: req.body.numero,
+            cargo: req.body.cargo,
             
           };
           User.create(data).then(function(newUser, created) {
@@ -175,7 +180,7 @@ module.exports = function(passport, user) {
     });
   }
 ));
-  //LOCAL SIGNIN
+  //LOCAL SIGNIN da erro
   passport.use('local-signin', new LocalStrategy({
       // by default, local strategy uses username and password, we will override with email
       usernameField: 'email',
@@ -190,19 +195,39 @@ module.exports = function(passport, user) {
       }
       User.findOne({ where: { email: email } }).then(function(user) {
         if (!user || user.status!="active") {
-          return done(null, false, jsonMessages.user.email);
+          return done(null, false, {message: ' nao tem esse email'});
         }
         if (!isValidPassword(user.password, password)) {
-          return done(null, false, jsonMessages.user.password);
+          return done(null, false, {message: ' nao tem essa pass'});
         }
-        var userinfo = user.get();
+        /*var userinfo = user.get();
         global.sessData.userinfo = userinfo;
         console.log(userinfo);
-        return done(null, userinfo);
+        return done(null, userinfo);*/
       }).catch(function(err) {
         console.log("Error:", err);
-        return done(null, false, jsonMessages.user.error);
-      });
+        return done(null, false,{message: ' outra cena'} );
+      });      
     }
   ));
-}*/
+}
+
+// novo metodo signin 
+/*const authenticateUser = (email, password, done) => {
+  const user = getUserByEmail(email)
+  if (user == null){
+    return done(null, false, jsonMessages.user.email)
+  }
+  try {
+    if (await bCrypt.compare(password, user.password)){
+
+    } else {
+      return done(null,false,jsonMessages.user.password)
+    }
+  } catch (e){
+    return done(e)
+  }
+}
+passport.use('local-signin', new LocalStrategy({usernameField: 'email'  }), authenticateUser)
+passport.serializeUser((user, done) => {})
+passport.deserializeUser((codigo, done) => {})*/
