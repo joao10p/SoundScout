@@ -20,8 +20,11 @@ const models = require('./models/');
 const flash = require('express-flash');
 const http = require('http');
 const fs = require('fs');
+const multer = require('multer'); //usado para a foto 
+const storage //fotos tambem 
 
 app.set('view-engine', 'ejs')
+
 app.use(express.urlencoded({ extended: false }))
 app.use(flash())
 app.use(session({
@@ -34,6 +37,16 @@ app.use(session({
     httpOnly: true
   }
 }));
+//SECÇÃO EXPERIMENTAL DE FOTOS
+app.get("/upload", (req,res) => {
+  res.render("Upload");
+});
+
+app.post("/upload",(req,res) =>{
+  res.send("Imagem inserida")
+});
+
+/////////////////////////////////
 app.use(express.static(__dirname + '/public'));
  /*const server = http.createServer(function(req,res){
     res.writeHead(200,{ 'Content-Type': 'text/html'})
