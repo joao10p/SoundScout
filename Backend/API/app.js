@@ -20,9 +20,20 @@ const models = require('./models/');
 const flash = require('express-flash');
 const http = require('http');
 const fs = require('fs');
+const path = require('path')
 const multer = require('multer'); //usado para a foto 
-const storage //fotos tambem 
+const storage = multer.diskStorage({
+  destination: (req,file, cb) => {
+    cb(null, 'Images')
+  },
+  filename:(req, file, cb) =>{
+    console.log(file)
+    cb(null,Date.now()+ path.extname(file.originalname))
+  }
 
+}) //fotos tambem 
+
+const upload = multer({storage:storage })//fotos
 app.set('view-engine', 'ejs')
 
 app.use(express.urlencoded({ extended: false }))
@@ -42,7 +53,7 @@ app.get("/upload", (req,res) => {
   res.render("Upload");
 });
 
-app.post("/upload",(req,res) =>{
+app.post("/upload",upload.single('image'),(req,res) =>{  //ATENÇAO! SE SO CONSEGUIRMOS ADICIONAR UMA FOTO O ERRO PODE ESTAR NO SINGLE
   res.send("Imagem inserida")
 });
 
