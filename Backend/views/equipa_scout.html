@@ -5,23 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Galeria - Sound</title>
-        <link rel="icon" type="images/x-icon" href="imagens/favicon.png" />
+        <title>SoundSout - HomePage</title>
+        <link rel="icon" type="images/x-icon" href="../public/imagens/favicon.png" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../public/css/styles.css" rel="stylesheet" />
         
     </head>
-    <body id="page-top" onload="myFunction1()">
+    <body id="page-top">
         <!-- Navigation-->
-
-       
-        <nav class="navbar navbar-custom navbar-expand-lg navbar-light fixed-top" id="mainNav">
-            <div class="container" >
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="#page-top">SoundScout</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
@@ -45,92 +43,173 @@
             <br>
             
            
+            <!--ROW-->
                 <div class="container">
                     <div class="row"> 
                         <div class="col-lg-12">
-                        <h1 style="text-align: center;">Galeria</h1>
+                        <h1 style="text-align: center;">Equipa</h1>
                         <hr>
                     </div>
                     </div>
 
                     <div class="row">
                    
-          <div class="col-lg-4" style="padding:2%;"><a href="galeria_id.html"> <img src="imagens/galeria_sound1.jpg" class="img-responsive" id="galeria"><div id="x1" class="centered1">Á JANELA</div><div id="x2" class="centered2">Beatriz Pequeno</div><div class="centered3">01Fev2021</div>
-                  </a>
-                 </div>
-                  <div class="col-lg-4" style="padding:2%;"><a href="galeria_id.html"><img src="imagens/galeria_sound2.jpg" class="img-responsive" id="galeria"><div class="centered1">ANIMA-TE</div><div class="centered2">João Lemos</div><div class="centered3">21Jul2020</div>
-                    </a> 
+          <div class="col-lg-4" style="padding:2%;"> 
+
+            <div class="card">
+                <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img class="img-responsive" src="../public/imagens/P1011101.JPG" alt="Avatar" style="width:300px;height:300px;">
+                  </div>
+                  <div class="flip-card-back">
+              
+                    <p style="padding: 5%;">Para Vítor, os domingos da sua infância eram passados no velhinho Alvalade, com jogos das camadas jovens de manhã, modalidades na nave e futebol sénior ao final da tarde.</p>
+                  </div>
                 </div>
-                <div class="col-lg-4" style="padding: 2%;"><a href="galeria_id.html"><img src="imagens/galeria_sound3.jpg" class="img-responsive" id="galeria"><div class="centered1">BENJAMIM CCVF</div><div class="centered2">Filipe Carvalho</div><div class="centered3">29Jun2020</div>
-                </a> 
+              </div>
+              <br>
+              <h2>Filipe Carvalho</h2>
+              <h5>Diretor, Redator e Fotógrafo</h5>
+              <h6>Vizela</h6>
+                <br>
+              </div>
+
+                 </div>
+
+
+                  <div class="col-lg-4" style="padding:2%;">
+
+                    <div class="card">
+                        <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img class="img-responsive" src="../public/imagens/P1011098.JPG" alt="Avatar" style="width:300px;height:300px;">
+                          </div>
+                          <div class="flip-card-back">
+                      
+                            <p style="padding: 5%;">Para Vítor, os domingos da sua infância eram passados no velhinho Alvalade, com jogos das camadas jovens de manhã, modalidades na nave e futebol sénior ao final da tarde.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                      <h2>João Lemos</h2>
+                      <h5>Diretor, Designer</h5>
+                      <h6>Guimarães</h6>
+                        <br>
+                      </div>
+
+                </div>
+
+
+                <div class="col-lg-4" style="padding: 2%;">
+
+<div class="card">
+  <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img class="img-responsive" src="../public/imagens/P1011097.JPG" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+
+      <p style="padding: 5%;">Para Vítor, os domingos da sua infância eram passados no velhinho Alvalade, com jogos das camadas jovens de manhã, modalidades na nave e futebol sénior ao final da tarde.</p>
+    </div>
+  </div>
+</div>
+<br>
+  <h3>Pedro Carvalho</h2>
+  <h5>Diretor, Redator e Revisor</h5>
+  <h6>Vizela</h6>
+  <br>
+</div>
+
             </div>
         </div>  
 
-        <script>
-            function myFunction1() {
-            var z= document.getElementById("x1").innerHTML;
-              var s= z.length;
-              console.log(z);
-              console.log(s);
 
-              if (s > 5) {
-                x1.style.fontSize = "0.5rem";
-  }
-}
-            </script>
 
-<script>
-    function myFunction2() {
-    var z= document.getElementById("x2").innerHTML;
-      var s= z.length;
-      console.log(z);
-      console.log(s);
 
-      if (s > 5) {
-        x2.style.fontSize = "0.5rem";
-}
-}
-    </script>
+         <!--ROW-->
+         <div class="container">
 
-        <div class="row"> 
-            <div class="col-lg-4" style="padding:2%;"><a href="galeria_id.html"> <img src="imagens/galeria_sound4.jpg" class="img-responsive" id="galeria"><div class="centered1">FESTIVAL BOREAL</div><div class="centered2">Nélson Oliveira</div><div class="centered3">06Fev2020</div>
-              </a>
-             </div>
-              <div class="col-lg-4" style="padding:2%;"><a href="galeria_id.html"><img src="imagens/galeria_sound5.jpg" class="img-responsive" id="galeria"><div class="centered1">MUCHOFLOW</div><div class="centered2">Filipe Carvalho</div><div class="centered3">18Dez2019</div>
-                </a> 
-            </div>
-            <div class="col-lg-4" style="padding: 2%;"><a href="galeria_id.html"><img src="imagens/galeria_sound6.jpg" class="img-responsive" id="galeria"><div class="centered1">FESTIVAL PARA GENTE SENTADA</div><div class="centered2">Sara Sofia de Melo</div><div class="centered3">12Nov2019</div>
-            </a> 
+            <div class="row">
+           
+  <div class="col-lg-4" style="padding:2%;"> 
+
+    <div class="card">
+        <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img class="img-responsive" src="../public/imagens/P1011101.JPG" alt="Avatar" style="width:300px;height:300px;">
+          </div>
+          <div class="flip-card-back">
+      
+            <p style="padding: 5%;">Para Vítor, os domingos da sua infância eram passados no velhinho Alvalade, com jogos das camadas jovens de manhã, modalidades na nave e futebol sénior ao final da tarde.</p>
+          </div>
         </div>
-    </div>  
+      </div>
+      <br>
+      <h2>André Morais</h2>
+      <h5>Coordenador</h5>
+      <h6>Guimarães</h6>
+        <br>
+      </div>
 
-
-
-
-
-    <div class="row"> 
-        <div class="col-lg-4" style="padding:2%;"><a href="galeria_id.html"> <img src="imagens/galeria_sound7.jpg" class="img-responsive" id="galeria"><div class="centered1">titulo</div><div class="centered2">fotografo</div><div class="centered3">data</div>
-          </a>
          </div>
-          <div class="col-lg-4" style="padding:2%;"><a href="galeria_id.html"><img src="imagens/galeria_sound8.jpg" class="img-responsive" id="galeria"><div class="centered1">titulo</div><div class="centered2">fotografo</div><div class="centered3">data</div>
-            </a> 
+
+
+          <div class="col-lg-4" style="padding:2%;">
+
+            <div class="card">
+                <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img class="img-responsive" src="../public/imagens/P1011098.JPG" alt="Avatar" style="width:300px;height:300px;">
+                  </div>
+                  <div class="flip-card-back">
+              
+                    <p style="padding: 5%;">Para Vítor, os domingos da sua infância eram passados no velhinho Alvalade, com jogos das camadas jovens de manhã, modalidades na nave e futebol sénior ao final da tarde.</p>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <h2>Ada</h2>
+              <h5>Diretor Geral, Redator, Fotógrafo</h5>
+              <h6>Guimarães</h6>
+                <br>
+              </div>
+
         </div>
-        <div class="col-lg-4" style="padding: 2%;"><a href="galeria_id.html"><img src="imagens/galeria_sound9.jpg" class="img-responsive" id="galeria"><div class="centered1">titulo</div><div class="centered2">fotografo</div><div class="centered3">data</div>
-        </a> 
+
+
+        <div class="col-lg-4" style="padding: 2%;">
+
+<div class="card">
+<div class="flip-card">
+<div class="flip-card-inner">
+<div class="flip-card-front">
+<img class="img-responsive" src="../public/imagens/P1011097.JPG" alt="Avatar" style="width:300px;height:300px;">
+</div>
+<div class="flip-card-back">
+
+<p style="padding: 5%;">Para Vítor, os domingos da sua infância eram passados no velhinho Alvalade, com jogos das camadas jovens de manhã, modalidades na nave e futebol sénior ao final da tarde.</p>
+</div>
+</div>
+</div>
+<br>
+<h2>João Lemos</h2>
+<h5>Diretor Geral</h5>
+<h6>Guimarães</h6>
+<br>
+</div>
+
     </div>
 </div>  
 
+        
 
-<div class="row">
-    <div class="col-lg-12">
-    <div class="center">
-        <br>
-        <br>
-        <br>
-        <button class="btn btn-light" style="text-align: center;" margin= "0";>+ Álbuns</button>
-    </div>
-</div>
-</div>
+
+    
                  </div>
         </header>
     
@@ -141,7 +220,7 @@
                 <br>                
                 <br><br>
                 <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="imagens/soundscout_sobre.jpg" alt="" /></div>
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="../public/imagens/soundscout_sobre.jpg" alt="" /></div>
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
                             <h4>SoundScout</h4>
@@ -153,7 +232,7 @@
                 <br>
                 <!-- Project One Row-->
                 <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-                    <div class="col-lg-6"><img class="img-fluid" src="imagens/sound_sobre.jpg" alt="" /></div>
+                    <div class="col-lg-6"><img class="img-fluid" src="../public/imagens/sound_sobre.jpg" alt="" /></div>
                     <div class="col-lg-6">
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
@@ -168,7 +247,7 @@
                 </div>
                 <!-- Project Two Row-->
                 <div class="row justify-content-center no-gutters">
-                    <div class="col-lg-6"><img class="img-fluid" src="imagens/scout_sobre.jpg" alt="" /></div>
+                    <div class="col-lg-6"><img class="img-fluid" src="../public/imagens/scout_sobre.jpg" alt="" /></div>
                     <div class="col-lg-6 order-lg-first">
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
@@ -236,7 +315,7 @@
             <div class="container">
                 <!-- Featured Project Row-->
                 <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="imagens/app.jpg" alt="" /></div>
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="../public/imagens/app.jpg" alt="" /></div>
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
                             <h4>SoundScout Mobile</h4>
@@ -346,16 +425,16 @@
         <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © SoundScout 2020</div>
 
 
-            <button type="button" id="area" class="btn btn-link" style="float: right;" data-toggle="modal" data-target="#janela">
+            <button type="button" class="btn btn-link" style="float: right;" data-toggle="modal" data-target="#janela">
         Área Reservada
       </button>
 
-      <button type="button" id="ingles" style="float: left; ">
-        <img src="imagens/ingles.png">
+      <button type="button" style="float: left; background: none; border: none; margin-left: 1%;">
+        <img src="../public/imagens/ingles.png">
       </button>
 
-      <button type="button" id="portugues" style="float: left ">
-        <img src="imagens/portugues.png">
+      <button type="button" style="float: left; background: none; border: none;">
+        <img src="../public/imagens/portugues.png">
       </button>
 
       <!-- Janela -->
@@ -414,6 +493,4 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
-
-
 </html>

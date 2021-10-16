@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>revista - sound</title>
+        <title>Galeria - Sound</title>
         <link rel="icon" type="images/x-icon" href="imagens/favicon.png" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
@@ -13,23 +13,25 @@
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../public/css/styles.css" rel="stylesheet" />
         
     </head>
-    <body id="page-top">
+    <body id="page-top" onload="myFunction1()">
         <!-- Navigation-->
-        <nav class="navbar navbar-custom navbar-expand-lg navbar-light bg-cor txt-black fixed-top "id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger " style="color: black;" href="sound.html">Sound</a>
+
+       
+        <nav class="navbar navbar-custom navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container" >
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">SoundScout</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color: black;" href="#about">Sobre</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color: black;" href="#projects">Aplicação</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color: black;" href="#signup">Contactos</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Aplicação</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contactos</a></li>
                     </ul>
                 </div>
             </div>
@@ -42,98 +44,81 @@
             <br>
             <br>
             
-            
            
                 <div class="container">
                     <div class="row"> 
                         <div class="col-lg-12">
-                        <h1 style="text-align: center;">Revistas</h1>
+                        <h1 style="text-align: center;">Galeria</h1>
                         <hr>
                     </div>
                     </div>
 
-                    <div class="row" id="1">
+                    <div class="row">
                    
-          <div class="col-lg-4" id="revista1" style="padding:2%;"><a href="revista_id.html"> <img src="imagens/revista_sound1.jpg" class="img-responsive" id="revista">
-            <label id="titulo_revista" class="text_center"
-            style="text-align: center;">Março 2021</label> <label class="text_center" style="text-align: center;" id="numero_revista">Edição nº18</label>
+          <div class="col-lg-4" style="padding:2%;"><a href="galeria_id.html"> <img src="imagens/galeria_sound1.jpg" class="img-responsive" id="galeria"><div id="x1" class="centered1">Á JANELA</div><div id="x2" class="centered2">Beatriz Pequeno</div><div class="centered3">01Fev2021</div>
                   </a>
                  </div>
-                  <div class="col-lg-4" id="revista2" style="padding:2%;"><a href="revista_id.html"><img src="imagens/revista_sound2.jpg" class="img-responsive" id="revista">  <label id="titulo_revista" class="text_center"
-                    style="text-align: center;">Fevereiro 2021</label> <label class="text_center" style="text-align: center;" id="numero_revista">Edição nº17</label>
+                  <div class="col-lg-4" style="padding:2%;"><a href="galeria_id.html"><img src="imagens/galeria_sound2.jpg" class="img-responsive" id="galeria"><div class="centered1">ANIMA-TE</div><div class="centered2">João Lemos</div><div class="centered3">21Jul2020</div>
                     </a> 
                 </div>
-                <div class="col-lg-4" id="revista3" style="padding: 2%;"><a href="revista_id.html"><img src="imagens/revista_sound3.jpg" class="img-responsive" id="revista"> <label id="titulo_revista" class="text_center"
-                    style="text-align: center;">Janeiro 2021</label> <label class="text_center" style="text-align: center;" id="numero_revista">Edição nº16</label>
+                <div class="col-lg-4" style="padding: 2%;"><a href="galeria_id.html"><img src="imagens/galeria_sound3.jpg" class="img-responsive" id="galeria"><div class="centered1">BENJAMIM CCVF</div><div class="centered2">Filipe Carvalho</div><div class="centered3">29Jun2020</div>
                 </a> 
             </div>
         </div>  
 
+        <script>
+            function myFunction1() {
+            var z= document.getElementById("x1").innerHTML;
+              var s= z.length;
+              console.log(z);
+              console.log(s);
 
-        <div class="row" id="2"> 
-            <div class="col-lg-4" id="revista4" style="padding:2%;"><a href="revista_id.html"> <img src="imagens/revista_sound4.jpg" class="img-responsive" id="revista">  <label id="titulo_revista" class="text_center"
-                style="text-align: center;">Dezembro 2020</label> <label class="text_center" style="text-align: center;" id="numero_revista">Edição nº15</label>
+              if (s > 5) {
+                x1.style.fontSize = "0.5rem";
+  }
+}
+            </script>
+
+<script>
+    function myFunction2() {
+    var z= document.getElementById("x2").innerHTML;
+      var s= z.length;
+      console.log(z);
+      console.log(s);
+
+      if (s > 5) {
+        x2.style.fontSize = "0.5rem";
+}
+}
+    </script>
+
+        <div class="row"> 
+            <div class="col-lg-4" style="padding:2%;"><a href="galeria_id.html"> <img src="imagens/galeria_sound4.jpg" class="img-responsive" id="galeria"><div class="centered1">FESTIVAL BOREAL</div><div class="centered2">Nélson Oliveira</div><div class="centered3">06Fev2020</div>
               </a>
              </div>
-              <div class="col-lg-4" id="revista5" style="padding:2%;"><a href="revista_id.html"><img src="imagens/revista_sound5.jpg" class="img-responsive" id="revista">   <label id="titulo_revista" class="text_center"
-                style="text-align: center;">Novembro 2020</label> <label class="text_center" style="text-align: center;" id="numero_revista">Edição nº14</label>
+              <div class="col-lg-4" style="padding:2%;"><a href="galeria_id.html"><img src="imagens/galeria_sound5.jpg" class="img-responsive" id="galeria"><div class="centered1">MUCHOFLOW</div><div class="centered2">Filipe Carvalho</div><div class="centered3">18Dez2019</div>
                 </a> 
             </div>
-            <div class="col-lg-4" id="revista6" style="padding: 2%;"><a href="revista_id.html"><img src="imagens/revista_sound6.jpg" class="img-responsive" id="revista">   <label id="titulo_revista" class="text_center"
-                style="text-align: center;">Outubro 2020</label> <label class="text_center" style="text-align: center;" id="numero_revista">Edição nº13</label>
+            <div class="col-lg-4" style="padding: 2%;"><a href="galeria_id.html"><img src="imagens/galeria_sound6.jpg" class="img-responsive" id="galeria"><div class="centered1">FESTIVAL PARA GENTE SENTADA</div><div class="centered2">Sara Sofia de Melo</div><div class="centered3">12Nov2019</div>
+            </a> 
         </div>
     </div>  
 
-    
 
 
 
 
-
-    <div class="row" id="3"> 
-        <div class="col-lg-4" id="revista7" style="padding:2%;"><a href="revista_id.html"> <img src="imagens/revista_sound7.jpg" class="img-responsive" id="revista">   <label id="titulo_revista" class="text_center"
-            style="text-align: center;">Setembro 2020</label> <label class="text_center" style="text-align: center;" id="numero_revista">Edição nº12</label>
+    <div class="row"> 
+        <div class="col-lg-4" style="padding:2%;"><a href="galeria_id.html"> <img src="imagens/galeria_sound7.jpg" class="img-responsive" id="galeria"><div class="centered1">titulo</div><div class="centered2">fotografo</div><div class="centered3">data</div>
           </a>
          </div>
-          <div class="col-lg-4" id="revista8" style="padding:2%;"><a href="revista_id.html"><img src="imagens/revista_sound8.jpg" class="img-responsive" id="revista">   <label id="titulo_revista" class="text_center"
-            style="text-align: center;">Agosto 2020</label> <label class="text_center" style="text-align: center;" id="numero_revista">Edição nº11</label>
+          <div class="col-lg-4" style="padding:2%;"><a href="galeria_id.html"><img src="imagens/galeria_sound8.jpg" class="img-responsive" id="galeria"><div class="centered1">titulo</div><div class="centered2">fotografo</div><div class="centered3">data</div>
             </a> 
         </div>
-        <div class="col-lg-4" id="revista9" style="padding: 2%;"><a href="revista_id.html"><img src="imagens/revista_sound9.jpg" class="img-responsive" id="revista">  <label id="titulo_revista" class="text_center"
-            style="text-align: center;">Julho 2020</label> <label class="text_center" style="text-align: center;" id="numero_revista">Edição nº10</label>
+        <div class="col-lg-4" style="padding: 2%;"><a href="galeria_id.html"><img src="imagens/galeria_sound9.jpg" class="img-responsive" id="galeria"><div class="centered1">titulo</div><div class="centered2">fotografo</div><div class="centered3">data</div>
         </a> 
     </div>
 </div>  
-
-
-
-<script>
-    var x=3;
-    function myFunction() {
-
-var d1 = document.getElementById(x);
-x++; 
-console.log(x);
-d1.insertAdjacentHTML('afterend', '<div class="row" id="linha"><div class="col-lg-4" id="revista_1" style="padding:2%;" id="col"><a href="revista_id.html"> <img src="imagens/revista_sound7.jpg" class="img-responsive" id="revista"> <label id="titulo_revista" class="text_center">Setembro 2020</label> <label class="text_center" style="text-align: center;" id="numero_revista">Edição nº12</label></a></div> <div class="col-lg-4" id="revista_2" style="padding:2%;" id="col"><a href="revista_id.html"> <img src="imagens/revista_sound7.jpg" class="img-responsive" id="revista"> <label id="titulo_revista" class="text_center">Setembro 2020</label> <label class="text_center" style="text-align: center;" id="numero_revista">Edição nº12</label></a></div> <div class="col-lg-4" id="revista_3" style="padding:2%;" id="col"><a href="revista_id.html"> <img src="imagens/revista_sound7.jpg" class="img-responsive" id="revista"> <label id="titulo_revista" class="text_center">Setembro 2020</label> <label class="text_center" style="text-align: center;" id="numero_revista">Edição nº12</label></a></div></div>');
-    }
-
-    var linha=4;
-    var count= 10;
-
-function idcontador(){
-document.getElementById("linha").id = linha;
-linha++;
-document.getElementById("revista_1").id = "revista"+count;
-count++;
-document.getElementById("revista_2").id= "revista"+count;
-count++;
-document.getElementById("revista_3").id= "revista"+count;
-count++;
-
-}
-
-    </script>
-
 
 
 <div class="row">
@@ -142,7 +127,7 @@ count++;
         <br>
         <br>
         <br>
-        <button class="btn btn-light" style="text-align: center;" margin= "0"; onclick="myFunction(); idcontador()">+ Revistas</button>
+        <button class="btn btn-light" style="text-align: center;" margin= "0";>+ Álbuns</button>
     </div>
 </div>
 </div>
@@ -369,7 +354,7 @@ count++;
         <img src="imagens/ingles.png">
       </button>
 
-      <button type="button" id="portugues" style="float: left; ">
+      <button type="button" id="portugues" style="float: left ">
         <img src="imagens/portugues.png">
       </button>
 
@@ -429,4 +414,6 @@ count++;
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
+
+
 </html>

@@ -1,11 +1,19 @@
+
+    
+  
+</html>
+
 <!DOCTYPE html>
 <html lang="pt">
     <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Scout - HomePage</title>
+        <title>Revista - Scout</title>
         <link rel="icon" type="images/x-icon" href="imagens/favicon.png" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
@@ -13,10 +21,11 @@
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../public/css/styles.css" rel="stylesheet" />
         
     </head>
-    <body id="page-top">
+   <!--<body id="page-top">--> 
+        <body style="background-color:#64a19d;" id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-custom navbar-expand-lg navbar-light fixed-top"  id="mainNav">
             <div class="container">
@@ -27,44 +36,27 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="revista_scout.html">Revista</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="galeria_scout.html">Galeria</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="betano.html">Betano</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="equipa_scout.html">Equipa</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Revista</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Betano</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Equipa</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <br>
+        <br>
+        <br>
+        
         <!-- Masthead-->
         <header class="masthead">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                
-                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                
-                <div class="carousel-inner">
-                  <div class="carousel-item active" data-interval="5000">
-                    <img class="d-block w-100" src="imagens/slideshow_scout1.jpg" alt="First slide">
-                  </div>
-                  <div class="carousel-item" data-interval="5000">
-                    <img class="d-block w-100" src="imagens/slideshow_scout2.jpg" alt="Second slide">
-                  </div>
-                  <div class="carousel-item" data-interval="5000">
-                    <img class="d-block w-100" src="imagens/slideshow_scout3.jpg" alt="Third slide">
-                  </div>
+            <div class="container">
+                <div class="row" style="width:1480px;height:670px;">
+                <iframe class="responsive-iframe" style="width: 90%; float: left;" id="mag" src="https://online.fliphtml5.com/wihsh/zmie/"  seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe>
+                <div style="float: right;" id="descrição">
+                    <a class="js-scroll-trigger" href="#about" id="descer" style="position: absolute; right: 3%; text-align: center;top: 3%;"><span style="font-size:58px;" class="fas fa-arrow-down"></span><br>Descrição</a>  
                 </div>
-                
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
+              </div>
                 
               </div>
              
@@ -284,24 +276,20 @@
         <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © SoundScout 2020</div>
 
 
-            <button type="button" id="area" class="btn btn-link" style="float: right;" data-toggle="modal" data-target="#janela">
+            <button type="button" class="btn btn-link" style="float: right;" data-toggle="modal" data-target="#janela">
         Área Reservada
       </button>
 
-      <button type="button" id="ingles" style="float: left; ">
+      <button type="button" style="float: left; background: none; border: none; margin-left: 1%;">
         <img src="imagens/ingles.png">
       </button>
 
-      <button type="button" id="portugues" style="float: left; ">
+      <button type="button" style="float: left; background: none; border: none;">
         <img src="imagens/portugues.png">
       </button>
 
       <div id="voltarTopo">
         <a class="js-scroll-trigger" href="#page-top" id="subir"><span style="font-size:24px;" class="fas fa-arrow-up"></span></a>  
-    </div>
-
-        <div id="voltarBaixo">
-        <a class="js-scroll-trigger" href="#page-top" id="descer"><span style="font-size:24px;" class="fas fa-arrow-down"></span></a>  
     </div>
 
       <!-- Janela -->
