@@ -5,6 +5,7 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+var router = express.Router();
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
@@ -72,6 +73,7 @@ app.use(express.static(__dirname + '/public'));
       res.end();
     })
   });*/
+  
   app.listen(port, function() {
     console.log('Example app listening on port ' + port + '!');
   });
@@ -79,8 +81,16 @@ app.use(express.static(__dirname + '/public'));
     
 app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }));
 app.use(expressSanitizer());
+app.use(express.static("public"))
 
 app.use('/', mainRoutes);
+
+var server = http.createServer(function(req, res){
+  console.log('request was made: '+req.url);
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  var myReadStream= fs.createReadStream(__dirname + '/index.html', 'utf8');
+  myReadStream.pipe(res);
+});
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
