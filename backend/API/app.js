@@ -1,7 +1,4 @@
 
-
-
-
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -35,7 +32,8 @@ const storage = multer.diskStorage({
 }); //fotos tambem 
 
 const upload = multer({storage:storage })//fotos
-app.set('view-engine', 'html')
+
+app.set("view engine", "ejs");
 
 app.use(express.urlencoded({ extended: false }))
 app.use(flash())
@@ -49,23 +47,27 @@ app.use(session({
     httpOnly: true
   }
 }));
-app.get("/",function (req,res){
-  res.sendFile(__dirname +"/upload.html");
+fs.readFile('./index.html', function (err, html) {
+
+  if (err) throw err;    
+
+  http.createServer(function(request, response) {  
+      response.writeHeader(200, {"Content-Type": "text/html"});  
+      response.write(html);  
+      response.end();  
+  }).listen(port);
 });
+
 //SECÇÃO EXPERIMENTAL DE FOTOS
 app.get("/upload", (req,res) => {
-  res.render("Upload");
+  res.render("upload");
 });
 
-app.post("/upload",upload.single("image"),(req,res) =>{  //ATENÇAO! SE SO CONSEGUIRMOS ADICIONAR UMA FOTO O ERRO PODE ESTAR NO SINGLE
-  res.send("Imagem inserida")
+app.post("./upload",upload.single("image"),(req,res) =>{  //ATENÇAO! SE SO CONSEGUIRMOS ADICIONAR UMA FOTO O ERRO PODE ESTAR NO SINGLE
+  res.send("Image Uploaded")
 });
 
-////////////////
 
-  app.listen(port, function() {
-    console.log('Example app listening on port ' + port + '!');
-  });
   //app.use(express.static(__dirname, { index: '../../startbootstrap-grayscale-gh-pages/index.html' })); nao sei o que e
     
 app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }));
@@ -99,7 +101,6 @@ app.use(
 
 
 
-//app.use(expressValidator());
 app.use(cors());
 var corsOptions = {
   origin: 'http://example.com',
