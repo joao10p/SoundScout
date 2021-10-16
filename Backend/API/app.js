@@ -30,12 +30,12 @@ const storage = multer.diskStorage({
   filename:(req, file, cb) =>{
     console.log(file)
     cb(null,Date.now()+ path.extname(file.originalname))
-  }
+  },
 
-}) //fotos tambem 
+}); //fotos tambem 
 
 const upload = multer({storage:storage })//fotos
-app.set('view-engine', 'ejs')
+app.set('view-engine', 'html')
 
 app.use(express.urlencoded({ extended: false }))
 app.use(flash())
@@ -49,35 +49,24 @@ app.use(session({
     httpOnly: true
   }
 }));
+app.get("/",function (req,res){
+  res.sendFile(__dirname +"/upload.html");
+});
 //SECÇÃO EXPERIMENTAL DE FOTOS
 app.get("/upload", (req,res) => {
   res.render("Upload");
 });
 
-app.post("/upload",upload.single('image'),(req,res) =>{  //ATENÇAO! SE SO CONSEGUIRMOS ADICIONAR UMA FOTO O ERRO PODE ESTAR NO SINGLE
+app.post("/upload",upload.single("image"),(req,res) =>{  //ATENÇAO! SE SO CONSEGUIRMOS ADICIONAR UMA FOTO O ERRO PODE ESTAR NO SINGLE
   res.send("Imagem inserida")
 });
 
-/////////////////////////////////
-app.use(express.static(__dirname + '/public'));
- /*const server = http.createServer(function(req,res){
-    res.writeHead(200,{ 'Content-Type': 'text/html'})
-    fs.readFile('../../startbootstrap-grayscale-gh-pages/index.html',function(error,data){
-      if(error){
-        res.writeHead(404)
-        res.write('Error: File Not Found')
-      }else {
-        res.write(data);
-      }
+////////////////
 
-      res.end();
-    })
-  });*/
-  
   app.listen(port, function() {
     console.log('Example app listening on port ' + port + '!');
   });
-  app.use(express.static(__dirname, { index: '../../startbootstrap-grayscale-gh-pages/index.html' }));
+  //app.use(express.static(__dirname, { index: '../../startbootstrap-grayscale-gh-pages/index.html' })); nao sei o que e
     
 app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }));
 app.use(expressSanitizer());
@@ -85,12 +74,7 @@ app.use(express.static("public"))
 
 app.use('/', mainRoutes);
 
-var server = http.createServer(function(req, res){
-  console.log('request was made: '+req.url);
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  var myReadStream= fs.createReadStream(__dirname + '/index.html', 'utf8');
-  myReadStream.pipe(res);
-});
+
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
