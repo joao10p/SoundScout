@@ -31,6 +31,63 @@ app.get('/scout', (req,res) => {
   res.sendFile(__dirname + '/views/scout.html')
 })
 
+app.get('/menu', (req,res) => {
+  res.sendFile(__dirname + '/views/menu.html')
+})
+
+app.get('/betano', (req,res) => {
+  res.sendFile(__dirname + '/views/betano.html')
+})
+
+app.get('/equipa_scout', (req,res) => {
+  res.sendFile(__dirname + '/views/equipa_scout.html')
+})
+
+app.get('/equipa_sound', (req,res) => {
+  res.sendFile(__dirname + '/views/equipa_sound.html')
+})
+
+app.get('/galeria_id', (req,res) => {
+  res.sendFile(__dirname + '/views/galeria_id.html')
+})
+
+app.get('/galeria_scout', (req,res) => {
+  res.sendFile(__dirname + '/views/galeria_scout.html')
+})
+app.get('/galeria_sound', (req,res)=> {
+  res.sendFile(__dirname + '/views/galeria_sound.html')
+})
+app.get('/menu_diretores', (req,res) => {
+  res.sendFile(__dirname + '/views/menu_diretores.html')
+})
+
+app.get('/revista_id', (req,res) => {
+  res.sendFile(__dirname + '/views/revista_id.html')
+})
+
+app.get('/revista_scout', (req,res) => {
+  res.sendFile(__dirname + '/views/revista_scout.html')
+})
+
+app.get('/revista_sound', (req,res) => {
+  res.sendFile(__dirname + '/views/revista_sound.html')
+})
+
+app.get('/scout', (req,res) => {
+  res.sendFile(__dirname + '/views/scout.html')
+})
+
+app.get('/sound', (req,res) => {
+  res.sendFile(__dirname + '/views/sound.html')
+})
+
+app.get('/spotify', (req,res) => {
+  res.sendFile(__dirname + '/views/spotify.html')
+})
+
+app.get('/upload', (req,res) => {
+  res.sendFile(__dirname + '/views/upload.html')
+})
 //USA AS ROTAS PARA IR BUSCAR OS CONTROLLERS E AS PAGINAS
 app.use('/', mainRoutes);
 
