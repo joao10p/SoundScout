@@ -561,6 +561,8 @@ pre code {
   .container-sm, .container {
     max-width: 540px;
   }
+
+
 }
 @media (min-width: 768px) {
   .container-md, .container-sm, .container {
@@ -4034,6 +4036,7 @@ input[type=button].btn-block {
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  
   
 }
 .navbar .container,
@@ -10284,6 +10287,7 @@ body {
   .projects-section .featured-text {
     padding: 0 0 0 2rem;
     border-left: 0.5rem solid #64a19d;
+
   }
 }
 .projects-section .project-text {
@@ -10294,6 +10298,7 @@ body {
   .projects-section .project-text {
     padding: 5rem;
   }
+
   .projects-section .project-text hr {
     border-color: #64a19d;
     border-width: 0.25rem;
