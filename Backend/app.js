@@ -23,9 +23,9 @@ app.get('', (req, res) => {
 
 
 //Add another Page
-/*app.get('/about', (req, res) => {
-   res.sendFile(__dirname + '/views/about.html')
-})*/
+app.get('/sound', (req, res) => {
+   res.sendFile(__dirname + '/views/sound.html')
+})
 
 //USA AS ROTAS PARA IR BUSCAR OS CONTROLLERS E AS PAGINAS
 app.use('/', mainRoutes);
