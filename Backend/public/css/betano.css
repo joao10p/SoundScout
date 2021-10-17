@@ -11,8 +11,8 @@ html, body, .capa {
 }
 
 body {
-	background: url('../imagens/capa1.png'),
-				url('../imagens/ruido.png'),
+	background: url('imagens/capa1.png'),
+				url('imagens/ruido.png'),
 				linear-gradient(50deg,#ff6600,#ff6600,black);
 	background-attachment: fixed;
 	font-family: Helvetica,Arial,sans-serif;
@@ -24,7 +24,7 @@ body {
 	height: 40px;
 	width: 132px;
 	display: block;
-	background: url('../imagens/scoutwhite.svg') no-repeat;
+	background: url('imagens/scoutwhite.svg') no-repeat;
 	background-size: contain;
 	color: transparent;
 }
