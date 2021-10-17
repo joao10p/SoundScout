@@ -1,17 +1,17 @@
 const express = require('express')
 const app = express()
-const port = 5000
+const port = 3000
 
 // Static Files
 app.use(express.static('public'));
 // Specific folder example
 app.use('/css', express.static(__dirname + 'public/css'))
-// app.use('/js', express.static(__dirname + 'public/js'))
-// app.use('/img', express.static(__dirname + 'public/images'))
+app.use('/js', express.static(__dirname + 'public/js'))
+app.use('/img', express.static(__dirname + 'public/images'))
 
 // Set View's
 app.set('views', './views');
-//app.set('view engine', 'ejs');
+app.set('view engine', 'ejs');
 
 // Navigation
 app.get('', (req, res) => {
@@ -19,10 +19,12 @@ app.get('', (req, res) => {
 })
 
 //Add another Page
-app.get('/about', (req, res) => {
-   res.sendFile(__dirname + '/views/about.html')
+app.get('sound', (req, res) => {
+   res.sendFile(__dirname + '/views/sound.html')
 })
 
+
+//Criacao do server
 app.listen(port, () => console.info(`App listening on port ${port}`))
 
 
