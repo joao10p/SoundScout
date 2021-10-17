@@ -3,7 +3,7 @@ const { router } = require('server');
 const app = express()
 const port = 3000
 const mainRoutes = require('./routes/main.routes');
-const scoutRoutes = require('./routes/scout');
+
 
 // Static Files
 app.use(express.static('public'));
@@ -27,9 +27,13 @@ app.get('/sound', (req, res) => {
    res.sendFile(__dirname + '/views/sound.html')
 })
 
+app.get('/scout', (req,res) => {
+  res.sendFile(__dirname + '/views/scout.html')
+})
+
 //USA AS ROTAS PARA IR BUSCAR OS CONTROLLERS E AS PAGINAS
 app.use('/', mainRoutes);
-app.use('/scout',scoutRoutes);
+
 
 //Criacao do server
 app.listen(port, () => console.info(`App listening on port ${port}`))
