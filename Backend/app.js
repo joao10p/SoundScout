@@ -51,6 +51,7 @@ app.get('/galeria_id', (req,res) => {
   res.sendFile(__dirname + '/views/galeria_id.html')
 })
 
+
 app.get('/galeria_scout', (req,res) => {
   res.sendFile(__dirname + '/views/galeria_scout.html')
 })
