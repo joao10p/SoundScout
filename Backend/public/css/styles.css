@@ -10394,12 +10394,14 @@ body {
 	position:fixed;
 	bottom:10px;
 	right:10px;
+  z-index: 20;
 }
 
 #descer{
 	position:fixed;
 	bottom:10px;
 	right:40px;
+  z-index: 20;
 }
 
 #mag{
