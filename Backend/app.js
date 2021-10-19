@@ -3,6 +3,9 @@ const { router } = require('server');
 const app = express()
 const port = 3000
 const mainRoutes = require('./routes/main.routes');
+const multer = require('multer');
+const path = require('path');
+
 
 
 // Static Files
@@ -106,6 +109,38 @@ app.listen(port, () => console.info(`App listening on port ${port}`))
 
 
 
+
+//FOTOS
+// Set Storage Engine
+const storage = multer.diskStorage({
+  destination: 'public/uploads/',
+  filename: function(req, file, cb){
+    cb(null, file.fieldname + '-' + Date.now() + 
+    path.extname(file.originalname));
+  }
+});
+
+// Init Upload
+const upload = multer({
+  storage: storage
+  //limits:{fileSize:1000000},
+  //fileFilter: function(req, file, cb){
+    //checkFileType(file, cb);
+  //}
+}).single('myImage');  // Aqui tambem podemos usar arreio em vezde single
+
+app.post('/upload', (req, res )=>{
+  upload(req, res, (err) => {
+    if(err){
+      res.render('upload', {
+        msg: err
+      }) ;
+    } else {
+      console.log(req.file);
+      res.send('test');
+    }
+  });
+});
 
 
 
