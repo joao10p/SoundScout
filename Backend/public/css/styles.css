@@ -10590,17 +10590,15 @@ width: 20%;
 }
 
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .navbar-nav {
-    padding-left: 600px;
+    padding-left: 450px;
   }
 }
 
-
-
-@media screen and (max-width: 1200px) {
+@media (min-width: 1200px) {
   .navbar-nav {
-    padding-left: 470px;
+    padding-left: 600px;
   }
 }
 
