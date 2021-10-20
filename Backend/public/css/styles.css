@@ -4066,9 +4066,11 @@ input[type=button].btn-block {
 .navbar-nav {
   display: flex;
   flex-direction: column;
-  padding-left: 0;
+  padding-left: auto;
   margin-bottom: 0;
   list-style: none;
+  margin-right: 0;
+     
 }
 .navbar-nav .nav-link {
   padding-right: 0;
@@ -10588,7 +10590,19 @@ width: 20%;
 }
 
 
+@media (min-width: 1200px) {
+  .navbar-nav {
+    padding-left: 600px;
+  }
+}
 
+
+
+@media screen and (max-width: 1200px) {
+  .navbar-nav {
+    padding-left: 470px;
+  }
+}
 
 
 
