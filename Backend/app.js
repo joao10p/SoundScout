@@ -5,6 +5,8 @@ const port = 3000
 const mainRoutes = require('./routes/main.routes');
 const multer = require('multer');
 const path = require('path');
+const bodyParser = require('body-parser');
+const expressSanitizer = require('express-sanitizer');
 
 
 
@@ -95,6 +97,11 @@ app.get('/upload', (req,res) => {
 })
 //USA AS ROTAS PARA IR BUSCAR OS CONTROLLERS E AS PAGINAS
 app.use('/', mainRoutes);
+
+//zona do fetch
+app.use(bodyParser.json(),bodyParser.urlencoded({extend:true}));
+app.use(expressSanitizer());
+
 
 
 //Criacao do server
