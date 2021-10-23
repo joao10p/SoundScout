@@ -7,7 +7,9 @@ const multer = require('multer');
 const path = require('path');
 const bodyParser = require('body-parser');
 const expressSanitizer = require('express-sanitizer');
-
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
 
 
 // Static Files
@@ -101,6 +103,38 @@ app.use('/', mainRoutes);
 //zona do fetch
 app.use(bodyParser.json(),bodyParser.urlencoded({extend:true}));
 app.use(expressSanitizer());
+app.use(express.urlencoded({ extended: false }))
+app.use(cors());
+app.use(cookieParser());
+app.use(session({
+  secret: 'our super secret session secret',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 3600000,
+    secure: true,
+    httpOnly: true
+  }
+}));
+
+//cookies 
+app.use(function(req, res, next) {
+  var cookie = req.cookies.cookieName;
+  if (cookie === undefined) {
+    var randomNumber = Math.random().toString();
+    randomNumber = randomNumber.substring(2, randomNumber.length);
+    res.cookie('cookieName', randomNumber, {
+      maxAge: 900000,
+      httpOnly: true,
+      secure: true
+    });
+    console.log('cookie created successfully');
+  }
+  else {
+    console.log('cookie exists', cookie);
+  }
+  next();
+});
 
 
 
