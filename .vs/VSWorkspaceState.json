@@ -2,11 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Backend",
-    "\\Backend\\API",
-    "\\Backend\\API\\config",
-    "\\Backend\\API\\controllers",
-    "\\Backend\\API\\models"
+    "\\Backend\\views"
   ],
-  "SelectedNode": "\\Backend",
+  "SelectedNode": "\\Backend\\app.js",
   "PreviewInSolutionExplorer": false
 }

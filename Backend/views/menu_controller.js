@@ -1,3 +1,6 @@
+
+alert("Hello! I am an alert box!!");
+/*
 window.onload = function() {
     document.getElementById("confirmar").onclick = function(e) {
         concol();
@@ -70,3 +73,4 @@ window.onload = function() {
 
 
 
+*/
