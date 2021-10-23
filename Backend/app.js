@@ -23,6 +23,7 @@ app.use('/img', express.static(__dirname + 'public/images'))
 app.set('views', './views');
 app.set('view engine', 'ejs');
 
+
 // Navigation
 app.get('', (req, res) => {
     res.sendFile(__dirname + '/views/index.html')
@@ -140,14 +141,6 @@ app.use(function(req, res, next) {
 
 //Criacao do server
 app.listen(port, () => console.info(`App listening on port ${port}`))
-
-
-
-
-
-
-
-
 
 
 
