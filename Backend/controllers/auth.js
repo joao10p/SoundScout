@@ -1,4 +1,11 @@
-const jsonMessagesPath = __dirname + "/../assets/jsonMessages/";
+exports.register = (req, res) => {
+    console.log(req.body);
+    res.send("form submitted")
+}
+
+
+
+/*const jsonMessagesPath = __dirname + "/../assets/jsonMessages/";
 const jsonMessages = require(jsonMessagesPath + "login");
 var exports = module.exports = {};
 
@@ -22,4 +29,4 @@ exports.logout = function(req, res, err) {
         }
         res.status(jsonMessages.user.logoutSuccess.status).send(jsonMessages.user.logoutSuccess);
     });
-};
+};*/

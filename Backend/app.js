@@ -176,6 +176,10 @@ app.post('/upload', (req, res )=>{
   });
 });
 
+//login
+app.use('/auth', require('./routes/auth'));
+
+
 
 /*
 const express = require('express');
