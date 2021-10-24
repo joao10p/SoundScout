@@ -20,6 +20,7 @@
     "express-flash": "0.0.2",
     "express-sanitizer": "^1.0.5",
     "express-session": "^1.17.1",
+    "forever": "^4.0.1",
     "fs": "0.0.1-security",
     "helmet": "^4.4.1",
     "helmet-csp": "^3.3.1",
