@@ -10423,7 +10423,8 @@ body {
 
 #galeria {
   filter: brightness(50%);
-  height: 334.4px;
+  height: 30vh;
+  width: 30vw;
 
 }
 
@@ -10443,7 +10444,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 1.5rem;
+  font-size: 100%;
+  overflow: auto;
 }
 .centered2 {
   position: absolute;
@@ -10452,7 +10454,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   color:white;
-  font-size: 1.5rem;
+  font-size: 100%;
+  overflow: auto;
 }
 .centered3 {
   position: absolute;
@@ -10461,7 +10464,8 @@ body {
   width: auto;
   transform: translate(-50%, -50%);
   color:white;
-  font-size: 1.5rem;
+  font-size: 100%;
+  overflow: auto;
 }
 
 .navbar-custom {
