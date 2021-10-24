@@ -10548,32 +10548,6 @@ button:hover, a:hover {
 }
 
 
-#ingles{
-
-position:relative;
-  
-  left: 47%;
-  padding: none;
-  background-color: none;
-  border: none;
-  width: 30px;
-  height: 30px;
-
-}
-
-#portugues{
-    position:relative;
-     
-      left: 48%;
-      padding: none;
-      background-color: none;
-      border: none;
-      width: 30px;
-      height: 30px;
-      
-
-}
-
 #area{
 float: right;
 width: 20%;
@@ -10602,6 +10576,60 @@ width: 20%;
   }
 }
 
+@media (min-width: 576px) {
+  #subs{
+    width: 508px;
+  }
+}
+@media (min-width: 768px) {
+  #subs {
+    width: 568px;
+  }
+}
+@media (min-width: 992px) {
+  #subs {
+    width: 608px;
+  }
+}
+@media (min-width: 1200px) {
+  #subs {
+    width: 728px;
+  }
+}
 
+#ingles{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+ 
+  
+    padding: none;
+    background-color: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+
+  
+  }
+  
+  #portugues{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+      
+        padding: none;
+        background-color: none;
+        border: none;
+        width: 30px;
+        height: 30px;
+        
+  
+  }
+
+  
+
+
+
+ 
 
 
