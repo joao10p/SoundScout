@@ -1,6 +1,6 @@
 
-alert("Hello! I am an alert box!!");
-/*
+
+
 window.onload = function() {
     document.getElementById("confirmar").onclick = function(e) {
         concol();
@@ -15,10 +15,10 @@ window.onload = function() {
         console.log(id);
         var data = {};
         data.email = document.getElementById("email").value;
-        data.numero=document.getElementById("telemovel")
+        data.numero=document.getElementById("telemovel").value;
         
         console.log(data);
-        fetch('/menu/' + id, {
+        fetch('http://127.0.0.1:3000/users/' + id, {
             headers: { 'Content-Type': 'application/json' },
             method: 'PUT',
             body: JSON.stringify(data)
@@ -54,7 +54,7 @@ window.onload = function() {
         async function fetchAsync() {
             const renderanalise = document.getElementById("telemovel");
             let txt = "";
-            const response = await fetch('/menu');
+            const response = await fetch('http://127.0.0.1:3000/users');
             const ana = await response.json();
             for (const newAna of ana) {
                 txt += newAna.numero;
@@ -73,4 +73,3 @@ window.onload = function() {
 
 
 
-*/
