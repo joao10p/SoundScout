@@ -10422,7 +10422,9 @@ body {
 }
 
 #galeria {
-  filter: brightness(50%)
+  filter: brightness(50%);
+  height: 334.4px;
+
 }
 
 .center {
