@@ -23,10 +23,10 @@ exports.read = function(req, res) {
 
 exports.readID = function(req, res) {
 
-    const codigo = req.params.id;
+    const id = req.params.id;
 
 
-    con.query('SELECT * from users where codigo=?', [codigo], function(err, rows, fields) {
+    con.query('SELECT * from users where id=?', [id], function(err, rows, fields) {
         if (!err) {
 
             if (rows.length == 0) {
@@ -48,7 +48,7 @@ exports.readID = function(req, res) {
 
 
 exports.save = function(req, res) {
-    const codigo = req.body.codigo;
+    const id = req.body.id;
     const nome = req.body.nome;
     const email = req.body.email;
     const numero = req.body.numero;
@@ -59,7 +59,7 @@ exports.save = function(req, res) {
 
         // Store hash in your password DB.
         var post = [
-            codigo,
+            id,
             nome,
             email,
             numero,
@@ -68,7 +68,7 @@ exports.save = function(req, res) {
 
         ];
          
-        query = con.query('INSERT INTO users SET codigo=?, nome=?, email=?, numero=?,password=?,cargo =?', post, function(err, rows, fields) {
+        query = con.query('INSERT INTO users SET id=?, nome=?, email=?, numero=?,password=?,cargo =?', post, function(err, rows, fields) {
             console.log(query.sql);
             if (!err) {
                 res.status(200).location(rows.insertId).send({
@@ -91,7 +91,7 @@ exports.save = function(req, res) {
 
 
 exports.update = function(req, res) {
-    const codigo =req.params.id;
+    const id =req.params.id;
     const nome = req.body.nome;
     const email = req.body.email;
     const numero = req.body.numero;
@@ -105,13 +105,13 @@ exports.update = function(req, res) {
             nome,
             email,
             numero,
-            codigo,
             password,
             cargo,
+            id
             
         ];
          
-        query = con.query('UPDATE users SET nome=?, email=?, numero=?,password=?,cargo =? where codigo=?', update, function(err, rows,
+        query = con.query('UPDATE users SET nome=?, email=?, numero=?,password=?,cargo =? where id=?', update, function(err, rows,
             fields) {
             console.log(query.sql);
             if (!err) {
@@ -131,9 +131,9 @@ exports.update = function(req, res) {
 
 
 exports.deleteID = function(req, res) {
-    const codigo = req.params.id;
+    const id = req.params.id;
 
-    con.query('DELETE from users where codigo= ?', [codigo], function(err, rows, fields) {
+    con.query('DELETE from users where id= ?', [id], function(err, rows, fields) {
         if (!err) {
             if (rows.length == 0) {
                 res.status(404).send({
