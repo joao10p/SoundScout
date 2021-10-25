@@ -679,8 +679,8 @@
           <button type="button" style="float: right;" class="btn btn-primary" id= "add1">Adicionar</button> <span style="float: right;">&nbsp;</span>
 <br>
 <br>
-
-      <div id="email">
+<form action="/auth/register" method="POST" >
+      <div id="nome_reg">
   <label class="data">Nome</label>
   <div class="box">
     <div class="form-group">
@@ -691,7 +691,7 @@
 
 </div>
 
-<div id="email">
+<div id="cargo_reg">
   <label class="data">Cargo</label>
   <div class="box">
     <div class="form-group">
@@ -703,7 +703,7 @@
 </div>
 
 
-<div id="email">
+<div id="telemovel_reg">
   <label class="data">Telemovel</label>
   <div class="box">
     <div class="form-group">
@@ -716,7 +716,7 @@
 
 
 
-<div id="email">
+<div id="email_reg">
   <label class="data">email</label>
   <div class="box">
     <div class="form-group">
@@ -730,7 +730,7 @@
 
 
 
-<div id="email">
+<div id="password_reg">
   <label class="data">Password</label>
   <div class="box">
     <div class="form-group">
@@ -739,7 +739,11 @@
   </div>
   </div>
 
+
+  <button type="submit" id="adicionar_pessoa" style="float: right;" class="btn btn-primary">Adicionar Staff</button> <span style="float: right;">&nbsp;</span>
+
 </div>
+</form>
 
   <button id="adicionar_staff" type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
 
