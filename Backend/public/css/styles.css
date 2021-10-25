@@ -10632,10 +10632,6 @@ width: 20%;
   
   }
 
-  
-
-
-
- 
-
-
+#revistaiframe {
+  transform: scale(1.61, 1.61);
+  }
