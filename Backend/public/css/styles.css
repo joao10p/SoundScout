@@ -10446,6 +10446,7 @@ body {
   color: white;
   font-size: 100%;
   overflow: auto;
+  white-space: nowrap;
 }
 .centered2 {
   position: absolute;
@@ -10456,6 +10457,7 @@ body {
   color:white;
   font-size: 100%;
   overflow: auto;
+  white-space: nowrap;
 }
 .centered3 {
   position: absolute;
@@ -10466,6 +10468,7 @@ body {
   color:white;
   font-size: 100%;
   overflow: auto;
+  white-space: nowrap;
 }
 
 .navbar-custom {
