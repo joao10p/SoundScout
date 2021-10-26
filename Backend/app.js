@@ -11,7 +11,14 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
-
+//cors
+app.use((req,res,next)=> {
+  console.log("Passou o cors")
+  res.header("Access-Control-Allow-Origin", "*");
+  app.use(cors());
+  next();
+}
+)
 // Static Files
 app.use(express.static('public'));
 // Specific folder example
@@ -105,7 +112,6 @@ app.use('/', mainRoutes);
 app.use(bodyParser.json(),bodyParser.urlencoded({extend:true}));
 app.use(expressSanitizer());
 app.use(express.urlencoded({ extended: false }))
-app.use(cors());
 app.use(cookieParser());
 app.use(session({
   secret: 'our super secret session secret',
