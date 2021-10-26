@@ -10635,3 +10635,9 @@ width: 20%;
 #revistaiframe {
   transform: scale(1.61, 1.61);
   }
+
+  @media (max-width: 800px) {
+    #galeria {
+    width: 100vw;;
+    }
+    }
