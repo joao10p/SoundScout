@@ -14,8 +14,10 @@ window.onload = function() {
         const id = document.getElementById("cod_valor1").value;
         console.log(id);
         var data = {};
+        data.nome= document.getElementById("nome").value;
         data.email = document.getElementById("email").value;
         data.numero=document.getElementById("telemovel").value;
+    
         
         console.log(data);
         fetch('http://localhost:3000/users/' + id, {
@@ -38,7 +40,7 @@ window.onload = function() {
             else {
                 //document.getElementById("cod_pedido").reset();
                 //document.getElementById("descricao_analise").reset();
-                alert("BRUNOOOOO");
+                alert("Utilizador alterado com sucesso!");
                 //refreshanalise();
             }
         }).then(function(result) {
@@ -70,6 +72,7 @@ window.onload = function() {
     ;
 
 };
+
 
 
 

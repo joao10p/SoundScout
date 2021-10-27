@@ -11,6 +11,10 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
+
+//BODY PARSER
+app.use(bodyParser.json(),bodyParser.urlencoded({extend:true}));
+app.use(express.urlencoded({ extended: false }))
 //cors
 app.use((req,res,next)=> {
   console.log("Passou o cors")
@@ -109,9 +113,9 @@ app.get('/upload', (req,res) => {
 app.use('/', mainRoutes);
 
 //zona do fetch
-app.use(bodyParser.json(),bodyParser.urlencoded({extend:true}));
+//app.use(bodyParser.json(),bodyParser.urlencoded({extend:true}));
 app.use(expressSanitizer());
-app.use(express.urlencoded({ extended: false }))
+//app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser());
 app.use(session({
   secret: 'our super secret session secret',
