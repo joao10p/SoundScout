@@ -1,16 +1,4 @@
-const express = require('express');
-const router = express.Router();
-const authController = require('../controllers/auth');
-
-router.post('/register' , authController.register)
-
-module.exports = router;
-
-
-
-
-
-/*const authController = require('../controllers/auth.js');
+const authController = require('../controllers/auth.js');
 module.exports = function(app, passport) {
     app.get('/signup', authController.signup);
     app.get('/signin', authController.signin); //funciona
@@ -26,4 +14,21 @@ module.exports = function(app, passport) {
         failureRedirect: '/signin'
     }));
 
-};*/
+};
+
+
+
+/*const express = require('express');
+const router = express.Router();
+const authController = require('../public/js/auth.js');
+
+router.post('/register' , authController.register)
+
+console.log("alert brunoo");
+
+module.exports = router;*/
+
+
+
+
+

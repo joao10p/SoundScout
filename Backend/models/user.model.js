@@ -1,6 +1,6 @@
 module.exports = function(sequelize, Sequelize) {
     let User = sequelize.define('user', {
-        codigo: { autoIncrement: true, primaryKey: true, type: Sequelize.INTEGER },
+        id: { autoIncrement: true, primaryKey: true, type: Sequelize.INTEGER },
         nome: { type: Sequelize.STRING, allowNull: false },
         email: { type: Sequelize.STRING, validate: { isEmail: true } },
         numero: { type: Sequelize.STRING, allowNull: false },

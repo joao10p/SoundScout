@@ -10,6 +10,8 @@ const expressSanitizer = require('express-sanitizer');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const passport = require('passport');
+const models = require('./models/');
 
 
 //BODY PARSER
@@ -187,7 +189,18 @@ app.post('/upload', (req, res )=>{
 });
 
 //login
-app.use('/auth', require('./routes/auth'));
+//app.use('/auth', require('./routes/auth'));
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+require('./routes/auth.js')(app, passport);
+require('./config/passport/passport.js')(passport, models.user);
+//Sync Database
+models.sequelize.sync().then(function() {
+  console.log('Nice! Database looks fine');
+
+}).catch(function(err) {
+  console.log(err, "Something went wrong with the Database Update!");
+});
 
 
 

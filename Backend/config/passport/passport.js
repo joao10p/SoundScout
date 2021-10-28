@@ -115,11 +115,11 @@ module.exports = function(passport, user) {
   var User = user;
   var LocalStrategy = require('passport-local').Strategy;
   passport.serializeUser(function(user, done) {
-    done(null, user.codigo);
+    done(null, user.id);
   });
   // used to deserialize the user
-  passport.deserializeUser(function(codigo, done) {
-    User.findById(codigo).then(function(user) {
+  passport.deserializeUser(function(id, done) {
+    User.findById(id).then(function(user) {
       if (user) {
         done(null, user.get());
       }
@@ -200,10 +200,10 @@ module.exports = function(passport, user) {
         if (!isValidPassword(user.password, password)) {
           return done(null, false, {message: ' nao tem essa pass'});
         }
-        /*var userinfo = user.get();
+        var userinfo = user.get();
         global.sessData.userinfo = userinfo;
         console.log(userinfo);
-        return done(null, userinfo);*/
+        return done(null, userinfo);
       }).catch(function(err) {
         console.log("Error:", err);
         return done(null, false,{message: ' outra cena'} );
