@@ -1,22 +1,46 @@
 
-
-
 window.onload = function() {
-    document.getElementById("confirmar").onclick = function(e) {
-        concol();
+        alert("dass")
+        document.getElementById("confirmar1").onclick = function(e) {
+            alert("ant")
+            //getNome();
+          
+            concol()
+        }
+    
 
-
-    }
+   /* function getNome(){
+        alert("passou no fetch");
+       const id = document.getElementById("id_trabalhador").value;
+       
+      fetch('http://localhost:3000/users/' +id)
+       .then(response => response.json()) // <-- important line
+       .then(response => {
+           console.log(response);
+           //JSON.stringify(response);
+           // changed .value to .innerHTML but you can handle it as you wish
+           
+           const txt = response[0].nome;
+           const txt1 = response[1].cargo
+           
+           document.getElementById("nome_pessoa").value = txt;
+           document.getElementById("cargo_pessoa").value=txt1;
+           
+       })
+       .catch(error => {
+           alert("Nope");
+       });
+    }*/
 
 
 
     function concol() {
-        const id = document.getElementById("cod_valor1").value;
+        const id = document.getElementById("id_trabalhador").value;
         console.log(id);
         var data = {};
-        data.nome= document.getElementById("nome").value;
-        data.email = document.getElementById("email").value;
-        data.numero=document.getElementById("telemovel").value;
+        
+        data.email = document.getElementById("email_diretores").value;
+        data.numero=document.getElementById("telemovel_diretores").value;
     
         
         console.log(data);
@@ -54,7 +78,7 @@ window.onload = function() {
 
     function refreshanalise() {
         async function fetchAsync() {
-            const renderanalise = document.getElementById("telemovel");
+            const renderanalise = document.getElementById("telemovel_diretores");
             let txt = "";
             const response = await fetch('http://localhost:3000/users');
             const ana = await response.json();
@@ -71,7 +95,7 @@ window.onload = function() {
 
     ;
 
-};
+}
 
 
 
