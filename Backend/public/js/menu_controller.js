@@ -1,7 +1,7 @@
 
 window.onload = function() {
         alert("dass")
-        document.getElementById("confirmar1").onclick = function(e) {
+        document.getElementById("confirmar_diretores").onclick = function(e) {
             alert("ant")
             //getNome();
           
