@@ -136,18 +136,18 @@ module.exports = function(passport, user) {
 
     },
     function(req, email, password, done) {
-      var generateHash = function(password) {
+      /*var generateHash = function(password) {
         return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
-      };
+      };*/
       User.findOne({ where: { email: email } }).then(function(user) {
         if (user) {
           return done(null, false, jsonMessages.user.duplicate);
         }
         else {
-          var userPassword = generateHash(password);
+          //var userPassword = generateHash(password);
           var data = {
             email: email,
-            password: userPassword,
+            password: password,
             nome: req.body.nome,
             numero: req.body.numero,
             cargo: req.body.cargo,

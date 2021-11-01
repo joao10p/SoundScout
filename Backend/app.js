@@ -12,6 +12,8 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const models = require('./models/');
+const { connect } = require('./config/connect');
+const connection = require('./config/connect');
 
 
 //BODY PARSER
@@ -111,6 +113,10 @@ app.get('/spotify', (req,res) => {
 app.get('/upload', (req,res) => {
   res.sendFile(__dirname + '/views/upload.html')
 })
+
+app.get('/teste', (req,res) => {
+  res.sendFile(__dirname + '/views/teste.html')
+})
 //USA AS ROTAS PARA IR BUSCAR OS CONTROLLERS E AS PAGINAS
 app.use('/', mainRoutes);
 
@@ -188,7 +194,7 @@ app.post('/upload', (req, res )=>{
   });
 });
 
-//login
+// create login
 //app.use('/auth', require('./routes/auth'));
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
@@ -202,6 +208,33 @@ models.sequelize.sync().then(function() {
   console.log(err, "Something went wrong with the Database Update!");
 });
 
+// login
+
+app.post('/', function(req, res, next) {
+       
+  var email = req.body.email;
+  var password = req.body.password;
+  /*var hash = bcrypt.hashSync(password, 10);
+  const bcryptPassword = bcrypt.compareSync(password, hash);*/
+
+      connection.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password], function(err, rows, fields) {
+          if(err) throw err
+           
+          // if user not found
+          if (rows.length <= 0) {
+              req.flash('error', 'Please correct enter email and Password!')
+              res.redirect('/')
+          }
+          else { // if user found
+              // render to views/user/edit.ejs template file
+              //req.session.loggedin = true;
+              //req.session.nome = nome;
+              res.redirect('/menu');
+
+          }            
+      })
+
+})
 
 
 /*
