@@ -13,7 +13,9 @@ window.onload= function() {
     document.getElementById("add_revistas").onclick=function(e){
         save_revista();
     }
-
+    document.getElementById("confirmar_banner").onclick=function(e){
+        save_banner_scout();
+    }
 
     //-----------------------------------------------------------------------------------------------------//
 
@@ -100,6 +102,49 @@ function save_revista() {
     data.nome = document.getElementById("nome_revistas").value;
     data.edicao = document.getElementById("numero_revistas").value;
     data.nome_revista= document.getElementById("select_revistas").value;
+    data.revista=document.getElementById("revista_revistas").value;
+    console.log(data);
+    fetch('http://localhost:3000/scout/', {
+        headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
+        body: JSON.stringify(data)
+    }).then(function(response) {
+        if (!response.ok) {
+            console.log(response.status); //=> number 100–599
+            console.log(response.statusText); //=> String
+            console.log(response.headers); //=> Headers
+            console.log(response.url); //=> String
+            if (response.status === 409) {
+                alert("Duplicated occurrences Code");
+            }
+            else {
+                throw Error(response.statusText);
+            }
+        }
+        else {
+           /*document.getElementById("nome_revistas").reset();
+            document.getElementById("numero_revistas").reset();
+            document.getElementById("select_revistas").reset();*/
+            alert("Revista adicionada com sucesso!");
+            //refreshanalise();
+        }
+    }).then(function(result) {
+        console.log(result);
+    }).catch(function(err) {
+        //alert("Submission error");
+        console.error(err);
+    });
+}
+
+
+//BANNERS 
+
+
+//BANNER DA SOUND
+function save_banner_scout() {
+    alert("passou no banner")
+    var data = {};
+    data.banner = document.getElementById("sound_banner").value;
     
     console.log(data);
     fetch('http://localhost:3000/scout/', {
