@@ -275,7 +275,7 @@
 
 
       <!-- Janela -->
-      <form class="modal fade" id="janela">
+      <div class="modal fade" id="janela">
         
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
@@ -283,20 +283,22 @@
             <!-- cabecalho -->
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">
-                <span>&times;</span>
+                <span style="position: relative; float: right;">&times;</span>
               </button>
             </div>
-            <div>
-            <form action="/" method="POST">
-                <input type="email" name="email" id="email" class="input-field" placeholder="Username"/>
-                <input type="password" name="password" id="password" class="input-field" placeholder="Password"/>
-                <input type="submit" class="btn" value="LOGIN">
-            </div>
+            <div class="form">
+            <form class="form-group" action="/" method="POST">
+                <br>
+                <input type="email" class="form-control" name="email" id="email" class="input-field" style="width: 90%; margin: auto;" placeholder="Digite o seu e-mail"/>
+                <input type="password" class="form-control" name="password" id="password" class="input-field" style="width: 90%; margin: auto;" placeholder="Digite a sua password"/>
+                <br>
+                <input type="submit" class="btn btn-primary" value="LOGIN" >
             </form>
           </div>
         </div>
+        </div>
 
-      </form>
+    </div>
 
 
         </footer>
