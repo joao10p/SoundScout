@@ -286,35 +286,13 @@
                 <span>&times;</span>
               </button>
             </div>
-
-            <!-- corpo -->
-            <div class="modal-body">
-
-              <div class="form-group">
-                <input type="email" class="form-control" id="email" placeholder="Digite o seu e-mail">
-              </div>
-
-              <div class="form-group">
-                <input type="password" class="form-control" id="senha" placeholder="Digite a sua password">
-              </div>
-
+            <div>
+            <form action="/" method="POST">
+                <input type="email" name="email" id="email" class="input-field" placeholder="Username"/>
+                <input type="password" name="password" id="password" class="input-field" placeholder="Password"/>
+                <input type="submit" class="btn" value="LOGIN">
             </div>
-
-            <!-- rodape -->
-            <div class="modal-footer">
-
-              <button type="button" class="btn btn-default" data-dismiss="modal">
-                Cancelar
-              </button>
-
-            
-              <button type="button" class="btn btn-primary" id="login_but"> <!--Mudar para submit, meti em button para tornar visual-->
-                Logar
-              </button>
-            
-
-            </div>
-
+            </form>
           </div>
         </div>
 
