@@ -49,7 +49,7 @@ exports.readID = function(req, res) {
 
 exports.save = function(req, res) {
     const id = req.body.id;
-    const edicao = req.body.edicao;
+    const nome = req.body.nome;
     const revista = req.body.revista;
     const capa = req.body.capa;
     const banner =req.body.banner;
@@ -67,7 +67,7 @@ exports.save = function(req, res) {
         // Store hash in your password DB.
         var post = [
             id,
-            edicao,
+            nome,
             revista,
             capa,
             banner,
@@ -81,7 +81,7 @@ exports.save = function(req, res) {
 
         ];
          
-        query = con.query('INSERT INTO sound SET id=?, edicao=?, revista=?, capa=?,banner=?,slider1 =?,slider2 =?, slider3 =?, titulo =?, texto=?, txtimagem=?,cargoS=?', post, function(err, rows, fields) {
+        query = con.query('INSERT INTO sound SET id=?, nome=?, revista=?, capa=?,banner=?,slider1 =?,slider2 =?, slider3 =?, titulo =?, texto=?, txtimagem=?,cargoS=?', post, function(err, rows, fields) {
             console.log(query.sql);
             if (!err) {
                 res.status(200).location(rows.insertId).send({
@@ -105,7 +105,7 @@ exports.save = function(req, res) {
 
 exports.update = function(req, res) {
     const id =req.params.id;
-    const edicao = req.body.edicao;
+    const nome = req.body.nome;
     const revista = req.body.revista;
     const capa = req.body.capa;
     const banner =req.body.banner;
@@ -121,7 +121,7 @@ exports.update = function(req, res) {
     
 
         var update = [
-            edicao,
+            nome,
             revista,
             capa,
             banner,
@@ -136,7 +136,7 @@ exports.update = function(req, res) {
             
         ];
          
-        query = con.query('UPDATE sound SET edicao=?, revista=?, capa=?,banner=?,slider1 =?,slider2 =?, slider3 =?, titulo =?, texto=?, txtimagem=?,cargoS=? where id=?', update, function(err, rows,
+        query = con.query('UPDATE sound SET nome=?, revista=?, capa=?,banner=?,slider1 =?,slider2 =?, slider3 =?, titulo =?, texto=?, txtimagem=?,cargoS=? where id=?', update, function(err, rows,
             fields) {
             console.log(query.sql);
             if (!err) {

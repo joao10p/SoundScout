@@ -2,8 +2,8 @@ const express = require ('express');
 const router = express.Router();
 const Galer = require ('../controllers/galeria.controller.js');
 const User = require ('../controllers/users.controller.js');
-const Scout = require('../controllers/scout.controller.js');
-const Sound = require('../controllers/sound.controller.js');
+const ScoutSound = require('../controllers/scout_sound.controller.js');
+//const Sound = require('../controllers/sound.controller.js');
 
 //GALERIA
 router.get('/galeria', Galer.read);
@@ -20,11 +20,11 @@ router.put('/users/:id', User.update);
 router.delete('/users/:id', User.deleteID);
 
 //SCOUT
-router.get('/scout', Scout.read);
-router.get('/scout/:id', Scout.readID);
-router.post('/scout/', Scout.save);
-router.put('/scout/:id', Scout.update);
-router.delete('/scout/:id', Scout.deleteID);
+router.get('/scout', ScoutSound.read);
+router.get('/scout/:id', ScoutSound.readID);
+router.post('/scout/', ScoutSound.save);
+router.put('/scout/:id', ScoutSound.update);
+router.delete('/scout/:id', ScoutSound.deleteID);
 
 //SOUND
 router.get('/sound', Sound.read);

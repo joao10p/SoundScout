@@ -44,7 +44,7 @@ window.onload= function() {
            alert("Nope");
        })
     };
-
+    
 
     //ALTERAR DADOS DOS UTILIZADORES
     function concol() {
@@ -88,6 +88,60 @@ window.onload= function() {
             console.error(err);
         });
     }
+
+//---------------------------------------------------------------------------------------------------------//
+//ADICIONAR REVISTAS 
+function save_revista() {
+    var data = {};
+    data.id = document.getElementById("numero_revistas").value;
+    data.nome = document.getElementById("nome_revistas").value;
+    data.revista = document.getElementById("cod_idade").value;
+    data.genre = document.getElementById("genero").value;
+    data.address = document.getElementById("cod_morada").value;
+    data.cellphone = document.getElementById("cod_telem").value;
+    data.email = document.getElementById("cod_mail").value;
+    data.testemunho = document.getElementById("opiniao").value;
+    data.points = document.getElementById("text_numero").value;
+    console.log(data);
+    fetch('https://8be6e272ea074b059952fa0fd08c59ee.vfs.cloud9.us-east-1.amazonaws.com/witnesses', {
+        headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
+        body: JSON.stringify(data)
+    }).then(function(response) {
+        if (!response.ok) {
+            console.log(response.status); //=> number 100–599
+            console.log(response.statusText); //=> String
+            console.log(response.headers); //=> Headers
+            console.log(response.url); //=> String
+            if (response.status === 409) {
+                alert("Duplicated occurrences Code");
+            }
+            else {
+                throw Error(response.statusText);
+            }
+        }
+        else {
+            document.getElementById("cod_numero").reset();
+            document.getElementById("genero").reset();
+            document.getElementById("cod_nome").reset();
+            document.getElementById("cod_idade").reset();
+            document.getElementById("cod_morada").reset();
+            document.getElementById("cod_telem").reset();
+            document.getElementById("cod_mail").reset();
+            document.getElementById("opiniao").reset();
+            document.getElementById("text_numero").reset();
+            alert("BRUNOOOOO");
+            //refreshanalise();
+        }
+    }).then(function(result) {
+        console.log(result);
+    }).catch(function(err) {
+        //alert("Submission error");
+        console.error(err);
+    });
+}
+
+
 
 //---------------------------------------------------------------------------------------------------------//
     function refreshanalise() {
