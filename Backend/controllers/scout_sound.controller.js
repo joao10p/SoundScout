@@ -6,7 +6,7 @@ var mysql = require('mysql');
 exports.read = function(req, res) {
 
 
-    con.query('SELECT * from scout', function(err, rows, fields) {
+    con.query('SELECT * from revistas', function(err, rows, fields) {
         if (!err) {
 
             if (rows.length == 0) {
@@ -26,7 +26,7 @@ exports.readID = function(req, res) {
     const id = req.params.id;
 
 
-    con.query('SELECT * from scout where id=?', [id], function(err, rows, fields) {
+    con.query('SELECT * from revistas where id=?', [id], function(err, rows, fields) {
         if (!err) {
 
             if (rows.length == 0) {
@@ -50,6 +50,7 @@ exports.readID = function(req, res) {
 exports.save = function(req, res) {
     const id = req.body.id;
     const nome = req.body.nome;
+    const edicao = req.body.edicao;
     const nome_revista = req.body.nome_revista;
     const revista = req.body.revista;
     const capa = req.body.capa;
@@ -59,7 +60,7 @@ exports.save = function(req, res) {
     const slider3 = req.body.slider3;
     const titulo = req.body.titulo;
     const texto = req.body.texto;
-    const txtimagem = req.body.txtimagem;
+    const tximagem = req.body.tximagem;
     const cargoS = req.body.cargoS;
     
     var query = "";
@@ -69,6 +70,7 @@ exports.save = function(req, res) {
         var post = [
             id,
             nome,
+            edicao,
             nome_revista,
             revista,
             capa,
@@ -78,12 +80,13 @@ exports.save = function(req, res) {
             slider3, 
             titulo,
             texto,
-            txtimagem,
+            tximagem,
             cargoS
+            
 
         ];
          
-        query = con.query('INSERT INTO scout SET id=?, nome=?, nome_revista=?, revista=?, capa=?,banner=?,slider1 =?,slider2 =?, slider3 =?, titulo =?, texto=?, txtimagem=?,cargoS=?', post, function(err, rows, fields) {
+        query = con.query('INSERT INTO revistas SET id=?, nome=?,edicao=?, nome_revista=?, revista=?, capa=?,banner=?,slider1 =?,slider2 =?, slider3 =?, titulo =?, texto=?, tximagem=?,cargoS=?', post, function(err, rows, fields) {
             console.log(query.sql);
             if (!err) {
                 res.status(200).location(rows.insertId).send({
@@ -108,6 +111,7 @@ exports.save = function(req, res) {
 exports.update = function(req, res) {
     const id =req.params.id;
     const nome = req.body.nome;
+    const edicao = req.body.edicao;
     const nome_revista = req.body.nome_revista;
     const revista = req.body.revista;
     const capa = req.body.capa;
@@ -117,7 +121,7 @@ exports.update = function(req, res) {
     const slider3 = req.body.slider3;
     const titulo = req.body.titulo;
     const texto = req.body.texto;
-    const txtimagem = req.body.txtimagem;
+    const tximagem = req.body.tximagem;
     const cargoS = req.body.cargoS;
     
     var query = "";
@@ -125,6 +129,7 @@ exports.update = function(req, res) {
 
         var update = [
             nome,
+            edicao,
             nome_revista,
             revista,
             capa,
@@ -134,13 +139,13 @@ exports.update = function(req, res) {
             slider3, 
             titulo,
             texto,
-            txtimagem,
+            tximagem,
             cargoS,
             id
             
         ];
          
-        query = con.query('UPDATE scout SET nome=?, nome_revista=?, revista=?, capa=?,banner=?,slider1 =?,slider2 =?, slider3 =?, titulo =?, texto=?, txtimagem=?,cargoS=? where id=?', update, function(err, rows,
+        query = con.query('UPDATE revistas SET nome=?,edicao=?, nome_revista=?, revista=?, capa=?,banner=?,slider1 =?,slider2 =?, slider3 =?, titulo =?, texto=?, tximagem=?,cargoS=? where id=?', update, function(err, rows,
             fields) {
             console.log(query.sql);
             if (!err) {
@@ -162,7 +167,7 @@ exports.update = function(req, res) {
 exports.deleteID = function(req, res) {
     const id = req.params.id;
 
-    con.query('DELETE from scout where id= ?', [id], function(err, rows, fields) {
+    con.query('DELETE from revistas where id= ?', [id], function(err, rows, fields) {
         if (!err) {
             if (rows.length == 0) {
                 res.status(404).send({

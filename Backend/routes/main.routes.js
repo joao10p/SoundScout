@@ -20,19 +20,19 @@ router.put('/users/:id', User.update);
 router.delete('/users/:id', User.deleteID);
 
 //SCOUT
-router.get('/scout', ScoutSound.read);
+router.get('/scoutGet', ScoutSound.read);
 router.get('/scout/:id', ScoutSound.readID);
 router.post('/scout/', ScoutSound.save);
 router.put('/scout/:id', ScoutSound.update);
 router.delete('/scout/:id', ScoutSound.deleteID);
 
 //SOUND
-router.get('/sound', Sound.read);
+/*router.get('/sound', Sound.read);
 router.get('/sound/:id', Sound.readID);
 router.post('/sound/', Sound.save);
 router.put('/sound/:id', Sound.update);
 router.delete('/sound/:id', Sound.deleteID);
-
+*/
 module.exports = router;
 console.log('Passou as rotas');
 

@@ -96,12 +96,7 @@ function save_revista() {
     data.id = document.getElementById("numero_revistas").value;
     data.nome = document.getElementById("nome_revistas").value;
     data.revista = document.getElementById("cod_idade").value;
-    data.genre = document.getElementById("genero").value;
-    data.address = document.getElementById("cod_morada").value;
-    data.cellphone = document.getElementById("cod_telem").value;
-    data.email = document.getElementById("cod_mail").value;
-    data.testemunho = document.getElementById("opiniao").value;
-    data.points = document.getElementById("text_numero").value;
+    
     console.log(data);
     fetch('https://8be6e272ea074b059952fa0fd08c59ee.vfs.cloud9.us-east-1.amazonaws.com/witnesses', {
         headers: { 'Content-Type': 'application/json' },
