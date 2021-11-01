@@ -10,6 +10,9 @@ window.onload= function() {
     document.getElementById("adicionar_pessoa").addEventListener("click", function() {
 		creatlogin();
 	})
+    document.getElementById("add_revistas").onclick=function(e){
+        save_revista();
+    }
 
 
     //-----------------------------------------------------------------------------------------------------//
@@ -92,13 +95,14 @@ window.onload= function() {
 //---------------------------------------------------------------------------------------------------------//
 //ADICIONAR REVISTAS 
 function save_revista() {
+    alert("passou na funçao save")
     var data = {};
-    data.id = document.getElementById("numero_revistas").value;
     data.nome = document.getElementById("nome_revistas").value;
-    data.revista = document.getElementById("cod_idade").value;
+    data.edicao = document.getElementById("numero_revistas").value;
+    data.nome_revista= document.getElementById("select_revistas").value;
     
     console.log(data);
-    fetch('https://8be6e272ea074b059952fa0fd08c59ee.vfs.cloud9.us-east-1.amazonaws.com/witnesses', {
+    fetch('http://localhost:3000/scout/', {
         headers: { 'Content-Type': 'application/json' },
         method: 'POST',
         body: JSON.stringify(data)
@@ -116,16 +120,10 @@ function save_revista() {
             }
         }
         else {
-            document.getElementById("cod_numero").reset();
-            document.getElementById("genero").reset();
-            document.getElementById("cod_nome").reset();
-            document.getElementById("cod_idade").reset();
-            document.getElementById("cod_morada").reset();
-            document.getElementById("cod_telem").reset();
-            document.getElementById("cod_mail").reset();
-            document.getElementById("opiniao").reset();
-            document.getElementById("text_numero").reset();
-            alert("BRUNOOOOO");
+           /*document.getElementById("nome_revistas").reset();
+            document.getElementById("numero_revistas").reset();
+            document.getElementById("select_revistas").reset();*/
+            alert("Revista adicionada com sucesso!");
             //refreshanalise();
         }
     }).then(function(result) {
