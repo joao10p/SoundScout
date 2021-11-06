@@ -229,7 +229,7 @@ app.post('/', function(req, res, next) {
               // render to views/user/edit.ejs template file
               //req.session.loggedin = true;
               //req.session.nome = nome;
-              res.redirect('/menu');
+              res.redirect('/menu_diretores');
 
           }            
       })
