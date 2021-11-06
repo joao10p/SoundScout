@@ -25,6 +25,7 @@ router.get('/scout/:id', ScoutSound.readID);
 router.post('/scout/', ScoutSound.save);
 router.put('/scout/:id', ScoutSound.update);
 router.delete('/scout/:id', ScoutSound.deleteID);
+router.get('/banner',ScoutSound.bannerSound);
 
 //SOUND
 /*router.get('/sound', Sound.read);

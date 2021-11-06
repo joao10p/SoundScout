@@ -144,7 +144,8 @@ function save_revista() {
 function save_banner_scout() {
     alert("passou no banner")
     var data = {};
-    data.banner = document.getElementById("sound_banner").value;
+    data.nome_revista=document.getElementById("select_banner").value;
+    data.banner = document.getElementById("scout_banner").value;
     
     console.log(data);
     fetch('http://localhost:3000/scout/', {

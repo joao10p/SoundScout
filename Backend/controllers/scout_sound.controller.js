@@ -184,3 +184,20 @@ exports.deleteID = function(req, res) {
             console.log('Error while performing Query.', err);
     });
 }
+exports.bannerSound = function(req, res) {
+
+
+    con.query('Select banner From revistas Where nome_revista="1" and banner is not null', function(err, rows, fields) {
+        if (!err) {
+
+            if (rows.length == 0) {
+                res.status(404).send("User not found");
+            }
+            else {
+                res.status(200).send(rows);
+            }
+        }
+        else
+            console.log('Error while performing Query.', err);
+    });
+}
