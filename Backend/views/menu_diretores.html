@@ -441,19 +441,28 @@
   <div id="textos">
     <br><br>
       <h1>Texto</h1>
-      <input  value="10" type="hidden" class="form-control" id="id_texto" >
+      <input  id="id_texto" >
   </div>
       <hr>
+
+      <script>
+        function myFunction() {
+          var x = document.getElementById("select_textos_diretores");
+          var i = x.selectedIndex;
+          document.getElementById("id_texto").value = i+9;
+        }
+        </script>
 
       <form>
 
         <div class="form-group">
-          <select id="select_textos_diretores" class="form-control form-control-lg">
+          <select id="select_textos_diretores" class="form-control form-control-lg" onchange="myFunction()">
             <option value="" disabled selected hidden>Escolha a revista</option>
-                <option value="1">Revista Sound </option>
-                <option value="2">Revista Scout</option>
+                <option onclick="myFunction()" value="1" id="10">Revista Sound </option>
+                <option onclick="myFunction1()" value="2" id="11">Revista Scout</option>
           </select>
       </div>
+
     
 <br>
 <br>
