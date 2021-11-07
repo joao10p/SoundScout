@@ -23,10 +23,10 @@ exports.read = function(req, res) {
 
 exports.readID = function(req, res) {
 
-    const titulo = req.params.id;
+    const id = req.params.id;
 
 
-    con.query('SELECT * from galeria where titulo=?', [titulo], function(err, rows, fields) {
+    con.query('SELECT * from galeria where id=?', [id], function(err, rows, fields) {
         if (!err) {
 
             if (rows.length == 0) {
@@ -48,25 +48,31 @@ exports.readID = function(req, res) {
 
 
 exports.save = function(req, res) {
+    const id = req.body.id;
     const titulo = req.body.titulo;
+    const revista =req.body.revista;
     const data = req.body.data;
     const fotografo = req.body.fotografo;
-    const imagem = req.body.imagem;
+    const capa = req.body.capa;
+    const album =req.body.album;
     
     var query = "";
    
 
         // Store hash in your password DB.
         var post = [
+            id,
             titulo,
+            revista,
             data,
             fotografo,
-            imagem,
+            capa,
+            album
             
 
         ];
          
-        query = con.query('INSERT INTO galeria SET titulo=?, data=?, fotografo=?, imagem=?', post, function(err, rows, fields) {
+        query = con.query('INSERT INTO galeria SET id=?, titulo=?, revista=?, data=?, fotografo=?, capa=?, album=?', post, function(err, rows, fields) {
             console.log(query.sql);
             if (!err) {
                 res.status(200).location(rows.insertId).send({
@@ -89,23 +95,29 @@ exports.save = function(req, res) {
 
 
 exports.update = function(req, res) {
-    const titulo =req.params.id;
+    const id = req.params.id;
+    const titulo = req.body.titulo;
+    const revista =req.body.revista;
     const data = req.body.data;
     const fotografo = req.body.fotografo;
-    const imagem = req.body.imagem;
- 
+    const capa = req.body.capa;
+    const album =req.body.album;
     var query = "";
     
 
         var update = [
+            titulo,
+            revista,
             data,
             fotografo,
-            imagem,
-            titulo,
+            capa,
+            album,
+            id
+            
             
         ];
          
-        query = con.query('UPDATE galeria SET data =?, fotografo=? where titulo=?', update, function(err, rows,
+        query = con.query('UPDATE galeria SET titulo=?,revista=?,data=?,fotografo=?,capa=?,album=? where id=?', update, function(err, rows,
             fields) {
             console.log(query.sql);
             if (!err) {
@@ -125,9 +137,9 @@ exports.update = function(req, res) {
 
 
 exports.deleteID = function(req, res) {
-    const titulo = req.params.id;
+    const id = req.params.id;
 
-    con.query('DELETE from galeria where titulo= ?', [titulo], function(err, rows, fields) {
+    con.query('DELETE from galeria where id= ?', [id], function(err, rows, fields) {
         if (!err) {
             if (rows.length == 0) {
                 res.status(404).send({

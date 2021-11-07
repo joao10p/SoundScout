@@ -60,6 +60,7 @@ exports.save = function(req, res) {
     const texto = req.body.texto;
     const txtimagem = req.body.txtimagem;
     const cargoS = req.body.cargoS;
+    const nome_cria_txt = req.body.nome_cria_txt;
     
     var query = "";
    
@@ -77,11 +78,12 @@ exports.save = function(req, res) {
             titulo,
             texto,
             txtimagem,
-            cargoS
+            cargoS,
+            nome_cria_txt
 
         ];
          
-        query = con.query('INSERT INTO sound SET id=?, nome=?, revista=?, capa=?,banner=?,slider1 =?,slider2 =?, slider3 =?, titulo =?, texto=?, txtimagem=?,cargoS=?', post, function(err, rows, fields) {
+        query = con.query('INSERT INTO sound SET id=?, nome=?, revista=?, capa=?,banner=?,slider1 =?,slider2 =?, slider3 =?, titulo =?, texto=?, txtimagem=?,cargoS=?, nome_cria_txt=?', post, function(err, rows, fields) {
             console.log(query.sql);
             if (!err) {
                 res.status(200).location(rows.insertId).send({
@@ -116,6 +118,7 @@ exports.update = function(req, res) {
     const texto = req.body.texto;
     const txtimagem = req.body.txtimagem;
     const cargoS = req.body.cargoS;
+    const nome_cria_txt = req.body.nome_cria_txt;
     
     var query = "";
     
@@ -132,11 +135,12 @@ exports.update = function(req, res) {
             texto,
             txtimagem,
             cargoS,
+            nome_cria_txt,
             id
             
         ];
          
-        query = con.query('UPDATE sound SET nome=?, revista=?, capa=?,banner=?,slider1 =?,slider2 =?, slider3 =?, titulo =?, texto=?, txtimagem=?,cargoS=? where id=?', update, function(err, rows,
+        query = con.query('UPDATE sound SET nome=?, revista=?, capa=?,banner=?,slider1 =?,slider2 =?, slider3 =?, titulo =?, texto=?, txtimagem=?,cargoS=?,nome_cria_txt=? where id=?', update, function(err, rows,
             fields) {
             console.log(query.sql);
             if (!err) {

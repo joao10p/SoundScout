@@ -16,7 +16,12 @@ window.onload= function() {
     document.getElementById("confirmar_banner").onclick=function(e){
         save_banner_scout();
     }
-
+    document.getElementById("add_galeria").onclick=function(e){
+        save_galeria();
+    }
+    document.getElementById("confirmar_textos_diretores").onclick=function(e){
+        save_texto();
+    }
     //-----------------------------------------------------------------------------------------------------//
 
     //BUSCAR OS NOMES DOS UTILIZADORES
@@ -179,6 +184,101 @@ function save_banner_scout() {
         console.error(err);
     });
 }
+
+
+//-------------------------GALERIA------------------------//
+function save_galeria() {
+    alert("passou na galeriar")
+    var data = {};
+    data.revista=document.getElementById("select_galeria_diretores").value;
+    data.titulo = document.getElementById("titulo_galeria_diretores").value;
+    data.data=document.getElementById("data_galeria_diretores").value;
+    data.fotografo=document.getElementById("fotografo_galeria_diretores").value;
+    data.capa=document.getElementById("capa_galeria_diretores").value;
+    data.album = document.getElementById("album_galeria_diretores").value;
+
+    console.log(data);
+    fetch('http://localhost:3000/galeria/', {
+        headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
+        body: JSON.stringify(data)
+    }).then(function(response) {
+        if (!response.ok) {
+            console.log(response.status); //=> number 100–599
+            console.log(response.statusText); //=> String
+            console.log(response.headers); //=> Headers
+            console.log(response.url); //=> String
+            if (response.status === 409) {
+                alert("Duplicated occurrences Code");
+            }
+            else {
+                throw Error(response.statusText);
+            }
+        }
+        else {
+           /*document.getElementById("nome_revistas").reset();
+            document.getElementById("numero_revistas").reset();
+            document.getElementById("select_revistas").reset();*/
+            alert("Revista adicionada com sucesso!");
+            //refreshanalise();
+        }
+    }).then(function(result) {
+        console.log(result);
+    }).catch(function(err) {
+        //alert("Submission error");
+        console.error(err);
+    });
+}
+
+//-------------------------TEXTO------------------------//
+function save_texto() {
+    alert("passou no texto")
+    var data = {};
+    data.nome_revista=document.getElementById("select_textos_diretores").value;
+    data.titulo = document.getElementById("titulo_textos_diretores").value;
+    data.nome_cria_txt=document.getElementById("nome_textos_diretores").value;
+    data.cargoS=document.getElementById("cargo_textos_diretores").value;
+    data.texto=document.getElementById("texto_textos_diretores").value;
+    data.tximagem = document.getElementById("imagem_textos_diretores").value;
+
+    console.log(data);
+    fetch('http://localhost:3000/scout/', {
+        headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
+        body: JSON.stringify(data)
+    }).then(function(response) {
+        if (!response.ok) {
+            console.log(response.status); //=> number 100–599
+            console.log(response.statusText); //=> String
+            console.log(response.headers); //=> Headers
+            console.log(response.url); //=> String
+            if (response.status === 409) {
+                alert("Duplicated occurrences Code");
+            }
+            else {
+                throw Error(response.statusText);
+            }
+        }
+        else {
+           /*document.getElementById("nome_revistas").reset();
+            document.getElementById("numero_revistas").reset();
+            document.getElementById("select_revistas").reset();*/
+            alert("Texto adicionado com sucesso!");
+            //refreshanalise();
+        }
+    }).then(function(result) {
+        console.log(result);
+    }).catch(function(err) {
+        //alert("Submission error");
+        console.error(err);
+    });
+}
+
+
+
+
+
+
 
 
 
