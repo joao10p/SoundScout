@@ -1,6 +1,8 @@
 
 window.onload= function() {
     show_galeria();
+    show_users();
+    show_revista();
     document.getElementById("get_id").onclick=function(e){
         getNome();
     }
@@ -10,9 +12,11 @@ window.onload= function() {
     }
     document.getElementById("adicionar_pessoa").addEventListener("click", function() {
 		creatlogin();
+        show_users();
 	})
     document.getElementById("add_revistas").onclick=function(e){
         save_revista();
+        show_revista();
     }
     document.getElementById("confirmar_banner").onclick=function(e){
         save_banner_scout();
@@ -102,6 +106,27 @@ window.onload= function() {
 
 //---------------------------------------------------------------------------------------------------------//
 //ADICIONAR REVISTAS 
+
+function show_revista() {
+  
+    async function fetchAsync() {
+        const renderoccurrences = document.getElementById("table_revistas");
+        let txt = "";
+        const response = await fetch('http://localhost:3000/scoutGet');
+        const revistas = await response.json();
+        txt += "<table class='table'>";
+        txt += "<thead>";
+        txt += "<tr><th>Nome</th><th>Nº de Edição</th><th>Revista</th></tr></thead><tbody>";
+        for (const newOccu of revistas) {
+            txt += "<tr><td style='text-align:center'>" + newOccu.nome + "</td><td>" + newOccu.edicao+ "</td><td>" + newOccu.nome_revista + "</td>s</tr>";
+             //txt += `<td><button id='${newOccu.id}'class='delete' onclick = "deleteOcc(id); location.reload();" >Eliminar</button>`; VER FUTURAMENTE O BOTAO DELETE 
+        }
+        txt += "</tbody></table>";
+        renderoccurrences.innerHTML = txt;
+    }
+    //chama a função fetchAsync()
+    fetchAsync().then(data => console.log("ok")).catch(reason => console.log(reason.message));
+}
 function save_revista() {
     alert("passou na funçao save")
     var data = {};
@@ -255,8 +280,10 @@ function save_galeria() {
 }
 
 //-------------------------TEXTO------------------------//
+
 function save_texto() {
-    alert("passou no texto")
+    const id = document.getElementById("id_trabalhador").value;
+    console.log(id);
     var data = {};
     data.nome_revista=document.getElementById("select_textos_diretores").value;
     data.titulo = document.getElementById("titulo_textos_diretores").value;
@@ -264,11 +291,10 @@ function save_texto() {
     data.cargoS=document.getElementById("cargo_textos_diretores").value;
     data.texto=document.getElementById("texto_textos_diretores").value;
     data.tximagem = document.getElementById("imagem_textos_diretores").value;
-
     console.log(data);
-    fetch('http://localhost:3000/scout/', {
+    fetch('http://localhost:3000/users/' + id, {
         headers: { 'Content-Type': 'application/json' },
-        method: 'POST',
+        method: 'PUT',
         body: JSON.stringify(data)
     }).then(function(response) {
         if (!response.ok) {
@@ -284,10 +310,10 @@ function save_texto() {
             }
         }
         else {
-           /*document.getElementById("nome_revistas").reset();
-            document.getElementById("numero_revistas").reset();
-            document.getElementById("select_revistas").reset();*/
-            alert("Texto adicionado com sucesso!");
+            //document.getElementById("cod_pedido").reset();
+            //document.getElementById("descricao_analise").reset();
+            
+            alert("Utilizador alterado com sucesso!");
             //refreshanalise();
         }
     }).then(function(result) {
@@ -301,7 +327,12 @@ function save_texto() {
 
 
 
-
+    data.nome_revista=document.getElementById("select_textos_diretores").value;
+    data.titulo = document.getElementById("titulo_textos_diretores").value;
+    data.nome_cria_txt=document.getElementById("nome_textos_diretores").value;
+    data.cargoS=document.getElementById("cargo_textos_diretores").value;
+    data.texto=document.getElementById("texto_textos_diretores").value;
+    data.tximagem = document.getElementById("imagem_textos_diretores").value;
 
 
 
@@ -327,7 +358,28 @@ function save_texto() {
     ;
 
     //-------------------------------STAFF-----------------------------------------//
+    //SHOW TABELA DE USERS 
 
+    function show_users() {
+  
+        async function fetchAsync() {
+            const renderoccurrences = document.getElementById("table_staff");
+            let txt = "";
+            const response = await fetch('http://localhost:3000/users');
+            const users = await response.json();
+            txt += "<table class='table'>";
+            txt += "<thead>";
+            txt += "<tr><th>Id</th><th>Nome</th><th>Cargo</th><th>NºTelemóvel</th></tr></thead><tbody>";
+            for (const newOccu of users) {
+                txt += "<tr><td style='text-align:center'>" + newOccu.id + "</td><td>" + newOccu.nome + "</td><td>" + newOccu.cargo + "</td><td>" + newOccu.numero + "</td></tr>";
+                 //txt += `<td><button id='${newOccu.id}'class='delete' onclick = "deleteOcc(id); location.reload();" >Eliminar</button>`; VER FUTURAMENTE O BOTAO DELETE 
+            }
+            txt += "</tbody></table>";
+            renderoccurrences.innerHTML = txt;
+        }
+        //chama a função fetchAsync()
+        fetchAsync().then(data => console.log("ok")).catch(reason => console.log(reason.message));
+    }
     //CRIAR CONTA
     function creatlogin() {
         
@@ -360,7 +412,9 @@ function save_texto() {
 					alert("Autenticação feita com sucesso!")
 					window.location.href = "/";
 					return response.json();
+                    
 				}
+                
 			};
 		}).then(function(result) {
 			console.log(result);
