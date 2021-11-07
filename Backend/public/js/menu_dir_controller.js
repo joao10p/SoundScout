@@ -1,5 +1,6 @@
 
 window.onload= function() {
+    show_galeria();
     document.getElementById("get_id").onclick=function(e){
         getNome();
     }
@@ -187,6 +188,29 @@ function save_banner_scout() {
 
 
 //-------------------------GALERIA------------------------//
+//---Mostrar a tabela
+function show_galeria() {
+  
+    async function fetchAsync() {
+        const renderoccurrences = document.getElementById("table_galeria_diretores");
+        let txt = "";
+        const response = await fetch('http://localhost:3000/galeria');
+        const galeria = await response.json();
+        txt += "<table class='table'>";
+        txt += "<thead>";
+        txt += "<tr><th>Titulo</th><th>Data</th><th>Fotógrafo</th><th>Revista</th></tr></thead><tbody>";
+        for (const newOccu of galeria) {
+            txt += "<tr><td style='text-align:center'>" + newOccu.titulo + "</td><td>" + newOccu.data + "</td><td>" + newOccu.fotografo + "</td><td>" + newOccu.revista + "</td></tr>";
+             //txt += `<td><button id='${newOccu.id}'class='delete' onclick = "deleteOcc(id); location.reload();" >Eliminar</button>`; VER FUTURAMENTE O BOTAO DELETE 
+        }
+        txt += "</tbody></table>";
+        renderoccurrences.innerHTML = txt;
+    }
+    //chama a função fetchAsync()
+    fetchAsync().then(data => console.log("ok")).catch(reason => console.log(reason.message));
+}
+
+//---Save dados
 function save_galeria() {
     alert("passou na galeriar")
     var data = {};
