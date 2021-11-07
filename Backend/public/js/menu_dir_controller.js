@@ -35,6 +35,7 @@ window.onload= function() {
         
        const id = document.getElementById("id_trabalhador").value;
        
+       
       fetch('http://localhost:3000/users/' +id)
        .then(response => response.json()) // <-- important line
        .then(response => {
@@ -282,9 +283,11 @@ function save_galeria() {
 //-------------------------TEXTO------------------------//
 
 function save_texto() {
-    const id = document.getElementById("id_trabalhador").value;
+    const id = document.getElementById("id_texto").value;
+    
     console.log(id);
     var data = {};
+    
     data.nome_revista=document.getElementById("select_textos_diretores").value;
     data.titulo = document.getElementById("titulo_textos_diretores").value;
     data.nome_cria_txt=document.getElementById("nome_textos_diretores").value;
@@ -292,7 +295,7 @@ function save_texto() {
     data.texto=document.getElementById("texto_textos_diretores").value;
     data.tximagem = document.getElementById("imagem_textos_diretores").value;
     console.log(data);
-    fetch('http://localhost:3000/users/' + id, {
+    fetch('http://localhost:3000/scout/' + id, {
         headers: { 'Content-Type': 'application/json' },
         method: 'PUT',
         body: JSON.stringify(data)

@@ -14,8 +14,8 @@ window.onload= function() {
                 JSON.stringify(response);
                 // changed .value to .innerHTML but you can handle it as you wish
 
-                const txt = response[18].banner;
-                document.getElementById("bannerSound").value = txt;
+                const txt = response[0].banner;
+                document.getElementById("bannerSound").appendChild  = txt;
             })
             .catch(error => {
                 alert("Nope");

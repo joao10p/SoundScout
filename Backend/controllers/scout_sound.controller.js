@@ -62,6 +62,7 @@ exports.save = function(req, res) {
     const texto = req.body.texto;
     const tximagem = req.body.tximagem;
     const cargoS = req.body.cargoS;
+    const nome_cria_txt= req.body.nome_cria_txt;
     
     var query = "";
    
@@ -81,12 +82,13 @@ exports.save = function(req, res) {
             titulo,
             texto,
             tximagem,
-            cargoS
+            cargoS,
+            nome_cria_txt
             
 
         ];
          
-        query = con.query('INSERT INTO revistas SET id=?, nome=?,edicao=?, nome_revista=?, revista=?, capa=?,banner=?,slider1 =?,slider2 =?, slider3 =?, titulo =?, texto=?, tximagem=?,cargoS=?', post, function(err, rows, fields) {
+        query = con.query('INSERT INTO revistas SET id=?, nome=?,edicao=?, nome_revista=?, revista=?, capa=?,banner=?,slider1 =?,slider2 =?, slider3 =?, titulo =?, texto=?, tximagem=?,cargoS=?, nome_cria_txt=?', post, function(err, rows, fields) {
             console.log(query.sql);
             if (!err) {
                 res.status(200).location(rows.insertId).send({
@@ -123,6 +125,7 @@ exports.update = function(req, res) {
     const texto = req.body.texto;
     const tximagem = req.body.tximagem;
     const cargoS = req.body.cargoS;
+    const nome_cria_txt = req.body.nome_cria_txt;
     
     var query = "";
     
@@ -141,11 +144,12 @@ exports.update = function(req, res) {
             texto,
             tximagem,
             cargoS,
+            nome_cria_txt,
             id
             
         ];
          
-        query = con.query('UPDATE revistas SET nome=?,edicao=?, nome_revista=?, revista=?, capa=?,banner=?,slider1 =?,slider2 =?, slider3 =?, titulo =?, texto=?, tximagem=?,cargoS=? where id=?', update, function(err, rows,
+        query = con.query('UPDATE revistas SET nome=?,edicao=?, nome_revista=?, revista=?, capa=?,banner=?,slider1 =?,slider2 =?, slider3 =?, titulo =?, texto=?, tximagem=?,cargoS=?,nome_cria_txt=? where id=?', update, function(err, rows,
             fields) {
             console.log(query.sql);
             if (!err) {
