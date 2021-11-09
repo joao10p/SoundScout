@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>SoundSout - HomePage</title>
+        <title>Galeria - Sound</title>
         <link rel="icon" type="images/x-icon" href="imagens/favicon.png" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
@@ -14,315 +14,275 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+
+
+        <style>
+          
+          
+            div.gallery img {
+              width: 100%;
+              height: auto;
+              border-radius: 100px;
+            }
+            
+            div.desc {
+              padding: 10px 0px 30px 0px;
+              text-align: center;
+            }
+
+            .ic{
+                padding: 5px;
+            }
+
+            div.desc1 {
+              padding: 10px 0px 0px 0px;
+              text-align: center;
+            }
+            
+            * {
+              box-sizing: border-box;
+            }
+            
+            .responsive {
+              padding: 0 30px;
+              float: left;
+              width: 24.99999%;
+            }
+
+            @media only screen and (max-width: 1000px) {
+              .responsive {
+                width: 32.9999%;
+                margin: 6px 0;
+              }
+            }
+            
+            @media only screen and (max-width: 800px) {
+              .responsive {
+                width: 49.99999%;
+                margin: 6px 0;
+              }
+            }
+            
+            @media only screen and (max-width: 500px) {
+              .responsive {
+                width: 100%;
+              }
+            }
+            
+            .clearfix:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+            </style>
         
     </head>
-    <body id="page-top">
+    <body id="page-top" onload="myFunction1()">
         <!-- Navigation-->
+
+       
         <nav class="navbar navbar-default navbar-expand-lg navbar-light  fixed-top" id="mainNav">
-          <div class="container">
-              <a class="navbar-brand js-scroll-trigger" href="/">SoundScout</a>
-              <button id="isto" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                 
-                  <i class="fas fa-bars"></i>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarResponsive" >
-                  <ul class="navbar-nav" ml-auto style="width:100%; ">
-                      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Sobre</a></li>
-                      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Aplicação</a></li>
-                      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contactos</a></li>
-                  </ul>
-              </div>
-          </div>
-      </nav>
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="/">SoundScout</a>
+                <button id="isto" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                   
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive" >
+                    <ul class="navbar-nav" ml-auto style="width:100%; ">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/revista_sound">Revista</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/galeria_sound">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/spotify">Spotify</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/equipa_sound">Equipa</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <!-- Masthead-->
 
         <header class="masthead1">
             <br>
             <br>
             <br>
-            <br>
+            <br> 
+            <div class="row"> 
+                <div class="col-lg-12">
+                <h1 style="text-align: center;">Equipa</h1>
+                <hr>
+            </div>
+            </div>
             
            
-            <!--ROW-->
                 <div class="container">
-                    <div class="row"> 
-                        <div class="col-lg-12">
-                        <h1 style="text-align: center;">Equipa</h1>
-                        <hr>
-                    </div>
-                    </div>
-
                     <div class="row">
-                   
-          <div class="col-lg-4" style="padding:2%;"> 
+                  
 
-            <div class="card">
-                <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <img class="img-responsive" src="imagens/P1011101.JPG" alt="Avatar" style="width:300px;height:300px;">
-                  </div>
-                  <div class="flip-card-back">
-              
-                    <p style="padding: 5%;">Para Vítor, os domingos da sua infância eram passados no velhinho Alvalade, com jogos das camadas jovens de manhã, modalidades na nave e futebol sénior ao final da tarde.</p>
-                  </div>
-                </div>
-              </div>
-              <br>
-              <h2>Filipe Carvalho</h2>
-              <h5>Diretor, Redator e Fotógrafo</h5>
-              <h6>Vizela</h6>
-                <br>
-              </div>
+        <script>
+            function myFunction1() {
+            var z= document.getElementById("x1").innerHTML;
+              var s= z.length;
+              console.log(z);
+              console.log(s);
 
-                 </div>
+              if (s > 5) {
+                x1.style.fontSize = "0.5rem";
+  }
+}
+            </script>
 
+<script>
+    function myFunction2() {
+    var z= document.getElementById("x2").innerHTML;
+      var s= z.length;
+      console.log(z);
+      console.log(s);
 
-                  <div class="col-lg-4" style="padding:2%;">
-
-                    <div class="card">
-                        <div class="flip-card">
-                        <div class="flip-card-inner">
-                          <div class="flip-card-front">
-                            <img class="img-responsive" src="imagens/P1011098.JPG" alt="Avatar" style="width:300px;height:300px;">
-                          </div>
-                          <div class="flip-card-back">
-                      
-                            <p style="padding: 5%;">Para Vítor, os domingos da sua infância eram passados no velhinho Alvalade, com jogos das camadas jovens de manhã, modalidades na nave e futebol sénior ao final da tarde.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <br>
-                      <h2>João Lemos</h2>
-                      <h5>Diretor, Designer</h5>
-                      <h6>Guimarães</h6>
-                        <br>
-                      </div>
-
-                </div>
-
-
-                <div class="col-lg-4" style="padding: 2%;">
-
-<div class="card">
-  <div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img class="img-responsive" src="imagens/P1011097.JPG" alt="Avatar" style="width:300px;height:300px;">
-    </div>
-    <div class="flip-card-back">
-
-      <p style="padding: 5%;">Para Vítor, os domingos da sua infância eram passados no velhinho Alvalade, com jogos das camadas jovens de manhã, modalidades na nave e futebol sénior ao final da tarde.</p>
+      if (s > 5) {
+        x2.style.fontSize = "0.5rem";
+}
+}
+    </script>
+ <div class="responsive">
+    <div class="gallery">
+        <img src="imagens/P1011101.JPG"  width="600" height="400">
+      
+      <div class="desc1"><a href="https://www.linkedin.com/in/jo%C3%A3o-lemos-2001/" target=”_blank”><span class="ic fa-code fa-2x fab fa-linkedin"></a></span><span class="ic fa-code fa-2x  fab fa-instagram-square"></span><span class="ic fa-code fa-2x fas fa-envelope-square"></span></div>
+      <div class="desc">Proprietário e CO-Fundador</div>
     </div>
   </div>
-</div>
-<br>
-  <h3>Pedro Carvalho</h2>
-  <h5>Diretor, Redator e Revisor</h5>
-  <h6>Vizela</h6>
-  <br>
-</div>
-
-            </div>
-        </div>  
 
 
 
-
-         <!--ROW-->
-         <div class="container">
-
-            <div class="row">
-           
-  <div class="col-lg-4" style="padding:2%;"> 
-
-    <div class="card">
-        <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img class="img-responsive" src="imagens/P1011101.JPG" alt="Avatar" style="width:300px;height:300px;">
-          </div>
-          <div class="flip-card-back">
+  <div class="responsive">
+    <div class="gallery">
+        <img src="imagens/P1011095.JPG"  width="600" height="400">
       
-            <p style="padding: 5%;">Para Vítor, os domingos da sua infância eram passados no velhinho Alvalade, com jogos das camadas jovens de manhã, modalidades na nave e futebol sénior ao final da tarde.</p>
-          </div>
-        </div>
-      </div>
-      <br>
-      <h2>André Morais</h2>
-      <h5>Coordenador</h5>
-      <h6>Guimarães</h6>
-        <br>
-      </div>
-
-         </div>
-
-
-          <div class="col-lg-4" style="padding:2%;">
-
-            <div class="card">
-                <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <img class="img-responsive" src="imagens/P1011098.JPG" alt="Avatar" style="width:300px;height:300px;">
-                  </div>
-                  <div class="flip-card-back">
-              
-                    <p style="padding: 5%;">Para Vítor, os domingos da sua infância eram passados no velhinho Alvalade, com jogos das camadas jovens de manhã, modalidades na nave e futebol sénior ao final da tarde.</p>
-                  </div>
-                </div>
-              </div>
-              <br>
-              <h2>Ada</h2>
-              <h5>Diretor Geral, Redator, Fotógrafo</h5>
-              <h6>Guimarães</h6>
-                <br>
-              </div>
-
-        </div>
-
-
-        <div class="col-lg-4" style="padding: 2%;">
-
-<div class="card">
-<div class="flip-card">
-<div class="flip-card-inner">
-<div class="flip-card-front">
-<img class="img-responsive" src="imagens/P1011097.JPG" alt="Avatar" style="width:300px;height:300px;">
-</div>
-<div class="flip-card-back">
-
-<p style="padding: 5%;">Para Vítor, os domingos da sua infância eram passados no velhinho Alvalade, com jogos das camadas jovens de manhã, modalidades na nave e futebol sénior ao final da tarde.</p>
-</div>
-</div>
-</div>
-<br>
-<h2>João Lemos</h2>
-<h5>Diretor Geral</h5>
-<h6>Guimarães</h6>
-<br>
-</div>
-
+      <div class="desc1"><a href="https://www.linkedin.com/in/jo%C3%A3o-lemos-2001/" target=”_blank”><span class="ic fa-code fa-2x fab fa-linkedin"></a></span><span class="ic fa-code fa-2x  fab fa-instagram-square"></span><span class="ic fa-code fa-2x fas fa-envelope-square"></span></div>
+      <div class="desc">Proprietário e CO-Fundador</div>
     </div>
-</div>  
-
-        
+  </div>
 
 
-    
-                 </div>
-        </header>
-    
-        <!-- About-->
-        <section class="projects-section text-center" id="about">
-             <div class="container">
-                <!-- Featured Project Row-->
-                <br>                
-                <br><br>
-                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="imagens/soundscout_sobre.jpg" alt="" /></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>SoundScout</h4>
-                            <p class="text-black-50 mb-0">SoundScout é um projeto criado por três jovens, que consiste na criação de duas revistas online, que aborda os temas do futebol e da música.</p>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <br>
-                <!-- Project One Row-->
-                <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-                    <div class="col-lg-6"><img class="img-fluid" src="imagens/sound_sobre.jpg" alt="" /></div>
-                    <div class="col-lg-6">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">Sound</h4>
-                                    <p class="mb-0 text-white-50">A revista SOUND, nasce da inquietação de querer partilhar e introduzir às pessoas, artistas do passado, presente e futuro da história da música. Nesta revista vais encontrar muita variedade. Do indie ao punk, com passagens pelo hip-hop e outros, a SOUND também aposta em vários segmentos como artigos de opinião, reviews, entrevistas, entre outros.</p>
-                                    <hr class="d-none d-lg-block mb-0 ml-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project Two Row-->
-                <div class="row justify-content-center no-gutters">
-                    <div class="col-lg-6"><img class="img-fluid" src="imagens/scout_sobre.jpg" alt="" /></div>
-                    <div class="col-lg-6 order-lg-first">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white">Scout</h4>
-                                    <p class="mb-0 text-white-50">Na revista SCOUT, o objetivo é falar do futebol dentro das quatro linhas e evidenciar o mais importante desta modalidade tão bela, que por vezes, leva as pessoas da tristeza à alegria (e vice-versa) em apenas 90 minutos. Todos os meses, a SCOUT estará à vossa disposição com segmentos e histórias do passado, presente e futuro do futebol mundial.</p>
-                                    <hr class="d-none d-lg-block mb-0 mr-0" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <br>
-                <br>
-                <br>
-<h3>Foco no presente, atenção ao futuro, e análise do passado...</h3>
-            
+  <div class="responsive">
+    <div class="gallery">
+        <img src="imagens/P1011097.JPG"  width="600" height="400">
+      
+      <div class="desc1"><a href="https://www.linkedin.com/in/jo%C3%A3o-lemos-2001/" target=”_blank”><span class="ic fa-code fa-2x fab fa-linkedin"></a></span><span class="ic fa-code fa-2x  fab fa-instagram-square"></span><span class="ic fa-code fa-2x fas fa-envelope-square"></span></div>
+      <div class="desc">Proprietário e CO-Fundador</div>
+    </div>
+  </div>
 
-                <br>
-                <br>
-                <br>
+  <div class="responsive">
+    <div class="gallery">
+        <img src="imagens/P1011098.JPG"  width="600" height="400">
+      
+      <div class="desc1"><a href="https://www.linkedin.com/in/jo%C3%A3o-lemos-2001/" target=”_blank”><span class="ic fa-code fa-2x fab fa-linkedin"></a></span><span class="ic fa-code fa-2x  fab fa-instagram-square"></span><span class="ic fa-code fa-2x fas fa-envelope-square"></span></div>
+      <div class="desc">Proprietário e CO-Fundador</div>
+    </div>
+  </div>
 
-   <div class="row">
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-flag text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Missão</h4>
-                                <hr class="my-4" />
-                                <div class="small text-black-50">Promover a cultura musical e futebolística, desafiando os padrões da imprensa com um design moderno e original apoiado nas novas tecnologias.</div>
-                            </div>
-                        </div>
-                    </div>
+  <div class="responsive">
+    <div class="gallery">
+        <img src="imagens/P1011101.JPG"  width="600" height="400">
+      
+      <div class="desc1"><a href="https://www.linkedin.com/in/jo%C3%A3o-lemos-2001/" target=”_blank”><span class="ic fa-code fa-2x fab fa-linkedin"></a></span><span class="ic fa-code fa-2x  fab fa-instagram-square"></span><span class="ic fa-code fa-2x fas fa-envelope-square"></span></div>
+      <div class="desc">Proprietário e CO-Fundador</div>
+    </div>
+  </div>
 
-                    
+  <div class="responsive">
+    <div class="gallery">
+        <img src="imagens/P1011101.JPG"  width="600" height="400">
+      
+      <div class="desc1"><a href="https://www.linkedin.com/in/jo%C3%A3o-lemos-2001/" target=”_blank”><span class="ic fa-code fa-2x fab fa-linkedin"></a></span><span class="ic fa-code fa-2x  fab fa-instagram-square"></span><span class="ic fa-code fa-2x fas fa-envelope-square"></span></div>
+      <div class="desc">Proprietário e CO-Fundador</div>
+    </div>
+  </div>
 
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-eye text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Visão</h4>
-                                <hr class="my-4" />
-                                <div class="small text-black-50">Pretendemos ser uma plataforma reconhecida nacionalmente promovendo a credibilidade jornalística.</div>
-                            </div>
-                        </div>
-                    </div>
+  <div class="responsive">
+    <div class="gallery">
+        <img src="imagens/P1011101.JPG"  width="600" height="400">
+      
+      <div class="desc1"><a href="https://www.linkedin.com/in/jo%C3%A3o-lemos-2001/" target=”_blank”><span class="ic fa-code fa-2x fab fa-linkedin"></a></span><span class="ic fa-code fa-2x  fab fa-instagram-square"></span><span class="ic fa-code fa-2x fas fa-envelope-square"></span></div>
+      <div class="desc">Proprietário e CO-Fundador</div>
+    </div>
+  </div>
 
-                
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-balance-scale text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Valores</h4>
-                                <hr class="my-4" />
-                                <div class="small text-black-50">Rigor, isenção, imparcialidade e transparência.</div>
-                            </div>
-                        </div>
-                    </div>
+
+  <div class="responsive">
+    <div class="gallery">
+        <img src="imagens/P1011101.JPG"  width="600" height="400">
+      
+      <div class="desc1"><a href="https://www.linkedin.com/in/jo%C3%A3o-lemos-2001/" target=”_blank”><span class="ic fa-code fa-2x fab fa-linkedin"></a></span><span class="ic fa-code fa-2x  fab fa-instagram-square"></span><span class="ic fa-code fa-2x fas fa-envelope-square"></span></div>
+      <div class="desc">Proprietário e CO-Fundador</div>
+    </div>
+  </div>
+  
+  
+  <div class="responsive">
+    <div class="gallery">
+        <img src="imagens/P1011101.JPG"  width="600" height="400">
+      
+      <div class="desc1"><a href="https://www.linkedin.com/in/jo%C3%A3o-lemos-2001/" target=”_blank”><span class="ic fa-code fa-2x fab fa-linkedin"></a></span><span class="ic fa-code fa-2x  fab fa-instagram-square"></span><span class="ic fa-code fa-2x fas fa-envelope-square"></span></div>
+      <div class="desc">Proprietário e CO-Fundador</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+        <img src="imagens/P1011101.JPG"  width="600" height="400">
+      
+      <div class="desc1"><a href="https://www.linkedin.com/in/jo%C3%A3o-lemos-2001/" target=”_blank”><span class="ic fa-code fa-2x fab fa-linkedin"></a></span><span class="ic fa-code fa-2x  fab fa-instagram-square"></span><span class="ic fa-code fa-2x fas fa-envelope-square"></span></div>
+      <div class="desc">Proprietário e CO-Fundador</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+        <img src="imagens/P1011101.JPG"  width="600" height="400">
+      
+      <div class="desc1"><a href="https://www.linkedin.com/in/jo%C3%A3o-lemos-2001/" target=”_blank”><span class="ic fa-code fa-2x fab fa-linkedin"></a></span><span class="ic fa-code fa-2x  fab fa-instagram-square"></span><span class="ic fa-code fa-2x fas fa-envelope-square"></span></div>
+      <div class="desc">Proprietário e CO-Fundador</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+        <img src="imagens/P1011101.JPG"  width="600" height="400">
+      
+      <div class="desc1"><a href="https://www.linkedin.com/in/jo%C3%A3o-lemos-2001/" target=”_blank”><span class="ic fa-code fa-2x fab fa-linkedin"></a></span><span class="ic fa-code fa-2x  fab fa-instagram-square"></span><span class="ic fa-code fa-2x fas fa-envelope-square"></span></div>
+      <div class="desc">Proprietário e CO-Fundador</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+        <img src="imagens/P1011101.JPG"  width="600" height="400">
+      
+      <div class="desc1"><a href="https://www.linkedin.com/in/jo%C3%A3o-lemos-2001/" target=”_blank”><span class="ic fa-code fa-2x fab fa-linkedin"></a></span><span class="ic fa-code fa-2x  fab fa-instagram-square"></span><span class="ic fa-code fa-2x fas fa-envelope-square"></span></div>
+      <div class="desc">Proprietário e CO-Fundador</div>
+    </div>
+  </div>
+
+  <section class="projects-section bg-light" id="projects">
+    <div class="container">
+        <!-- Featured Project Row-->
+        <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+            <div class="col-xl-8 col-lg-9"><img class="img-fluid mb-3 mb-lg-0" src="imagens/logoo.jpg" alt="" /></div>
+            <div class="col-xl-4 col-lg-3">
+                <div class="featured-text text-center text-lg-left">
+                    <h4>Equipa Scout</h4>
+                    <p class="text-black-50 mb-0">BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA EQUIPA</p>
                 </div>
             </div>
-        </section>
+        </div>
+
+</div>
+</div>
+</header>
+
         <!-- Projects-->
-        <section class="projects-section bg-light" id="projects">
-            <div class="container">
-                <!-- Featured Project Row-->
-                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="imagens/app.jpg" alt="" /></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>SoundScout Mobile</h4>
-                            <p class="text-black-50 mb-0">Agora podes obter acesso à aplicação mobile onde vais poder visualizar a revista sem precisar de recorrer a nenhum browser. Clica na imagem e faz download do apk que necessitas para instalar a melhor app do momento.</p>
-                        </div>
-                    </div>
-                </div>
+
                 <!--
               
                 <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
@@ -425,15 +385,15 @@
         <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © SoundScout 2020</div>
 
 
-            <button type="button" class="btn btn-link" style="float: right;" data-toggle="modal" data-target="#janela">
+            <button type="button" id="area" class="btn btn-link" style="float: right;" data-toggle="modal" data-target="#janela">
         Área Reservada
       </button>
 
-      <button type="button" style="float: left; background: none; border: none; margin-left: 1%;">
+      <button type="button" id="ingles" style="float: left; ">
         <img src="imagens/ingles.png">
       </button>
 
-      <button type="button" style="float: left; background: none; border: none;">
+      <button type="button" id="portugues" style="float: left ">
         <img src="imagens/portugues.png">
       </button>
 
@@ -493,4 +453,6 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
+
+
 </html>

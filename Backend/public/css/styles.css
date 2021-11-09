@@ -10471,6 +10471,32 @@ body {
   white-space: nowrap;
 }
 
+.centered4 {
+  left: 50%;
+}
+
+.centered5 {
+  position: absolute;
+  left: 40%;
+  width: auto;
+  transform: translate(-50%, -50%);
+  color:white;
+  font-size: 100%;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.centered6 {
+  position: absolute;
+  left: 60%;
+  width: auto;
+  transform: translate(-50%, -50%);
+  color:white;
+  font-size: 100%;
+  overflow: auto;
+  white-space: nowrap;
+}
+
 .navbar-custom {
   height: 65px;
 }
