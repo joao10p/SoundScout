@@ -26,7 +26,7 @@
   <body>
 
     <!-- Barra navegação -->
-    <nav class="navbar navbar-default" style="position: fixed; width: 100%;">
+    <nav class="navbar navbar-default" style="position: fixed; width: 100%;  z-index:1;">
       <div class="container">
         
         <div class="navbar-header">
@@ -77,29 +77,64 @@
    			<h1>Área Reservada</h1>
    		</div>
             <hr>
-       <label>ID:</label>
-       <input type="text" id="id_trabalhador" placeholder="id"> <br> <br>
-       <button id="get_id" type="submit" style="float: right;" class="btn btn-primary">Pesquisar</button> <span style="float: right;">&nbsp;</span>
-       <label>Nome:</label>
-       <input id="nome_pessoa" type="text" disabled=""></label> <br> <br>
 
-       <label>Cargo Principal:</label>
-       <input id="cargo_pessoa" type="text" disabled=""> <br> <br>
+            <div class="container">
+              <!-- Horizonatal Form -->
+              <div class="row">
+                <div class="col-xs-6">
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <label for="nameField" class="col-xs-2">ID</label>
+                      <div class="col-xs-10">
+                        <input type="text" class="form-control" id="id_trabalhador" placeholder="ID" />
+                      </div>
+                    </div><div class="col-xs-10 col-xs-offset-2">
+                      <button type="submit" id="get_id" class="btn btn-primary">Pesquisar</button> 
+                    </div>
 
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input  type="email" class="form-control" id="email_diretores" ><br>
-    </div>
+<br>
+<br>
+<br>
+                  
+                    <div class="form-group">
+                      <label for="emailField" class="col-xs-2">Nome</label>
+                      <div class="col-xs-10">
+                        <input type="email" class="form-control" id="nome_pessoa" style="background-color: white" disabled=""  />
+                      </div>
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="phoneField" class="col-xs-2">Cargo Principal</label>
+                      <div class="col-xs-10">
+                        <input type="text" class="form-control" id="cargo_pessoa" style="background-color: white" disabled="" />
+                      </div>
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="descField" class="col-xs-2">Email</label>
+                      <div class="col-xs-10">
+                        <input type="email" class="form-control" id="phoneField"  />
+                      </div>
+                    </div>
 
+                    <div class="form-group">
+                      <label for="descField" class="col-xs-2">Telemóvel</label>
+                      <div class="col-xs-10">
+                        <input type="text" class="form-control" id="telemovel_diretores"  />
+                      </div>
+                    </div>
+                    
+                    
 
-    <div class="form-group">
-      <label for="email">Telemóvel</label>
-      <input type="email" class="form-control" id="telemovel_diretores" >
-  </div>
-
-  <button id="confirmar" type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+                    <button id="confirmar" type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
   <input  type="hidden" class="form-control" id="pass_diretores" >
 </div>
+                    
+                  </form>
+                </div>
+              </div>
+            </div>
+      
   
   <div class="container">
     <div id="revista">
@@ -107,6 +142,8 @@
         <h1>Revistas</h1>
       </div>
         <hr>
+
+
         <div class="form-group">
 
           <table id="table_revistas" class="table">
@@ -152,8 +189,8 @@
             </tbody>
           </table>
 
-          <button id="add_revistas" type="button" style="float: right;" class="btn btn-primary">Adicionar</button> <span style="float: right;">&nbsp;</span>
-<br>
+          
+
 <br>
 
 <div id="nome">
@@ -191,15 +228,30 @@
  <br>
   <label for="myfile" class="fotografo">Revista</label>
   <div class="form-group">
-    <input id="revista_revistas" type="file" class="form-control-file" name="myfile" multiple>
+    <input type="url" class="form-control" id="revista_revistas">
   </div>
 
 
   <br>
   <label class="fotografo">Capa</label>
   <div class="form-group">
-    <input id="capa_revistas" type="file" class="form-control-file">
+   <!-- <input id="capa_revistas" data-toggle="tooltip" data-placement="top" title="heigth - 2480 / width - 3508"  type="file" class="form-control-file">  -->
+   <form action="/upload" method= "POST"
+         enctype="multipart/form-data">
+            <div class="file-field input-field">
+              <div class="btn grey">
+                <span>File</span>
+                <input data-toggle="tooltip" data-placement="top" title="heigth - 2480 / width - 3508" name="myImage" type="file">
+              </div>
+              <div hidden class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+          </form>  
   </div>
+
+  <button id="add_revistas" type="button" style="float: right;" class="btn btn-primary">Adicionar</button> <span style="float: right;">&nbsp;</span>
 
 </div>
 
@@ -240,10 +292,10 @@
 <br>
           <div class="form-group">
               <label for="imagem_scout">Banner</label>
-              <input id="scout_banner" type="file" class="form-control-file">
+              <input id="scout_banner" type="file" data-toggle="tooltip" data-placement="top" title="heigth - 770 / width - 750" class="form-control-file">
           </div>
 
-          <button id="confirmar_banner"type="button" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+          <button id="confirmar_banner"type="button"  style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
 
 
 
@@ -273,7 +325,7 @@
 
         <div class="form-group">
           <label for="imagem_um">Primeira imagem</label>
-          <input id="primeira_sliders" type="file" class="form-control-file">
+          <input id="primeira_sliders" data-toggle="tooltip" data-placement="top" title="heigth- 1540 / width- 770" type="file" class="form-control-file">
       </div>
 
 
@@ -281,7 +333,7 @@
 <br>
       <div class="form-group">
           <label for="imagem_dois">Segunda Imagem</label>
-          <input id="segunda_sliders" type="file" class="form-control-file">
+          <input id="segunda_sliders" data-toggle="tooltip" data-placement="top" title="heigth- 1540 / width- 770" type="file" class="form-control-file">
       </div>
 
 
@@ -290,7 +342,7 @@
 <br>
       <div class="form-group">
           <label for="imagem_tres">Terceira Imagem</label>
-          <input id="terceira_sliders" type="file" class="form-control-file">
+          <input id="terceira_sliders" data-toggle="tooltip" data-placement="top" title="heigth- 1540 / width- 770" type="file" class="form-control-file">
       </div>
 
       <br>
@@ -381,11 +433,12 @@
 </div>
 
 <div id="nome">
-  <label class="titulo">Titulo</label>
+  <label class="titulo"  >
+    Titulo</label>
   <div class="box">
     <div class="form-group">
       
-      <input type="text" class="form-control" id="titulo_galeria_diretores">
+      <input type="text" data-toggle="tooltip" data-placement="top" title="Capacidade máxima de 15 caracteres" maxlength="15" class="form-control" id="titulo_galeria_diretores">
   </div>
   </div>
 </div>
@@ -441,7 +494,7 @@
   <div id="textos">
     <br><br>
       <h1>Texto</h1>
-      <input  id="id_texto" >
+      <input hidden id="id_texto" >
   </div>
       <hr>
 
@@ -568,7 +621,7 @@
   <br>
                 <div class="form-group">
                     <label for="imagem_instagram">Imagem do Instagram</label>
-                    <input type="text" class="form-control" id="instagram_redes">
+                    <input id="instagram_redes" data-toggle="tooltip" data-placement="top" title="heigth- 1090 / width- 730" type="file" class="form-control-file">
                 </div>
 
                 <br>
