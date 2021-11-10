@@ -6269,9 +6269,7 @@ button.bg-danger:focus {
   background-color: #bd2130 !important;
 }
 
-.bg-light {
-  background-color: #f8f9fa !important;
-}
+
 
 a.bg-light:hover, a.bg-light:focus,
 button.bg-light:hover,
@@ -10278,10 +10276,12 @@ body {
   margin-bottom: 5rem;
 }
 
-.projects-section {
+.projects-section0 {
   background-color: #f8f9fa !important;
   padding: 5rem 0;
 }
+
+
 .projects-section .featured-text {
   padding: 2rem;
 }
@@ -10373,12 +10373,17 @@ body {
 .thumbnail a > img,
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-  display: block;
   max-width: 100%;
   height: auto;
-  width: 50vw;
   object-fit: cover;
-  height: 100vh;
+}
+
+
+.img-responsive1 {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  object-fit: cover;
 }
 
 .responsive-iframe {
@@ -10776,3 +10781,4 @@ width: 20%;
 #color_nav {
       color: black !important;
     }
+

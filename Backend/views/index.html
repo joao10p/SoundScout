@@ -15,6 +15,32 @@
         <script type="text/javascript" src="js/index_controller.js" crossorigin="anonymous"></script>
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+
+
+<style>
+
+        div.gallery img {
+            width: 100%;
+            height: 100vh;
+          }
+    
+          
+          .responsive {
+            float: left;
+            width: 49.999%;
+            height: 100vh;
+          }
+
+          @media only screen and (max-width: 900px) {
+            .responsive {
+              width: 100vw;
+              height: 100vh;
+            }
+          }
+
+          </style>
+
+
         
     </head>
     <body id="page-top">
@@ -30,7 +56,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive" >
                     <ul class="navbar-nav" ml-auto style="width:100%; ">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Sobre</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Aplicação</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Parceiros</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contactos</a></li>
                     </ul>
                 </div>
@@ -40,13 +66,23 @@
 
         <header class="masthead">
              <div class="row"> <!-- A minha ideia é alterar o banner para telemovel e para o tablet -->
-                   <div class="col-lg-6 col-sm-6 col-xs-12" style="padding-right: 0; padding-left: 0;"><a href="/sound"> <img id="bannerSound" class="img-responsive">
-                     </a>
-                    </div>
-                     <div  class="col-lg-6 col-sm-6 col-xs-12"  style="padding-right: 0; padding-left: 0;"><a href="/scout"><img src="imagens/scout_banner.jpg" class="img-responsive">
-                       </a> 
-                   </div>
-                    </div>
+                  
+
+                    <div class="responsive">
+                        <div class="gallery">
+                            <a href="/sound">
+                            <img class="gallery img-responsive" src="imagens/sound_banner.jpg"  width="600" height="400">
+                        </a>
+                        </div>
+                      </div>
+
+                      <div class="responsive">
+                        <div class="gallery">
+                            <a href="/scout">
+                            <img class="gallery img-responsive" src="imagens/scout_banner.jpg"  width="600" height="400">
+                        </a>
+                        </div>
+                      </div>
         </header>
     
         <!-- About-->
@@ -150,11 +186,11 @@
             <div class="container">
                 <!-- Featured Project Row-->
                 <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="imagens/app.jpg" alt="" /></div>
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="imagens/Betano-Logo1.png" alt="" /></div>
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
-                            <h4>SoundScout Mobile</h4>
-                            <p class="text-black-50 mb-0">Agora podes obter acesso à aplicação mobile onde vais poder visualizar a revista sem precisar de recorrer a nenhum browser. Clica na imagem e faz download do apk que necessitas para instalar a melhor app do momento.</p>
+                            <h4>Parceiros SoundScout</h4>
+                            <p class="text-black-50 mb-0">Porque acreditamos que valeroso trabalho advém de boas parcerias. O nosso foco passa por obter resultados proveitosos para ambos que nascem de uma bela amizade com marcas e projetos. </p>
                         </div>
                     </div>
                 </div>
