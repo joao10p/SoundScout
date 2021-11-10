@@ -18,7 +18,7 @@ window.onload= function() {
                 document.getElementById("bannerSound").appendChild  = txt;
             })
             .catch(error => {
-                alert("Nope");
+              
             });
     }
 
