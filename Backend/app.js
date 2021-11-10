@@ -117,6 +117,23 @@ app.get('/upload', (req,res) => {
 app.get('/teste', (req,res) => {
   res.sendFile(__dirname + '/views/teste.html')
 })
+
+app.get('/revista_id_sound', (req,res) => {
+  res.sendFile(__dirname + '/views/revista_id_sound.html')
+})
+
+app.get('/revista_id_scout', (req,res) => {
+  res.sendFile(__dirname + '/views/revista_id_scout.html')
+})
+
+app.get('/galeria_id_sound', (req,res) => {
+  res.sendFile(__dirname + '/views/galeria_id_sound.html')
+})
+
+
+app.get('/galeria_id_scout', (req,res) => {
+  res.sendFile(__dirname + '/views/galeria_id_scout.html')
+})
 //USA AS ROTAS PARA IR BUSCAR OS CONTROLLERS E AS PAGINAS
 app.use('/', mainRoutes);
 
