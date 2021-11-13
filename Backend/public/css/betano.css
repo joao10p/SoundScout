@@ -15,13 +15,6 @@
   object-fit: cover;
 }
 
-.gallery {
-	filter: brightness(50%);}
-
-	.gallery1 {
-		filter: brightness(100%);}
-
-
 .row {
 	display: flex;
 	flex-wrap: wrap;
