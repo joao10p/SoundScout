@@ -1,388 +1,393 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-      <title>BetScout</title>
-      <link rel="icon" href="imagens/favicon.png">
-  
-      <!-- Bootstrap -->
-      <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-      <link href="css/betano.css" rel="stylesheet">
-      
-       <!-- Font Awesome icons (free version)-->
-       <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-       <!-- Google fonts-->
-       <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-       <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-      <link href="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css" rel="stylesheet">
-  
-  <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
-  
-  
-      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-      <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->
-    </head>
-  
-    <body>
-  
-  
-      <nav class="navbar navbar-fixed-top navbar-inverse navbar-transparente">
-        <div class="container">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SpotSound</title>
+    <link rel="icon" href="imagens/favicon.png">
+
+
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/betano.css" rel="stylesheet">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div id="voltarBaixo">
+      <a class="js-scroll-trigger" href="/sound" id="subir"><span style="font-size:24px;" class="fas fa-arrow-left"></span></a>  <!-- about, redes, missao, signup -->
+  </div>
+
+
+    <nav class="navbar navbar-fixed-top navbar-inverse navbar-transparente">
+      <div class="container">
+        
+        <!-- header -->
+        <div class="navbar-header">
           
-          <!-- header -->
-          <div class="navbar-header">
-            
-            <!-- botao toggle -->
-            <button type="button" class="navbar-toggle collapsed"
-                    data-toggle="collapse" data-target="#barra-navegacao">
-              <span class="sr-only">alternar navegação</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-  
-            <a href="index.html" class="navbar-brand">
-              <span class="img-logo">Scout</span>
-            </a>
-  
-          </div>
-  
-          <!-- navbar -->
-          <div class="collapse navbar-collapse" id="barra-navegacao">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="">Revistas</a></li>
-              <li><a href="">Galeria</a></li>
-              <li><a href="">Betano</a></li>
-              <li><a href="">Equipa</a></li>
-            </ul>
-          </div>
-        </div><!-- /container -->
-      </nav><!-- /nav -->
+          <!-- botao toggle -->
+          <button type="button" class="navbar-toggle collapsed"
+                  data-toggle="collapse" data-target="#barra-navegacao">
+            <span class="sr-only">alternar navegação</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
 
-      <div id="voltarBaixo">
-        <a class="js-scroll-trigger" href="/scout" id="subir"><span style="font-size:24px;" class="fas fa-arrow-left"></span></a>  <!-- about, redes, missao, signup -->
+          <a href="/index" class="navbar-brand">
+            <span class="img-logo">Sound</span>
+          </a>
+
+        </div>
+
+        <!-- navbar -->
+        <div class="collapse navbar-collapse" id="barra-navegacao">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="">Revista</a></li>
+            <li><a href="">Galeria</a></li>
+            <li><a href="">Spotify</a></li>
+            <li><a href="">Equipa</a></li>
+          </ul>
+        </div>
+      </div><!-- /container -->
+    </nav><!-- /nav -->
+
+    <div class="capa">
+      <div class="texto-capa">
+        <h1>Futebol para todos</h1>
+        <a href="" class="btn btn-custom btn-roxo btn-lg">Os Momentos que são memórias</a>
+        <a href="" class="btn btn-custom btn-branco btn-lg">Vai um quiz?</a>
+      </div>
     </div>
-  
-      <div class="capa">
-        <div class="texto-capa">
-          <h1>BetScout</h1>
-          <a href="#servicos" class=" js-scroll-trigger btn btn-custom btn-roxo btn-lg">Betano - Faz a tua aposta</a> 
-          <a href="#bets" class=" js-scroll-trigger btn btn-custom btn-branco btn-lg">Prognósticos Revista Scout</a>
-        </div>
-      </div>
-  
-      <!-- Conteudos -->
-      <section id="servicos">
-        <div class="container">
-       <img src="imagens/betanopag.JPG" class="img-responsive" style="width: 100%; padding-top: 10px; padding-bottom: 10px;">
-      </div>
-      </section>
-  
-      <section id="recursos">
-        <div class="container">
-          <div class="row">
-            
-                <div class="col-md-12">
-                  <img src="imagens/Betano-Logo.png" class="img-responsive">
-                </div>
-  
-              </div><!-- /row -->
-  
-            </div>
-  
-          </div>
-        </div>
-      </section>
-  
-      <!-- Rodape -->
-      <section id="bets">
-        <div class="container">
-          <div class="row">
-            <br>
-            <h2>Prognósticos Revista Scout</h2>
-            <br>
-       <table
-    id="table" class="table table-bordered table-striped table-dark"
-    data-toggle="table"
-    data-height="460">
-    <thead>
-    <tr>
-      <th> <img src="imagens/1581596348619.png" class="img-responsive" height="35px" width="35px"> </th>
-      <th data-field="liga">Liga</th>
-      <th data-field="jogo">Jogo</th>
-      <th data-field="bet">Bet</th>
-      <th data-field="odd">Odd</th>
-      <th data-field="data">Data</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <th><input type="checkbox" name="" id="chkPrint" onclick="n()"></th>
-      <th data-field="name"><img src="imagens/liga.png" class="img-responsive" height="30px" width="30px"></th>
-      <th data-field="jogo">Cagliari x Juventus</th>
-      <th data-field="bet">Juventus</th>
-                <th data-field="data">14/03, 16h40</th>
-      <th data-field="odd" id="odd_1" value="1">1,44</th>
-  
-      </tr>
 
+    <!-- Conteudos -->
+    <section id="servicos">
+      <div class="container" >
+        <br><br>
+        <div class="row">
+
+          <!-- albuns -->
+          <div class="col-md-6">
+              <div style="height: 100%;"><iframe class="responsive-iframe" width="100%" height="100%"  src="https://www.youtube.com/embed/h390K9Fkh8g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            </div>
 
      
-      <tr>
-      <th><input type="checkbox" name=""></th>
-      <th data-field="name"><img src="imagens/prem.png" class="img-responsive" height="30px" width="30px"></th>
-      <th data-field="jogo">Cagliari x Juventus</th>
-      <th data-field="bet">Juventus</th>
-                  <th data-field="data">14/03, 16h40</th>
-      <th data-field="odd">1,44</th>
-  
-      </tr>
-      <tr>
-      <th><input type="checkbox" name=""></th>
-      <th data-field="name"><img src="imagens/prem.png" class="img-responsive" height="30px" width="30px"></th>
-      <th data-field="jogo">Cagliari x Juventus</th>
-      <th data-field="bet">Juventus</th>
-                  <th data-field="data">14/03, 16h40</th>
-      <th data-field="odd">1,44</th>
-  
-      </tr>
-      <tr>
-      <th><input type="checkbox" name=""></th>
-      <th data-field="name"><img src="imagens/serie.png" class="img-responsive" height="30px" width="30px"></th>
-      <th data-field="jogo">Cagliari x Juventus</th>
-      <th data-field="bet">Juventus</th>
-                  <th data-field="data">14/03, 16h40</th>
-      <th data-field="odd">1,44</th>
-  
-      </tr>
-      <tr>
-      <th><input type="checkbox" name=""></th>
-      <th data-field="name"><img src="imagens/ligue.png" class="img-responsive" height="30px" width="30px"></th>
-      <th data-field="jogo">Cagliari x Juventus</th>
-      <th data-field="bet">Juventus</th>
-  
-            <th data-field="data">14/03, 16h40</th>
-            <th data-field="odd">1,44</th>
-      </tr>
-    </tbody>
-  </table>
-  
-  <script>
+          <!-- servicos -->
+          <div class="col-md-6">
+            <h3 id="spotifyin3">Milan x Liverpool – Final da Champions de 2005</h3>
+            <p id="spotifyin4"><span style="font-weight: bold;">O Milagre de Istambul!</span><br><br>
 
-    function n() {
-      var chkPrint = document.getElementById("chkPrint");
-chkPrint.value = chkPrint.checked;
-console.log(chkPrint.value);
-        if (chkPrint.checked == true) {
-          var odd_atual = document.getElementById('odd_aposta').value;
-          var primeira_odd= document.getElementById('odd_1').value; 
+              Assim ficou conhecido o jogo entre Liverpool e Milan pela final da Liga dos Campeões de 2005, em Istambul, palco também da próxima final da competição.
+              <br><br>
+              Você acreditaria que seu time conseguiria reagir depois de sair do 1º tempo tomando um baile e perdendo de 3 a 0 em uma final? Pois o Liverpool conseguiu!⠀
+              <br><br>
+              Lembre como tudo aconteceu nos melhores momentos da partida:</p>
+          </div>
+        </div>
 
-          console.log(odd_atual.value);
-          console.log(primeira_odd);
+<br><br>
+        <div class="row">
 
-          if (odd_atual == 0) {
-            document.getElementById('odd_aposta').innerHTML = primeira_odd;
-          } else{
-            var x= odd_atual * primeira_odd;
-            console.log(x);
+          <!-- albuns -->
+          <div class="col-md-6">
+              <div style="height: 100%;"><iframe class="responsive-iframe" width="100%" height="100%"  src="https://www.youtube.com/embed/BYwlOX2DGeI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            </div>
+
+     
+          <!-- servicos -->
+          <div class="col-md-6">
+            <h3 id="spotifyin3">Portugal x Inglaterra – Meia-Final Europeu 2004</h3>
+            <p id="spotifyin4"><span style="font-weight: bold;">Mãos de Ricardo, Panenka de Postiga, banco em cheio</span><br><br>
+
+              Há quase 16 anos, Portugal viveu um dos jogos mais épicos e arrepiantes na história dos Campeonatos da Europa. A 24 de junho de 2004, depois de 120 minutos, Ricardo acabou como herói improvável nos penáltis: defendeu sem luvas e bateu depois David James para colocar a equipa das quinas na meia-final da prova que o país organizou.<br><br>
+             
+              Dos 11 metros, mais e mais emoção. Beckham atirou para a bancada, Rui Costa também o fez e, entre os restantes remates certeiros, Ricardo tirou as luvas para defender o remate de Darius Vassell, antes de assumir a marcação do penálti decisivo para selar a festa portuguesa na Luz.</p>
+          </div>
+        </div>
+
+        <br><br>
+        <div class="row">
+
+          <!-- albuns -->
+          <div class="col-md-6">
+              <div style="height: 100%;"><iframe class="responsive-iframe" width="100%" height="100%"  src="https://www.youtube.com/embed/brYCsAe__EM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            </div>
+
+     
+          <!-- servicos -->
+          <div class="col-md-6">
+            <h3 id="spotifyin3">Porto x Benfica – Liga Portugal</h3>
+            <p id="spotifyin4"><span style="font-weight: bold;">Um Senhor Dragão</span><br><br>
+
+              Esta foi a noite em que o FC Porto conseguiu uma das maiores vitórias de sempre sobre o rival lisboeta, humilhando a águia com um histórico 5x0, deixando por terra o campeão nacional e destroçando as ambições de Jorge Jesus em revalidar o título conquistado meses antes com classe e inegável superioridade. Uma noite de sonho para o dragão, um pesadelo muito difícil de esquecer para a águia...
+              <br><br>
+              Antes de correr o pano sobre o clássico, Hulk voltou a fuzilar Roberto com um remate cruzado da direita. O Benfica caía com estrondo e o Porto ficava com o caminho livre para o título que viria a celebrar na casa do rival...</p>
+          </div>
+        </div>
+        <br><br>
 
 
-            document.getElementById('odd_aposta').innerHTML = x;
+        <div class="row">
 
-          }  
-      }else{
+          <!-- albuns -->
+          <div class="col-md-6">
+              <div style="height: 100%;"><iframe class="responsive-iframe" width="100%" height="100%"  src="https://www.youtube.com/embed/qpG-IhVwzFU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            </div>
 
-        var odd_atual = document.getElementById('odd_aposta');
-          var primeira_odd= document.getElementById('odd_1');
+     
+          <!-- servicos -->
+          <div class="col-md-6">
+            <h3 id="spotifyin3">França x Portugal – Final Europeu 2016</h3>
+            <p id="spotifyin4"><span style="font-weight: bold;">Éder, o sonho...</span><br><br>
 
-          console.log(odd_atual.value);
-          console.log(primeira_odd);
-
-          var x= odd_atual / primeira_odd;
-          console.log(x);
-
-          document.getElementById('odd_aposta').innerHTML = x ;
-
-      }
-    }
-  
-
-    </script>
-
-  
-<label style="float: right;" id="ganhos">&emsp;&emsp;0 </label>
-<label style="float: right;">Ganhos:</label>
-<label class="label label-default" id="odd_aposta" style="float: right;" >&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;0 </label>
-<label style="float: right;" >Odd:</label>
-<input  id="aposta_quantia" style="float: right;" type="" name=""> </input>
-<label style="float: right;">Aposta:</label>
-
-
-  
-  
-
-  
-  
-          </div><!-- /row -->
+              10 de julho de 2016. Pode perguntar-se a qualquer português onde estava neste dia a partir das 20 horas e todos saberão responder. É uma data mágica, a data em que Portugal conquistou – finalmente – o primeiro título da sua história futebolística. E um nome virou eterno na diáspora lusa: Éder.<br><br>
+              O Stade de France era o palco da final. De um lado a França, a jogar em casa, com um percurso ascendente na prova e moralizada: nas meias-finais, os gauleses eliminaram a então Campeã do Mundo Alemanha. Portugal estava na final com muito sofrimento, tendo corrido mesmo sérios riscos de ser eliminado logo na fase de grupos que ultrapassou com três empates. Depois, afastou a Croácia no prolongamento, a Polónia no desempate por grandes penalidades e nas meias-finais o surpreendente País de Gales, de forma tranquila.</p>
+          </div>
         </div>
 
 
 
-        <br>
-        <br>
-        <br>
-        <br>
+        <br><br>
+        <div class="row">
 
-        <section class="signup-section" id="signup">
-          <div class="container">
-              <div class="row">
-                  <div class="col-md-10 col-lg-8 mx-auto text-center">
-                      <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                      <h2 class="text-white mb-5">Subscreve para receber novidades!</h2>
-                      <form class="form-inline d-flex">
-                          <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Digite o seu endereço de email..." />
-                          <button id="subs" class="btn btn-primary " type="submit">Subscrever</button>
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </section>
-      <!-- Contact-->
-      <section class="contact-section bg-black">
-          <div class="container">
-              <div class="row">
-                  <div class="col-md-4 mb-3 mb-md-0">
-                      <div class="card py-4 h-100">
-                          <div class="card-body text-center">
-                              <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                              <h4 class="text-uppercase m-0">Sede</h4>
-                              <hr class="my-4" />
-                              <div class="small text-black-50">Guimarães, Braga, Portugal</div>
-                          </div>
-                      </div>
-                  </div>
-                  
-                  <div class="col-md-4 mb-3 mb-md-0">
-                      <a href="mailto:soundscoutoficial@gmail.com">
-                      <div class="card py-4 h-100">
-                          <div class="card-body text-center">
-                              <i class="fas fa-envelope text-primary mb-2"></i>
-                              <h4 class="text-uppercase m-0">Email</h4>
-                              <hr class="my-4" />
-                              <div class="small text-black-50">soundscoutoficial@gmail.com</div>
-                          </div>
-                      </div>
-                      </a>
-                  </div>
-                  <div class="col-md-4 mb-3 mb-md-0">
-                      <a href="tel:935946600">
-                      <div class="card py-4 h-100">
-                          <div class="card-body text-center">
-                              <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                              <h4 class="text-uppercase m-0">Telemóvel</h4>
-                              <hr class="my-4" />
-                              <div class="small text-black-50">935946600</div>
-                          </div>
-                      </div>
-                  </a>
-                  </div>
-              </div>
-              <div class="social d-flex justify-content-center">
-                  <a class="mx-2" href="https://www.instagram.com/revistasound/" target="_blank"><i class="fab fa-instagram"></i>Sound</a>
-                  <a class="mx-2" href="https://www.youtube.com/channel/UC7DH0jBsR8skp8CRsP221mA" target="_blank"><i class="fab fa-youtube"></i></a>
-                  <a class="mx-2" href="https://open.spotify.com/user/my0v58fi48y8yepmoma7pct3g?si=Zc9Tv8koS0KcIg5_CL6auQ" target="_blank"><i class="fab fa-spotify"></i></a>
-                  <a class="mx-2" href="https://www.instagram.com/revistascout/" target="_blank"><i class="fab fa-instagram"></i>Scout</a>
-              </div>
-          </div>
-
-
-      </section>
-
-      <div id="voltarBaixo">
-        <a class="js-scroll-trigger" href="#signup" id="descer"><span style="font-size:24px;" class="fas fa-arrow-down"></span></a>  <!-- about, redes, missao, signup -->
-    </div>
-
-      <!-- Footer-->
-      <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © SoundScout 2020</div>
-
-
-          <button type="button" class="btn btn-link" style="float: right;" data-toggle="modal" data-target="#janela">
-      Área Reservada
-    </button>
-
-    <button type="button" style="float: left; background: none; border: none; margin-left: 1%;">
-      <img src="imagens/ingles.png">
-    </button>
-
-    <button type="button" style="float: left; background: none; border: none;">
-      <img src="imagens/portugues.png">
-    </button>
-
-    <!-- Janela -->
-    <form class="modal fade" id="janela">
-      
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          
-          <!-- cabecalho -->
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">
-              <span>&times;</span>
-            </button>
-          </div>
-
-          <!-- corpo -->
-          <div class="modal-body">
-
-            <div class="form-group">
-              <input type="email" class="form-control" id="email" placeholder="Digite o seu e-mail">
+          <!-- albuns -->
+          <div class="col-md-6">
+              <div style="height: 100%;"><iframe class="responsive-iframe" width="100%" height="100%"  src="https://www.youtube.com/embed/TR6vJTjJ9fg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
             </div>
 
-            <div class="form-group">
-              <input type="password" class="form-control" id="senha" placeholder="Digite a sua password">
-            </div>
+     
+          <!-- servicos -->
+          <div class="col-md-6">
+            <h3 id="spotifyin3">Argentina x Alemanha – Final Mundial 1986</h3>
+            <p id="spotifyin4"><span style="font-weight: bold;">Coroar Maradona</span><br><br>
 
+              A 29 de Junho de 1986, a Argentina bateu a Alemanha Ocidental por três bolas a duas, no Estádio Azteca, Cidade do México, e ganhou o direito a levantar a Taça de Campeão do Mundo da FIFA pela segunda vez. Quem se deslocou ao célebre anfiteatro da capital mexicana não saiu defraudado. A final de 1986 teve de tudo: pormenores individuais, táctica, emoção, drama e incerteza. A final em que El Pibe levantou a Taça de Campeão do Mundo.
+              <br><br>
+              Argentina três, Alemanha Federal dois... Não havia forma desta vitória escapar à Alviceleste. Quando Romualdo Arppi Filho apitou para o final, a Argentina juntava-se a Uruguai e a Alemanha, com dois troféus conquistados. A Alemanha, pela segunda vez consecutiva, perdia a final e o ajuste de contas teria de ficar para Roma, quatro anos mais tarde...</p>
           </div>
+        </div>
+        <br><br>
+ 
 
-          <!-- rodape -->
-          <div class="modal-footer">
+        </div>
+      </div>
+    </section>        
+    
+    <script>
+      function spotify(){
+      var w = window.innerWidth;
+      var r = w * 0.715;  
+      var y = r/2;
+      document.getElementById("spotify").style.width = y+"px";
+      document.getElementById("spotify").style.height = "300px";
+    
+    document.getElementById("spotify").style.visibility = "visible";
+    
+    
+      var myobj = document.getElementById("spotifyin");
+      myobj.remove();
+      var myobj1 = document.getElementById("spotifyin1");
+      myobj1.remove();
+      var myobj2 = document.getElementById("spotifyin2");
+      myobj2.remove();
+      var myobj3 = document.getElementById("spotifyin3");
+      myobj3.remove();
+      var myobj4 = document.getElementById("spotifyin4");
+      myobj4.remove();
+    
+    
+              }
+    </script>
 
-            <button type="button" class="btn btn-default" data-dismiss="modal">
-              Cancelar
-            </button>
-
+     <section id="recursos">
+      <div class="container">
+        <div class="row">
           
-            <button type="button" class="btn btn-primary" id="login_but"> <!--Mudar para submit, meti em button para tornar visual-->
-              Logar
-            </button>
-          
+              <div class="col-md-12">
+                <img src="imagens/spotify-logotipo.png" class="img-responsive">
+              </div>
+
+            </div><!-- /row -->
 
           </div>
 
         </div>
       </div>
+    </section>
 
-    </form>
-      </footer>
-  
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="bootstrap/js/bootstrap.min.js"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script> 
-    </body>
+    <!-- Rodape -->
+    <section id="album">
+      <div class="container">
 
-    </html>
+        <div class="row">
+          <div class="col-xl-12 col-lg-12 col-md-12">
+          <h1>QUIZ PREMIER LEAGUE&nbsp<span class="far fa-futbol"></span></h1>
+        </div>
+        </div>
+        <div class="row">
+          
+          <div class="col-xl-5 col-lg-5 col-md-5">
+            <h4 style="font-weight: bold;"  id="spotifyin">Em que ano foi criada a Premier League em Inglaterra?</h4>
+            <p id="descricao">1986</p>
+            <p id="descricao">1988</p>
+            <p id="descricao">1990</p>
+            <p id="descricao">1992</p>
+          </div>
+          <div class="col-xl-5 col-lg-5 col-md-5">
+            <h4 style="font-weight: bold;" id="spotifyin">Qual é o clube com mais títulos na liga Inglesa?</h4>
+            <p id="descricao">Manchester United</p>
+            <p id="descricao">Liverpool</p>
+            <p id="descricao">Arsenal</p>
+            <p id="descricao">Chelsea</p>
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-2">
+            <div class="responsive">
+              <div class="gallery">
+                  <img src="imagens/green.jpg"  width="200" height="200">
+              </div>
+            </div>
+          </div>
+          </div>
+
+
+          <div class="row">
+          
+            <div class="col-xl-5 col-lg-5 col-md-5">
+              <h4 style="font-weight: bold;" id="spotifyin">Qual destes clubes já se sagrou campeão?</h4>
+              <p id="descricao">Blackburn Rovers</p>
+              <p id="descricao">Nottingham Forest</p>
+              <p id="descricao">Newcastle United</p>
+              <p id="descricao">Leeds United</p>
+            </div>
+            <div class="col-xl-5 col-lg-5 col-md-5">
+              <h4 style="font-weight: bold;" id="spotifyin">Qual é o recorde de golos marcados numa partida?
+              </h4>
+              <p id="descricao">10</p>
+              <p id="descricao">11</p>
+              <p id="descricao">12</p>
+              <p id="descricao">13</p>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-2">
+              <div class="responsive">
+                <div class="gallery">
+                    <img src="imagens/yellow.jpg"  width="200" height="200">
+                </div>
+              </div>
+            </div>
+                
+            </div>
+
+
+
+
+
+            <div class="row">
+          
+              <div class="col-xl-5 col-lg-5 col-md-5">
+                <h4 style="font-weight: bold;" id="spotifyin">Quem é o jogador que participou em mais jogos?
+                </h4>
+                <p id="descricao">David James</p>
+                <p id="descricao">Ryan Giggs</p>
+                <p id="descricao">Gareth Barry</p>
+                <p id="descricao">Frank Lampard</p>
+              </div>
+              <div class="col-xl-5 col-lg-5 col-md-5">
+                <h4 style="font-weight: bold;" id="spotifyin">Quem é o jogador que conquistou mais vezes o prémio de melhor marcador?
+                </h4>
+                <p id="descricao">Alan Shearer</p>
+                <p id="descricao">Harry Kane</p>
+                <p id="descricao">Thierry Henry</p>
+                <p id="descricao">Cristiano Ronaldo</p>
+              </div>
+              <div class="col-xl-2 col-lg-2 col-md-2">
+                <div class="responsive">
+                  <div class="gallery1">
+                      <img src="imagens/orange.jpg"  width="200" height="200">
+                  </div>
+                </div>
+              </div>
+                  
+              </div>
+
+
+
+
+              <div class="row">
+          
+                <div class="col-xl-5 col-lg-5 col-md-5">
+                  <h4 style="font-weight: bold;" id="spotifyin">Qual destes clubes já se sagrou campeão?</h4>
+                  <p id="descricao">Blackburn Rovers</p>
+                  <p id="descricao">Nottingham Forest</p>
+                  <p id="descricao">Newcastle United</p>
+                  <p id="descricao">Leeds United</p>
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-5">
+                  <h4 style="font-weight: bold;" id="spotifyin">Qual é o recorde de golos marcados numa partida?
+                  </h4>
+                  <p id="descricao">10</p>
+                  <p id="descricao">11</p>
+                  <p id="descricao">12</p>
+                  <p id="descricao">13</p>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-2">
+                  <div class="responsive">
+                    <div class="gallery">
+                        <img src="imagens/red.jpg"  width="200" height="200">
+                    </div>
+                  </div>
+                </div>
+                    
+                </div>
+
+
+                <div class="col-xl-5 col-lg-5 col-md-5">
+                  <h4 style="font-weight: bold;" id="spotifyin">Quem é o jogador que participou em mais jogos?
+                  </h4>
+                  <p id="descricao">David James</p>
+                  <p id="descricao">Ryan Giggs</p>
+                  <p id="descricao">Gareth Barry</p>
+                  <p id="descricao">Frank Lampard</p>
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-5">
+                  <h4 style="font-weight: bold;" id="spotifyin">Quem é o jogador que conquistou mais vezes o prémio de melhor marcador?
+                  </h4>
+                  <p id="descricao">Alan Shearer</p>
+                  <p id="descricao">Harry Kane</p>
+                  <p id="descricao">Thierry Henry</p>
+                  <p id="descricao">Cristiano Ronaldo</p>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-2">
+                  <button class="btn btn-custom btn-roxo btn-lg" style="margin:45% 0px;top:40% !important;width: 200px;height: 100px;">SUBMETER</button>
+                </div>
+                    
+                </div>
+  
+
+
+
+              
+          </div>
+        </div><!-- /row -->
+      </div>
+    </section>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
