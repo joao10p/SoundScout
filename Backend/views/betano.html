@@ -15,6 +15,28 @@
     <link href="css/betano.css" rel="stylesheet">
     <script src="js/scripts.js"></script> 
 
+    <style>
+
+.question{
+	font-weight: 600;
+  font-size: 20px;
+
+}
+.answers {
+  margin-bottom: 20px;
+}
+.answers label{
+  display: block;
+  font-weight: 100;
+  font-size: 14px;
+}
+
+#submit{color:white; margin:45% 0px;top:40% !important;width: 200px;height: 100px;
+  
+}
+
+    </style>
+
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -182,31 +204,7 @@
       </div>
     </section>        
     
-    <script>
-      function spotify(){
-      var w = window.innerWidth;
-      var r = w * 0.715;  
-      var y = r/2;
-      document.getElementById("spotify").style.width = y+"px";
-      document.getElementById("spotify").style.height = "300px";
-    
-    document.getElementById("spotify").style.visibility = "visible";
-    
-    
-      var myobj = document.getElementById("spotifyin");
-      myobj.remove();
-      var myobj1 = document.getElementById("spotifyin1");
-      myobj1.remove();
-      var myobj2 = document.getElementById("spotifyin2");
-      myobj2.remove();
-      var myobj3 = document.getElementById("spotifyin3");
-      myobj3.remove();
-      var myobj4 = document.getElementById("spotifyin4");
-      myobj4.remove();
-    
-    
-              }
-    </script>
+
 
      <section id="recursos">
       <div class="container">
@@ -227,157 +225,128 @@
     <!-- Rodape -->
     <section id="album">
       <div class="container">
-
         <div class="row">
           <div class="col-xl-12 col-lg-12 col-md-12">
           <h1>QUIZ PREMIER LEAGUE&nbsp<span class="far fa-futbol"></span></h1>
         </div>
         </div>
         <div class="row">
-          
-          <div class="col-xl-5 col-lg-5 col-md-5">
-            <h4 style="font-weight: bold;"  id="spotifyin">Em que ano foi criada a Premier League em Inglaterra?</h4>
-            <p id="descricao">1986</p>
-            <p id="descricao">1988</p>
-            <p id="descricao">1990</p>
-            <p id="descricao">1992</p>
-          </div>
-          <div class="col-xl-5 col-lg-5 col-md-5">
-            <h4 style="font-weight: bold;" id="spotifyin">Qual é o clube com mais títulos na liga Inglesa?</h4>
-            <p id="descricao">Manchester United</p>
-            <p id="descricao">Liverpool</p>
-            <p id="descricao">Arsenal</p>
-            <p id="descricao">Chelsea</p>
-          </div>
-          <div class="col-xl-2 col-lg-2 col-md-2">
-            <div class="responsive">
-              <div class="gallery">
-                  <img id="10pt" style="filter:brightness(50%);" src="imagens/green.jpg"  width="200" height="200">
-              </div>
+          <div class="col-xl-10 col-lg-10" id="quiz"></div>
+          <div style="z-index: -100; top:0; position: absolute;" id="results"></div>
+        
+
+        <div class="col-xl-2 col-lg-2">
+          <div class="responsive">
+            <div class="gallery">
+                <img id="10pt" style="filter:brightness(50%);"  src="imagens/green.jpg"  width="200" height="200">
             </div>
           </div>
+          <div class="responsive">
+            <div class="gallery">
+                <img id="9pt" style="filter:brightness(50%);"  src="imagens/yellow.jpg"  width="200" height="200">
+            </div>
           </div>
-
-
-          <div class="row">
+          <div class="responsive">
+            <div class="gallery">
+                <img id="6pt" style="filter:brightness(50%);"  src="imagens/orange.jpg"  width="200" height="200">
+            </div>
+          </div>
+          <div class="responsive">
+            <div class="gallery">
+                <img id="3pt" style="filter:brightness(50%);"  src="imagens/red.jpg"  width="200" height="200">
+            </div>
+          </div>
           
-            <div class="col-xl-5 col-lg-5 col-md-5">
-              <h4 style="font-weight: bold;" id="spotifyin">Qual destes clubes já se sagrou campeão?</h4>
-              <p id="descricao">Blackburn Rovers</p>
-              <p id="descricao">Nottingham Forest</p>
-              <p id="descricao">Newcastle United</p>
-              <p id="descricao">Leeds United</p>
-            </div>
-            <div class="col-xl-5 col-lg-5 col-md-5">
-              <h4 style="font-weight: bold;" id="spotifyin">Qual é o recorde de golos marcados numa partida?
-              </h4>
-              <p id="descricao">10</p>
-              <p id="descricao">11</p>
-              <p id="descricao">12</p>
-              <p id="descricao">13</p>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-2">
-              <div class="responsive">
-                <div class="gallery">
-                    <img id="9pt" style="filter:brightness(50%);"  src="imagens/yellow.jpg"  width="200" height="200">
-                </div>
-              </div>
-            </div>
-                
-            </div>
-
-
-
-
-
-            <div class="row">
           
-              <div class="col-xl-5 col-lg-5 col-md-5">
-                <h4 style="font-weight: bold;" id="spotifyin">Quem é o jogador que participou em mais jogos?
-                </h4>
-                <p id="descricao">David James</p>
-                <p id="descricao">Ryan Giggs</p>
-                <p id="descricao">Gareth Barry</p>
-                <p id="descricao">Frank Lampard</p>
-              </div>
-              <div class="col-xl-5 col-lg-5 col-md-5">
-                <h4 style="font-weight: bold;" id="spotifyin">Quem é o jogador que conquistou mais vezes o prémio de melhor marcador?
-                </h4>
-                <p id="descricao">Alan Shearer</p>
-                <p id="descricao">Harry Kane</p>
-                <p id="descricao">Thierry Henry</p>
-                <p id="descricao">Cristiano Ronaldo</p>
-              </div>
-              <div class="col-xl-2 col-lg-2 col-md-2">
-                <div class="responsive">
-                  <div class="gallery">
-                      <img id="6pt" style="filter:brightness(50%);"  src="imagens/orange.jpg"  width="200" height="200">
-                  </div>
-                </div>
-              </div>
-                  
-              </div>
-
-
-
-
-              <div class="row">
+         
           
-                <div class="col-xl-5 col-lg-5 col-md-5">
-                  <h4 style="font-weight: bold;" id="spotifyin">Qual destes clubes já se sagrou campeão?</h4>
-                  <p id="descricao">Blackburn Rovers</p>
-                  <p id="descricao">Nottingham Forest</p>
-                  <p id="descricao">Newcastle United</p>
-                  <p id="descricao">Leeds United</p>
-                </div>
-                <div class="col-xl-5 col-lg-5 col-md-5">
-                  <h4 style="font-weight: bold;" id="spotifyin">Qual é o recorde de golos marcados numa partida?
-                  </h4>
-                  <p id="descricao">10</p>
-                  <p id="descricao">11</p>
-                  <p id="descricao">12</p>
-                  <p id="descricao">13</p>
-                </div>
-                <div class="col-xl-2 col-lg-2 col-md-2">
-                  <div class="responsive">
-                    <div class="gallery">
-                        <img id="3pt" style="filter:brightness(50%);"  src="imagens/red.jpg"  width="200" height="200">
-                    </div>
-                  </div>
-                </div>
-                    
-                </div>
+          
+        <button class="btn btn-custom btn-roxo btn-lg" id="submit">Submit Quiz</button>
+      </div>
+      </div>
+    </div>
+
+        
+      
+        
 
 
-                <div class="col-xl-5 col-lg-5 col-md-5">
-                  <h4 style="font-weight: bold;" id="spotifyin">Quem é o jogador que participou em mais jogos?
-                  </h4>
-                  <p id="descricao">David James</p>
-                  <p id="descricao">Ryan Giggs</p>
-                  <p id="descricao">Gareth Barry</p>
-                  <p id="descricao">Frank Lampard</p>
-                </div>
-                <div class="col-xl-5 col-lg-5 col-md-5">
-                  <h4 style="font-weight: bold;" id="spotifyin">Quem é o jogador que conquistou mais vezes o prémio de melhor marcador?
-                  </h4>
-                  <p id="descricao">Alan Shearer</p>
-                  <p id="descricao">Harry Kane</p>
-                  <p id="descricao">Thierry Henry</p>
-                  <p id="descricao">Cristiano Ronaldo</p>
-                </div>
-                <div class="col-xl-2 col-lg-2 col-md-2">
-                  <button onclick="quiz()"  class="btn btn-custom btn-roxo btn-lg" style="color:white; margin:45% 0px;top:40% !important;width: 200px;height: 100px;">SUBMETER</button>
-                </div>
-                    
-                </div>
-  
+<script>
+(function(){
+  function buildQuiz(){
+    // variable to store the HTML output
+    const output = [];
 
-  <script>
-     function quiz(){
-x =
-Math.floor(Math.random() * 10);
+    // for each question...
+    myQuestions.forEach(
+      (currentQuestion, questionNumber) => {
 
-if (x<4){
+        // variable to store the list of possible answers
+        const answers = [];
+
+        // and for each available answer...
+        for(letter in currentQuestion.answers){
+
+          // ...add an HTML radio button
+          answers.push(
+            `<label>
+              <input type="radio" name="question${questionNumber}" value="${letter}">
+              ${letter} :
+              ${currentQuestion.answers[letter]}
+            </label>`
+          );
+        }
+
+        // add this question and its answers to the output
+        output.push(
+          `<div class="col-xl-5 col-lg-5"><div class="question" > ${currentQuestion.question} </div>
+          <div class="answers"> ${answers.join('')} </div></div>`
+        );
+      }
+    );
+
+    // finally combine our output list into one string of HTML and put it on the page
+    quizContainer.innerHTML = output.join('');
+  }
+
+  function showResults(){
+
+    // gather answer containers from our quiz
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+
+    // keep track of user's answers
+    let numCorrect = 0;
+
+    // for each question...
+    myQuestions.forEach( (currentQuestion, questionNumber) => {
+
+      // find selected answer
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+      // if answer is correct
+      if(userAnswer === currentQuestion.correctAnswer){
+        // add to the number of correct answers
+        numCorrect++;
+
+        // color the answers green
+        answerContainers[questionNumber].style.color = 'lightgreen';
+      }
+      // if answer is wrong or blank
+      else{
+        // color the answers red
+        answerContainers[questionNumber].style.color = 'red';
+      }
+    });
+
+    // show number of correct answers out of total
+    var y = `${numCorrect}`;
+    var x = Number(y);
+    console.log(y);
+    console.log(x);
+
+    if (x<4){
   document.getElementById("3pt").style.filter = "brightness(100%)"
   document.getElementById("6pt").style.filter = "brightness(50%)"
   document.getElementById("9pt").style.filter = "brightness(50%)"
@@ -401,7 +370,121 @@ if (x==10) {
   document.getElementById("9pt").style.filter = "brightness(50%)"
   document.getElementById("10pt").style.filter = "brightness(100%)"
 }
-}
+  }
+
+  const quizContainer = document.getElementById('quiz');
+  const resultsContainer = document.getElementById('results');
+  const submitButton = document.getElementById('submit');
+  const myQuestions = [
+    {
+      question: "Em que ano foi criada a Premier League em Inglaterra, sucedendo à", //+30 //-65
+      answers: {
+        a: "1986",
+        b: "1988",
+        c: "1990",
+        d: "1992"
+      },
+      correctAnswer: "d"
+    },
+    {
+      question: "Qual é o clube com mais títulos ingleses?",
+      answers: {
+        a: "Manchester United",
+        b: "Liverpool",
+        c: "Arsenal",
+        d: "Chelsea"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "Qual destes clubes já se sagrou campeão?",
+      answers: {
+        a: "Blackburn Rovers",
+        b: "Nottingham Forest",
+        c: "Newcastle United",
+        d: "Leeds United"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "Qual é o recorde de golos marcados numa partida?",
+      answers: {
+        a: "10",
+        b: "11",
+        c: "12",
+        d: "13"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "Quem é o jogador que participou em mais jogos?",
+      answers: {
+        a: "David James",
+        b: "Ryan Giggs",
+        c: "Gareth Barry",
+        d: "Frank Lampard"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "Quem é o jogador que conquistou mais vezes o prémio de melhor mar", //65
+      answers: {
+        a: "Alan Shearer",
+        b: "Harry Kane",
+        c: "Thierry Henry",
+        d: "Cristiano Ronaldo"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "Em qual destes clubes não jogou Luís Boa Morte, o português com m", //65
+      answers: {
+        a: "Fulham",
+        b: "Everton",
+        c: "West Ham",
+        d: "Arsenal"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "Qual é a equipa que ficou conhecida como os “Invencíveis” após se", //65
+      answers: {
+        a: "Manchester City",
+        b: "Arsenal",
+        c: "Manchester United",
+        d: "Liverpool"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "Na temporada 15/16, o Leicester City conquistou a Premier League.", //65
+      answers: {
+        a: "Riyad Mahrez",
+        b: "N'Golo Kanté",
+        c: "Danny Drinkwater",
+        d: "Harry Maguire"
+      },
+      correctAnswer: "d"
+    },
+    {
+      question: "Até à 11ª jornada, quantos jogadores portugueses já atuaram esta ", //65
+      answers: {
+        a: "17",
+        b: "19",
+        c: "21",
+        d: "23",
+      },
+      correctAnswer: "b"
+    }
+    
+  ];
+
+  // Kick things off
+  buildQuiz();
+
+  // Event listeners
+  submitButton.addEventListener('click', showResults);
+})();
 
 </script>
 
