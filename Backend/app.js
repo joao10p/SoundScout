@@ -196,7 +196,7 @@ const upload = multer({
   //fileFilter: function(req, file, cb){
     //checkFileType(file, cb);
   //}
-}).single('myImage');  // Aqui tambem podemos usar arreio em vezde single
+}).single('banner');  // Aqui tambem podemos usar arreio em vezde single
 
 app.post('/upload', (req, res )=>{
   upload(req, res, (err) => {
