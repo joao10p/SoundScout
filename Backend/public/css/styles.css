@@ -10656,6 +10656,8 @@ width: 20%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    
+
       
         padding: none;
         background-color: none;
@@ -10667,14 +10669,16 @@ width: 20%;
   }
   @media (min-width: 0px) {
     #portugues {
-      position:absolute;
+      position: absolute ;
 
-    left: 45.5%;
+    left: 40vw;
+    
     }
     #ingles{
       position:absolute;
 
-    left: 48.5%;
+    left: 50vw;
+    
     }
 
 
@@ -10696,62 +10700,11 @@ width: 20%;
     #portugues {
       position:absolute;
 
-    left: 45.5%;
-    }
-    #ingles{
-      position:absolute;
-
-    left: 49.5%;
-    }
-  }
-
-  @media (min-width: 1080px) {
-    #portugues {
-      position:absolute;
-
-    left: 46.1%;
-    }
-    #ingles{
-      position:absolute;
-
-    left: 50.1%;
-    }
-  }@media (min-width: 0px) {
-    #portugues {
-      position:relative;
-
-    left: 45.5%;
-    }
-    #ingles{
-      position:relative;
-
-    left: 48.5%;
-    }
-
-
-  }
-  @media (min-width: 768px) {
-    #portugues {
-      position:absolute;
-
     left: 45%;
     }
     #ingles{
       position:absolute;
 
-    left: 49%;
-    }
-  }
-
-  @media (min-width: 992px) {
-    #portugues {
-      position:absolute;
-
-    left: 45.5%;
-    }
-    #ingles{
-      position:absolute;
-
     left: 49.5%;
     }
   }
@@ -10768,6 +10721,7 @@ width: 20%;
     left: 50.1%;
     }
   }
+
 #revistaiframe {
   transform: scale(1.61, 1.61);
   }
