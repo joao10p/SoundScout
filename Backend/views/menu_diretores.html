@@ -429,8 +429,19 @@
 
 <br>
           <div class="form-group">
-              <label for="imagem_scout">Banner</label>
-              <input id="scout_banner" type="file" data-toggle="tooltip" data-placement="top" title="heigth - 770 / width - 750" class="form-control-file">
+            <form action="/upload" method= "POST"
+            enctype="multipart/form-data">
+               <div class="file-field input-field">
+                 <div class="btn grey">
+                   <span>File</span>
+                   <input data-toggle="tooltip" data-placement="top" title="heigth - 770 / width - 750" name="myImage" type="file">
+                 </div>
+                 <div hidden class="file-path-wrapper">
+                   <input class="file-path validate" type="text">
+                 </div>
+               </div>
+               <button type="submit" class="btn">Submit</button>
+             </form>  
           </div>
 
           <button id="confirmar_banner" type="button"  style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
@@ -463,7 +474,19 @@
 
         <div class="form-group">
           <label for="imagem_um">Primeira imagem</label>
-          <input id="primeira_sliders" data-toggle="tooltip" data-placement="top" title="heigth- 1540 / width- 770" type="file" class="form-control-file">
+          <form action="/upload" method= "POST"
+         enctype="multipart/form-data">
+            <div class="file-field input-field">
+              <div class="btn grey">
+                <span>File</span>
+                <input data-toggle="tooltip" data-placement="top" title="heigth - 1540 / width - 770" name="myImage" type="file">
+              </div>
+              <div hidden class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+          </form>  
       </div>
 
 
@@ -471,16 +494,40 @@
 <br>
       <div class="form-group">
           <label for="imagem_dois">Segunda Imagem</label>
-          <input id="segunda_sliders" data-toggle="tooltip" data-placement="top" title="heigth- 1540 / width- 770" type="file" class="form-control-file">
+          <form action="/upload" method= "POST"
+         enctype="multipart/form-data">
+            <div class="file-field input-field">
+              <div class="btn grey">
+                <span>File</span>
+                <input data-toggle="tooltip" data-placement="top" title="heigth - 1540 / width - 770" name="myImage" type="file">
+              </div>
+              <div hidden class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+          </form>  
       </div>
 
-
+ 
 
 <br>
 <br>
       <div class="form-group">
           <label for="imagem_tres">Terceira Imagem</label>
-          <input id="terceira_sliders" data-toggle="tooltip" data-placement="top" title="heigth- 1540 / width- 770" type="file" class="form-control-file">
+          <form action="/upload" method= "POST"
+         enctype="multipart/form-data">
+            <div class="file-field input-field">
+              <div class="btn grey">
+                <span>File</span>
+                <input data-toggle="tooltip" data-placement="top" title="heigth - 1540 / width - 770" name="myImage" type="file">
+              </div>
+              <div hidden class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+          </form>  
       </div>
 
       <br>
@@ -607,7 +654,19 @@
 
 <label class="fotografo">Capa</label>
 <div class="form-group">
-  <input type="file" class="form-control-file" id="capa_galeria_diretores">
+  <form action="/upload" method= "POST"
+         enctype="multipart/form-data">
+            <div class="file-field input-field">
+              <div class="btn grey">
+                <span>File</span>
+                <input data-toggle="tooltip" data-placement="top" title="heigth - **** / width - ****" name="myImage" type="file">
+              </div>
+              <div hidden class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+          </form>  
 </div>
 
 
@@ -615,8 +674,19 @@
 <label class="fotografo">Álbum</label>
 <div class="form-group">
 
-  <input type="file" class="form-control-file" id="album_galeria_diretores">
-  <button type="button" id="add_galeria" style="float: right;" class="btn btn-primary">Adicionar</button> <span style="float: right;">&nbsp;</span>
+  <form action="/upload" method= "POST"
+  enctype="multipart/form-data">
+     <div class="file-field input-field">
+       <div class="btn grey">
+         <span>File</span>
+         <input data-toggle="tooltip" data-placement="top" title="heigth - **** / width - ****" name="myImage" type="file">
+       </div>
+       <div hidden class="file-path-wrapper">
+         <input class="file-path validate" type="text">
+       </div>
+     </div>
+     <button type="submit" class="btn">Submit</button>
+   </form>    <button type="button" id="add_galeria" style="float: right;" class="btn btn-primary">Adicionar</button> <span style="float: right;">&nbsp;</span>
 </div>
 
 
@@ -698,16 +768,21 @@
 
           <div class="form-group">
               <label for="imagem_texto">Imagem</label>
-
-              <button type="button" class="btn btn-default"
-              data-toggle="tooltip" title="1280x720px" data-placement="right">
-        <span class="fas fa-lightbulb"></span> Dica
-      </button><!-- Colocar Dimensões-->
-
       <form>
         <div class="form-group">
-          <input type="file" class="form-control-file" id="imagem_textos_diretores">
-        </div>
+          <form action="/upload" method= "POST"
+          enctype="multipart/form-data">
+             <div class="file-field input-field">
+               <div class="btn grey">
+                 <span>File</span>
+                 <input data-toggle="tooltip" data-placement="top" title="heigth - 1280 / width - 720" name="myImage" type="file">
+               </div>
+               <div hidden class="file-path-wrapper">
+                 <input class="file-path validate" type="text">
+               </div>
+             </div>
+             <button type="submit" class="btn">Submit</button>
+           </form>          </div>
        <!-- Upload de fotos-->
           </div>
 
@@ -759,9 +834,20 @@
   <br>
                 <div class="form-group">
                     <label for="imagem_instagram">Imagem do Instagram</label>
-                    <input id="instagram_redes" data-toggle="tooltip" data-placement="top" title="heigth- 1090 / width- 730" type="file" class="form-control-file">
+                    <form action="/upload" method= "POST"
+         enctype="multipart/form-data">
+            <div class="file-field input-field">
+              <div class="btn grey">
+                <span>File</span>
+                <input data-toggle="tooltip" data-placement="top" title="heigth - 1090 / width - 730" name="myImage" type="file">
+              </div>
+              <div hidden class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+          </form>  
                 </div>
-
                 <br>
 
                 <button id="confirmar_redes" type="button" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
