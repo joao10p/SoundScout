@@ -33,7 +33,7 @@ window.onload= function() {
 
     function getNome(){
         
-       const id = document.getElementById("get_id").value;
+       const id = document.getElementById("id_trabalhador").value;
        
        
       fetch('http://localhost:3000/users/' +id)
