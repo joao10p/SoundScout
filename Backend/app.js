@@ -14,6 +14,7 @@ const passport = require('passport');
 const models = require('./models/');
 const { connect } = require('./config/connect');
 const connection = require('./config/connect');
+//var imageRouter = require('./routes/image-route');
 
 
 //BODY PARSER
@@ -33,7 +34,7 @@ app.use(express.static('public'));
 app.use('/css', express.static(__dirname + 'public/css'))
 app.use('/js', express.static(__dirname + 'public/js'))
 app.use('/img', express.static(__dirname + 'public/images'))
-
+//app.use('/', imageRouter);
 // Set View's
 app.set('views', './views');
 app.set('view engine', 'ejs');
@@ -134,8 +135,13 @@ app.get('/galeria_id_sound', (req,res) => {
 app.get('/galeria_id_scout', (req,res) => {
   res.sendFile(__dirname + '/views/galeria_id_scout.html')
 })
+
+app.get('/try', (req,res) => {
+  res.sendFile(__dirname + '/views/try.html')
+})
 //USA AS ROTAS PARA IR BUSCAR OS CONTROLLERS E AS PAGINAS
 app.use('/', mainRoutes);
+
 
 //zona do fetch
 //app.use(bodyParser.json(),bodyParser.urlencoded({extend:true}));
@@ -178,38 +184,6 @@ app.use(function(req, res, next) {
 app.listen(port, () => console.info(`App listening on port ${port}`))
 
 
-
-//FOTOS
-// Set Storage Engine
-const storage = multer.diskStorage({
-  destination: 'public/uploads/',
-  filename: function(req, file, cb){
-    cb(null, file.fieldname + '-' + Date.now() + 
-    path.extname(file.originalname));
-  }
-});
-
-// Init Upload
-const upload = multer({
-  storage: storage
-  //limits:{fileSize:1000000},
-  //fileFilter: function(req, file, cb){
-    //checkFileType(file, cb);
-  //}
-}).single('banner');  // Aqui tambem podemos usar arreio em vezde single
-
-app.post('/upload', (req, res )=>{
-  upload(req, res, (err) => {
-    if(err){
-      res.render('upload', {
-        msg: err
-      }) ;
-    } else {
-      console.log(req.file);
-      res.send('test');
-    }
-  });
-});
 
 // create login
 //app.use('/auth', require('./routes/auth'));

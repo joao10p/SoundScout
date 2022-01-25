@@ -34,7 +34,7 @@ window.onload= function() {
     function getNome(){
         
        const id = document.getElementById("id_trabalhador").value;
-       
+
        
       fetch('http://localhost:3000/users/' +id)
        .then(response => response.json()) // <-- important line
@@ -42,7 +42,6 @@ window.onload= function() {
            console.log(response);
            JSON.stringify(response);
            // changed .value to .innerHTML but you can handle it as you wish
-           
            const txt = response[0].nome;
            const txt1 = response[0].cargo;
            const txt2= response[0].email;
@@ -51,7 +50,7 @@ window.onload= function() {
            
             document.getElementById("nome_pessoa").value = txt;
             document.getElementById("cargo_pessoa").value=txt1;
-            document.getElementById("email_diretores").value=txt2;
+            document.getElementById("phoneField").value=txt2;
             document.getElementById("telemovel_diretores").value=txt3;
             document.getElementById("pass_diretores").value=txt4;
            
@@ -65,9 +64,8 @@ window.onload= function() {
     //ALTERAR DADOS DOS UTILIZADORES
     function concol() {
         const id = document.getElementById("id_trabalhador").value;
-        console.log(id);
         var data = {};
-        data.email = document.getElementById("email_diretores").value;
+        data.email = document.getElementById("phoneField").value;
         data.numero=document.getElementById("telemovel_diretores").value;
         data.cargo=document.getElementById("cargo_pessoa").value;
         data.nome=document.getElementById("nome_pessoa").value;
@@ -129,7 +127,7 @@ function show_revista() {
     fetchAsync().then(data => console.log("ok")).catch(reason => console.log(reason.message));
 }
 function save_revista() {
-    alert("passou na funçao save")
+    
     var data = {};
     data.nome = document.getElementById("nome_revistas").value;
     data.edicao = document.getElementById("numero_revistas").value;
@@ -174,13 +172,12 @@ function save_revista() {
 
 //BANNER DA SOUND
 function save_banner_scout() {
-    alert("passou no banner")
     var data = {};
     data.nome_revista=document.getElementById("select_banner").value;
-    data.banner = document.getElementById("scout_banner").value;
+    data.banner = document.getElementById("file").value;
     
     console.log(data);
-    fetch('http://localhost:3000/scout/', {
+    fetch('http://localhost:3000/scoutBanner/', {
         headers: { 'Content-Type': 'application/json' },
         method: 'POST',
         body: JSON.stringify(data)
@@ -238,7 +235,7 @@ function show_galeria() {
 
 //---Save dados
 function save_galeria() {
-    alert("passou na galeriar")
+    alert("passou na galeria")
     var data = {};
     data.revista=document.getElementById("select_galeria_diretores").value;
     data.titulo = document.getElementById("titulo_galeria_diretores").value;
@@ -329,13 +326,6 @@ function save_texto() {
 
 
 
-
-    data.nome_revista=document.getElementById("select_textos_diretores").value;
-    data.titulo = document.getElementById("titulo_textos_diretores").value;
-    data.nome_cria_txt=document.getElementById("nome_textos_diretores").value;
-    data.cargoS=document.getElementById("cargo_textos_diretores").value;
-    data.texto=document.getElementById("texto_textos_diretores").value;
-    data.tximagem = document.getElementById("imagem_textos_diretores").value;
 
 
 
