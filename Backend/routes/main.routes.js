@@ -35,6 +35,6 @@ router.put('/sound/:id', Sound.update);
 router.delete('/sound/:id', Sound.deleteID);
 */
 module.exports = router;
-
+console.log('Passou as rotas');
 
 
