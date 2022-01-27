@@ -14,7 +14,7 @@ window.onload = function () {
     }
     document.getElementById("adicionar_pessoa").addEventListener("click", function () {
         creatlogin();
-        show_users();
+        //show_users();
     })
     document.getElementById("add_revistas").onclick = function (e) {
         save_revista();
@@ -400,9 +400,9 @@ window.onload = function () {
 			else {
 				creatlogin();
 				async function creatlogin() {
-					const res = await fetch('http://localhost:3000//signupSuccess');
+					const res = await fetch('http://localhost:3000/signupSuccess');
 					const data = await res.json();
-					alert("Autenticação feita com sucesso!")
+					alert("Conta criada com sucesso")
 					window.location.href = "/";
 					return response.json();
                     
