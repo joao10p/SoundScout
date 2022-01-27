@@ -84,7 +84,7 @@ app.get('/galeria_scout', (req,res) => {
 app.get('/galeria_sound', (req,res)=> {
   res.sendFile(__dirname + '/views/galeria_sound.html')
 })
-app.get('/menu_diretores', (req,res) => {
+app.get('/menu_diretores', checkAuthenticated, (req,res) => {
   res.sendFile(__dirname + '/views/menu_diretores.html')
 })
 
@@ -187,9 +187,6 @@ app.use(function(req, res, next) {
 //Criacao do server
 app.listen(port, () => console.info(`App listening on port ${port}`))
 
-
-
-// create login
 //app.use('/auth', require('./routes/auth'));
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
@@ -203,7 +200,13 @@ models.sequelize.sync().then(function() {
   console.log(err, "Something went wrong with the Database Update!");
 });
 
-
+//ver se esta autenticado
+function checkAuthenticated(req, res , next){
+  if(req.isAuthenticated()){
+     return next()
+  }
+  res.redirect('/')
+}
 
 
 /*
