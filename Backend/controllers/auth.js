@@ -25,11 +25,5 @@ exports.logout = function(req, res, err) {
 };
 
 
-/*exports.register = (req, res) => {
-    console.log(req.body);
-    res.send("form submitted")
-}*/
-
-
 
 

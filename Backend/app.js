@@ -189,7 +189,7 @@ app.listen(port, () => console.info(`App listening on port ${port}`))
 //app.use('/auth', require('./routes/auth'));
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
-require('./routes/auth.js')(app, passport);
+require('./routes/auth.routes.js')(app, passport);
 require('./config/passport/passport.js')(passport, models.user);
 //Sync Database
 models.sequelize.sync().then(function() {
