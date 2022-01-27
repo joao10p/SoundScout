@@ -5,6 +5,12 @@ window.onload = function () {
     show_galeria();
     show_users();
     show_revista();
+    const input = document.getElementById('uploadedFile');
+
+    // add event listener
+    input.addEventListener('change', () => {
+        uploadFile();
+    });
     document.getElementById("get_id").onclick = function (e) {
         getNome();
     }
@@ -173,41 +179,21 @@ window.onload = function () {
 
 
     //BANNER DA SOUND
-    function save_banner_scout() {
+    function uploadFile()  {
+
         var data = {};
-        //data.nome_revista=document.getElementById("select_banner").value;
-        data.banner = document.getElementById("file").value;
-        console.log(data);
-        fetch('http://localhost:3000/scoutBanner', {
-            headers: { 'Content-Type':'image/png' },
+        data.uploadFile = document.getElementById("uploadedFile");
+        
+
+        // send `POST` request
+        fetch('http://localhost:3000/upload/', {
             method: 'POST',
             body: JSON.stringify(data)
-        }).then(function (response) {
-            if (!response.ok) {
-                console.log(response.status); //=> number 100–599
-                console.log(response.statusText); //=> String
-                console.log(response.headers); //=> Headers
-                console.log(response.url); //=> String
-                if (response.status === 409) {
-                    alert("Duplicated occurrences Code");
-                }
-                else {
-                    throw Error(response.statusText);
-                }
-            }
-            else {
-                /*document.getElementById("nome_revistas").reset();
-                 document.getElementById("numero_revistas").reset();
-                 document.getElementById("select_revistas").reset();*/
-                alert("Revista adicionada com sucesso!");
-                //refreshanalise();
-            }
-        }).then(function (result) {
-            console.log(result);
-        }).catch(function (err) {
-            //alert("Submission error");
-            console.error(err);
-        });
+        })
+        alert("passa no fetch")
+            .then(res => res.json())
+            .then(json => console.log(json))
+            .catch(err => console.error(err));
     }
 
 

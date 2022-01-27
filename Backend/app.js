@@ -14,6 +14,7 @@ const passport = require('passport');
 const models = require('./models/');
 const { connect } = require('./config/connect');
 const connection = require('./config/connect');
+const fileUpload = require('express-fileupload');
 //var imageRouter = require('./routes/image-route');
 
 
@@ -158,7 +159,10 @@ app.use(session({
     httpOnly: true
   }
 }));
+//BANNER TRYYYYYYYYYYYYYYYYYYYYYYY
 
+
+module.exports = app;
 //cookies 
 app.use(function(req, res, next) {
   var cookie = req.cookies.cookieName;

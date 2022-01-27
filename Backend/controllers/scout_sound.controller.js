@@ -195,7 +195,7 @@ exports.save_slider3 = function (req, res) {
 }
 exports.save_banner = function (req, res) {
     const id = req.body.id;
-    const nome_revista = req.body.nome_revista;
+    //const nome_revista = req.body.nome_revista;
     const banner = req.file.filename;
     var query = "";
 
@@ -203,12 +203,12 @@ exports.save_banner = function (req, res) {
     // Store hash in your password DB.
     var post = [
         id,
-        nome_revista,
+        //nome_revista,
         banner
 
     ];
 
-    query = con.query('INSERT INTO revistas SET id=?, nome_revista =?, banner =?', post, function (err, rows, fields) {
+    query = con.query('INSERT INTO revistas SET id=?, banner =?', post, function (err, rows, fields) {
         console.log(query.sql);
         if (!err) {
             res.status(200).location(rows.insertId).send({
