@@ -176,13 +176,12 @@ window.onload = function () {
     function save_banner_scout() {
         var data = {};
         //data.nome_revista=document.getElementById("select_banner").value;
-        var form = document.getElementById("myImage");
-        var formData = new FormData(form);
+        data.banner = document.getElementById("file").value;
         console.log(data);
         fetch('http://localhost:3000/scoutBanner', {
- 
+            headers: { 'Content-Type':'image/png' },
             method: 'POST',
-            body: formData
+            body: JSON.stringify(data)
         }).then(function (response) {
             if (!response.ok) {
                 console.log(response.status); //=> number 100–599
