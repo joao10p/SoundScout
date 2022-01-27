@@ -160,7 +160,34 @@ app.use(session({
   }
 }));
 //BANNER TRYYYYYYYYYYYYYYYYYYYYYYY
+app.use(fileUpload({
+  createParentPath: true
+}));
+app.post('/upload', async (req, res) => {
+  try {
+      if(!req.files) {
+          res.send({
+              status: false,
+              message: 'Error: No file uploaded'
+          });
+      } else {
+          let uploadedFile = req.files.uploadedFile;
+          uploadedFile.mv('./uploadedFiles/' + uploadedFile.name);
+          res.json({
+              message: 'File is uploaded',
+              data: {
+                  name: uploadedFile.name,
+                  mimetype: uploadedFile.mimetype,
+                  size: uploadedFile.size
+              }
+          });
+      }
+  } catch (err) {
+      res.json({Error: "Error while uploading file."})
+  }
+});
 
+module.exports = app;
 
 module.exports = app;
 //cookies 
