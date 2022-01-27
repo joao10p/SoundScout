@@ -1,15 +1,13 @@
 
-
-
 window.onload = function () {
     show_galeria();
     show_users();
     show_revista();
-    const input = document.getElementById('uploadedFile');
+    const input = document.getElementById('banner');
 
     // add event listener
     input.addEventListener('change', () => {
-        uploadFile();
+        uploadFile(input.files[0]);
     });
     document.getElementById("get_id").onclick = function (e) {
         getNome();
@@ -181,16 +179,16 @@ window.onload = function () {
     //BANNER DA SOUND
     function uploadFile()  {
 
-        var data = {};
-        data.uploadFile = document.getElementById("uploadedFile");
-        
+        const fd = new FormData();
+        fd.append('banner', file);
+        alert("entra no upload")
 
         // send `POST` request
-        fetch('http://localhost:3000/upload/', {
+        fetch('http://localhost:3000/scoutBanner', {
             method: 'POST',
             body: JSON.stringify(data)
         })
-        alert("passa no fetch")
+   
             .then(res => res.json())
             .then(json => console.log(json))
             .catch(err => console.error(err));
