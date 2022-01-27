@@ -1,5 +1,5 @@
 
-const con = require("../config/connect");
+/*const con = require("../config/connect");
 exports.read = function(req, res) {
 
 //para de falhar por favor
@@ -120,8 +120,7 @@ exports.deleteID = function(req, res) {
             console.log('Error while performing Query.', err);
     });
 }
-
-/*
+*/
 const con = require("../config/connect");
 var mysql = require('mysql');
 //var connection = mysql.createConnection();  
@@ -274,4 +273,3 @@ exports.deleteID = function(req, res) {
             console.log('Error while performing Query.', err);
     });
 }
-*/
