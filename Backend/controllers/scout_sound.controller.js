@@ -193,22 +193,57 @@ exports.save_slider3 = function (req, res) {
     });
 
 }
-exports.save_banner = function (req, res) {
-    const id = req.body.id;
-    //const nome_revista = req.body.nome_revista;
-    const banner = req.file.filename;
+exports.save_banner_sound = function (req, res) {
+    const id = 24;
+    const nome_revista = 1;
+    const banner_sound = req.file.filename;
     var query = "";
 
 
     // Store hash in your password DB.
     var post = [
-        id,
-        //nome_revista,
-        banner
+        nome_revista,
+        banner_sound,
+        id
 
     ];
 
-    query = con.query('INSERT INTO revistas SET id=?, banner =?', post, function (err, rows, fields) {
+    query = con.query('UPDATE revistas SET nome_revista=?, banner =? WHERE id=?', post, function (err, rows, fields) {
+        console.log(query.sql);
+        if (!err) {
+            res.status(200).location(rows.insertId).send({
+                "msg": "inserted with success"
+            });
+            console.log("Number of records inserted: " + rows.affectedRows);
+        }
+        else {
+            if (err.code == "ER_DUP_ENTRY") {
+                res.status(409).send({ "msg": err.code });
+                console.log('Error while performing Query.', err);
+            }
+            else res.status(400).send({ "msg": err.code });
+        }
+    });
+
+}
+
+exports.save_banner_scout = function (req, res) {
+    const id = 23;
+    const nome_revista = 2;
+    const banner_scout = req.file.filename;
+    var query = "";
+
+
+    // Store hash in your password DB.
+    var post = [
+        
+        nome_revista,
+        banner_scout,
+        id
+
+    ];
+
+    query = con.query('UPDATE revistas SET nome_revista=?, banner =? WHERE id=?', post, function (err, rows, fields) {
         console.log(query.sql);
         if (!err) {
             res.status(200).location(rows.insertId).send({

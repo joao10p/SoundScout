@@ -1,35 +1,22 @@
+window.onload = function () {
+    alert("ent");
 
-window.onload= function() {
-    bannersoud();
-    
-    }
+function bannersound() {
+    const id = 23;
 
-
-    function bannersoud() {
-
-        fetch("http://localhost:3000/banner")
-            .then(response => response.json()) // <-- important line
-            .then(response => {
-                console.log(response);
-                JSON.stringify(response);
-                // changed .value to .innerHTML but you can handle it as you wish
-
-                const txt = response[0].banner;
-                document.getElementById("bannerSound").appendChild  = txt;
-            })
-            .catch(error => {
-              
-            });
-    }
+    alert("#sD");
+    fetch('http://localhost:3000/scout/' + id)
+        .then(response => response.blob())
+        .then(image => {
+            const txt = response[0].banner;
+            document.getElementById("sound").value = txt;
+            alert("chega");
+        })
+        .catch(error => {
+            alert("Nope");
+        })
+};
 
 
 
-
-
-
-
-
-
-
-
-
+};

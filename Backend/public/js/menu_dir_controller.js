@@ -3,12 +3,13 @@ window.onload = function () {
     show_galeria();
     show_users();
     show_revista();
-    const input = document.getElementById('banner');
+    // select file input
+    const input = document.getElementById('avatar');
 
     // add event listener
     input.addEventListener('change', () => {
         uploadFile(input.files[0]);
-    });
+    })
     document.getElementById("get_id").onclick = function (e) {
         getNome();
     }
@@ -177,23 +178,32 @@ window.onload = function () {
 
 
     //BANNER DA SOUND
-    function uploadFile()  {
+    const uploadFile = (file) => {
+
+        // add file to FormData object
 
         const fd = new FormData();
-        fd.append('banner', file);
-        alert("entra no upload")
+        if (document.getElementById("select_banner") == 1) {
+            fd.append('banner_sound', file);
+            fetch('/soundBanner', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        } else {
+            fd.append('banner_scout', file);
+            fetch('/scoutBanner', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        }
 
-        // send `POST` request
-        fetch('http://localhost:3000/scoutBanner', {
-            method: 'POST',
-            body: JSON.stringify(data)
-        })
-   
-            .then(res => res.json())
-            .then(json => console.log(json))
-            .catch(err => console.error(err));
-    }
-
+    };
 
     //-------------------------GALERIA------------------------//
     //---Mostrar a tabela
@@ -360,43 +370,43 @@ window.onload = function () {
     }
     //CRIAR CONTA
     function creatlogin() {
-		let data = {};
-		data.nome = document.getElementById("nome_staff").value;
-		data.cargo = document.getElementById("cargo_staff").value;
-		data.numero = document.getElementById("telemovel_staff").value;
-		data.email = document.getElementById("email_staff").value;
-		data.password = document.getElementById("password_staff").value;
-		
-		console.log(data); //debugging para ver os dados que foram enviados
-		//chamada fetch para envio dos dados para o servior via POST
-		fetch('http://localhost:3000/signup', {
-			headers: { 'Content-Type': 'application/json' },
-			method: 'POST',
-			body: JSON.stringify(data)
-		}).then(function(response) {
-			if (!response.ok) {
-				console.log(response.status); //=> number 100â€“599
-				console.log(response.statusText); //=> String
-				console.log(response.headers); //=> Headers
-				console.log(response.url); //=> String
-				throw Error(response.statusText);
-			}
-			else {
-				creatlogin();
-				async function creatlogin() {
-					const res = await fetch('http://localhost:3000/signupSuccess');
-					const data = await res.json();
-					alert("Conta criada com sucesso")
-					window.location.href = "/";
-					return response.json();
-                    
-				}
-                
-			};
-		}).then(function(result) {
-			console.log(result);
-		});
-	}
+        let data = {};
+        data.nome = document.getElementById("nome_staff").value;
+        data.cargo = document.getElementById("cargo_staff").value;
+        data.numero = document.getElementById("telemovel_staff").value;
+        data.email = document.getElementById("email_staff").value;
+        data.password = document.getElementById("password_staff").value;
+
+        console.log(data); //debugging para ver os dados que foram enviados
+        //chamada fetch para envio dos dados para o servior via POST
+        fetch('http://localhost:3000/signup', {
+            headers: { 'Content-Type': 'application/json' },
+            method: 'POST',
+            body: JSON.stringify(data)
+        }).then(function (response) {
+            if (!response.ok) {
+                console.log(response.status); //=> number 100â€“599
+                console.log(response.statusText); //=> String
+                console.log(response.headers); //=> Headers
+                console.log(response.url); //=> String
+                throw Error(response.statusText);
+            }
+            else {
+                creatlogin();
+                async function creatlogin() {
+                    const res = await fetch('http://localhost:3000/signupSuccess');
+                    const data = await res.json();
+                    alert("Conta criada com sucesso")
+                    window.location.href = "/";
+                    return response.json();
+
+                }
+
+            };
+        }).then(function (result) {
+            console.log(result);
+        });
+    }
 
 
 };
