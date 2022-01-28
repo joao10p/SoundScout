@@ -42,7 +42,7 @@ app.set('view engine', 'ejs');
 
 
 // Navigation
-app.get('', (req, res) => {
+app.get('', checkNotAuthenticated, (req, res) => {
     res.sendFile(__dirname + '/views/index.html')
 })
 
@@ -84,7 +84,7 @@ app.get('/galeria_scout', (req,res) => {
 app.get('/galeria_sound', (req,res)=> {
   res.sendFile(__dirname + '/views/galeria_sound.html')
 })
-app.get('/menu_diretores', checkAuthenticated, (req,res) => {
+app.get('/menu_diretores',checkNotAuthenticated,  (req,res) => {
   res.sendFile(__dirname + '/views/menu_diretores.html')
 })
 
@@ -139,6 +139,10 @@ app.get('/galeria_id_scout', (req,res) => {
 
 app.get('/try', (req,res) => {
   res.sendFile(__dirname + '/views/try.html')
+})
+
+app.get('/login',checkNotAuthenticated, (req,res) => {
+  res.sendFile(__dirname + '/views/login.html')
 })
 //USA AS ROTAS PARA IR BUSCAR OS CONTROLLERS E AS PAGINAS
 app.use('/', mainRoutes);
@@ -232,7 +236,14 @@ function checkAuthenticated(req, res , next){
   if(req.isAuthenticated()){
      return next()
   }
-  res.redirect('/')
+  res.redirect('/login')
+}
+
+function checkNotAuthenticated(req, res, next){
+  if(req.isAuthenticated()){
+   return  res.redirect('/menu_diretores')
+  }
+   next()
 }
 
 
