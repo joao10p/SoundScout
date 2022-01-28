@@ -10837,3 +10837,8 @@ width: 20%;
     #tipo_de_letra{
       font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
     }
+
+    #page-top{
+      background: #f8f9fa;
+
+    }
