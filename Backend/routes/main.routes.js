@@ -18,6 +18,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({
     storage: storage
+
 })
 
 //GALERIA
@@ -36,6 +37,7 @@ router.delete('/users/:id', User.deleteID);
 
 //SCOUT e SOUND
 router.get('/scoutGet', ScoutSound.read);
+router.get('/soundtGetbanner', ScoutSound.read_banner_sound);
 router.get('/scout/:id', ScoutSound.readID);
 router.post('/scoutRevistas/', upload.single('capa'), ScoutSound.save_revistas);
 router.post('/scoutSlide1/', upload.single('slider1'), ScoutSound.save_slider1);
@@ -43,7 +45,9 @@ router.post('/scoutSlide2/', upload.single('slider2'), ScoutSound.save_slider2);
 router.post('/scoutSlide3/', upload.single('slider3'), ScoutSound.save_slider3);
 router.post('/scoutBanner/', upload.single('banner_scout'), ScoutSound.save_banner_scout);
 router.post('/soundBanner/', upload.single('banner_sound'), ScoutSound.save_banner_sound);
-router.post('/scoutTexto/', upload.single('tximagem'), ScoutSound.save_text);
+router.post('/scoutTexto_image/', upload.single('tximagem_scout'), ScoutSound.save_text_image_scout);
+router.post('/soundTexto_image/', upload.single('tximagem_sound'), ScoutSound.save_text_image_sound);
+router.post('/scoutTexto/', ScoutSound.save_text);
 router.put('/scout/:id', ScoutSound.update);
 router.delete('/scout/:id', ScoutSound.deleteID);
 router.get('/banner', ScoutSound.bannerSound);

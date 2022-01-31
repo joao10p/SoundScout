@@ -25,14 +25,18 @@ window.onload = function () {
         save_revista();
         show_revista();
     }
-    document.getElementById("confirmar_banner").onclick = function (e) {
-        save_banner_scout();
-    }
+
     document.getElementById("add_galeria").onclick = function (e) {
         save_galeria();
     }
     document.getElementById("confirmar_textos_diretores").onclick = function (e) {
         save_texto();
+        const input = document.getElementById('txt_imagem');
+
+        // add event listener
+        input.onclick(() => {
+            save_txt_image(input.files[0]);
+        })
     }
     //-----------------------------------------------------------------------------------------------------//
 
@@ -183,8 +187,8 @@ window.onload = function () {
         // add file to FormData object
 
         const fd = new FormData();
-        if (document.getElementById("select_banner") == 1) {
-            fd.append('banner_sound', file);
+        if (document.getElementById("select_banner").value == 1) {
+            fd.append('banner_scout', file);
             fetch('/soundBanner', {
                 method: 'POST',
                 body: fd
@@ -275,9 +279,12 @@ window.onload = function () {
     //-------------------------TEXTO------------------------//
 
     function save_texto() {
-        const id = document.getElementById("id_texto").value;
-
-        console.log(id);
+        var id =0 ;
+        if (document.getElementById("select_textos_diretores").value == 1) {
+            id = 1;
+        } else {
+            id = 2;
+        }
         var data = {};
 
         data.nome_revista = document.getElementById("select_textos_diretores").value;
@@ -285,7 +292,6 @@ window.onload = function () {
         data.nome_cria_txt = document.getElementById("nome_textos_diretores").value;
         data.cargoS = document.getElementById("cargo_textos_diretores").value;
         data.texto = document.getElementById("texto_textos_diretores").value;
-        data.tximagem = document.getElementById("imagem_textos_diretores").value;
         console.log(data);
         fetch('http://localhost:3000/scout/' + id, {
             headers: { 'Content-Type': 'application/json' },
@@ -320,10 +326,35 @@ window.onload = function () {
     }
 
 
+    //save imagem do texto
 
 
+    const save_txt_image = (file) => {
 
+        // add file to FormData object
 
+        const fd = new FormData();
+        if (document.getElementById("select_textos_diretores").value == 1) {
+            fd.append('tximagem_sound', file);
+            fetch('/soundTexto_image', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        } else {
+            fd.append('tximagem_scout', file);
+            fetch('/scoutTexto_image', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        }
+
+    };
 
     //---------------------------------------------------------------------------------------------------------//
     function refreshanalise() {

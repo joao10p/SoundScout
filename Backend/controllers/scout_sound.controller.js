@@ -22,6 +22,25 @@ exports.read = function (req, res) {
     });
 }
 
+
+exports.read_banner_sound = function (req, res) {
+    const id = 24;
+
+    con.query('SELECT banner from revistas WHERE id =?', [id], function (err, rows, fields) {
+        if (!err) {
+
+            if (rows.length == 0) {
+                res.status(404).send("User not found");
+            }
+            else {
+                res.status(200).send(rows);
+            }
+        }
+        else
+            console.log('Error while performing Query.', err);
+    });
+}
+
 exports.readID = function (req, res) {
 
     const id = req.params.id;
@@ -236,7 +255,7 @@ exports.save_banner_scout = function (req, res) {
 
     // Store hash in your password DB.
     var post = [
-        
+
         nome_revista,
         banner_scout,
         id
@@ -264,11 +283,10 @@ exports.save_banner_scout = function (req, res) {
 
 
 exports.save_text = function (req, res) {
-    const id = req.body.id;
+    const id = 1;
     const nome_revista = req.body.nome_revista;
     const titulo = req.body.titulo;
     const texto = req.body.texto;
-    const tximagem = req.file.filename;
     const cargoS = req.body.cargoS;
     const nome_cria_txt = req.body.nome_cria_txt;
     var query = "";
@@ -276,17 +294,18 @@ exports.save_text = function (req, res) {
 
     // Store hash in your password DB.
     var post = [
-        id,
         nome_revista,
         titulo,
         texto,
-        tximagem,
         cargoS,
-        nome_cria_txt
+        nome_cria_txt,
+        id
+        
+
 
     ];
 
-    query = con.query('INSERT INTO revistas SET id=?, nome_revista =?, titulo =?, texto =?, tximagem =?, cargoS =?, nome_cria_txt', post, function (err, rows, fields) {
+    query = con.query('UPDATE revistas SET nome_revista=?, titulo =?, texto =?, cargoS =?, nome_cria_txt =? WHERE id=? ', post, function (err, rows, fields) {
         console.log(query.sql);
         if (!err) {
             res.status(200).location(rows.insertId).send({
@@ -304,6 +323,74 @@ exports.save_text = function (req, res) {
     });
 
 }
+
+exports.save_text_image_sound = function (req, res) {
+    const id = 1;
+    const tximagem = req.file.filename;
+    
+    var query = "";
+
+
+    // Store hash in your password DB.
+    var post = [
+        tximagem,
+        id
+
+
+    ];
+
+    query = con.query('UPDATE revistas SET tximagem =? WHERE id=? ', post, function (err, rows, fields) {
+        console.log(query.sql);
+        if (!err) {
+            res.status(200).location(rows.insertId).send({
+                "msg": "inserted with success"
+            });
+            console.log("Number of records inserted: " + rows.affectedRows);
+        }
+        else {
+            if (err.code == "ER_DUP_ENTRY") {
+                res.status(409).send({ "msg": err.code });
+                console.log('Error while performing Query.', err);
+            }
+            else res.status(400).send({ "msg": err.code });
+        }
+    });
+
+}
+exports.save_text_image_scout = function (req, res) {
+    const id = 2;
+    const tximagem = req.file.filename;
+    
+    var query = "";
+
+
+    // Store hash in your password DB.
+    var post = [
+        tximagem,
+        id
+
+
+    ];
+
+    query = con.query('UPDATE revistas SET tximagem =? WHERE id=? ', post, function (err, rows, fields) {
+        console.log(query.sql);
+        if (!err) {
+            res.status(200).location(rows.insertId).send({
+                "msg": "inserted with success"
+            });
+            console.log("Number of records inserted: " + rows.affectedRows);
+        }
+        else {
+            if (err.code == "ER_DUP_ENTRY") {
+                res.status(409).send({ "msg": err.code });
+                console.log('Error while performing Query.', err);
+            }
+            else res.status(400).send({ "msg": err.code });
+        }
+    });
+
+}
+
 exports.update = function (req, res) {
     const id = req.params.id;
     const nome = req.body.nome;

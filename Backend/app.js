@@ -119,6 +119,9 @@ app.get('/upload', (req,res) => {
 app.get('/teste', (req,res) => {
   res.sendFile(__dirname + '/views/teste.html')
 })
+app.get('/try', (req,res) => {
+  res.sendFile(__dirname + '/views/try.html')
+})
 
 app.get('/revista_id_sound', (req,res) => {
   res.sendFile(__dirname + '/views/revista_id_sound.html')
