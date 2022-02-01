@@ -42,7 +42,21 @@ window.onload = function () {
     input3.addEventListener('change', () => {
         uploadCapa(input3.files[0]);
     })
-
+    const input4 = document.getElementById('primeira');
+    // add event listener
+    input4.addEventListener('change', () => {
+        uploadSlider1(input4.files[0]);
+    })
+    const input5 = document.getElementById('segunda');
+    // add event listener
+    input5.addEventListener('change', () => {
+        uploadSlider2(input5.files[0]);
+    })
+    const input6 = document.getElementById('terceira');
+    // add event listener
+    input6.addEventListener('change', () => {
+        uploadSlider3(input6.files[0]);
+    })
 
 
     //-----------------------------------------------------------------------------------------------------//
@@ -217,7 +231,7 @@ window.onload = function () {
 
         const fd = new FormData();
         if (document.getElementById("select_banner").value == 1) {
-            fd.append('banner_scout', file);
+            fd.append('banner_sound', file);
             fetch('/soundBanner', {
                 method: 'POST',
                 body: fd
@@ -238,8 +252,90 @@ window.onload = function () {
 
     };
     //------------------------SLIDERS-------------------------//
-    
 
+    //PRIMEIRO SLIDER
+    function uploadSlider1(file) {
+
+        // add file to FormData object
+
+        const fd = new FormData();
+        if (document.getElementById("select_sliders").value == 1) {
+            fd.append('sound_slider1', file);
+            fetch('/soundSlide1/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        } else {
+            fd.append('scout_slider1', file);
+            fetch('/scoutSlide1/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        }
+
+    };
+
+    //SEGUNDO SLIDER 
+    function uploadSlider2(file) {
+
+        // add file to FormData object
+
+        const fd = new FormData();
+        if (document.getElementById("select_sliders").value == 1) {
+            fd.append('sound_slider2', file);
+            fetch('/soundSlide2/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        } else {
+            fd.append('scout_slider2', file);
+            fetch('/scoutSlide2/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        }
+
+    };
+
+    //TERCEIRO SLIDER
+    function uploadSlider3(file) {
+
+        // add file to FormData object
+
+        const fd = new FormData();
+        if (document.getElementById("select_sliders").value == 1) {
+            fd.append('sound_slider3', file);
+            fetch('/soundSlide3/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        } else {
+            fd.append('scout_slider3', file);
+            fetch('/scoutSlide3/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        }
+
+    };
     //-------------------------GALERIA------------------------//
     //---Mostrar a tabela
     function show_galeria() {
