@@ -12,7 +12,7 @@ const path = require('path');
 const storage = multer.diskStorage({
     destination: './public/imagens/',
     filename: (req, file, cb) => {
-        return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
+        return cb(null, `${file.fieldname}_${Date.now()}_${file.originalname}`)
     }
 })
 
@@ -39,7 +39,8 @@ router.delete('/users/:id', User.deleteID);
 router.get('/scoutGet', ScoutSound.read);
 router.get('/soundtGetbanner', ScoutSound.read_banner_sound);
 router.get('/scout/:id', ScoutSound.readID);
-router.post('/scoutRevistas/', upload.single('capa'), ScoutSound.save_revistas);
+router.post('/scoutRevistas/', ScoutSound.save_revistas);
+router.post('/scoutCapa/', upload.single('capa'), ScoutSound.save_capa);
 router.post('/scoutSlide1/', upload.single('slider1'), ScoutSound.save_slider1);
 router.post('/scoutSlide2/', upload.single('slider2'), ScoutSound.save_slider2);
 router.post('/scoutSlide3/', upload.single('slider3'), ScoutSound.save_slider3);
@@ -48,7 +49,7 @@ router.post('/soundBanner/', upload.single('banner_sound'), ScoutSound.save_bann
 router.post('/scoutTexto_image/', upload.single('tximagem_scout'), ScoutSound.save_text_image_scout);
 router.post('/soundTexto_image/', upload.single('tximagem_sound'), ScoutSound.save_text_image_sound);
 router.post('/scoutTexto/', ScoutSound.save_text);
-router.put('/scout/:id', ScoutSound.update);
+router.put('/scoutRevistas_mod/', ScoutSound.update);
 router.delete('/scout/:id', ScoutSound.deleteID);
 router.get('/banner', ScoutSound.bannerSound);
 

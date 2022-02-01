@@ -31,13 +31,20 @@ window.onload = function () {
     }
     document.getElementById("confirmar_textos_diretores").onclick = function (e) {
         save_texto();
-        const input = document.getElementById('txt_imagem');
-
-        // add event listener
-        input.onclick(() => {
-            save_txt_image(input.files[0]);
-        })
     }
+    const input2 = document.getElementById('txt_imagem');
+    // add event listener
+    input2.addEventListener('change', () => {
+        save_txt_image(input2.files[0]);
+    })
+    const input3 = document.getElementById('capa');
+    // add event listener
+    input3.addEventListener('change', () => {
+        uploadCapa(input3.files[0]);
+    })
+
+
+
     //-----------------------------------------------------------------------------------------------------//
 
     //BUSCAR OS NOMES DOS UTILIZADORES
@@ -137,7 +144,9 @@ window.onload = function () {
         //chama a função fetchAsync()
         fetchAsync().then(data => console.log("ok")).catch(reason => console.log(reason.message));
     }
-    function save_revista() {
+    function save_revista(file) {
+        const fd = new FormData();
+
 
         var data = {};
         data.nome = document.getElementById("nome_revistas").value;
@@ -145,9 +154,10 @@ window.onload = function () {
         data.nome_revista = document.getElementById("select_revistas").value;
         data.revista = document.getElementById("revista_revistas").value;
         console.log(data);
-        fetch('http://localhost:3000/scout/', {
+
+        fetch('http://localhost:3000/scoutRevistas_mod/', {
             headers: { 'Content-Type': 'application/json' },
-            method: 'POST',
+            method: 'PUT',
             body: JSON.stringify(data)
         }).then(function (response) {
             if (!response.ok) {
@@ -177,12 +187,31 @@ window.onload = function () {
         });
     }
 
+    //Save capa da revista 
+    function uploadCapa(file) {
+
+        // add file to FormData object
+
+        const fd = new FormData();
+
+        fd.append('capa', file);
+        fetch('/scoutCapa', {
+            method: 'POST',
+            body: fd
+        })
+            .then(res => res.json())
+            .then(json => console.log(json))
+            .catch(err => console.error(err));
+
+    };
+
+    //----------------------------------------------------------------------//
 
     //BANNERS 
 
 
     //BANNER DA SOUND
-    const uploadFile = (file) => {
+    function uploadFile(file) {
 
         // add file to FormData object
 
@@ -279,7 +308,7 @@ window.onload = function () {
     //-------------------------TEXTO------------------------//
 
     function save_texto() {
-        var id =0 ;
+        var id = 0;
         if (document.getElementById("select_textos_diretores").value == 1) {
             id = 1;
         } else {

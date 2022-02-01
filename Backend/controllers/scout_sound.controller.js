@@ -4,10 +4,12 @@ var mysql = require('mysql');
 //var connection = mysql.createConnection();  
 
 
+
+
 exports.read = function (req, res) {
 
 
-    con.query('SELECT * from revistas', function (err, rows, fields) {
+    con.query('SELECT * from revistas WHERE id >=26', function (err, rows, fields) {
         if (!err) {
 
             if (rows.length == 0) {
@@ -73,7 +75,7 @@ exports.save_revistas = function (req, res) {
     const edicao = req.body.edicao;
     const nome_revista = req.body.nome_revista;
     const revista = req.body.revista;
-    const capa = req.file.filename;
+    //const capa = req.file.filename;
 
     var query = "";
 
@@ -84,13 +86,47 @@ exports.save_revistas = function (req, res) {
         nome,
         edicao,
         nome_revista,
-        revista,
-        capa
+        revista
+        //capa
 
 
     ];
 
-    query = con.query('INSERT INTO revistas SET id=?, nome=?,edicao=?, nome_revista=?, revista=?, capa=?', post, function (err, rows, fields) {
+    query = con.query('INSERT INTO revistas SET id=?, nome=?,edicao=?, nome_revista=?, revista=?', post, function (err, rows, fields) {
+        console.log(query.sql);
+        if (!err) {
+            res.status(200).location(rows.insertId).send({
+                "msg": "inserted with success"
+            });
+            console.log("Number of records inserted: " + rows.affectedRows);
+        }
+        else {
+            if (err.code == "ER_DUP_ENTRY") {
+                res.status(409).send({ "msg": err.code });
+                console.log('Error while performing Query.', err);
+            }
+            else res.status(400).send({ "msg": err.code });
+        }
+    });
+
+}
+
+//capa 
+
+exports.save_capa = function (req, res) {
+    const id = req.body.id;
+    const capa = req.file.filename;
+    var query = "";
+
+
+    // Store hash in your password DB.
+    var post = [
+        id,
+        capa
+
+    ];
+
+    query = con.query('INSERT INTO revistas SET id=?, capa =?', post, function (err, rows, fields) {
         console.log(query.sql);
         if (!err) {
             res.status(200).location(rows.insertId).send({
@@ -300,7 +336,7 @@ exports.save_text = function (req, res) {
         cargoS,
         nome_cria_txt,
         id
-        
+
 
 
     ];
@@ -326,14 +362,14 @@ exports.save_text = function (req, res) {
 
 exports.save_text_image_sound = function (req, res) {
     const id = 1;
-    const tximagem = req.file.filename;
-    
+    const tximagem_sound = req.file.filename;
+
     var query = "";
 
 
     // Store hash in your password DB.
     var post = [
-        tximagem,
+        tximagem_sound,
         id
 
 
@@ -359,14 +395,14 @@ exports.save_text_image_sound = function (req, res) {
 }
 exports.save_text_image_scout = function (req, res) {
     const id = 2;
-    const tximagem = req.file.filename;
-    
+    const tximagem_scout = req.file.filename;
+
     var query = "";
 
 
     // Store hash in your password DB.
     var post = [
-        tximagem,
+        tximagem_scout,
         id
 
 
@@ -392,21 +428,11 @@ exports.save_text_image_scout = function (req, res) {
 }
 
 exports.update = function (req, res) {
-    const id = req.params.id;
+    const id = req.body.id;
     const nome = req.body.nome;
     const edicao = req.body.edicao;
     const nome_revista = req.body.nome_revista;
     const revista = req.body.revista;
-    const capa = req.body.capa;
-    const banner = req.body.banner;
-    const slider1 = req.body.slider1;
-    const slider2 = req.body.slider2;
-    const slider3 = req.body.slider3;
-    const titulo = req.body.titulo;
-    const texto = req.body.texto;
-    const tximagem = req.body.tximagem;
-    const cargoS = req.body.cargoS;
-    const nome_cria_txt = req.body.nome_cria_txt;
 
     var query = "";
 
@@ -415,22 +441,12 @@ exports.update = function (req, res) {
         nome,
         edicao,
         nome_revista,
-        revista,
-        capa,
-        banner,
-        slider1,
-        slider2,
-        slider3,
-        titulo,
-        texto,
-        tximagem,
-        cargoS,
-        nome_cria_txt,
-        id
+        revista
+
 
     ];
 
-    query = con.query('UPDATE revistas SET nome=?,edicao=?, nome_revista=?, revista=?, capa=?,banner=?,slider1 =?,slider2 =?, slider3 =?, titulo =?, texto=?, tximagem=?,cargoS=?,nome_cria_txt=? where id=?', update, function (err, rows,
+    query = con.query('UPDATE revistas SET nome=?,edicao=?, nome_revista=?, revista=? where id >=26 ORDER BY id DESC LIMIT 1', update, function (err, rows,
         fields) {
         console.log(query.sql);
         if (!err) {
