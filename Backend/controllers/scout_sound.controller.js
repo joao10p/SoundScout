@@ -147,90 +147,60 @@ exports.save_capa = function (req, res) {
 
 //slider 1 
 
-exports.save_slider1 = function (req, res) {
-    const id = req.body.id;
-    const nome_revista = req.body.nome_revista;
+exports.save_slider_sound = function (req, res) {
+    const id = 4;
     const slider1 = req.file.filename;
-    var query = "";
+    const slider2 = req.file.filename; 
+    const slider3 = req.file.filename;
+
+var query = "";
 
 
-    // Store hash in your password DB.
-    var post = [
-        id,
-        nome_revista,
-        slider1
+// Store hash in your password DB.
+var post = [
+    slider1,
+    slider2,
+    slider3,
+    id
 
-    ];
+];
 
-    query = con.query('INSERT INTO revistas SET id=?, nome_revista =?, slider1 =?', post, function (err, rows, fields) {
-        console.log(query.sql);
-        if (!err) {
-            res.status(200).location(rows.insertId).send({
-                "msg": "inserted with success"
-            });
-            console.log("Number of records inserted: " + rows.affectedRows);
+query = con.query('UPDATE revistas revistas SET slider1 =?, slider2 =?, slider3 =? WHERE id =?', post, function (err, rows, fields) {
+    console.log(query.sql);
+    if (!err) {
+        res.status(200).location(rows.insertId).send({
+            "msg": "inserted with success"
+        });
+        console.log("Number of records inserted: " + rows.affectedRows);
+    }
+    else {
+        if (err.code == "ER_DUP_ENTRY") {
+            res.status(409).send({ "msg": err.code });
+            console.log('Error while performing Query.', err);
         }
-        else {
-            if (err.code == "ER_DUP_ENTRY") {
-                res.status(409).send({ "msg": err.code });
-                console.log('Error while performing Query.', err);
-            }
-            else res.status(400).send({ "msg": err.code });
-        }
-    });
-
+        else res.status(400).send({ "msg": err.code });
+    }
+});
 }
 
-exports.save_slider2 = function (req, res) {
-    const id = req.body.id;
-    const nome_revista = req.body.nome_revista;
-    const slider2 = req.file.filename;
-    var query = "";
-
-
-    // Store hash in your password DB.
-    var post = [
-        id,
-        nome_revista,
-        slider2
-
-    ];
-
-    query = con.query('INSERT INTO revistas SET id=?, nome_revista =?, slider2 =?', post, function (err, rows, fields) {
-        console.log(query.sql);
-        if (!err) {
-            res.status(200).location(rows.insertId).send({
-                "msg": "inserted with success"
-            });
-            console.log("Number of records inserted: " + rows.affectedRows);
-        }
-        else {
-            if (err.code == "ER_DUP_ENTRY") {
-                res.status(409).send({ "msg": err.code });
-                console.log('Error while performing Query.', err);
-            }
-            else res.status(400).send({ "msg": err.code });
-        }
-    });
-
-}
-
-exports.save_slider3 = function (req, res) {
-    const id = req.body.id;
-    const nome_revista = req.body.nome_revista;
+exports.save_slider_scout = function (req, res) {
+    const id = 5;
+    const slider1 = req.file.filename;
+    const slider2 = req.file.filename; 
     const slider3 = req.file.filename;
     var query = "";
 
 
     // Store hash in your password DB.
     var post = [
-        id,
-        nome_revista,
+        slider1,
+        slider2,
         slider3
+    
 
     ];
 
-    query = con.query('INSERT INTO revistas SET id=?, nome_revista =?, slider3 =?', post, function (err, rows, fields) {
+    query = con.query('INSERT INTO revistas SET id=?,slider1 =?, slider2 =?, slider3 =?', post, function (err, rows, fields) {
         console.log(query.sql);
         if (!err) {
             res.status(200).location(rows.insertId).send({
@@ -248,6 +218,7 @@ exports.save_slider3 = function (req, res) {
     });
 
 }
+
 exports.save_banner_sound = function (req, res) {
     const id = 24;
     const nome_revista = 1;
