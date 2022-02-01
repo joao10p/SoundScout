@@ -61,8 +61,8 @@ app.get('/menu', (req,res) => {
   res.sendFile(__dirname + '/views/menu.html')
 })
 
-app.get('/betano', (req,res) => {
-  res.sendFile(__dirname + '/views/betano.html')
+app.get('/bola', (req,res) => {
+  res.sendFile(__dirname + '/views/bola.html')
 })
 
 app.get('/equipa_scout', (req,res) => {
@@ -108,8 +108,8 @@ app.get('/sound', (req,res) => {
   res.sendFile(__dirname + '/views/sound.html')
 })
 
-app.get('/spotify', (req,res) => {
-  res.sendFile(__dirname + '/views/spotify.html')
+app.get('/musica', (req,res) => {
+  res.sendFile(__dirname + '/views/musica.html')
 })
 
 app.get('/upload', (req,res) => {
