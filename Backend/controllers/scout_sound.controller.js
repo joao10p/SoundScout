@@ -195,12 +195,13 @@ exports.save_slider_scout = function (req, res) {
     var post = [
         slider1,
         slider2,
-        slider3
+        slider3,
+        id
     
 
     ];
 
-    query = con.query('INSERT INTO revistas SET id=?,slider1 =?, slider2 =?, slider3 =?', post, function (err, rows, fields) {
+    query = con.query('UPDATE revistas revistas SET slider1 =?, slider2 =?, slider3 =? WHERE id =?', post, function (err, rows, fields) {
         console.log(query.sql);
         if (!err) {
             res.status(200).location(rows.insertId).send({
