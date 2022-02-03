@@ -121,7 +121,7 @@ exports.save_capa_galeria = function (req, res) {
 
 exports.save_galeria_album = function (req, res) {
   
-    const album_Sound = req.body.filename;
+    const album_Sound = req.file.filename;
     var query = "";
 
 

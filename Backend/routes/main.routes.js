@@ -21,14 +21,26 @@ const upload = multer({
 
 })
 
+const storage2 = multer.diskStorage({
+    destination: './public/imagens/',
+    filename: (req, file, cb) => {
+        return cb(null, `${file.path}_${file.fieldname}_${file.originalname}`)
+    }
+})
+
+const upload2 = multer({
+    storage: storage2
+
+})
+
 //GALERIA
 router.get('/galeria', Galer.read);
 router.get('/galeria/:id', Galer.readID);
 router.post('/galeria/', Galer.save);
 router.post('/galeriaCapaSound/', upload.single('sound_capa_galeria'), Galer.save_capa_galeria);
 router.post('/galeriaCapaScout/', upload.single('scout_capa_galeria'), Galer.save_capa_galeria);
-router.post('/galeriaAlbumSound/', upload.any('album_Sound'), Galer.save_galeria_album);
-router.post('/galeriaAlbumScout/', upload.any('album_Scout'), Galer.save_galeria_album);
+router.put('/galeriaAlbumSound/', upload2.any('album_Sound'), Galer.save_galeria_album);
+router.put('/galeriaAlbumScout/', upload2.any('album_Scout'), Galer.save_galeria_album);
 router.put('/galeria/:id', Galer.update);
 router.delete('/galeria/:id', Galer.deleteID);
 
