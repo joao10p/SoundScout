@@ -46,7 +46,7 @@ function getLink(){
         // changed .value to .innerHTML but you can handle it as you wish
         
         const txt = response[0].link;
-         document.getElementById("youtube_id").innerHTML = txt;
+         document.getElementById("youtube_id").src = txt;
          
         
     })
