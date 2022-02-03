@@ -5,9 +5,9 @@ window.onload = function () {
     show_revista();
     // select file input
     const input = document.getElementById('avatar');
-
+    const banner = document.getElementById('confirmar_banner');
     // add event listener
-    input.addEventListener('change', () => {
+    banner.addEventListener('click', () => {
         uploadFile(input.files[0]);
     })
     document.getElementById("get_id").onclick = function (e) {
@@ -32,30 +32,58 @@ window.onload = function () {
     document.getElementById("confirmar_textos_diretores").onclick = function (e) {
         save_texto();
     }
+    //TEXTO
+    const texto = document.getElementById('confirmar_textos_diretores')
     const input2 = document.getElementById('txt_imagem');
     // add event listener
-    input2.addEventListener('change', () => {
+    texto.addEventListener('click', () => {
         save_txt_image(input2.files[0]);
     })
+    //CAPA
+    const capaS = document.getElementById('add_revistas')
     const input3 = document.getElementById('capa');
     // add event listener
-    input3.addEventListener('change', () => {
+    capaS.addEventListener('click', () => {
         uploadCapa(input3.files[0]);
     })
+    //SLIDERS
+    const sliders = document.getElementById('confirmar_sliders')
     const input4 = document.getElementById('primeira');
     // add event listener
-    input4.addEventListener('change', () => {
+    sliders.addEventListener('click', () => {
         uploadSlider1(input4.files[0]);
     })
     const input5 = document.getElementById('segunda');
     // add event listener
-    input5.addEventListener('change', () => {
+    sliders.addEventListener('click', () => {
         uploadSlider2(input5.files[0]);
     })
     const input6 = document.getElementById('terceira');
     // add event listener
-    input6.addEventListener('change', () => {
+    sliders.addEventListener('click', () => {
         uploadSlider3(input6.files[0]);
+    })
+
+    //GALERIA
+    const addGaleria = document.getElementById('add_galeria');
+    const input7 = document.getElementById('capa_galeria');
+    // add event listener
+    addGaleria.addEventListener('click', () => {
+        uploadCapaGaleria(input7.files[0]);
+    })
+    const input8 = document.getElementById('album');
+    // add event listener
+    addGaleria.addEventListener('click', () => {
+        uploadAlbumGaleria(input8.files[0]);
+    })
+    //REDES
+    document.getElementById("confirmar_redes").onclick = function (e) {
+        save_redes();
+    }
+    const addRedes = document.getElementById('confirmar_redes');
+    const input9 = document.getElementById('redes');
+    addRedes.addEventListener('click', () => {
+        uploadRedes(input9.files[0]);
     })
 
 
@@ -169,9 +197,9 @@ window.onload = function () {
         data.revista = document.getElementById("revista_revistas").value;
         console.log(data);
 
-        fetch('http://localhost:3000/scoutRevistas_mod/', {
+        fetch('http://localhost:3000/scoutRevistas/', {
             headers: { 'Content-Type': 'application/json' },
-            method: 'PUT',
+            method: 'POST',
             body: JSON.stringify(data)
         }).then(function (response) {
             if (!response.ok) {
@@ -361,14 +389,12 @@ window.onload = function () {
 
     //---Save dados
     function save_galeria() {
-        alert("passou na galeria")
+
         var data = {};
         data.revista = document.getElementById("select_galeria_diretores").value;
         data.titulo = document.getElementById("titulo_galeria_diretores").value;
         data.data = document.getElementById("data_galeria_diretores").value;
         data.fotografo = document.getElementById("fotografo_galeria_diretores").value;
-        data.capa = document.getElementById("capa_galeria_diretores").value;
-        data.album = document.getElementById("album_galeria_diretores").value;
 
         console.log(data);
         fetch('http://localhost:3000/galeria/', {
@@ -392,7 +418,7 @@ window.onload = function () {
                 /*document.getElementById("nome_revistas").reset();
                  document.getElementById("numero_revistas").reset();
                  document.getElementById("select_revistas").reset();*/
-                alert("Revista adicionada com sucesso!");
+                alert("Galeria adicionada com sucesso!");
                 //refreshanalise();
             }
         }).then(function (result) {
@@ -402,6 +428,64 @@ window.onload = function () {
             console.error(err);
         });
     }
+    //CAPA
+
+    function uploadCapaGaleria(file) {
+
+        // add file to FormData object
+
+        const fd = new FormData();
+        if (document.getElementById("select_galeria_diretores").value == 1) {
+            fd.append('sound_capa_galeria', file);
+            fetch('/galeriaCapaSound/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        } else {
+            fd.append('scout_capa_galeria', file);
+            fetch('/galeriaCapaScout/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        }
+
+    };
+
+    //ALBUM
+
+    function uploadAlbumGaleria(file) {
+
+        // add file to FormData object
+
+        const fd = new FormData();
+        if (document.getElementById("select_galeria_diretores").value == 1) {
+            fd.append('album_Sound', file);
+            fetch('/galeriaAlbumSound/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        } else {
+            fd.append('album_Scout', file);
+            fetch('/galeriaAlbumScout/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        }
+
+    };
+
 
     //-------------------------TEXTO------------------------//
 
@@ -420,7 +504,7 @@ window.onload = function () {
         data.cargoS = document.getElementById("cargo_textos_diretores").value;
         data.texto = document.getElementById("texto_textos_diretores").value;
         console.log(data);
-        fetch('http://localhost:3000/scout/' + id, {
+        fetch('http://localhost:3000/saveText/' + id, {
             headers: { 'Content-Type': 'application/json' },
             method: 'PUT',
             body: JSON.stringify(data)
@@ -441,7 +525,7 @@ window.onload = function () {
                 //document.getElementById("cod_pedido").reset();
                 //document.getElementById("descricao_analise").reset();
 
-                alert("Utilizador alterado com sucesso!");
+                alert("Texto adicionado com sucesso!");
                 //refreshanalise();
             }
         }).then(function (result) {
@@ -567,5 +651,81 @@ window.onload = function () {
     }
 
 
-};
 
+
+
+
+    //-------------------REDES------------------------------------//
+    function save_redes() {
+        if (document.getElementById("select_redes").value == 1) {
+            id=1;
+            
+        } else {
+            id= 2;
+        }
+
+        var data = {};
+        data.nome_revista = document.getElementById("select_redes").value;
+        data.link = document.getElementById("youtube_redes").value;
+        console.log(data);
+        fetch('http://localhost:3000/redes/'+id, {
+            headers: { 'Content-Type': 'application/json' },
+            method: 'PUT',
+            body: JSON.stringify(data)
+        }).then(function (response) {
+            if (!response.ok) {
+                console.log(response.status); //=> number 100–599
+                console.log(response.statusText); //=> String
+                console.log(response.headers); //=> Headers
+                console.log(response.url); //=> String
+                if (response.status === 409) {
+                    alert("Duplicated occurrences Code");
+                }
+                else {
+                    throw Error(response.statusText);
+                }
+            }
+            else {
+                /*document.getElementById("nome_revistas").reset();
+                 document.getElementById("numero_revistas").reset();
+                 document.getElementById("select_revistas").reset();*/
+                alert("Adicionado com sucesso!");
+                //refreshanalise();
+            }
+        }).then(function (result) {
+            console.log(result);
+        }).catch(function (err) {
+            //alert("Submission error");
+            console.error(err);
+        });
+    }
+
+    const uploadRedes = (file) => {
+
+        // add file to FormData object
+
+        const fd = new FormData();
+        if (document.getElementById("select_redes").value == 1) {
+            fd.append('Capa_redes_sound', file);
+            fetch('/SoundredesCapa', {
+                method: 'PUT',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        } else {
+            fd.append('Capa_redes_scout', file);
+            fetch('/ScoutredesCapa', {
+                method: 'PUT',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        }
+
+    };
+
+
+};

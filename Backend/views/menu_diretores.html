@@ -1,908 +1,955 @@
 <!DOCTYPE html>
 <html lang="pt">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Área Reservada - Diretores</title>
-        <link rel="icon" type="images/x-icon" href="imagens/favicon.png" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-        <script type="text/javascript" src="js/menu_dir_controller.js" crossorigin="anonymous"></script>
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-      
-        <!--<script type="text/javascript" src="menu_controller.js" crossorigin="anonymous"></script>-->
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Área Reservada - Diretores</title>
+  <link rel="icon" type="images/x-icon" href="imagens/favicon.png" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet" />
+  <script type="text/javascript" src="js/menu_dir_controller.js" crossorigin="anonymous"></script>
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+  <!--<script type="text/javascript" src="menu_controller.js" crossorigin="anonymous"></script>-->
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <style>
-      @media (min-width: 100px) {
-      #get_id{
+  <style>
+    @media (min-width: 100px) {
+      #get_id {
         left: 50px !important;
         position: relative;
       }
-      #id_trabalhador{
+
+      #id_trabalhador {
         left: 50px !important;
         position: relative;
       }
-      #nome_pessoa{
+
+      #nome_pessoa {
         left: 50px !important;
         position: relative;
       }
-      #cargo_pessoa{
+
+      #cargo_pessoa {
         left: 50px !important;
         position: relative;
       }
-      #phoneField{
+
+      #phoneField {
         left: 50px !important;
         position: relative;
       }
-      #telemovel_diretores{
-        left: 50px !important;
-        position: relative;
-      }
-    }
-     @media (min-width: 576px) {
-      #get_id{
-        left: 50px !important;
-        position: relative;
-      }
-      #id_trabalhador{
-        left: 50px !important;
-        position: relative;
-      }
-      #nome_pessoa{
-        left: 50px !important;
-        position: relative;
-      }
-      #cargo_pessoa{
-        left: 50px !important;
-        position: relative;
-      }
-      #phoneField{
-        left: 50px !important;
-        position: relative;
-      }
-      #telemovel_diretores{
+
+      #telemovel_diretores {
         left: 50px !important;
         position: relative;
       }
     }
-    
-    
-    
-    
+
+    @media (min-width: 576px) {
+      #get_id {
+        left: 50px !important;
+        position: relative;
+      }
+
+      #id_trabalhador {
+        left: 50px !important;
+        position: relative;
+      }
+
+      #nome_pessoa {
+        left: 50px !important;
+        position: relative;
+      }
+
+      #cargo_pessoa {
+        left: 50px !important;
+        position: relative;
+      }
+
+      #phoneField {
+        left: 50px !important;
+        position: relative;
+      }
+
+      #telemovel_diretores {
+        left: 50px !important;
+        position: relative;
+      }
+    }
+
+
+
+
     @media (min-width: 768px) {
-      #get_id{
+      #get_id {
         left: 30px !important;
         position: relative;
       }
-      #id_trabalhador{
+
+      #id_trabalhador {
         left: 30px !important;
         position: relative;
       }
-      #nome_pessoa{
+
+      #nome_pessoa {
         left: 30px !important;
         position: relative;
       }
-      #cargo_pessoa{
+
+      #cargo_pessoa {
         left: 30px !important;
         position: relative;
       }
-      #phoneField{
+
+      #phoneField {
         left: 30px !important;
         position: relative;
       }
-      #telemovel_diretores{
+
+      #telemovel_diretores {
         left: 30px !important;
         position: relative;
       }
     }
+
     @media (min-width: 992px) {
-      #get_id{
+      #get_id {
         left: 20px !important;
         position: relative;
       }
-      #id_trabalhador{
+
+      #id_trabalhador {
         left: 20px !important;
         position: relative;
       }
-      #nome_pessoa{
+
+      #nome_pessoa {
         left: 20px !important;
         position: relative;
       }
-      #cargo_pessoa{
+
+      #cargo_pessoa {
         left: 20px !important;
         position: relative;
       }
-      #phoneField{
+
+      #phoneField {
         left: 20px !important;
         position: relative;
       }
-      #telemovel_diretores{
+
+      #telemovel_diretores {
         left: 20px !important;
         position: relative;
       }
     }
+
     @media (min-width: 1200px) {
-      #get_id{
+      #get_id {
         left: 0px !important;
         position: relative;
       }
-      #id_trabalhador{
+
+      #id_trabalhador {
         left: 0px !important;
         position: relative;
       }
-      #nome_pessoa{
+
+      #nome_pessoa {
         left: 0px !important;
         position: relative;
       }
-      #cargo_pessoa{
+
+      #cargo_pessoa {
         left: 0px !important;
         position: relative;
       }
-      #phoneField{
+
+      #phoneField {
         left: 0px !important;
         position: relative;
       }
-      #telemovel_diretores{
+
+      #telemovel_diretores {
         left: 0px !important;
         position: relative;
       }
     }
-    </style>
-  </head>
-  <body>
+  </style>
+</head>
 
-    <!-- Barra navegação -->
-    <nav class="navbar navbar-default" style="position: fixed; width: 100%;  z-index:1;">
-      <div class="container">
-        
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" 
-                  data-toggle="collapse" data-target="#barra-navegacao">
-            <span class="sr-only">Alternar Menu</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a href="#" class="navbar-brand js-scroll-trigger">SoundScout</a>
-        </div>
+<body>
 
-        <div class="collapse navbar-collapse" id="barra-navegacao">
-          <style>
-            html {
-              scroll-behavior: smooth;
-            }
-            </style>
-          <ul class="nav navbar-nav navbar-right">
-            <li> <a href="#revista">Revistas</a> </li>
-            <li> <a href="#banner">Banner</a> </li>
-            <li> <a href="#sliders">Sliders</a> </li>
-            <li> <a href="#galeria">Galeria</a> </li>
-            <li> <a href="#textos">Texto</a> </li>
-            <li> <a  href="#redes_sociais">Redes Sociais</a> </li>
-            <li> <a href="#playlists">Playlists</a> </li>
-            <li> <a  href="#apostas">Apostas</a> </li>
-            <li> <a  href="#staff">Staff</a> </li>
-            <li> <a href="/">Logout </a> </li>
+  <!-- Barra navegação -->
+  <nav class="navbar navbar-default" style="position: fixed; width: 100%;  z-index:1;">
+    <div class="container">
 
-          </ul>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-navegacao">
+          <span class="sr-only">Alternar Menu</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand js-scroll-trigger">SoundScout</a>
+      </div>
 
-        </div>
+      <div class="collapse navbar-collapse" id="barra-navegacao">
+        <style>
+          html {
+            scroll-behavior: smooth;
+          }
+        </style>
+        <ul class="nav navbar-nav navbar-right">
+          <li> <a href="#revista">Revistas</a> </li>
+          <li> <a href="#banner">Banner</a> </li>
+          <li> <a href="#sliders">Sliders</a> </li>
+          <li> <a href="#galeria">Galeria</a> </li>
+          <li> <a href="#textos">Texto</a> </li>
+          <li> <a href="#redes_sociais">Redes Sociais</a> </li>
+          <li> <a href="#playlists">Playlists</a> </li>
+          <li> <a href="#apostas">Apostas</a> </li>
+          <li> <a href="#staff">Staff</a> </li>
+          <li> <a href="/">Logout </a> </li>
+
+        </ul>
 
       </div>
-    </nav>
 
-
-    <br>
-    <br>
-    <br>
-    <br>
-    
-
-   	<div class="container">
-   		<div>
-   			<h1>Área Reservada</h1>
-   		</div>
-            <hr>
-
-            <div class="container">
-              <!-- Horizonatal Form -->
-              <div class="row">
-                <div class="col-xs-6">
-                  <form class="form-horizontal">
-                    <div class="form-group">
-                      <label for="nameField" class="col-xs-2">ID</label>
-                      <div class="col-xs-10">
-                        <input type="text" class="form-control" id="id_trabalhador" placeholder="ID" />
-                      </div>
-                    </div><div class="col-xs-10 col-xs-offset-2">
-                      <button type="button" id="get_id" class="btn btn-primary">Pesquisar</button> 
-                    </div>
-
-<br>
-<br>
-<br>
-                  
-                    <div class="form-group">
-                      <label for="emailField" class="col-xs-2">Nome</label>
-                      <div class="col-xs-10">
-                        <input type="email" class="form-control" id="nome_pessoa" style="background-color: white" disabled=""  />
-                      </div>
-                    </div>
-                  
-                    <div class="form-group">
-                      <label for="phoneField" class="col-xs-2">Cargo Principal</label>
-                      <div class="col-xs-10">
-                        <input type="text" class="form-control" id="cargo_pessoa" style="background-color: white" disabled="" />
-                      </div>
-                    </div>
-                  
-                    <div class="form-group">
-                      <label for="descField" class="col-xs-2">Email</label>
-                      <div class="col-xs-10">
-                        <input type="email" class="form-control" id="phoneField"  />
-                      </div>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="descField" class="col-xs-2">Telemóvel</label>
-                      <div class="col-xs-10">
-                        <input type="text" class="form-control" id="telemovel_diretores"  />
-                      </div>
-                    </div>
-                    
-                    
-
-                    <button id="confirmar" type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
-  <input  type="hidden" class="form-control" id="pass_diretores" >
-</div>
-                    
-                  </form>
-                </div>
-              </div>
-            </div>
-      
-  
-  <div class="container">
-    <div id="revista">
-      <br><br><br>
-        <h1>Revistas</h1>
-      </div>
-        <hr>
-
-
-        <div class="form-group">
-
-          <table id="table_revistas" class="table">
-            <thead>
-              <tr>
-                <th scope="col"></th>
-                <th scope="col">Nome</th>
-                <th scope="col">Nº de Edição</th>
-                <th scope="col">Revista</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row"></th>
-                <td>Março 2021</td>
-                <td >#18</td>
-                <td>Revista Sound</td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td>Março 2021</td>
-                <td >#18</td>
-                <td>Revista Scout</td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td>Fevereiro 2021</td>
-                <td >#17</td>
-                <td>Revista Sound</td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td>Fevereiro 2021</td>
-                <td >#17</td>
-                <td>Revista Scout</td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td>Janeiro 2021</td>
-                <td >#16</td>
-                <td>Revista Sound</td>
-              </tr>
-            </tbody>
-          </table>
-
-          
-
-<br>
-
-<div id="nome">
-  <label class="titulo">Nome</label>
-  <div class="box">
-    <div class="form-group">
-      
-      <input type="text" class="form-control" id="nome_revistas">
-  </div>
-  </div>
-</div>
-
-      <div id="email">
-  <label class="data">Nº de Edição </label>
-  <div class="box">
-    <div class="form-group">
-      
-      <input type="text" class="form-control" id="numero_revistas">
-  </div>
-  </div>
-
-</div>
-
-<br>
- 
-  <div class="box">
-    <select id="select_revistas" class="form-control form-control-lg">
-      <option value="" disabled selected hidden>Escolha a revista</option>
-          <option value="1">Revista Sound </option>
-          <option value="2">Revista Scout</option>
-    </select>
-  </div>
-
-
- <br>
-  <label for="myfile" class="fotografo">Revista</label>
-  <div class="form-group">
-    <input type="url" class="form-control" id="revista_revistas">
-  </div>
+    </div>
+  </nav>
 
 
   <br>
-  <label class="fotografo">Capa</label>
-  <div class="form-group">
-   <!-- <input id="capa_revistas" data-toggle="tooltip" data-placement="top" title="heigth - 2480 / width - 3508"  type="file" class="form-control-file">  -->
-   <form action="/upload" method= "POST"
-         enctype="multipart/form-data">
-            <div class="file-field input-field">
-              <div class="btn grey">
-                <span>File</span>
-                <input data-toggle="tooltip" data-placement="top" title="heigth - 2480 / width - 3508" name="myImage" type="file" id="capa">
-              </div>
-              <div hidden class="file-path-wrapper">
-                <input class="file-path validate" type="text">
+  <br>
+  <br>
+  <br>
+
+
+  <div class="container">
+    <div>
+      <h1>Área Reservada</h1>
+    </div>
+    <hr>
+
+    <div class="container">
+      <!-- Horizonatal Form -->
+      <div class="row">
+        <div class="col-xs-6">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="nameField" class="col-xs-2">ID</label>
+              <div class="col-xs-10">
+                <input type="text" class="form-control" id="id_trabalhador" placeholder="ID" />
               </div>
             </div>
-            <button type="submit" class="btn">Submit</button>
-          </form>  
-  </div>
+            <div class="col-xs-10 col-xs-offset-2">
+              <button type="button" id="get_id" class="btn btn-primary">Pesquisar</button>
+            </div>
 
-  <button id="add_revistas" type="button" style="float: right;" class="btn btn-primary">Adicionar</button> <span style="float: right;">&nbsp;</span>
+            <br>
+            <br>
+            <br>
 
-</div>
+            <div class="form-group">
+              <label for="emailField" class="col-xs-2">Nome</label>
+              <div class="col-xs-10">
+                <input type="email" class="form-control" id="nome_pessoa" style="background-color: white" disabled="" />
+              </div>
+            </div>
 
+            <div class="form-group">
+              <label for="phoneField" class="col-xs-2">Cargo Principal</label>
+              <div class="col-xs-10">
+                <input type="text" class="form-control" id="cargo_pessoa" style="background-color: white" disabled="" />
+              </div>
+            </div>
 
+            <div class="form-group">
+              <label for="descField" class="col-xs-2">Email</label>
+              <div class="col-xs-10">
+                <input type="email" class="form-control" id="phoneField" />
+              </div>
+            </div>
 
-<button id="adicionar_revistas" type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
-
-<button id="editar_revistas" type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
-
-
-      </div>
-      </div>
-
-
-
-  
-
-   	
-
-     <div class="container">
-      <div id="banner">
-        <br><br><br>
-          <h1>Banner</h1>
-      </div>
-          <hr>
-
-          <form>
-
-            <div class="box">
-              <select id="select_banner" class="form-control form-control-lg">
-                <option value="" disabled selected hidden>Escolha a revista</option>
-                    <option value="1">Revista Sound </option>
-                    <option value="2">Revista Scout</option>
-              </select>
+            <div class="form-group">
+              <label for="descField" class="col-xs-2">Telemóvel</label>
+              <div class="col-xs-10">
+                <input type="text" class="form-control" id="telemovel_diretores" />
+              </div>
             </div>
 
 
-<br>
-          <div class="form-group">
-            <form action="/upload" method= "POST"
-            enctype="multipart/form-data" >
-               <div class="file-field input-field">
-                 <div class="btn grey">
-                   <span>File</span>
-                   <input  id='banner' data-toggle="tooltip" data-placement="top" title="heigth - 770 / width - 750" name="myImage" type="file">
-                 </div>
-                 <div hidden class="file-path-wrapper">
-                   <input class="file-path validate" type="text">
-                 </div>
-                 
-               </div>
-               <button type="submit" class="btn">Submit</button>
-             </form>  
-          </div>
 
-          <button id="confirmar_banner" type="button"  style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
-          <input type="file" id="avatar">
+            <button id="confirmar" type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span
+              style="float: right;">&nbsp;</span>
+            <input type="hidden" class="form-control" id="pass_diretores">
+        </div>
 
-
-        
         </form>
-
-<br>
-<br>
-
-<div class="container">
-  <div id="sliders">
-    <br><br><br>
-      <h1>Sliders</h1>
+      </div>
+    </div>
   </div>
+
+
+  <div class="container">
+    <div id="revista">
+      <br><br><br>
+      <h1>Revistas</h1>
+    </div>
+    <hr>
+
+
+    <div class="form-group">
+
+      <table id="table_revistas" class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Nome</th>
+            <th scope="col">Nº de Edição</th>
+            <th scope="col">Revista</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td>Março 2021</td>
+            <td>#18</td>
+            <td>Revista Sound</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td>Março 2021</td>
+            <td>#18</td>
+            <td>Revista Scout</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td>Fevereiro 2021</td>
+            <td>#17</td>
+            <td>Revista Sound</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td>Fevereiro 2021</td>
+            <td>#17</td>
+            <td>Revista Scout</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td>Janeiro 2021</td>
+            <td>#16</td>
+            <td>Revista Sound</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+      <br>
+
+      <div id="nome">
+        <label class="titulo">Nome</label>
+        <div class="box">
+          <div class="form-group">
+
+            <input type="text" class="form-control" id="nome_revistas">
+          </div>
+        </div>
+      </div>
+
+      <div id="email">
+        <label class="data">Nº de Edição </label>
+        <div class="box">
+          <div class="form-group">
+
+            <input type="text" class="form-control" id="numero_revistas">
+          </div>
+        </div>
+
+      </div>
+
+      <br>
+
+      <div class="box">
+        <select id="select_revistas" class="form-control form-control-lg">
+          <option value="" disabled selected hidden>Escolha a revista</option>
+          <option value="1">Revista Sound </option>
+          <option value="2">Revista Scout</option>
+        </select>
+      </div>
+
+
+      <br>
+      <label for="myfile" class="fotografo">Revista</label>
+      <div class="form-group">
+        <input type="url" class="form-control" id="revista_revistas">
+      </div>
+
+
+      <br>
+      <label class="fotografo">Capa</label>
+      <div class="form-group">
+        <!-- <input id="capa_revistas" data-toggle="tooltip" data-placement="top" title="heigth - 2480 / width - 3508"  type="file" class="form-control-file">  -->
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <div class="file-field input-field">
+            <div class="btn grey">
+              <span>File</span>
+              <input data-toggle="tooltip" data-placement="top" title="heigth - 2480 / width - 3508" name="myImage"
+                type="file" id="capa">
+            </div>
+            <div hidden class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+            </div>
+          </div>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+
+      <button id="add_revistas" type="button" style="float: right;" class="btn btn-primary">Adicionar</button> <span
+        style="float: right;">&nbsp;</span>
+
+    </div>
+
+
+
+    <button id="adicionar_revistas" type="submit" style="float: right; display: none;"
+      class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+
+    <button id="editar_revistas" type="submit" style="float: right; display: none;"
+      class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+
+
+  </div>
+  </div>
+
+
+
+
+
+
+
+  <div class="container">
+    <div id="banner">
+      <br><br><br>
+      <h1>Banner</h1>
+    </div>
+    <hr>
+
+    <form>
+
+      <div class="box">
+        <select id="select_banner" class="form-control form-control-lg">
+          <option value="" disabled selected hidden>Escolha a revista</option>
+          <option value="1">Revista Sound </option>
+          <option value="2">Revista Scout</option>
+        </select>
+      </div>
+
+
+      <br>
+      <div class="form-group">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <div class="file-field input-field">
+            <div class="btn grey">
+              <span>File</span>
+              <input id='banner' data-toggle="tooltip" data-placement="top" title="heigth - 770 / width - 750"
+                name="myImage" type="file">
+            </div>
+            <div hidden class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+            </div>
+
+          </div>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+
+      <button id="confirmar_banner" type="button" style="float: right;" class="btn btn-primary">Confirmar</button> <span
+        style="float: right;">&nbsp;</span>
+      <input type="file" id="avatar">
+
+
+
+    </form>
+
+    <br>
+    <br>
+
+    <div class="container">
+      <div id="sliders">
+        <br><br><br>
+        <h1>Sliders</h1>
+      </div>
       <hr>
 
       <div class="form-group">
         <select id="select_sliders" class="form-control form-control-lg">
           <option value="" disabled selected hidden>Escolha a revista</option>
-              <option value="1">Revista Sound </option>
-              <option value="2">Revista Scout</option>
+          <option value="1">Revista Sound </option>
+          <option value="2">Revista Scout</option>
         </select>
-    </div>
-
-    <br>
-      
-
-        <div class="form-group">
-          <label for="imagem_um">Primeira imagem</label>
-          <form action="/upload" method= "POST"
-         enctype="multipart/form-data">
-            <div class="file-field input-field">
-              <div class="btn grey">
-                <span>File</span>
-                <input data-toggle="tooltip" data-placement="top" title="heigth - 1540 / width - 770" name="myImage" type="file" id = "primeira" >
-              </div>
-              <div hidden class="file-path-wrapper">
-                <input class="file-path validate" type="text">
-              </div>
-            </div>
-            <button type="submit" class="btn">Submit</button>
-          </form>  
-      </div>
-     
-<br>
-<br>
-      <div class="form-group">
-          <label for="imagem_dois">Segunda Imagem</label>
-          <form action="/upload" method= "POST"
-         enctype="multipart/form-data">
-            <div class="file-field input-field">
-              <div class="btn grey">
-                <span>File</span>
-                <input data-toggle="tooltip" data-placement="top" title="heigth - 1540 / width - 770" name="myImage" type="file" id= "segunda">
-              </div>
-              <div hidden class="file-path-wrapper">
-                <input class="file-path validate" type="text">
-              </div>
-            </div>
-            <button type="submit" class="btn">Submit</button>
-          </form>  
-      </div>
-
- 
-
-<br>
-<br>
-      <div class="form-group">
-          <label for="imagem_tres">Terceira Imagem</label>
-          <form action="/upload" method= "POST"
-         enctype="multipart/form-data">
-            <div class="file-field input-field">
-              <div class="btn grey">
-                <span>File</span>
-                <input data-toggle="tooltip" data-placement="top" title="heigth - 1540 / width - 770" name="myImage" type="file"  id = "terceira">
-              </div>
-              <div hidden class="file-path-wrapper">
-                <input class="file-path validate" type="text">
-              </div>
-            </div>
-            <button type="submit" class="btn">Submit</button>
-          </form>  
       </div>
 
       <br>
-      <button id="confirmar_sliders" type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
 
 
-
-    
-</form>
-
-<br>
-<br>
-
-
-<form>
-<div class="container">
-  <div id="galeria">
-    <br><br><br>
-      <h1>Galeria</h1>
-  </div>
-      <hr>
-
-      <form>
-
-      
-  
-
-<table id="table_galeria_diretores" class="table">
-  <thead>
-    <tr>
-      <th scope="col"></th>
-      <th scope="col">Titulo</th>
-      <th scope="col">Data</th>
-      <th scope="col">Fotógrafo</th>
-      <th scope="col">Revista</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row"></th>
-      <td>Á JANELA</td>
-      <td>01Fev2021</td>
-      <td>Beatriz Pequeno</td>
-      <td>Revista Sound</td>
-    </tr>
-    <tr>
-      <th scope="row"></th>
-      <td>ANIMA-TE</td>
-      <td>21Jul2020</td>
-      <td>João Lemos</td>
-      <td>Revista Sound</td>
-    </tr>
-    <tr>
-      <th scope="row"></th>
-      <td >SCP vs SLB</td>
-      <td>04Fev2021</td>
-      <td>Isabel Silva</td>
-      <td>Revista Scout</td>
-    </tr>
-    <tr>
-      <th scope="row"></th>
-      <td>BENJAMIM CCVF</td>
-      <td>29Jun2020</td>
-      <td>Filipe Carvalho</td>
-      <td>Revista Sound</td>
-    </tr>
-    <tr>
-      <th scope="row"></th>
-      <td >CHRISTMAS CHALLENGE</td>
-      <td >12Dez2019</td>
-      <td >Filipe Carvalho</td>
-      <td>Revista Scout</td>
-    </tr>
-  </tbody>
-</table>
-
-
-<br>
-<br>
-<br>
-
-<div class="form-group">
-  <select id="select_galeria_diretores" class="form-control form-control-lg">
-    <option value="" disabled selected hidden>Escolha a revista</option>
-        <option value="1">Revista Sound </option>
-        <option value="2">Revista Scout</option>
-  </select>
-</div>
-
-<div id="nome">
-  <label class="titulo"  >
-    Titulo</label>
-  <div class="box">
-    <div class="form-group">
-      
-      <input type="text" data-toggle="tooltip" data-placement="top" title="Capacidade máxima de 15 caracteres" maxlength="15" class="form-control" id="titulo_galeria_diretores">
-  </div>
-  </div>
-</div>
-
-      <div id="email">
-  <label class="data">Data</label>
-  <div class="box">
-    <div class="form-group">
-      
-      <input type="text" class="form-control" id="data_galeria_diretores">
-  </div>
-  </div>
-
-</div>
-
-<div id="email">
-  <label class="data">Fotógrafo</label>
-  <div class="box">
-    <div class="form-group">
-      
-      <input type="text" class="form-control" id="fotografo_galeria_diretores">
-  </div>
-  </div>
-
-</div>
-
-
-
-<label class="fotografo">Capa</label>
-<div class="form-group">
-  <form action="/upload" method= "POST"
-         enctype="multipart/form-data">
-            <div class="file-field input-field">
-              <div class="btn grey">
-                <span>File</span>
-                <input data-toggle="tooltip" data-placement="top" title="heigth - **** / width - ****" name="myImage" type="file">
-              </div>
-              <div hidden class="file-path-wrapper">
-                <input class="file-path validate" type="text">
-              </div>
+      <div class="form-group">
+        <label for="imagem_um">Primeira imagem</label>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <div class="file-field input-field">
+            <div class="btn grey">
+              <span>File</span>
+              <input data-toggle="tooltip" data-placement="top" title="heigth - 1540 / width - 770" name="myImage"
+                type="file" id="primeira">
             </div>
-            <button type="submit" class="btn">Submit</button>
-          </form>  
-</div>
-
-
-
-<label class="fotografo">Álbum</label>
-<div class="form-group">
-
-  <form action="/upload" method= "POST"
-  enctype="multipart/form-data">
-     <div class="file-field input-field">
-       <div class="btn grey">
-         <span>File</span>
-         <input data-toggle="tooltip" data-placement="top" title="heigth - **** / width - ****" name="myImage" type="file">
-       </div>
-       <div hidden class="file-path-wrapper">
-         <input class="file-path validate" type="text">
-       </div>
-     </div>
-     <button type="submit" class="btn">Submit</button>
-   </form>    <button type="button" id="add_galeria" style="float: right;" class="btn btn-primary">Adicionar</button> <span style="float: right;">&nbsp;</span>
-</div>
-
-
-
-
-
-<button id="adicionar_galeria_diretores" type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
-
-<button id="editar_galeria_diretores" type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
-</div>
-
-<div class="container">
-  <div id="textos">
-    <br><br>
-      <h1>Texto</h1>
-      <input hidden id="id_texto" >
-  </div>
-      <hr>
-
-      <script>
-        function myFunction() {
-          var x = document.getElementById("select_textos_diretores");
-          var i = x.selectedIndex;
-          document.getElementById("id_texto").value = i+9;
-        }
-        </script>
-
-      <form>
-
-        <div class="form-group">
-          <select id="select_textos_diretores" class="form-control form-control-lg" onchange="myFunction()">
-            <option value="" disabled selected hidden>Escolha a revista</option>
-                <option onclick="myFunction()" value="1" id="10">Revista Sound </option>
-                <option onclick="myFunction1()" value="2" id="11">Revista Scout</option>
-          </select>
+            <div hidden class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+            </div>
+          </div>
+          <button type="submit" class="btn">Submit</button>
+        </form>
       </div>
 
-    
-<br>
-<br>
-
-     
-
-          <div class="form-group">
-              <label for="titulo">Título</label>
-              <input type="text" class="form-control" id="titulo_textos_diretores">
+      <br>
+      <br>
+      <div class="form-group">
+        <label for="imagem_dois">Segunda Imagem</label>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <div class="file-field input-field">
+            <div class="btn grey">
+              <span>File</span>
+              <input data-toggle="tooltip" data-placement="top" title="heigth - 1540 / width - 770" name="myImage"
+                type="file" id="segunda">
+            </div>
+            <div hidden class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+            </div>
           </div>
-          
-<br>
-
-          <div class="form-group">
-            <label for="nome">Nome</label>
-            <input type="text" class="form-control" id="nome_textos_diretores">
-        </div>
-       
-<br>
-
-        <div class="form-group">
-          <label for="cargo">Cargo</label>
-          <input type="text" class="form-control" id="cargo_textos_diretores">
+          <button type="submit" class="btn">Submit</button>
+        </form>
       </div>
-     
-<br>
-
-
-<div class="form-group">
-  <label for="texto">Texto</label>
-  <textarea class="form-control" id="texto_textos_diretores" placeholder="Escreve aqui..." style="height: 100px;"></textarea>
-</div>
 
 
 
-
-
-</div>
-</form>     
-<br>
-
-
-          <div class="form-group">
-              <label for="imagem_texto">Imagem</label>
-      <form>
-        <div class="form-group">
-          <form action="/upload" method= "POST"
-          enctype="multipart/form-data">
-             <div class="file-field input-field">
-               <div class="btn grey">
-                 <span>File</span>
-                 <input id="txt_imagem" data-toggle="tooltip" data-placement="top" title="heigth - 1280 / width - 720" name="myImage" type="file">
-               </div>
-               <div hidden class="file-path-wrapper">
-                 <input class="file-path validate" type="text">
-               </div>
-             </div>
-             <button type="submit" class="btn">Submit</button>
-           </form>          </div>
-       <!-- Upload de fotos-->
+      <br>
+      <br>
+      <div class="form-group">
+        <label for="imagem_tres">Terceira Imagem</label>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <div class="file-field input-field">
+            <div class="btn grey">
+              <span>File</span>
+              <input data-toggle="tooltip" data-placement="top" title="heigth - 1540 / width - 770" name="myImage"
+                type="file" id="terceira">
+            </div>
+            <div hidden class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+            </div>
           </div>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
 
-         
-          
+      <br>
+      <button id="confirmar_sliders" type="submit" style="float: right;" class="btn btn-primary">Confirmar</button>
+      <span style="float: right;">&nbsp;</span>
 
-          
-        
-        
 
-<br>
+
+
       </form>
 
-</div>
+      <br>
+      <br>
 
-<button id="confirmar_textos_diretores" type="submit" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
 
-</form>
-<br>
-<br>
+      <form>
+        <div class="container">
+          <div id="galeria">
+            <br><br><br>
+            <h1>Galeria</h1>
+          </div>
+          <hr>
+
+          <form>
+
+
+
+
+            <table id="table_galeria_diretores" class="table">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Titulo</th>
+                  <th scope="col">Data</th>
+                  <th scope="col">Fotógrafo</th>
+                  <th scope="col">Revista</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"></th>
+                  <td>Á JANELA</td>
+                  <td>01Fev2021</td>
+                  <td>Beatriz Pequeno</td>
+                  <td>Revista Sound</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td>ANIMA-TE</td>
+                  <td>21Jul2020</td>
+                  <td>João Lemos</td>
+                  <td>Revista Sound</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td>SCP vs SLB</td>
+                  <td>04Fev2021</td>
+                  <td>Isabel Silva</td>
+                  <td>Revista Scout</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td>BENJAMIM CCVF</td>
+                  <td>29Jun2020</td>
+                  <td>Filipe Carvalho</td>
+                  <td>Revista Sound</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td>CHRISTMAS CHALLENGE</td>
+                  <td>12Dez2019</td>
+                  <td>Filipe Carvalho</td>
+                  <td>Revista Scout</td>
+                </tr>
+              </tbody>
+            </table>
+
+
+            <br>
+            <br>
+            <br>
+
+            <div class="form-group">
+              <select id="select_galeria_diretores" class="form-control form-control-lg">
+                <option value="" disabled selected hidden>Escolha a revista</option>
+                <option value="1">Revista Sound </option>
+                <option value="2">Revista Scout</option>
+              </select>
+            </div>
+
+            <div id="nome">
+              <label class="titulo">
+                Titulo</label>
+              <div class="box">
+                <div class="form-group">
+
+                  <input type="text" data-toggle="tooltip" data-placement="top"
+                    title="Capacidade máxima de 15 caracteres" maxlength="15" class="form-control"
+                    id="titulo_galeria_diretores">
+                </div>
+              </div>
+            </div>
+
+            <div id="email">
+              <label class="data">Data</label>
+              <div class="box">
+                <div class="form-group">
+
+                  <input type="text" class="form-control" id="data_galeria_diretores">
+                </div>
+              </div>
+
+            </div>
+
+            <div id="email">
+              <label class="data">Fotógrafo</label>
+              <div class="box">
+                <div class="form-group">
+
+                  <input type="text" class="form-control" id="fotografo_galeria_diretores">
+                </div>
+              </div>
+
+            </div>
+
+
+
+            <label class="fotografo">Capa</label>
+            <div class="form-group">
+              <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="file-field input-field">
+                  <div class="btn grey">
+                    <span>File</span>
+                    <input data-toggle="tooltip" data-placement="top" title="heigth - **** / width - ****"
+                      name="myImage" type="file" id="capa_galeria">
+                  </div>
+                  <div hidden class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                  </div>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+              </form>
+            </div>
+
+
+
+            <label class="fotografo">Álbum</label>
+            <div class="form-group">
+
+              <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="file-field input-field">
+                  <div class="btn grey">
+                    <span>File</span>
+                    <input data-toggle="tooltip" data-placement="top" title="heigth - **** / width - ****" name="file[]"
+                      type="file" id="album" multiple>
+                  </div>
+                  <div hidden class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                  </div>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+              </form> <button type="button" id="add_galeria" style="float: right;"
+                class="btn btn-primary">Adicionar</button> <span style="float: right;">&nbsp;</span>
+            </div>
+
+
+
+
+
+            <button id="adicionar_galeria_diretores" type="submit" style="float: right; display: none;"
+              class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+
+            <button id="editar_galeria_diretores" type="submit" style="float: right; display: none;"
+              class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+        </div>
+
+        <div class="container">
+          <div id="textos">
+            <br><br>
+            <h1>Texto</h1>
+            <input hidden id="id_texto">
+          </div>
+          <hr>
+
+          <script>
+            function myFunction() {
+              var x = document.getElementById("select_textos_diretores");
+              var i = x.selectedIndex;
+              document.getElementById("id_texto").value = i + 9;
+            }
+          </script>
+
+          <form>
+
+            <div class="form-group">
+              <select id="select_textos_diretores" class="form-control form-control-lg" onchange="myFunction()">
+                <option value="" disabled selected hidden>Escolha a revista</option>
+                <option onclick="myFunction()" value="1" id="10">Revista Sound </option>
+                <option onclick="myFunction1()" value="2" id="11">Revista Scout</option>
+              </select>
+            </div>
+
+
+            <br>
+            <br>
+
+
+
+            <div class="form-group">
+              <label for="titulo">Título</label>
+              <input type="text" class="form-control" id="titulo_textos_diretores">
+            </div>
+
+            <br>
+
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input type="text" class="form-control" id="nome_textos_diretores">
+            </div>
+
+            <br>
+
+            <div class="form-group">
+              <label for="cargo">Cargo</label>
+              <input type="text" class="form-control" id="cargo_textos_diretores">
+            </div>
+
+            <br>
+
+
+            <div class="form-group">
+              <label for="texto">Texto</label>
+              <textarea class="form-control" id="texto_textos_diretores" placeholder="Escreve aqui..."
+                style="height: 100px;"></textarea>
+            </div>
+
+
+
+
+
+        </div>
+      </form>
+      <br>
+
+
+      <div class="form-group">
+        <label for="imagem_texto">Imagem</label>
+        <form>
+          <div class="form-group">
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+              <div class="file-field input-field">
+                <div class="btn grey">
+                  <span>File</span>
+                  <input id="txt_imagem" data-toggle="tooltip" data-placement="top" title="heigth - 1280 / width - 720"
+                    name="myImage" type="file">
+                </div>
+                <div hidden class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+                </div>
+              </div>
+              <button type="submit" class="btn">Submit</button>
+            </form>
+          </div>
+          <!-- Upload de fotos-->
+      </div>
+
+
+
+
+
+
+
+
+      <br>
+      </form>
+
+    </div>
+
+    <button id="confirmar_textos_diretores" type="submit" style="float: right;"
+      class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+
+    </form>
+    <br>
+    <br>
 
 
 
 
     <div class="container">
-        <div id="redes_sociais">
-          <br><br><br>
-            <h1>Redes Sociais</h1>
+      <div id="redes_sociais">
+        <br><br><br>
+        <h1>Redes Sociais</h1>
+      </div>
+      <hr>
+
+
+      <form>
+
+        <div class="form-group">
+          <select id="select_redes" class="form-control form-control-lg">
+            <option value="" disabled selected hidden>Escolha a revista</option>
+            <option value=1>Revista Sound </option>
+            <option value=2>Revista Scout</option>
+          </select>
         </div>
-            <hr>
+
+        <div class="form-group">
+          <label for="link_youtube">Link de Youtube</label>
+          <input type="text" class="form-control" id="youtube_redes">
+        </div>
 
 
-            <form>
-
-              <div class="form-group">
-                <select id="select_redes" class="form-control form-control-lg">
-                  <option value="" disabled selected hidden>Escolha a revista</option>
-                      <option value="sound">Revista Sound </option>
-                      <option value="scout">Revista Scout</option>
-                </select>
-            </div>
-
-                <div class="form-group">
-                    <label for="link_youtube">Link de Youtube</label>
-                    <input type="text" class="form-control" id="youtube_redes">
-                </div>
-                
-
-  <br>
-                <div class="form-group">
-                    <label for="imagem_instagram">Imagem do Instagram</label>
-                    <form action="/upload" method= "POST"
-         enctype="multipart/form-data">
+        <br>
+        <div class="form-group">
+          <label for="imagem_instagram">Imagem do Instagram</label>
+          <form action="/upload" method="POST" enctype="multipart/form-data">
             <div class="file-field input-field">
               <div class="btn grey">
                 <span>File</span>
-                <input data-toggle="tooltip" data-placement="top" title="heigth - 1090 / width - 730" name="myImage" type="file">
+                <input data-toggle="tooltip" data-placement="top" title="heigth - 1090 / width - 730" name="myImage"
+                  type="file" id="redes">
               </div>
               <div hidden class="file-path-wrapper">
                 <input class="file-path validate" type="text">
               </div>
             </div>
             <button type="submit" class="btn">Submit</button>
-          </form>  
-                </div>
-                <br>
+          </form>
+        </div>
+        <br>
 
-                <button id="confirmar_redes" type="button" style="float: right;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
-
-
-
-              
+        <button id="confirmar_redes" type="button" style="float: right;" class="btn btn-primary">Confirmar</button>
+        <span style="float: right;">&nbsp;</span>
 
 
-    <br>
-    <br>
 
 
-    <div class="container">
-        <div id="playlists">
-          <br><br><br>
+
+
+        <br>
+        <br>
+
+
+        <div class="container">
+          <div id="playlists">
+            <br><br><br>
             <h1>Playlists</h1>
+          </div>
+          <hr>
         </div>
-            <hr>
-    </div>
 
 
-    <br>
-    <br>
+        <br>
+        <br>
 
 
-    <div class="container">
-        <div id="apostas">
-          <br><br><br>
+        <div class="container">
+          <div id="apostas">
+            <br><br><br>
             <h1>Apostas</h1>
+          </div>
+          <hr>
         </div>
-            <hr>
-    </div>
 
 
-    <br>
-    <br>
+        <br>
+        <br>
 
-    <div class="container">
-      <div id="staff">
-        <br><br><br>
-          <h1>Staff</h1>
-      </div>
+        <div class="container">
+          <div id="staff">
+            <br><br><br>
+            <h1>Staff</h1>
+          </div>
           <hr>
 
           <div class="form-group">
             <span>
-            <label for="pesquisar">Membro Desejado</label>
-            <input type="number" class="form-control" id="selecionarTable">
-            
-        </input>
-      </span>
-        </div>
+              <label for="pesquisar">Membro Desejado</label>
+              <input type="number" class="form-control" id="selecionarTable">
 
-        
+              </input>
+            </span>
+          </div>
+
+
 
 
           <table id="table_staff" class="table">
@@ -919,171 +966,167 @@
               <tr>
                 <th scope="row"></th>
                 <td>1</td>
-                <td >João Lemos</td>
+                <td>João Lemos</td>
                 <td>Diretor</td>
                 <td>935946600</td>
               </tr>
               <tr>
                 <th scope="row"></th>
-                <td >2</td>
-                <td >Pedro Carvalho</td>
+                <td>2</td>
+                <td>Pedro Carvalho</td>
                 <td>Diretor</td>
                 <td></td>
               </tr>
               <tr>
                 <th scope="row"></th>
-                <td >3</td>
-                <td >Filipe Carvalho</td>
-                <td >Diretor</td>
-                <td ></td>
+                <td>3</td>
+                <td>Filipe Carvalho</td>
+                <td>Diretor</td>
+                <td></td>
               </tr>
               <tr>
                 <th scope="row"></th>
-                <td >4</td>
-                <td >Matilde Camacho</td>
-                <td >Redatora</td>
-                <td ></td>
+                <td>4</td>
+                <td>Matilde Camacho</td>
+                <td>Redatora</td>
+                <td></td>
               </tr>
               <tr>
                 <th scope="row"></th>
-                <td >5</td>
-                <td >André Morais</td>
-                <td >Coordenador</td>
-                <td ></td>
+                <td>5</td>
+                <td>André Morais</td>
+                <td>Coordenador</td>
+                <td></td>
               </tr>
               <tr>
                 <th scope="row"></th>
-                <td >6</td>
-                <td >Guilherme Kunsler</td>
-                <td >Revisor</td>
-                <td ></td>
+                <td>6</td>
+                <td>Guilherme Kunsler</td>
+                <td>Revisor</td>
+                <td></td>
               </tr>
               <tr>
                 <th scope="row"></th>
-                <td >7</td>
-                <td >Beatriz Pequeno</td>
-                <td >Fotógrafa</td>
-                <td ></td>
+                <td>7</td>
+                <td>Beatriz Pequeno</td>
+                <td>Fotógrafa</td>
+                <td></td>
               </tr>
             </tbody>
           </table>
 
-          <button type="button" style="float: right;" class="btn btn-primary" id= "add1">Adicionar</button> <span style="float: right;">&nbsp;</span>
-<br>
-<br>
+          <button type="button" style="float: right;" class="btn btn-primary" id="add1">Adicionar</button> <span
+            style="float: right;">&nbsp;</span>
+          <br>
+          <br>
 
-      <div id="nome_reg">
-  <label class="data">Nome</label>
-  <div class="box">
-    <div class="form-group">
-      
-      <input type="text" class="form-control" id="nome_staff">
-  </div>
-  </div>
+          <div id="nome_reg">
+            <label class="data">Nome</label>
+            <div class="box">
+              <div class="form-group">
 
-</div>
+                <input type="text" class="form-control" id="nome_staff">
+              </div>
+            </div>
 
-<div id="cargo_reg">
-  <label class="data">Cargo</label>
-  <div class="box">
-    <div class="form-group">
-      
-      <input type="text" class="form-control" id="cargo_staff">
-  </div>
-  </div>
+          </div>
 
-</div>
+          <div id="cargo_reg">
+            <label class="data">Cargo</label>
+            <div class="box">
+              <div class="form-group">
 
+                <input type="text" class="form-control" id="cargo_staff">
+              </div>
+            </div>
 
-<div id="telemovel_reg">
-  <label class="data">Telemovel</label>
-  <div class="box">
-    <div class="form-group">
-      
-      <input type="number" class="form-control" id="telemovel_staff">
-  </div>
-  </div>
-
-</div>
+          </div>
 
 
+          <div id="telemovel_reg">
+            <label class="data">Telemovel</label>
+            <div class="box">
+              <div class="form-group">
 
-<div id="email_reg">
-  <label class="data">email</label>
-  <div class="box">
-    <div class="form-group">
-      
-      <input type="email" class="form-control" id="email_staff">
-  </div>
-  </div>
+                <input type="number" class="form-control" id="telemovel_staff">
+              </div>
+            </div>
 
-</div>
+          </div>
 
 
 
+          <div id="email_reg">
+            <label class="data">email</label>
+            <div class="box">
+              <div class="form-group">
 
-<div id="password_reg">
-  <label class="data">Password</label>
-  <div class="box">
-    <div class="form-group">
-      
-      <input type="password" class="form-control" id="password_staff">
-  </div>
-  </div>
+                <input type="email" class="form-control" id="email_staff">
+              </div>
+            </div>
 
-
-  <button type="submit" id="adicionar_pessoa" style="float: right;" class="btn btn-primary">Adicionar Staff</button> <span style="float: right;">&nbsp;</span>
-
-</div>
-
-
-  <button id="adicionar_staff" type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
-
-<button id="editar_staff" type="submit" style="float: right; display: none;" class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
-
-</div>
+          </div>
 
 
 
-  <br>
-  <br>
+
+          <div id="password_reg">
+            <label class="data">Password</label>
+            <div class="box">
+              <div class="form-group">
+
+                <input type="password" class="form-control" id="password_staff">
+              </div>
+            </div>
+
+
+            <button type="submit" id="adicionar_pessoa" style="float: right;" class="btn btn-primary">Adicionar
+              Staff</button> <span style="float: right;">&nbsp;</span>
+
+          </div>
+
+
+          <button id="adicionar_staff" type="submit" style="float: right; display: none;"
+            class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+
+          <button id="editar_staff" type="submit" style="float: right; display: none;"
+            class="btn btn-primary">Confirmar</button> <span style="float: right;">&nbsp;</span>
+
+        </div>
 
 
 
-    <!--<script type="text/javascript">
+        <br>
+        <br>
+
+
+
+        <!--<script type="text/javascript">
         $(function () {
           $('[data-toggle="tooltip"]').tooltip()
           $('[data-toggle="popover"]').popover()
         })
       </script>-->
 
- <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
- <script type="text/javascript">
-   $(function () {
-     $('[data-toggle="tooltip"]').tooltip()
-     $('[data-toggle="popover"]').popover()
-   })
- </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
- <!-- Include all compiled plugins (below), or include individual files as needed -->
- <!--<script src="bootstrap/js/bootstrap.min.js"></script>-->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-   <!--- <script type="text/javascript" src="js/createacc.js" crossorigin="anonymous"></script> -->
-    
-  </body>
+        <script type="text/javascript">
+          $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+            $('[data-toggle="popover"]').popover()
+          })
+        </script>
+
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <!--<script src="bootstrap/js/bootstrap.min.js"></script>-->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <!--- <script type="text/javascript" src="js/createacc.js" crossorigin="anonymous"></script> -->
+
+</body>
+
 </html>
-
-
-
-
-
-
-
-
-

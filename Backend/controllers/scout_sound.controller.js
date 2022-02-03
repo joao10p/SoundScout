@@ -121,12 +121,13 @@ exports.save_capa = function (req, res) {
 
     // Store hash in your password DB.
     var post = [
-        id,
-        capa
+        capa,
+        id
+        
 
     ];
 
-    query = con.query('INSERT INTO revistas SET id=?, capa =?', post, function (err, rows, fields) {
+    query = con.query('UPDATE revistas SET  capa =?  where id >=26 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
         console.log(query.sql);
         if (!err) {
             res.status(200).location(rows.insertId).send({
@@ -291,7 +292,7 @@ exports.save_banner_scout = function (req, res) {
 
 
 exports.save_text = function (req, res) {
-    const id = 1;
+    const id = req.params.id;
     const nome_revista = req.body.nome_revista;
     const titulo = req.body.titulo;
     const texto = req.body.texto;
@@ -331,6 +332,8 @@ exports.save_text = function (req, res) {
     });
 
 }
+
+
 
 exports.save_text_image_sound = function (req, res) {
     const id = 1;
@@ -419,6 +422,43 @@ exports.update = function (req, res) {
     ];
 
     query = con.query('UPDATE revistas SET nome=?,edicao=?, nome_revista=?, revista=? where id >=26 ORDER BY id DESC LIMIT 1', update, function (err, rows,
+        fields) {
+        console.log(query.sql);
+        if (!err) {
+            console.log("Number of records updated: " + rows.affectedRows);
+            res.status(200).send({ "msg": "update with success" });
+        }
+        else {
+            res.status(400).send({ "msg": err.code });
+            console.log('Error while performing Query.', err);
+
+        };
+    });
+
+
+}
+exports.update_text = function (req, res) {
+    const id = req.body.id;
+    const nome_revista = req.body.nome_revista;
+    const titulo = req.body.titulo;
+    const nome_cria_txt = req.body.nome_cria_txt;
+    const cargoS = req.body.cargoS;
+    const texto = req.body.texto;
+    var query = "";
+
+
+    var update = [
+        nome_revista,
+        titulo,
+        nome_cria_txt,
+        cargoS,
+        texto, 
+        id
+
+
+    ];
+
+    query = con.query('UPDATE revistas SET nome_revista =?, titulo =?, nome_cria_txt=?, cargoS =?, texto =? WHERE id =?', update, function (err, rows,
         fields) {
         console.log(query.sql);
         if (!err) {
