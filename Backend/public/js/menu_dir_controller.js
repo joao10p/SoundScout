@@ -1,5 +1,6 @@
-
+ 
 window.onload = function () {
+    
     show_galeria();
     show_users();
     show_revista();
@@ -74,7 +75,11 @@ window.onload = function () {
     const input8 = document.getElementById('album');
     // add event listener
     addGaleria.addEventListener('click', () => {
-        uploadAlbumGaleria(input8.files[0]);
+        for (let index = 0; index < input8.files.length; index++) {
+            uploadAlbumGaleria(input8.files[index]);
+
+        }
+
     })
     //REDES
     document.getElementById("confirmar_redes").onclick = function (e) {
@@ -658,17 +663,17 @@ window.onload = function () {
     //-------------------REDES------------------------------------//
     function save_redes() {
         if (document.getElementById("select_redes").value == 1) {
-            id=1;
-            
+            id = 1;
+
         } else {
-            id= 2;
+            id = 2;
         }
 
         var data = {};
         data.nome_revista = document.getElementById("select_redes").value;
         data.link = document.getElementById("youtube_redes").value;
         console.log(data);
-        fetch('http://localhost:3000/redes/'+id, {
+        fetch('http://localhost:3000/redes/' + id, {
             headers: { 'Content-Type': 'application/json' },
             method: 'PUT',
             body: JSON.stringify(data)

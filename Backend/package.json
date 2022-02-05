@@ -24,6 +24,7 @@
     "file-loader": "^6.2.0",
     "forever": "^4.0.1",
     "fs": "0.0.1-security",
+    "type": "module",
     "helmet": "^4.4.1",
     "helmet-csp": "^3.3.1",
     "html": "^1.0.0",

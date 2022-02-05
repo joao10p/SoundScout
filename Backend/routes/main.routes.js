@@ -4,34 +4,26 @@ const Galer = require('../controllers/galeria.controller.js');
 const User = require('../controllers/users.controller.js');
 const ScoutSound = require('../controllers/scout_sound.controller.js');
 const Redes = require('../controllers/rede.controller.js');
+const Album = require('../controllers/album.js');
 const multer = require('multer');
 const path = require('path');
-
+var count = 1;
 
 //FOTOS
 const storage = multer.diskStorage({
     destination: './public/imagens/',
     filename: (req, file, cb) => {
-        return cb(null, `${file.fieldname}_${file.originalname}`)
+        return cb(null, `${count}_${file.fieldname}_${file.originalname}`)
     }
 })
+count++;
 
 const upload = multer({
     storage: storage
 
 })
 
-const storage2 = multer.diskStorage({
-    destination: './public/imagens/',
-    filename: (req, file, cb) => {
-        return cb(null, `${file.path}_${file.fieldname}_${file.originalname}`)
-    }
-})
 
-const upload2 = multer({
-    storage: storage2
-
-})
 
 //GALERIA
 router.get('/galeria', Galer.read);
@@ -39,12 +31,15 @@ router.get('/galeria/:id', Galer.readID);
 router.post('/galeria/', Galer.save);
 router.post('/galeriaCapaSound/', upload.single('sound_capa_galeria'), Galer.save_capa_galeria);
 router.post('/galeriaCapaScout/', upload.single('scout_capa_galeria'), Galer.save_capa_galeria);
-router.put('/galeriaAlbumSound/', upload2.any('album_Sound'), Galer.save_galeria_album);
-router.put('/galeriaAlbumScout/', upload2.any('album_Scout'), Galer.save_galeria_album);
+router.post('/galeriaAlbumSound/', upload.single('album_Sound'), Galer.save_galeria_album);
+router.post('/galeriaAlbumScout/', upload.single('album_Scout'), Galer.save_galeria_album);
 router.put('/galeria/:id', Galer.update);
 router.delete('/galeria/:id', Galer.deleteID);
 
-//USERS
+
+//ALBUM
+router.post('/Album/', upload.any('album_Sound'), Album.save);
+//USERS.
 router.get('/users', User.read);
 router.get('/users/:id', User.readID);
 router.post('/users/', User.save);
