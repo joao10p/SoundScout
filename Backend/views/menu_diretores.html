@@ -224,6 +224,7 @@
           <li> <a href="#textos">Texto</a> </li>
           <li> <a href="#redes_sociais">Redes Sociais</a> </li>
           <li> <a href="#playlists">Playlists</a> </li>
+          <li> <a href="#albuns">Álbuns</a> </li>
           <li> <a href="#apostas">Apostas</a> </li>
           <li> <a href="#staff">Staff</a> </li>
           <li> <a href="/">Logout </a> </li>
@@ -910,7 +911,121 @@
             <h1>Playlists</h1>
           </div>
           <hr>
+
+          <form>
+    
+            <div class="form-group">
+              <label for="musica_titulo">Título</label>
+              <input data-toggle="tooltip" data-placement="top" title="TITULO" name="myImage" type="text" class="form-control" id="">
+            </div>
+    
+
+            <div class="form-group">
+              <label for="musica_texto">Texto</label>
+              <input data-toggle="tooltip" data-placement="top" title="Texto" name="myImage" type="text" class="form-control" id="">
+            </div>
+
+
+            <div class="form-group">
+              <label for="link_spotify">Link</label>
+              <input data-toggle="tooltip" data-placement="top" title="LINK" name="myImage" type="text" class="form-control" id="">
+            </div>
+    
+            <br>
+            <div class="form-group">
+              <label for="capa_album">Capa Álbum</label>
+              <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="file-field input-field">
+                  <div class="btn grey">
+                    <span>File</span>
+                    <input data-toggle="tooltip" data-placement="top" title="OLA" name="myImage"
+                      type="file" id="">
+                  </div>
+                  <div hidden class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                  </div>
+                </div>
+              </form>
+
+
+
         </div>
+        <br>
+
+        <button id="" type="button" style="float: right;" class="btn btn-primary">Confirmar</button>
+        <span style="float: right;">&nbsp;</span>
+
+        <br>
+        <br>
+
+
+        <div class="container">
+          <div id="albuns">
+            <br><br><br>
+            <h1>Álbum</h1>
+          </div>
+          <hr>
+
+          <form>
+    
+            <div class="form-group">
+              <label for="album_titulo">Título</label>
+              <input data-toggle="tooltip" data-placement="top" title="TITULO" name="myImage" type="text" class="form-control" id="">
+            </div>
+
+            <form>
+    
+              <div class="form-group">
+                <label for="album_artista">Artista</label>
+                <input data-toggle="tooltip" data-placement="top" title="Artista" name="myImage" type="text" class="form-control" id="">
+              </div>
+
+
+              <div class="form-group">
+                <label for="album_nome">Nome</label>
+                <input data-toggle="tooltip" data-placement="top" title="Nome" name="myImage" type="text" class="form-control" id="">
+              </div>
+
+
+              <div class="form-group">
+                <label for="album_cargo">Cargo</label>
+                <input data-toggle="tooltip" data-placement="top" title="Cargo" name="myImage" type="text" class="form-control" id="">
+              </div>
+      
+  
+              <div class="form-group">
+                <label for="album_texto">Texto</label>
+                <input data-toggle="tooltip" data-placement="top" title="Texto" name="myImage" type="text" class="form-control" id="">
+              </div>
+  
+  
+              <div class="form-group">
+                <label for="linkalbum_spotify">Link</label>
+                <input data-toggle="tooltip" data-placement="top" title="LINK" name="myImage" type="text" class="form-control" id="">
+              </div>
+      
+              <br>
+              <div class="form-group">
+                <label for="capa_album">Capa Álbum</label>
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                  <div class="file-field input-field">
+                    <div class="btn grey">
+                      <span>File</span>
+                      <input data-toggle="tooltip" data-placement="top" title="OLA" name="myImage"
+                        type="file" id="">
+                    </div>
+                    <div hidden class="file-path-wrapper">
+                      <input class="file-path validate" type="text">
+                    </div>
+                  </div>
+                </form>
+    
+
+         
+
+
+        </div>
+
 
 
         <br>
