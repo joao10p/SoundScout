@@ -1045,6 +1045,123 @@
         <br>
 
         <div class="container">
+          <div id="subs">
+            <br><br><br>
+            <h1>Subscrições</h1>
+          </div>
+          <hr>
+
+
+
+
+
+          <table id="table_subs" class="table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"></th>
+                <td class="email">1@gmail.com</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td class="email">2@gmail.com</td>
+             
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td class="email" >3@gmail.com</td>
+              
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td class="email">4@gmail.com</td>
+              
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td class="email">5@gmail.com</td>
+              
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td class="email">6@gmail.com</td>
+               
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td class="email">7@gmail.com</td>
+              
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td class="email">8@gmail.com</td>
+              
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td class="email">9@gmail.com</td>
+              
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td class="email">10@gmail.com</td>
+              
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td class="email">11@gmail.com</td>
+              
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td class="email">12@gmail.com</td>
+              
+              </tr>
+
+            </tbody>
+          </table>
+
+       
+
+          <textarea id="demosubs" style="width: 100%;">
+            Subscrições</textarea>
+
+          <button type="button" onclick="getEmail()" style="float: right;" class="btn btn-primary" id="add1">Obter</button> <span
+            style="float: right;">&nbsp;</span>
+          <br>
+          <br>
+
+
+          </div>
+
+          <script>
+            function getEmail(){
+                var email = new Array();
+                var arr = document.getElementsByClassName('email');
+                for(var i=0; i< arr.length; i++){
+                    email.push(arr[i].innerHTML);
+                }
+                console.log(email.join(','));
+                document.getElementById("demosubs").innerHTML = (email.join(','));
+            }
+            </script>
+   
+
+        </div>
+
+
+
+        <br>
+        <br>
+
+
+
+        <div class="container">
           <div id="staff">
             <br><br><br>
             <h1>Staff</h1>
@@ -1205,8 +1322,7 @@
 
         </div>
 
-
-
+        
         <br>
         <br>
 
