@@ -1,6 +1,6 @@
- 
+
 window.onload = function () {
-    
+
     show_galeria();
     show_users();
     show_revista();
@@ -75,10 +75,15 @@ window.onload = function () {
     const input8 = document.getElementById('album');
     // add event listener
     addGaleria.addEventListener('click', () => {
-        for (let index = 0; index < input8.files.length; index++) {
-            uploadAlbumGaleria(input8.files[index]);
-
-        }
+        uploadAlbumGaleria(input8.files[0]);
+        uploadAlbumGaleria1(input8.files[1]);
+        uploadAlbumGaleria2(input8.files[2]);
+        uploadAlbumGaleria3(input8.files[3]);
+        uploadAlbumGaleria4(input8.files[4]);
+        uploadAlbumGaleria5(input8.files[5]);
+        uploadAlbumGaleria6(input8.files[6]);
+        uploadAlbumGaleria7(input8.files[7]);
+        uploadAlbumGaleria8(input8.files[8]);
 
     })
     //REDES
@@ -470,8 +475,8 @@ window.onload = function () {
 
         const fd = new FormData();
         if (document.getElementById("select_galeria_diretores").value == 1) {
-            fd.append('album_Sound', file);
-            fetch('/galeriaAlbumSound/', {
+            fd.append('1', file);
+            fetch('/Album/foto1/', {
                 method: 'POST',
                 body: fd
             })
@@ -479,8 +484,216 @@ window.onload = function () {
                 .then(json => console.log(json))
                 .catch(err => console.error(err));
         } else {
-            fd.append('album_Scout', file);
-            fetch('/galeriaAlbumScout/', {
+            fd.append('1', file);
+            fetch('/Album/foto1/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        }
+
+    };
+    function uploadAlbumGaleria1(file) {
+
+        // add file to FormData object
+
+        const fd = new FormData();
+        if (document.getElementById("select_galeria_diretores").value == 1) {
+            fd.append('2', file);
+            fetch('/Album/foto2/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        } else {
+            fd.append('2', file);
+            fetch('/Album/foto2/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        }
+
+    };
+    function uploadAlbumGaleria2(file) {
+
+        // add file to FormData object
+
+        const fd = new FormData();
+        if (document.getElementById("select_galeria_diretores").value == 1) {
+            fd.append('3', file);
+            fetch('/Album/foto3/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        } else {
+            fd.append('3', file);
+            fetch('/Album/foto3/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        }
+
+    };
+    function uploadAlbumGaleria3(file) {
+
+        // add file to FormData object
+
+        const fd = new FormData();
+        if (document.getElementById("select_galeria_diretores").value == 1) {
+            fd.append('4', file);
+            fetch('/Album/foto4', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        } else {
+            fd.append('4', file);
+            fetch('/Album/foto4', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        }
+
+    };
+    function uploadAlbumGaleria4(file) {
+
+        // add file to FormData object
+
+        const fd = new FormData();
+        if (document.getElementById("select_galeria_diretores").value == 1) {
+            fd.append('5', file);
+            fetch('/Album/foto5', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        } else {
+            fd.append('5', file);
+            fetch('/Album/foto5', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        }
+
+    };
+    function uploadAlbumGaleria5(file) {
+
+        // add file to FormData object
+
+        const fd = new FormData();
+        if (document.getElementById("select_galeria_diretores").value == 1) {
+            fd.append('6', file);
+            fetch('/Album/foto6/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        } else {
+            fd.append('6', file);
+            fetch('/Album/foto6/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        }
+
+    };
+    function uploadAlbumGaleria6(file) {
+
+        // add file to FormData object
+
+        const fd = new FormData();
+        if (document.getElementById("select_galeria_diretores").value == 1) {
+            fd.append('7', file);
+            fetch('/Album/foto7/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        } else {
+            fd.append('7', file);
+            fetch('/Album/foto7/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        }
+
+    };
+    function uploadAlbumGaleria7(file) {
+
+        // add file to FormData object
+
+        const fd = new FormData();
+        if (document.getElementById("select_galeria_diretores").value == 1) {
+            fd.append('8', file);
+            fetch('/Album/foto8/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        } else {
+            fd.append('8', file);
+            fetch('/Album/foto8/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        }
+
+    };
+    function uploadAlbumGaleria8(file) {
+
+        // add file to FormData object
+
+        const fd = new FormData();
+        if (document.getElementById("select_galeria_diretores").value == 1) {
+            fd.append('9', file);
+            fetch('/Album/foto9/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        } else {
+            fd.append('9', file);
+            fetch('/Album/foto9/', {
                 method: 'POST',
                 body: fd
             })

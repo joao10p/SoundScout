@@ -123,7 +123,7 @@ exports.save_capa = function (req, res) {
     var post = [
         capa,
         id
-        
+
 
     ];
 
@@ -151,43 +151,43 @@ exports.save_capa = function (req, res) {
 exports.save_slider_sound = function (req, res) {
     const id = 4;
     const slider1 = req.file.filename;
-    const slider2 = req.file.filename; 
+    const slider2 = req.file.filename;
     const slider3 = req.file.filename;
 
-var query = "";
+    var query = "";
 
 
-// Store hash in your password DB.
-var post = [
-    slider1,
-    slider2,
-    slider3,
-    id
+    // Store hash in your password DB.
+    var post = [
+        slider1,
+        slider2,
+        slider3,
+        id
 
-];
+    ];
 
-query = con.query('UPDATE revistas revistas SET slider1 =?, slider2 =?, slider3 =? WHERE id =?', post, function (err, rows, fields) {
-    console.log(query.sql);
-    if (!err) {
-        res.status(200).location(rows.insertId).send({
-            "msg": "inserted with success"
-        });
-        console.log("Number of records inserted: " + rows.affectedRows);
-    }
-    else {
-        if (err.code == "ER_DUP_ENTRY") {
-            res.status(409).send({ "msg": err.code });
-            console.log('Error while performing Query.', err);
+    query = con.query('UPDATE revistas revistas SET slider1 =?, slider2 =?, slider3 =? WHERE id =?', post, function (err, rows, fields) {
+        console.log(query.sql);
+        if (!err) {
+            res.status(200).location(rows.insertId).send({
+                "msg": "inserted with success"
+            });
+            console.log("Number of records inserted: " + rows.affectedRows);
         }
-        else res.status(400).send({ "msg": err.code });
-    }
-});
+        else {
+            if (err.code == "ER_DUP_ENTRY") {
+                res.status(409).send({ "msg": err.code });
+                console.log('Error while performing Query.', err);
+            }
+            else res.status(400).send({ "msg": err.code });
+        }
+    });
 }
 
 exports.save_slider_scout = function (req, res) {
     const id = 5;
     const slider1 = req.file.filename;
-    const slider2 = req.file.filename; 
+    const slider2 = req.file.filename;
     const slider3 = req.file.filename;
     var query = "";
 
@@ -198,7 +198,7 @@ exports.save_slider_scout = function (req, res) {
         slider2,
         slider3,
         id
-    
+
 
     ];
 
@@ -452,7 +452,7 @@ exports.update_text = function (req, res) {
         titulo,
         nome_cria_txt,
         cargoS,
-        texto, 
+        texto,
         id
 
 
@@ -491,23 +491,6 @@ exports.deleteID = function (req, res) {
                 res.status(200).send({
                     "msg": "success"
                 });
-            }
-        }
-        else
-            console.log('Error while performing Query.', err);
-    });
-}
-exports.bannerSound = function (req, res) {
-
-
-    con.query('Select banner From revistas Where nome_revista="1" and banner is not null', function (err, rows, fields) {
-        if (!err) {
-
-            if (rows.length == 0) {
-                res.status(404).send("User not found");
-            }
-            else {
-                res.status(200).send(rows);
             }
         }
         else
