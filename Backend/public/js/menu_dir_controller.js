@@ -4,6 +4,7 @@ window.onload = function () {
     show_galeria();
     show_users();
     show_revista();
+    show_subs();
     // select file input
     const input = document.getElementById('avatar');
     const banner = document.getElementById('confirmar_banner');
@@ -95,8 +96,24 @@ window.onload = function () {
     addRedes.addEventListener('click', () => {
         uploadRedes(input9.files[0]);
     })
-
-
+    //PLAYLIST
+    document.getElementById("conf_playlist").onclick = function (e) {
+        save_playlist();
+    }
+    const input10 = document.getElementById('capa_id');
+    const addPlaylist = document.getElementById('conf_playlist');
+    addPlaylist.addEventListener('click', () => {
+        uploadPlaylist(input10.files[0]);
+    })
+    //MUSICA 
+    document.getElementById("conf_musica").onclick = function (e) {
+        save_musica();
+    }
+    const input11 = document.getElementById('capa_id_mus');
+    const addMusica = document.getElementById('conf_musica');
+    addMusica.addEventListener('click', () => {
+        uploadMusica(input11.files[0]);
+    })
     //-----------------------------------------------------------------------------------------------------//
 
     //BUSCAR OS NOMES DOS UTILIZADORES
@@ -946,4 +963,153 @@ window.onload = function () {
     };
 
 
+    ///SUBSCRITORES
+    function show_subs() {
+
+        async function fetchAsync() {
+            const renderoccurrences = document.getElementById("table_subs");
+            let txt = "";
+            const response = await fetch('http://localhost:3000/email');
+            const subscritores = await response.json();
+            txt += "<table class='table'>";
+            txt += "<thead>";
+            txt += "<tr><th>Nome</th><th>Nº de Edição</th><th>Revista</th></tr></thead><tbody>";
+            for (const newOccu of subscritores) {
+                txt += "<tr><td style='text-align:center'>" + newOccu.id + "</td><td>" + newOccu.email + "</td><td>";
+                //txt += `<td><button id='${newOccu.id}'class='delete' onclick = "deleteOcc(id); location.reload();" >Eliminar</button>`; VER FUTURAMENTE O BOTAO DELETE 
+            }
+            txt += "</tbody></table>";
+            renderoccurrences.innerHTML = txt;
+        }
+        //chama a função fetchAsync()
+        fetchAsync().then(data => console.log("ok")).catch(reason => console.log(reason.message));
+    }
+
+
+
+    ///PLAYLIST 
+    function save_playlist() {
+
+
+
+        var data = {};
+        data.titulo = document.getElementById("titulos_id").value;
+        data.texto = document.getElementById("texto_id").value;
+        data.link = document.getElementById("link_id").value;
+        console.log(data);
+
+        fetch('http://localhost:3000/playlist/', {
+            headers: { 'Content-Type': 'application/json' },
+            method: 'POST',
+            body: JSON.stringify(data)
+        }).then(function (response) {
+            if (!response.ok) {
+                console.log(response.status); //=> number 100–599
+                console.log(response.statusText); //=> String
+                console.log(response.headers); //=> Headers
+                console.log(response.url); //=> String
+                if (response.status === 409) {
+                    alert("Duplicated occurrences Code");
+                }
+                else {
+                    throw Error(response.statusText);
+                }
+            }
+            else {
+                /*document.getElementById("nome_revistas").reset();
+                 document.getElementById("numero_revistas").reset();
+                 document.getElementById("select_revistas").reset();*/
+                alert("Playlist adicionada com sucesso");
+                //refreshanalise();
+            }
+        }).then(function (result) {
+            console.log(result);
+        }).catch(function (err) {
+            //alert("Submission error");
+            console.error(err);
+        });
+    }
+    function uploadPlaylist(file) {
+
+        // add file to FormData object
+
+        const fd = new FormData();
+
+        fd.append('capa_playlist', file);
+        fetch('/playlistCapa', {
+            method: 'POST',
+            body: fd
+        })
+            .then(res => res.json())
+            .then(json => console.log(json))
+            .catch(err => console.error(err));
+
+    };
+
+    //MUSICA 
+
+    function save_musica() {
+
+
+
+        var data = {};
+        data.titulo = document.getElementById("titulo_musica").value;
+        data.artista = document.getElementById("artista_musica").value;
+        data.nome = document.getElementById("nome_musica").value;
+        data.cargo = document.getElementById("cargo_musica").value;
+        data.texto = document.getElementById("texto_musica").value;
+        data.link = document.getElementById("link_musica").value;
+        console.log(data);
+
+        fetch('http://localhost:3000/musica', {
+            headers: { 'Content-Type': 'application/json' },
+            method: 'POST',
+            body: JSON.stringify(data)
+        }).then(function (response) {
+            if (!response.ok) {
+                console.log(response.status); //=> number 100–599
+                console.log(response.statusText); //=> String
+                console.log(response.headers); //=> Headers
+                console.log(response.url); //=> String
+                if (response.status === 409) {
+                    alert("Duplicated occurrences Code");
+                }
+                else {
+                    throw Error(response.statusText);
+                }
+            }
+            else {
+                /*document.getElementById("nome_revistas").reset();
+                 document.getElementById("numero_revistas").reset();
+                 document.getElementById("select_revistas").reset();*/
+                alert("Playlist adicionada com sucesso");
+                //refreshanalise();
+            }
+        }).then(function (result) {
+            console.log(result);
+        }).catch(function (err) {
+            //alert("Submission error");
+            console.error(err);
+        });
+    }
+
+    function uploadMusica(file) {
+
+        // add file to FormData object
+
+        const fd = new FormData();
+
+        fd.append('capa_musica', file);
+        fetch('/MusicaCapa', {
+            method: 'POST',
+            body: fd
+        })
+            .then(res => res.json())
+            .then(json => console.log(json))
+            .catch(err => console.error(err));
+
+    };
+
 };
+
+

@@ -39,7 +39,7 @@ exports.save = function (req, res) {
 exports.read = function (req, res) {
 
 
-    con.query('SELECT email from subscritores', function (err, rows, fields) {
+    con.query('SELECT * from subscritores', function (err, rows, fields) {
         if (!err) {
 
             if (rows.length == 0) {

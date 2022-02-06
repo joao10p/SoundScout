@@ -6,6 +6,8 @@ const ScoutSound = require('../controllers/scout_sound.controller.js');
 const Redes = require('../controllers/rede.controller.js');
 const Album = require('../controllers/album.js');
 const Subs = require('../controllers/subscritores.js');
+const Play = require('../controllers/playlist.js');
+const Musica = require('../controllers/musica.js');
 const multer = require('multer');
 const path = require('path');
 var count = 1;
@@ -40,9 +42,18 @@ const upload2 = multer({
 
 
 
+
+//MUSICA
+router.post('/musica/', Musica.save);
+router.get('/getMusica/', Musica.read);
+router.post('/MusicaCapa/', upload.single("capa_musica"), Musica.save_capa);
 //SUBSCRITORES
 router.post('/subs/', Subs.save);
 router.get('/email/', Subs.read);
+//PLAYLIST
+router.post('/playlist/', Play.save);
+router.get('/getPlay/', Play.read);
+router.post('/playlistCapa/', upload.single("capa_playlist"), Play.save_capa);
 //GALERIA
 router.get('/galeria', Galer.read);
 router.get('/galeria/:id', Galer.readID);
