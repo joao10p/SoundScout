@@ -1158,11 +1158,12 @@
                   <script>
                     function getEmail() {
                       var email = new Array();
-                      var arr = document.getElementsByClassName('email');
+                      var arr = document.getElementById("table_subs").getElementsByTagName("td");
+
                       for (var i = 0; i < arr.length; i++) {
+                        
                         email.push(arr[i].innerHTML);
                       }
-                      console.log(email.join(','));
                       document.getElementById("demosubs").innerHTML = (email.join(','));
                     }
                   </script>

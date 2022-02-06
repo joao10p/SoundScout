@@ -973,9 +973,10 @@ window.onload = function () {
             const subscritores = await response.json();
             txt += "<table class='table'>";
             txt += "<thead>";
-            txt += "<tr><th>Nome</th><th>Nº de Edição</th><th>Revista</th></tr></thead><tbody>";
+            txt += "<tr><th>Emails</th></tr></thead><tbody>";
             for (const newOccu of subscritores) {
-                txt += "<tr><td style='text-align:center'>" + newOccu.id + "</td><td>" + newOccu.email + "</td><td>";
+                if((newOccu.email).includes('@')){
+                txt += "<tr><td style='text-align:center'>" + newOccu.email + "","" + "</td><td>";} else{console.log("Email invalido:" + newOccu.email); }
                 //txt += `<td><button id='${newOccu.id}'class='delete' onclick = "deleteOcc(id); location.reload();" >Eliminar</button>`; VER FUTURAMENTE O BOTAO DELETE 
             }
             txt += "</tbody></table>";
