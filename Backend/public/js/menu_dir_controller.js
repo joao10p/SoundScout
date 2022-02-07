@@ -27,9 +27,15 @@ window.onload = function () {
         save_revista();
         show_revista();
     }
+    if (document.getElementById("select_galeria_diretores").value == 1) {
+        document.getElementById("add_galeria").onclick = function (e) {
+            save_galeria_sound();
+        }
+    } else {
+        document.getElementById("add_galeria").onclick = function (e) {
+            save_galeria_scout();
+        }
 
-    document.getElementById("add_galeria").onclick = function (e) {
-        save_galeria();
     }
     document.getElementById("confirmar_textos_diretores").onclick = function (e) {
         save_texto();
@@ -398,7 +404,7 @@ window.onload = function () {
         async function fetchAsync() {
             const renderoccurrences = document.getElementById("table_galeria_diretores");
             let txt = "";
-            const response = await fetch('http://localhost:3000/galeria');
+            const response = await fetch('http://localhost:3000/galeriaSound');
             const galeria = await response.json();
             txt += "<table class='table'>";
             txt += "<thead>";
@@ -415,7 +421,48 @@ window.onload = function () {
     }
 
     //---Save dados
-    function save_galeria() {
+    function save_galeria_sound() {
+
+        var data = {};
+        data.revista = document.getElementById("select_galeria_diretores").value;
+        data.titulo = document.getElementById("titulo_galeria_diretores").value;
+        data.data = document.getElementById("data_galeria_diretores").value;
+        data.fotografo = document.getElementById("fotografo_galeria_diretores").value;
+
+        console.log(data);
+        fetch('http://localhost:3000/galeriaSound/', {
+            headers: { 'Content-Type': 'application/json' },
+            method: 'POST',
+            body: JSON.stringify(data)
+        }).then(function (response) {
+            if (!response.ok) {
+                console.log(response.status); //=> number 100–599
+                console.log(response.statusText); //=> String
+                console.log(response.headers); //=> Headers
+                console.log(response.url); //=> String
+                if (response.status === 409) {
+                    alert("Duplicated occurrences Code");
+                }
+                else {
+                    throw Error(response.statusText);
+                }
+            }
+            else {
+                /*document.getElementById("nome_revistas").reset();
+                 document.getElementById("numero_revistas").reset();
+                 document.getElementById("select_revistas").reset();*/
+                alert("Galeria adicionada com sucesso!");
+                //refreshanalise();
+            }
+        }).then(function (result) {
+            console.log(result);
+        }).catch(function (err) {
+            //alert("Submission error");
+            console.error(err);
+        });
+
+    }
+    function save_galeria_scout() {
 
         var data = {};
         data.revista = document.getElementById("select_galeria_diretores").value;
@@ -493,7 +540,7 @@ window.onload = function () {
         const fd = new FormData();
         if (document.getElementById("select_galeria_diretores").value == 1) {
             fd.append('1', file);
-            fetch('/Album/foto1/', {
+            fetch('/AlbumSound/foto1', {
                 method: 'POST',
                 body: fd
             })
@@ -502,7 +549,7 @@ window.onload = function () {
                 .catch(err => console.error(err));
         } else {
             fd.append('1', file);
-            fetch('/Album/foto1/', {
+            fetch('//AlbumScout/foto1', {
                 method: 'POST',
                 body: fd
             })
@@ -519,7 +566,7 @@ window.onload = function () {
         const fd = new FormData();
         if (document.getElementById("select_galeria_diretores").value == 1) {
             fd.append('2', file);
-            fetch('/Album/foto2/', {
+            fetch('/AlbumSound/foto2/', {
                 method: 'POST',
                 body: fd
             })
@@ -528,7 +575,7 @@ window.onload = function () {
                 .catch(err => console.error(err));
         } else {
             fd.append('2', file);
-            fetch('/Album/foto2/', {
+            fetch('/AlbumScout/foto2/', {
                 method: 'POST',
                 body: fd
             })
@@ -545,7 +592,7 @@ window.onload = function () {
         const fd = new FormData();
         if (document.getElementById("select_galeria_diretores").value == 1) {
             fd.append('3', file);
-            fetch('/Album/foto3/', {
+            fetch('/AlbumSound/foto3/', {
                 method: 'POST',
                 body: fd
             })
@@ -554,7 +601,7 @@ window.onload = function () {
                 .catch(err => console.error(err));
         } else {
             fd.append('3', file);
-            fetch('/Album/foto3/', {
+            fetch('/AlbumScout/foto3/', {
                 method: 'POST',
                 body: fd
             })
@@ -571,7 +618,7 @@ window.onload = function () {
         const fd = new FormData();
         if (document.getElementById("select_galeria_diretores").value == 1) {
             fd.append('4', file);
-            fetch('/Album/foto4', {
+            fetch('/AlbumSound/foto4', {
                 method: 'POST',
                 body: fd
             })
@@ -580,7 +627,7 @@ window.onload = function () {
                 .catch(err => console.error(err));
         } else {
             fd.append('4', file);
-            fetch('/Album/foto4', {
+            fetch('/AlbumScout/foto4', {
                 method: 'POST',
                 body: fd
             })
@@ -597,7 +644,7 @@ window.onload = function () {
         const fd = new FormData();
         if (document.getElementById("select_galeria_diretores").value == 1) {
             fd.append('5', file);
-            fetch('/Album/foto5', {
+            fetch('/AlbumSound/foto5', {
                 method: 'POST',
                 body: fd
             })
@@ -606,7 +653,7 @@ window.onload = function () {
                 .catch(err => console.error(err));
         } else {
             fd.append('5', file);
-            fetch('/Album/foto5', {
+            fetch('/AlbumScout/foto5', {
                 method: 'POST',
                 body: fd
             })
@@ -623,7 +670,7 @@ window.onload = function () {
         const fd = new FormData();
         if (document.getElementById("select_galeria_diretores").value == 1) {
             fd.append('6', file);
-            fetch('/Album/foto6/', {
+            fetch('/AlbumSound/foto6/', {
                 method: 'POST',
                 body: fd
             })
@@ -632,7 +679,7 @@ window.onload = function () {
                 .catch(err => console.error(err));
         } else {
             fd.append('6', file);
-            fetch('/Album/foto6/', {
+            fetch('/AlbumScout/foto6/', {
                 method: 'POST',
                 body: fd
             })
@@ -649,7 +696,7 @@ window.onload = function () {
         const fd = new FormData();
         if (document.getElementById("select_galeria_diretores").value == 1) {
             fd.append('7', file);
-            fetch('/Album/foto7/', {
+            fetch('/AlbumSound/foto7/', {
                 method: 'POST',
                 body: fd
             })
@@ -658,7 +705,7 @@ window.onload = function () {
                 .catch(err => console.error(err));
         } else {
             fd.append('7', file);
-            fetch('/Album/foto7/', {
+            fetch('/AlbumScout/foto7/', {
                 method: 'POST',
                 body: fd
             })
@@ -675,7 +722,7 @@ window.onload = function () {
         const fd = new FormData();
         if (document.getElementById("select_galeria_diretores").value == 1) {
             fd.append('8', file);
-            fetch('/Album/foto8/', {
+            fetch('/AlbumSound/foto8/', {
                 method: 'POST',
                 body: fd
             })
@@ -684,7 +731,7 @@ window.onload = function () {
                 .catch(err => console.error(err));
         } else {
             fd.append('8', file);
-            fetch('/Album/foto8/', {
+            fetch('/AlbumScout/foto8/', {
                 method: 'POST',
                 body: fd
             })
@@ -701,7 +748,7 @@ window.onload = function () {
         const fd = new FormData();
         if (document.getElementById("select_galeria_diretores").value == 1) {
             fd.append('9', file);
-            fetch('/Album/foto9/', {
+            fetch('/AlbumSound/foto9/', {
                 method: 'POST',
                 body: fd
             })
@@ -710,7 +757,7 @@ window.onload = function () {
                 .catch(err => console.error(err));
         } else {
             fd.append('9', file);
-            fetch('/Album/foto9/', {
+            fetch('/AlbumScout/foto9/', {
                 method: 'POST',
                 body: fd
             })
@@ -975,8 +1022,9 @@ window.onload = function () {
             txt += "<thead>";
             txt += "<tr><th>Emails</th></tr></thead><tbody>";
             for (const newOccu of subscritores) {
-                if((newOccu.email).includes('@')){
-                txt += "<tr><td style='text-align:center'>" + newOccu.email + "","" + "</td><td>";} else{console.log("Email invalido:" + newOccu.email); }
+                if ((newOccu.email).includes('@')) {
+                    txt += "<tr><td style='text-align:center'>" + newOccu.email + "", "" + "</td><td>";
+                } else { console.log("Email invalido:" + newOccu.email); }
                 //txt += `<td><button id='${newOccu.id}'class='delete' onclick = "deleteOcc(id); location.reload();" >Eliminar</button>`; VER FUTURAMENTE O BOTAO DELETE 
             }
             txt += "</tbody></table>";
