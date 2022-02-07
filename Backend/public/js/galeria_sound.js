@@ -1,4 +1,5 @@
 window.onload = function () {
+    getCapa();
 
     document.getElementById("subs").addEventListener("click", function () {
         save_subs();
@@ -40,4 +41,28 @@ window.onload = function () {
             console.error(err);
         });
     }
+
+    function getCapa() {
+
+        const id = 1;
+
+
+        fetch('http://localhost:3000/galeriaSound/' + id)
+            .then(response => response.json()) // <-- important line
+            .then(response => {
+                console.log(response);
+                JSON.stringify(response);
+                // changed .value to .innerHTML but you can handle it as you wish
+                const txt = response[0].capa;
+
+                document.getElementById("galeria").src = txt;
+                
+
+            })
+            .catch(error => {
+                alert("Nope");
+            })
+    };
+
+
 } 

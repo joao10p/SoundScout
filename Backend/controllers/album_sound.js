@@ -15,7 +15,7 @@ exports.save1 = function (req, res) {
 
     ];
 
-    query = con.query('UPDATE galeria_scout SET  foto1 =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
+    query = con.query('UPDATE galeria_sound SET  foto1 =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
         console.log(query.sql);
         if (!err) {
             res.status(200).location(rows.insertId).send({
@@ -47,7 +47,7 @@ exports.save2 = function (req, res) {
 
     ];
 
-    query = con.query('UPDATE galeria_scout SET  foto2 =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
+    query = con.query('UPDATE galeria_sound SET  foto2 =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
         console.log(query.sql);
         if (!err) {
             res.status(200).location(rows.insertId).send({
@@ -79,7 +79,7 @@ exports.save3 = function (req, res) {
 
     ];
 
-    query = con.query('UPDATE galeria_scout SET  foto3 =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
+    query = con.query('UPDATE galeria_sound SET  foto3 =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
         console.log(query.sql);
         if (!err) {
             res.status(200).location(rows.insertId).send({
@@ -111,7 +111,7 @@ exports.save4 = function (req, res) {
 
     ];
 
-    query = con.query('UPDATE galeria_scout SET  foto4 =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
+    query = con.query('UPDATE galeria_sound SET  foto4 =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
         console.log(query.sql);
         if (!err) {
             res.status(200).location(rows.insertId).send({
@@ -145,7 +145,7 @@ exports.save5 = function (req, res) {
 
     ];
 
-    query = con.query('UPDATE galeria_scout SET  foto5 =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
+    query = con.query('UPDATE galeria_sound SET  foto5 =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
         console.log(query.sql);
         if (!err) {
             res.status(200).location(rows.insertId).send({
@@ -178,7 +178,7 @@ exports.save6 = function (req, res) {
 
     ];
 
-    query = con.query('UPDATE galeria_scout SET  foto6 =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
+    query = con.query('UPDATE galeria_sound SET  foto6 =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
         console.log(query.sql);
         if (!err) {
             res.status(200).location(rows.insertId).send({
@@ -210,7 +210,7 @@ exports.save7 = function (req, res) {
 
     ];
 
-    query = con.query('UPDATE galeria_scout SET  foto7 =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
+    query = con.query('UPDATE galeria_sound SET  foto7 =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
         console.log(query.sql);
         if (!err) {
             res.status(200).location(rows.insertId).send({
@@ -242,7 +242,7 @@ exports.save8 = function (req, res) {
 
     ];
 
-    query = con.query('UPDATE galeria_scout SET  foto8 =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
+    query = con.query('UPDATE galeria_sound SET  foto8 =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
         console.log(query.sql);
         if (!err) {
             res.status(200).location(rows.insertId).send({
@@ -275,7 +275,7 @@ exports.save9 = function (req, res) {
 
     ];
 
-    query = con.query('UPDATE galeria_scout SET  foto9 =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
+    query = con.query('UPDATE galeria_sound SET  foto9 =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
         console.log(query.sql);
         if (!err) {
             res.status(200).location(rows.insertId).send({

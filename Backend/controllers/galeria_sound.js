@@ -6,7 +6,7 @@ var mysql = require('mysql');
 exports.read = function (req, res) {
 
 
-    con.query('SELECT * from galeria_scout', function (err, rows, fields) {
+    con.query('select * from (select * from galeria_sound UNION ALL select * from galeria_scout) res', function (err, rows, fields) {
         if (!err) {
 
             if (rows.length == 0) {
@@ -26,7 +26,7 @@ exports.readID = function (req, res) {
     const id = req.params.id;
 
 
-    con.query('SELECT * from galeria_scout where id=?', [id], function (err, rows, fields) {
+    con.query('SELECT SUBSTRING(capa, 8) AS capa from galeria_sound WHERE id =?', [id], function (err, rows, fields) {
         if (!err) {
 
             if (rows.length == 0) {
@@ -69,7 +69,7 @@ exports.save = function (req, res) {
 
     ];
 
-    query = con.query('INSERT INTO galeria_scout SET id=?, titulo=?, revista=?, data=?, fotografo=?', post, function (err, rows, fields) {
+    query = con.query('INSERT INTO galeria_sound SET id=?, titulo=?, revista=?, data=?, fotografo=?', post, function (err, rows, fields) {
         console.log(query.sql);
         if (!err) {
             res.status(200).location(rows.insertId).send({
@@ -100,7 +100,7 @@ exports.save_capa_galeria = function (req, res) {
 
     ];
 
-    query = con.query('UPDATE galeria_scout SET  capa =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
+    query = con.query('UPDATE galeria_sound SET  capa =?  where id >=1 ORDER BY id DESC LIMIT 1', post, function (err, rows, fields) {
         console.log(query.sql);
         if (!err) {
             res.status(200).location(rows.insertId).send({
@@ -138,7 +138,7 @@ exports.update = function (req, res) {
 
     ];
 
-    query = con.query('UPDATE galeria_scout SET titulo=?,revista=?,data=?,fotografo=? where id=?', update, function (err, rows,
+    query = con.query('UPDATE galeria_sound SET titulo=?,revista=?,data=?,fotografo=? where id=?', update, function (err, rows,
         fields) {
         console.log(query.sql);
         if (!err) {
@@ -160,7 +160,7 @@ exports.update = function (req, res) {
 exports.deleteID = function (req, res) {
     const id = req.params.id;
 
-    con.query('DELETE from galeria_scout where id= ?', [id], function (err, rows, fields) {
+    con.query('DELETE from galeria_sound where id= ?', [id], function (err, rows, fields) {
         if (!err) {
             if (rows.length == 0) {
                 res.status(404).send({
