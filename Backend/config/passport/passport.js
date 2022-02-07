@@ -10,7 +10,7 @@ module.exports = function(passport, user) {
   });
   // used to deserialize the user
   passport.deserializeUser(function(id, done) {
-    User.findById(id).then(function(user) {
+    User.findByPk(id).then(function(user) {
       if (user) {
         done(null, user.get());
       }
@@ -19,6 +19,7 @@ module.exports = function(passport, user) {
       }
     });
   });
+  
   
   passport.use('local-signup', new LocalStrategy({
       usernameField: 'email',
@@ -104,6 +105,8 @@ module.exports = function(passport, user) {
         if (!isValidPassword(user.password, password)) {
           return done(null, false, jsonMessages.user.password);
         }
+        //console.log(user);
+        //req.session.save();
         return done(null, user);
       }).catch(function(err) {
         console.log("Error:", err);

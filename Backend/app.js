@@ -16,6 +16,8 @@ const { connect } = require('./config/connect');
 const connection = require('./config/connect');
 const fileUpload = require('express-fileupload');
 //var imageRouter = require('./routes/image-route');
+var MySQLStore = require('express-mysql-session')(session);
+
 
 
 //BODY PARSER
@@ -40,9 +42,10 @@ app.use('/img', express.static(__dirname + 'public/images'))
 app.set('views', './views');
 app.set('view engine', 'ejs');
 
-
 // Navigation
-app.get('', checkNotAuthenticated, (req, res) => {
+app.get('',  (req, res) => {
+  console.log(req.user);
+  console.log(req.isAuthenticated());
     res.sendFile(__dirname + '/views/index.html')
 })
 
@@ -84,7 +87,9 @@ app.get('/galeria_scout', (req,res) => {
 app.get('/galeria_sound', (req,res)=> {
   res.sendFile(__dirname + '/views/galeria_sound.html')
 })
-app.get('/menu_diretores',checkNotAuthenticated,  (req,res) => {
+app.get('/menu_diretores',  (req,res) => {
+  console.log(req.user);
+  console.log(req.isAuthenticated());
   res.sendFile(__dirname + '/views/menu_diretores.html')
 })
 
@@ -145,11 +150,20 @@ app.get('/try', (req,res) => {
   res.sendFile(__dirname + '/views/try.html')
 })
 
-app.get('/login',checkNotAuthenticated, (req,res) => {
+app.get('/login', (req,res) => {
   res.sendFile(__dirname + '/views/login.html')
 })
 //USA AS ROTAS PARA IR BUSCAR OS CONTROLLERS E AS PAGINAS
 app.use('/', mainRoutes);
+
+var options = {
+  host: 'remotemysql.com',
+  user: 'AOlZ2PiCPa',
+  password: 'c72uob9rs6',
+  database: 'AOlZ2PiCPa'
+};
+
+var sessionStore = new MySQLStore(options);
 
 
 //zona do fetch
@@ -160,13 +174,19 @@ app.use(cookieParser());
 app.use(session({
   secret: 'our super secret session secret',
   resave: false,
+  store: sessionStore,
   saveUninitialized: false,
-  cookie: {
+  /*cookie: {
     maxAge: 3600000,
-    secure: true,
+    //secure: true,
     httpOnly: true
-  }
+  }*/
 }));
+
+//midleware passport
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+
 //BANNER TRYYYYYYYYYYYYYYYYYYYYYYY
 app.use(fileUpload({
   createParentPath: true
@@ -223,8 +243,7 @@ app.use(function(req, res, next) {
 app.listen(port, () => console.info(`App listening on port ${port}`))
 
 //app.use('/auth', require('./routes/auth'));
-app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
+
 require('./routes/auth.routes.js')(app, passport);
 require('./config/passport/passport.js')(passport, models.user);
 //Sync Database
@@ -235,8 +254,11 @@ models.sequelize.sync().then(function() {
   console.log(err, "Something went wrong with the Database Update!");
 });
 
+
 //ver se esta autenticado
-function checkAuthenticated(req, res , next){
+
+
+/*function checkAuthenticated(req, res , next){
   if(req.isAuthenticated()){
      return next()
   }
@@ -248,7 +270,7 @@ function checkNotAuthenticated(req, res, next){
    return  res.redirect('/menu_diretores')
   }
    next()
-}
+}*/
 
 
 /*
