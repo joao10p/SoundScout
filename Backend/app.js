@@ -17,12 +17,9 @@ const connection = require('./config/connect');
 const fileUpload = require('express-fileupload');
 //var imageRouter = require('./routes/image-route');
 var MySQLStore = require('express-mysql-session')(session);
+//var LocalStrategy = require('passport-local').Strategy;
+//var bcrypt = require('bcrypt');
 
-
-
-//BODY PARSER
-app.use(bodyParser.json(),bodyParser.urlencoded({extend:true}));
-app.use(express.urlencoded({ extended: false }))
 //cors
 app.use((req,res,next)=> {
   console.log("Passou o cors")
@@ -49,6 +46,30 @@ app.get('',  (req, res) => {
     res.sendFile(__dirname + '/views/index.html')
 })
 
+app.use(require("express-session")({
+  secret: 'our super secret session secret',
+  saveUninitialized: false,
+  resave: false,
+  store: sessionStore
+  
+  /*cookie: {
+    maxAge: 3600000,
+    //secure: true,
+    httpOnly: true
+  }*/
+}));
+//zona do fetch
+//app.use(bodyParser.json(),bodyParser.urlencoded({extend:true}));
+app.use(expressSanitizer());
+//app.use(express.urlencoded({ extended: false }))
+app.use(cookieParser());
+
+//midleware passport
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+//BODY PARSER
+app.use(bodyParser.json(),bodyParser.urlencoded({extend:true}));
+app.use(express.urlencoded({ extended: false }))
 
 //Add another Page
 
@@ -87,9 +108,8 @@ app.get('/galeria_scout', (req,res) => {
 app.get('/galeria_sound', (req,res)=> {
   res.sendFile(__dirname + '/views/galeria_sound.html')
 })
-app.get('/menu_diretores',  (req,res) => {
-  console.log(req.user);
-  console.log(req.isAuthenticated());
+app.get('/menu_diretores', checkAuthenticated, (req,res) => {
+
   res.sendFile(__dirname + '/views/menu_diretores.html')
 })
 
@@ -166,27 +186,6 @@ var options = {
 var sessionStore = new MySQLStore(options);
 
 
-//zona do fetch
-//app.use(bodyParser.json(),bodyParser.urlencoded({extend:true}));
-app.use(expressSanitizer());
-//app.use(express.urlencoded({ extended: false }))
-app.use(cookieParser());
-app.use(session({
-  secret: 'our super secret session secret',
-  resave: false,
-  store: sessionStore,
-  saveUninitialized: false,
-  /*cookie: {
-    maxAge: 3600000,
-    //secure: true,
-    httpOnly: true
-  }*/
-}));
-
-//midleware passport
-app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
-
 //BANNER TRYYYYYYYYYYYYYYYYYYYYYYY
 app.use(fileUpload({
   createParentPath: true
@@ -254,11 +253,17 @@ models.sequelize.sync().then(function() {
   console.log(err, "Something went wrong with the Database Update!");
 });
 
+////login
+
+
+
+
+
 
 //ver se esta autenticado
 
 
-/*function checkAuthenticated(req, res , next){
+function checkAuthenticated(req, res , next){
   if(req.isAuthenticated()){
      return next()
   }
@@ -270,7 +275,7 @@ function checkNotAuthenticated(req, res, next){
    return  res.redirect('/menu_diretores')
   }
    next()
-}*/
+}
 
 
 /*

@@ -29,7 +29,7 @@ window.onload = function () {
 				async function login() {
 					const res = await fetch('http://localhost:3000/signinSuccess');
 					const data = await res.json();
-					alert("Autenticação feita com sucesso!");
+					//alert("Autenticação feita com sucesso!");
 					window.location.href = "/menu_diretores";
 					return response.json();
 				}

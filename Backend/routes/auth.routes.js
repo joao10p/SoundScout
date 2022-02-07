@@ -8,11 +8,20 @@ module.exports = function(app, passport) {
         successRedirect: '/',
         failureRedirect: '/menu_diretores'
     }));
-    app.get('/logout', authController.logout); //
-    app.post('/signin', passport.authenticate('local-signin', { // funciona
+    app.post('/log', passport.authenticate('local-teste',{
         successRedirect: '/menu_diretores',
         failureRedirect: '/login'
-    }));
+      }));
+    app.get('/logout', authController.logout); //
+    app.post('/signin', passport.authenticate('local-signin', {
+        failureRedirect: '/login'
+    }),
+    function(req, res){
+        req.session.save(() => {
+            res.redirect('/menu_diretores');
+        });
+    }
+    );
    
 
 };

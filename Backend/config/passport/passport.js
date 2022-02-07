@@ -85,6 +85,8 @@ module.exports = function(passport, user) {
   }
 ));
 */
+
+
   //LOCAL SIGNIN
  passport.use('local-signin', new LocalStrategy({
       // by default, local strategy uses username and password, we will override with email
@@ -107,6 +109,8 @@ module.exports = function(passport, user) {
         }
         //console.log(user);
         //req.session.save();
+        //req.isAuthenticated() == true;
+        //req.session.save();
         return done(null, user);
       }).catch(function(err) {
         console.log("Error:", err);
@@ -114,4 +118,35 @@ module.exports = function(passport, user) {
       });
     }
   ));
+
+  /*passport.use('local-signin', new LocalStrategy({
+    // by default, local strategy uses username and password, we will override with email
+    usernameField: 'email',
+    passwordField: 'password',
+    passReqToCallback: true // allows us to pass back the entire request to the callback
+  },
+  function(req, email, password, done) {
+    const con = require("../config/connect.js");
+
+    con.query('SELECT id, password FROM users WHERE email = ?', [email], function(err, results, fields){
+      if (err) {done(err)};
+
+      if (results.length === 0) {
+        done(null, false);
+      }
+
+      const hash = results[0].password.toString();
+
+      bcrypt.compare(password, hash, function(err, response){
+        if(response === true){
+          return done (null, {user_id:results[0].id})
+        }else{
+          return done(null, false);
+        }
+      })
+    })
+  }
+));*/
 }
+
+
