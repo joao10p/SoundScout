@@ -61,7 +61,7 @@ router.post('/playlistCapa/', upload.single("capa_playlist"), Play.save_capa);
 
 //GALERIA--ALBUM--SCOUT 
 router.get('/galeriaScout', Galer.read);
-router.get('/galeria/:id', Galer.readID);
+router.get('/galeria/:id', Galer.readID);   
 router.get('/galeriaScout2/:id', Galer.read_id);
 router.get('/galeriaScoutMax', Galer.readMax);
 router.post('/galeria/', Galer.save);
@@ -133,9 +133,15 @@ router.delete('/scout/:id', ScoutSound.deleteID);
 //REVISTA SOUND 
 router.post('/soundRevistas/', RevSound.save);
 router.post('/soundCapa/', upload2.single('capa_sound'), RevSound.save_capa);
+router.get('/revistaSound/:id', RevSound.readID);
+router.get('/revistaSoundMax', RevSound.readMax);
+router.get('/revistaSound2/:id', RevSound.read_id);
 //REVISTA SCOUT
 router.post('/scoutRevistas/', RevScout.save);
 router.post('/scoutCapa/', upload2.single('capa_scout'), RevScout.save_capa);
+router.get('/revistaScout/:id', RevScout.readID);
+router.get('/revistaScoutMax', RevScout.readMax);
+router.get('/revistaScout2/:id', RevSound.read_id);
 module.exports = router;
 
 
