@@ -27,15 +27,15 @@ window.onload = function () {
         save_revista();
         show_revista();
     }
-    if (document.getElementById("select_galeria_diretores").value == 1) {
-        document.getElementById("add_galeria").onclick = function (e) {
+    document.getElementById("add_galeria").onclick = function (e) {
+        if (document.getElementById("select_galeria_diretores").value = 1) {
             save_galeria_sound();
-        }
-    } else {
-        document.getElementById("add_galeria").onclick = function (e) {
-            save_galeria_scout();
-        }
 
+        } else {
+
+            save_galeria_scout();
+
+        }
     }
     document.getElementById("confirmar_textos_diretores").onclick = function (e) {
         save_texto();
