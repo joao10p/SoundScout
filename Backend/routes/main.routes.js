@@ -33,7 +33,7 @@ const upload = multer({
 const storage2 = multer.diskStorage({
     destination: './public/imagens/',
     filename: (req, file, cb) => {
-        return cb(null, `${file.fieldname}_${file.originalname}`)
+        return cb(null, `${file.fieldname}_${file.originalname}_${Date.now()}`)
     }
 })
 const upload2 = multer({
@@ -61,7 +61,7 @@ router.post('/playlistCapa/', upload.single("capa_playlist"), Play.save_capa);
 router.get('/galeriaScout', Galer.read);
 router.get('/galeria/:id', Galer.readID);
 router.post('/galeria/', Galer.save);
-router.post('/galeriaCapaScout/', upload.single('scout_capa_galeria'), Galer.save_capa_galeria);
+router.post('/galeriaCapaScout/', upload2.single('scout_capa_galeria'), Galer.save_capa_galeria);
 router.put('/galeria/:id', Galer.update);
 router.delete('/galeria/:id', Galer.deleteID);
 router.post('/AlbumScout/foto1', upload2.single('1'), Album.save1);
@@ -79,7 +79,7 @@ router.get('/galeriaSound', GalerSound.read);
 router.get('/galeriaSoundMax', GalerSound.readMax);
 router.get('/galeriaSound/:id', GalerSound.readID);
 router.post('/galeriaSound/', GalerSound.save);
-router.post('/galeriaCapaSound/', upload.single('sound_capa_galeria'), GalerSound.save_capa_galeria);
+router.post('/galeriaCapaSound/', upload2.single('sound_capa_galeria'), GalerSound.save_capa_galeria);
 router.put('/galeriaSound/:id', GalerSound.update);
 router.delete('/galeriaSound/:id', GalerSound.deleteID);
 router.post('/AlbumSound/foto1', upload2.single('1'), AlbumSound.save1);
