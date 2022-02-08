@@ -9,7 +9,7 @@ var mysql = require('mysql');
 exports.read = function (req, res) {
 
 
-    con.query('SELECT * from revistas WHERE id >=26', function (err, rows, fields) {
+    con.query('Select * from (select * from revista_sound UNION ALL select * from revista_scout) res', function (err, rows, fields) {
         if (!err) {
 
             if (rows.length == 0) {

@@ -28,7 +28,7 @@ window.onload = function () {
         show_revista();
     }
     document.getElementById("add_galeria").onclick = function (e) {
-        save_galeria_sound();
+        save_galeria();
     }
     document.getElementById("confirmar_textos_diretores").onclick = function (e) {
         save_texto();
@@ -45,7 +45,7 @@ window.onload = function () {
     const input3 = document.getElementById('capa');
     // add event listener
     capaS.addEventListener('click', () => {
-        uploadCapa(input3.files[0]);
+        uploadCapa_Revista(input3.files[0]);
     })
     //SLIDERS
     const sliders = document.getElementById('confirmar_sliders')
@@ -197,13 +197,13 @@ window.onload = function () {
         async function fetchAsync() {
             const renderoccurrences = document.getElementById("table_revistas");
             let txt = "";
-            const response = await fetch('http://localhost:3000/scoutGet');
+            const response = await fetch('http://localhost:3000/scoutSoundGet');
             const revistas = await response.json();
             txt += "<table class='table'>";
             txt += "<thead>";
-            txt += "<tr><th>Nome</th><th>Nº de Edição</th><th>Revista</th></tr></thead><tbody>";
+            txt += "<tr><th>Nome</th><th>Nº de Edição</th><th>Revista</th><th>Link</th></tr></thead><tbody>";
             for (const newOccu of revistas) {
-                txt += "<tr><td style='text-align:center'>" + newOccu.nome + "</td><td>" + newOccu.edicao + "</td><td>" + newOccu.nome_revista + "</td>s</tr>";
+                txt += "<tr><td style='text-align:left'>" + newOccu.nome + "</td><td>" + newOccu.edicao + "</td><td>" + newOccu.revista + "</td><td>" + newOccu.link + "</td><td>";
                 //txt += `<td><button id='${newOccu.id}'class='delete' onclick = "deleteOcc(id); location.reload();" >Eliminar</button>`; VER FUTURAMENTE O BOTAO DELETE 
             }
             txt += "</tbody></table>";
@@ -212,66 +212,108 @@ window.onload = function () {
         //chama a função fetchAsync()
         fetchAsync().then(data => console.log("ok")).catch(reason => console.log(reason.message));
     }
-    function save_revista(file) {
-        const fd = new FormData();
+    function save_revista() {
 
 
         var data = {};
         data.nome = document.getElementById("nome_revistas").value;
         data.edicao = document.getElementById("numero_revistas").value;
-        data.nome_revista = document.getElementById("select_revistas").value;
-        data.revista = document.getElementById("revista_revistas").value;
+        data.link = document.getElementById("select_revistas").value;
         console.log(data);
 
-        fetch('http://localhost:3000/scoutRevistas/', {
-            headers: { 'Content-Type': 'application/json' },
-            method: 'POST',
-            body: JSON.stringify(data)
-        }).then(function (response) {
-            if (!response.ok) {
-                console.log(response.status); //=> number 100–599
-                console.log(response.statusText); //=> String
-                console.log(response.headers); //=> Headers
-                console.log(response.url); //=> String
-                if (response.status === 409) {
-                    alert("Duplicated occurrences Code");
+        if (document.getElementById("select_revistas").value == 1) {
+            fetch('http://localhost:3000/soundRevistas/', {
+                headers: { 'Content-Type': 'application/json' },
+                method: 'POST',
+                body: JSON.stringify(data)
+            }).then(function (response) {
+                if (!response.ok) {
+                    console.log(response.status); //=> number 100–599
+                    console.log(response.statusText); //=> String
+                    console.log(response.headers); //=> Headers
+                    console.log(response.url); //=> String
+                    if (response.status === 409) {
+                        alert("Duplicated occurrences Code");
+                    }
+                    else {
+                        throw Error(response.statusText);
+                    }
                 }
                 else {
-                    throw Error(response.statusText);
+                    /*document.getElementById("nome_revistas").reset();
+                     document.getElementById("numero_revistas").reset();
+                     document.getElementById("select_revistas").reset();*/
+                    alert("Revista adicionada com sucesso!");
+                    //refreshanalise();
                 }
-            }
-            else {
-                /*document.getElementById("nome_revistas").reset();
-                 document.getElementById("numero_revistas").reset();
-                 document.getElementById("select_revistas").reset();*/
-                alert("Revista adicionada com sucesso!");
-                //refreshanalise();
-            }
-        }).then(function (result) {
-            console.log(result);
-        }).catch(function (err) {
-            //alert("Submission error");
-            console.error(err);
-        });
+            }).then(function (result) {
+                console.log(result);
+            }).catch(function (err) {
+                //alert("Submission error");
+                console.error(err);
+            });
+        } else {
+            fetch('http://localhost:3000/scoutRevistas/', {
+                headers: { 'Content-Type': 'application/json' },
+                method: 'POST',
+                body: JSON.stringify(data)
+            }).then(function (response) {
+                if (!response.ok) {
+                    console.log(response.status); //=> number 100–599
+                    console.log(response.statusText); //=> String
+                    console.log(response.headers); //=> Headers
+                    console.log(response.url); //=> String
+                    if (response.status === 409) {
+                        alert("Duplicated occurrences Code");
+                    }
+                    else {
+                        throw Error(response.statusText);
+                    }
+                }
+                else {
+                    /*document.getElementById("nome_revistas").reset();
+                     document.getElementById("numero_revistas").reset();
+                     document.getElementById("select_revistas").reset();*/
+                    alert("Revista adicionada com sucesso!");
+                    //refreshanalise();
+                }
+            }).then(function (result) {
+                console.log(result);
+            }).catch(function (err) {
+                //alert("Submission error");
+                console.error(err);
+            });
+        }
     }
 
     //Save capa da revista 
-    function uploadCapa(file) {
+    function uploadCapa_Revista(file) {
 
         // add file to FormData object
 
         const fd = new FormData();
-
-        fd.append('capa', file);
-        fetch('/scoutCapa', {
-            method: 'POST',
-            body: fd
-        })
-            .then(res => res.json())
-            .then(json => console.log(json))
-            .catch(err => console.error(err));
+        if (document.getElementById("select_revistas").value == 1) {
+            fd.append('capa_sound', file);
+            fetch('/soundCapa/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        } else {
+            fd.append('capa_scout', file);
+            fetch('/scoutCapa/', {
+                method: 'POST',
+                body: fd
+            })
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err));
+        }
 
     };
+
 
     //----------------------------------------------------------------------//
 
@@ -414,7 +456,7 @@ window.onload = function () {
     }
 
     //---Save dados
-    function save_galeria_sound() {
+    function save_galeria() {
 
         var data = {};
         data.revista = document.getElementById("select_galeria_diretores").value;
@@ -488,46 +530,7 @@ window.onload = function () {
 
 
     }
-    function save_galeria_scout() {
 
-        var data = {};
-        data.revista = document.getElementById("select_galeria_diretores").value;
-        data.titulo = document.getElementById("titulo_galeria_diretores").value;
-        data.data = document.getElementById("data_galeria_diretores").value;
-        data.fotografo = document.getElementById("fotografo_galeria_diretores").value;
-
-        console.log(data);
-        fetch('http://localhost:3000/galeria/', {
-            headers: { 'Content-Type': 'application/json' },
-            method: 'POST',
-            body: JSON.stringify(data)
-        }).then(function (response) {
-            if (!response.ok) {
-                console.log(response.status); //=> number 100–599
-                console.log(response.statusText); //=> String
-                console.log(response.headers); //=> Headers
-                console.log(response.url); //=> String
-                if (response.status === 409) {
-                    alert("Duplicated occurrences Code");
-                }
-                else {
-                    throw Error(response.statusText);
-                }
-            }
-            else {
-                /*document.getElementById("nome_revistas").reset();
-                 document.getElementById("numero_revistas").reset();
-                 document.getElementById("select_revistas").reset();*/
-                alert("Galeria adicionada com sucesso!");
-                //refreshanalise();
-            }
-        }).then(function (result) {
-            console.log(result);
-        }).catch(function (err) {
-            //alert("Submission error");
-            console.error(err);
-        });
-    }
     //CAPA
 
     function uploadCapaGaleria(file) {

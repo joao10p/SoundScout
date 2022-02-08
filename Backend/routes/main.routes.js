@@ -10,6 +10,8 @@ const AlbumSound = require('../controllers/album_sound.js');
 const Subs = require('../controllers/subscritores.js');
 const Play = require('../controllers/playlist.js');
 const Musica = require('../controllers/musica.js');
+const RevSound = require('../controllers/revista_sound.js');
+const RevScout = require('../controllers/revista_scout.js');
 const multer = require('multer');
 const path = require('path');
 var count = 1;
@@ -60,6 +62,8 @@ router.post('/playlistCapa/', upload.single("capa_playlist"), Play.save_capa);
 //GALERIA--ALBUM--SCOUT 
 router.get('/galeriaScout', Galer.read);
 router.get('/galeria/:id', Galer.readID);
+router.get('/galeriaScout2/:id', Galer.read_id);
+router.get('/galeriaScoutMax', Galer.readMax);
 router.post('/galeria/', Galer.save);
 router.post('/galeriaCapaScout/', upload2.single('scout_capa_galeria'), Galer.save_capa_galeria);
 router.put('/galeria/:id', Galer.update);
@@ -78,6 +82,7 @@ router.post('/AlbumScout/foto9', upload2.single('9'), Album.save9);
 router.get('/galeriaSound', GalerSound.read);
 router.get('/galeriaSoundMax', GalerSound.readMax);
 router.get('/galeriaSound/:id', GalerSound.readID);
+router.get('/galeriaSound2/:id', GalerSound.read_id);
 router.post('/galeriaSound/', GalerSound.save);
 router.post('/galeriaCapaSound/', upload2.single('sound_capa_galeria'), GalerSound.save_capa_galeria);
 router.put('/galeriaSound/:id', GalerSound.update);
@@ -106,12 +111,10 @@ router.put('/redes/:id', Redes.save);
 router.put('/ScoutredesCapa', upload.single('Capa_redes_scout'), Redes.save_imagem_scout);
 router.put('/SoundredesCapa', upload.single('Capa_redes_sound'), Redes.save_imagem_sound);
 //SCOUT e SOUND
-router.get('/scoutGet', ScoutSound.read);
+router.get('/scoutSoundGet', ScoutSound.read);
 router.get('/soundtGetbanner', ScoutSound.read_banner_sound);
 router.get('/scout/:id', ScoutSound.readID);
-router.post('/scoutRevistas/', ScoutSound.save_revistas);
 router.put('/saveText/:id', ScoutSound.save_text);
-router.post('/scoutCapa/', upload.single('capa'), ScoutSound.save_capa);
 router.post('/soundSlide1/', upload.single('sound_slider1'), ScoutSound.save_slider_sound);
 router.post('/soundSlide2/', upload.single('sound_slider2'), ScoutSound.save_slider_sound);
 router.post('/soundSlide3/', upload.single('sound_slider3'), ScoutSound.save_slider_sound);
@@ -127,6 +130,12 @@ router.put('/scoutRevistas_mod/', ScoutSound.update);
 router.delete('/scout/:id', ScoutSound.deleteID);
 
 
+//REVISTA SOUND 
+router.post('/soundRevistas/', RevSound.save);
+router.post('/soundCapa/', upload2.single('capa_sound'), RevSound.save_capa);
+//REVISTA SCOUT
+router.post('/scoutRevistas/', RevScout.save);
+router.post('/scoutCapa/', upload2.single('capa_scout'), RevScout.save_capa);
 module.exports = router;
 
 

@@ -20,13 +20,55 @@ exports.read = function (req, res) {
             console.log('Error while performing Query.', err);
     });
 }
+exports.read_id = function (req, res) {
+    const id = req.params.id;
+
+    con.query('SELECT * from galeria_scout WHERE id =?', [id], function (err, rows, fields) {
+        if (!err) {
+
+            if (rows.length == 0) {
+                res.status(404).send("User not found");
+            }
+            else {
+                res.status(200).send(rows);
+            }
+        }
+        else
+            console.log('Error while performing Query.', err);
+    });
+}
+exports.readMax = function (req, res) {
+
+    const id = req.params.id;
+
+
+    con.query('SELECT id FROM galeria_scout ORDER BY id DESC LIMIT 0, 1', [id], function (err, rows, fields) {
+        if (!err) {
+
+            if (rows.length == 0) {
+                res.status(404).send({
+                    "msg": "galeria nao encontrada"
+                });
+            }
+            else {
+                res.status(200).send(rows);
+            }
+        }
+        else
+            res.status(400).send({
+                "msg": err.code
+            });
+        console.log('Error while performing Query.', err);
+    });
+}
+
 
 exports.readID = function (req, res) {
 
     const id = req.params.id;
 
 
-    con.query('SELECT * from galeria_scout where id=?', [id], function (err, rows, fields) {
+    con.query('SELECT SUBSTRING(capa, 8) AS capa from galeria_scout WHERE id =?', [id], function (err, rows, fields) {
         if (!err) {
 
             if (rows.length == 0) {

@@ -46,6 +46,25 @@ exports.readID = function (req, res) {
     });
 }
 
+
+exports.read_id = function (req, res) {
+    const id = req.params.id;
+
+    con.query('SELECT * from galeria_sound WHERE id =?', [id], function (err, rows, fields) {
+        if (!err) {
+
+            if (rows.length == 0) {
+                res.status(404).send("User not found");
+            }
+            else {
+                res.status(200).send(rows);
+            }
+        }
+        else
+            console.log('Error while performing Query.', err);
+    });
+}
+
 exports.readMax = function (req, res) {
 
     const id = req.params.id;

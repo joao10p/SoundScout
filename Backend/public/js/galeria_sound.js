@@ -1,11 +1,15 @@
 window.onload = function () {
     getCapa();
+    getTitulos();
 
     document.getElementById("subs").addEventListener("click", function () {
         save_subs();
     });
     document.getElementById("add").addEventListener("click", function () {
         getCapa();
+    });
+    document.getElementById("add").addEventListener("click", function () {
+        getTitulos();
     });
 
     function save_subs() {
@@ -53,12 +57,12 @@ window.onload = function () {
                 console.log(response);
                 JSON.stringify(response);
                 // changed .value to .innerHTML but you can handle it as you wish
-                const txt = response[0].id; 
+                const txt = response[0].id;
                 document.getElementById("max").value = txt;
 
                 console.log(txt);
-                for (let index = 1; index < txt; index++) {
-                    const element = index;  
+                for (let index = 1; index <= txt; index++) {
+                    const element = index;
                     console.log(index);
 
 
@@ -76,6 +80,43 @@ window.onload = function () {
                 }
 
             })
-            
+
+    }
+    function getTitulos() {
+
+        fetch('http://localhost:3000/galeriaSoundMax/')
+            .then(response => response.json()) // <-- important line
+            .then(response => {
+                console.log(response);
+                JSON.stringify(response);
+                // changed .value to .innerHTML but you can handle it as you wish
+                const txt = response[0].id;
+                document.getElementById("max").value = txt;
+
+                console.log(txt);
+                for (let index = 1; index <= txt; index++) {
+                    const element = index;
+                    console.log(index);
+
+
+                    fetch('http://localhost:3000/galeriaSound2/' + element)
+                        .then(response => response.json()) // <-- important line
+                        .then(response => {
+                            console.log(response);
+                            JSON.stringify(response);
+                            // changed .value to .innerHTML but you can handle it as you wish
+                            const txt = response[0].titulo;
+                            const txt1 = response[0].fotografo;
+                            const txt2 = response[0].data;
+
+                            document.getElementById("titulo_"+index).innerHTML = txt;
+                            document.getElementById("foto_"+index).innerHTML = txt1;
+                            document.getElementById("data_"+index).innerHTML = txt2;
+
+                        })
+                }
+
+            })
+
     }
 }
