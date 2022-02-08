@@ -31,7 +31,7 @@
         <link href="css/styles.css" rel="stylesheet" />
         
     </head>
-    <body data-home-page="Página-Inicial.html" data-home-page-title="Página Inicial" class="u-body"><header class="u-clearfix u-header u-header" id="sec-d667">
+    <body data-home-page="Página-Inicial.html"  onload="apenas_num1();" data-home-page-title="Página Inicial" class="u-body"><header class="u-clearfix u-header u-header" id="sec-d667">
               <!-- Navigation-->
 
               <nav class="navbar navbar-default navbar-expand-lg navbar-light  fixed-top" id="mainNav">
@@ -64,7 +64,7 @@
                   <div class="u-gallery-inner u-gallery-inner-1">
                     <div class="u-effect-fade u-gallery-item">
                       <div class="u-back-slide">
-                        <img class="u-back-image u-expanded" id="1" value="scout" src="imagens/DSCF0812.JPG">
+                        <img class="u-back-image u-expanded" id="1" value="fotoscout" src="imagens/DSCF0812.JPG">
                       </div>
                       <div class="u-over-slide u-shading u-over-slide-1">
                         <h3 class="u-gallery-heading"></h3>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="u-effect-fade u-gallery-item">
                       <div class="u-back-slide">
-                        <img class="u-back-image u-expanded" id="2" value="scout" src="imagens/DSCF0817.JPG">
+                        <img class="u-back-image u-expanded" id="2" value="fotoscout" src="imagens/DSCF0817.JPG">
                       </div>
                       <div class="u-over-slide u-shading u-over-slide-2">
                         <h3 class="u-gallery-heading"></h3>
@@ -82,7 +82,7 @@
                     </div>
                     <div class="u-effect-fade u-gallery-item">
                       <div class="u-back-slide">
-                        <img class="u-back-image u-expanded" id="3" value="scout" src="imagens/DSCF0844.JPG">
+                        <img class="u-back-image u-expanded" id="3" value="fotoscout" src="imagens/DSCF0844.JPG">
                       </div>
                       <div class="u-over-slide u-shading u-over-slide-3">
                         <h3 class="u-gallery-heading"></h3>
@@ -91,7 +91,7 @@
                     </div>
                     <div class="u-effect-fade u-gallery-item">
                         <div class="u-back-slide">
-                          <img class="u-back-image u-expanded" id="4" value="scout" src="imagens/DSCF0819.jpg">
+                          <img class="u-back-image u-expanded" id="4" value="fotoscout" src="imagens/DSCF0819.jpg">
                         </div>
                         <div class="u-over-slide u-shading u-over-slide-4">
                           <h3 class="u-gallery-heading"></h3>
@@ -100,7 +100,7 @@
                       </div>
                       <div class="u-effect-fade u-gallery-item">
                         <div class="u-back-slide">
-                          <img class="u-back-image u-expanded" id="5" value="scout" src="imagens/DSCF0824.JPG">
+                          <img class="u-back-image u-expanded" id="5" value="fotoscout" src="imagens/DSCF0824.JPG">
                         </div>
                         <div class="u-over-slide u-shading u-over-slide-5">
                           <h3 class="u-gallery-heading"></h3>
@@ -109,7 +109,7 @@
                       </div>
                       <div class="u-effect-fade u-gallery-item">
                         <div class="u-back-slide">
-                          <img class="u-back-image u-expanded" id="6" value="scout" src="imagens/DSCF0825.JPG">
+                          <img class="u-back-image u-expanded" id="6" value="fotoscout" src="imagens/DSCF0825.JPG">
                         </div>
                         <div class="u-over-slide u-shading u-over-slide-6">
                           <h3 class="u-gallery-heading"></h3>
@@ -119,7 +119,7 @@
 
                       <div class="u-effect-fade u-gallery-item">
                         <div class="u-back-slide">
-                          <img class="u-back-image u-expanded" id="7" value="scout" src="imagens/DSCF0833.JPG">
+                          <img class="u-back-image u-expanded" id="7" value="fotoscout" src="imagens/DSCF0833.JPG">
                         </div>
                         <div class="u-over-slide u-shading u-over-slide-7">
                           <h3 class="u-gallery-heading"></h3>
@@ -129,7 +129,7 @@
 
                       <div class="u-effect-fade u-gallery-item">
                         <div class="u-back-slide">
-                          <img class="u-back-image u-expanded" id="8" value="scout" src="imagens/DSCF0836.JPG">
+                          <img class="u-back-image u-expanded" id="8" value="fotoscout" src="imagens/DSCF0836.JPG">
                         </div>
                         <div class="u-over-slide u-shading u-over-slide-8">
                           <h3 class="u-gallery-heading"></h3>
@@ -139,7 +139,7 @@
 
                       <div class="u-effect-fade u-gallery-item">
                         <div class="u-back-slide">
-                          <img class="u-back-image u-expanded" id="9" value="scout" src="imagens/DSCF0840.JPG">
+                          <img class="u-back-image u-expanded" id="9" value="fotoscout" src="imagens/DSCF0840.JPG">
                         </div>
                         <div class="u-over-slide u-shading u-over-slide-9">
                           <h3 class="u-gallery-heading"></h3>
@@ -274,7 +274,15 @@
                 </div>
             </div>
 
-
+            <input id="scout" value=""> </input>
+            <script>
+              var valor_galeria = localStorage.getItem("valor_galeria");
+              var apenas_num = valor_galeria.substr(7);
+        
+              function apenas_num1(){
+              document.getElementById("scout").value = apenas_num;
+              }
+            </script>
         </section>
         <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © SoundScout 2020</div>
