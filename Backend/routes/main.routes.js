@@ -33,7 +33,7 @@ const upload = multer({
 const storage2 = multer.diskStorage({
     destination: './public/imagens/',
     filename: (req, file, cb) => {
-        return cb(null, `${file.fieldname}_${file.originalname}_${Date.now()}`)
+        return cb(null, `${file.fieldname}_${Date.now()}_${file.originalname}`)
     }
 })
 const upload2 = multer({
