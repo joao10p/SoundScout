@@ -48,9 +48,10 @@ app.get('',  (req, res) => {
 
 app.use(require("express-session")({
   secret: 'our super secret session secret',
-  saveUninitialized: false,
+  store: sessionStore,
   resave: false,
-  store: sessionStore
+  saveUninitialized: false
+ 
   
   /*cookie: {
     maxAge: 3600000,
@@ -170,7 +171,7 @@ app.get('/try', (req,res) => {
   res.sendFile(__dirname + '/views/try.html')
 })
 
-app.get('/login', (req,res) => {
+app.get('/login', checkNotAuthenticated, (req,res) => {
   res.sendFile(__dirname + '/views/login.html')
 })
 //USA AS ROTAS PARA IR BUSCAR OS CONTROLLERS E AS PAGINAS

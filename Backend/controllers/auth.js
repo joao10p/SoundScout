@@ -20,7 +20,8 @@ exports.logout = function(req, res, err) {
             console.log(err);
             res.status(jsonMessages.user.logoutError.status).send(jsonMessages.user.logoutError);
         }
-        res.status(jsonMessages.user.logoutSuccess.status).send(jsonMessages.user.logoutSuccess);
+        //res.status(jsonMessages.user.logoutSuccess.status).send(jsonMessages.user.logoutSuccess);
+        res.redirect('/');
     });
 };
 
