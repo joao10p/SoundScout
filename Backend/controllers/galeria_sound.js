@@ -46,6 +46,32 @@ exports.readID = function (req, res) {
     });
 }
 
+exports.readMax = function (req, res) {
+
+    const id = req.params.id;
+
+
+    con.query('SELECT id FROM galeria_sound ORDER BY id DESC LIMIT 0, 1', [id], function (err, rows, fields) {
+        if (!err) {
+
+            if (rows.length == 0) {
+                res.status(404).send({
+                    "msg": "galeria nao encontrada"
+                });
+            }
+            else {
+                res.status(200).send(rows);
+            }
+        }
+        else
+            res.status(400).send({
+                "msg": err.code
+            });
+        console.log('Error while performing Query.', err);
+    });
+}
+
+
 
 exports.save = function (req, res) {
     const id = req.body.id;

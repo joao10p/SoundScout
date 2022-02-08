@@ -44,25 +44,34 @@ window.onload = function () {
 
     function getCapa() {
 
-        const id = 1;
-
-
-        fetch('http://localhost:3000/galeriaSound/' + id)
+        fetch('http://localhost:3000/galeriaSoundMax/')
             .then(response => response.json()) // <-- important line
             .then(response => {
                 console.log(response);
                 JSON.stringify(response);
                 // changed .value to .innerHTML but you can handle it as you wish
-                const txt = response[0].capa;
+                const txt = response[0].id;
 
-                document.getElementById("galeria").src = txt;
-                
+                console.log(txt);
+                for (let index = 1; index < txt; index++) {
+                    const element = index;  
+                    console.log(index);
+
+
+                    fetch('http://localhost:3000/galeriaSound/' + element)
+                        .then(response => response.json()) // <-- important line
+                        .then(response => {
+                            console.log(response);
+                            JSON.stringify(response);
+                            // changed .value to .innerHTML but you can handle it as you wish
+                            const txt = response[0].capa;
+
+                            document.getElementById(index).src = txt;
+
+                        })
+                }
 
             })
-            .catch(error => {
-                alert("Nope");
-            })
-    };
-
-
-} 
+            
+    }
+}
