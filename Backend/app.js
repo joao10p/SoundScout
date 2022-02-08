@@ -46,6 +46,15 @@ app.get('',  (req, res) => {
     res.sendFile(__dirname + '/views/index.html')
 })
 
+var options = {
+  host: 'remotemysql.com',
+  user: 'AOlZ2PiCPa',
+  password: 'c72uob9rs6',
+  database: 'AOlZ2PiCPa'
+};
+
+var sessionStore = new MySQLStore(options);
+
 app.use(require("express-session")({
   secret: 'our super secret session secret',
   store: sessionStore,
@@ -177,14 +186,6 @@ app.get('/login', checkNotAuthenticated, (req,res) => {
 //USA AS ROTAS PARA IR BUSCAR OS CONTROLLERS E AS PAGINAS
 app.use('/', mainRoutes);
 
-var options = {
-  host: 'remotemysql.com',
-  user: 'AOlZ2PiCPa',
-  password: 'c72uob9rs6',
-  database: 'AOlZ2PiCPa'
-};
-
-var sessionStore = new MySQLStore(options);
 
 
 //BANNER TRYYYYYYYYYYYYYYYYYYYYYYY
