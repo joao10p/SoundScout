@@ -161,7 +161,7 @@
                 </div>
             </div>
 
-            <input id="max"> </input>
+            <input TYPE="hidden" id="max"> </input>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="center">
@@ -178,11 +178,17 @@
 
         <script>
             var x = 3;
+            
+
             function myFunction() {
+                var max1 = document.getElementById("max").value
+                var linhamax = max1 / 3;
+                if(x<=linhamax){
                 var d1 = document.getElementById("linha"+x);
                 x++;
                 console.log(x);
-                d1.insertAdjacentHTML('afterend', '<div class="row" id="linha"> <div class="col-lg-4 col-md-4 galeria_sound_final " value="0" id="galeria_1" style="padding:2%;"><a href="galeria_id_sound"> <img src="imagens/galeria_sound7.jpg" class="galeria img-responsive" id="img_01"><div id="titulo_01" class="centered1">titulo</div><div id="foto_01" class="centered2">fotografo</div><div id="data_01" class="centered3">data</div></a> </div><div class="col-lg-4 col-md-4 galeria_sound_final" value="0" id="galeria_2" style="padding:2%;"><a href="galeria_id_sound"><img  src="imagens/galeria_sound8.jpg" class="galeria img-responsive"  id="img_02"><div id="titulo_02" class="centered1">titulo</div><div  id="foto_02" class="centered2">fotografo</div><div  id="data_02" class="centered3">data</div></a> </div><div class="col-lg-4 col-md-4 galeria_sound_final" value="0" id="galeria_3" style="padding: 2%;"><a href="galeria_id_sound"><img src="imagens/galeria_sound9.jpg" class="galeria img-responsive"  id="img_03"><div  id="titulo_03" class="centered1">titulo</div><div id="foto_03" class="centered2">fotografo</div><div id="data_03"  class="centered3">data</div></a> </div></div>  ');
+                d1.insertAdjacentHTML('afterend', '<div class="row" id="linha"> <div class="col-lg-4 col-md-4 galeria_sound_final " value="0" id="galeria_1" style="padding:2%;"><a href="galeria_id_sound"> <img src="imagens/galeria_sound7.jpg" class="galeria img-responsive" id="img_01"><div id="titulo_01" class="centered1"></div><div id="foto_01" class="centered2">Não existem mais galerias disponíveis</div><div id="data_01" class="centered3"></div></a> </div><div class="col-lg-4 col-md-4 galeria_sound_final" value="0" id="galeria_2" style="padding:2%;"><a href="galeria_id_sound"><img  src="imagens/galeria_sound8.jpg" class="galeria img-responsive"  id="img_02"><div id="titulo_02" class="centered1"></div><div  id="foto_02" class="centered2">Não existem mais galerias disponíveis</div><div  id="data_02" class="centered3"></div></a> </div><div class="col-lg-4 col-md-4 galeria_sound_final" value="0" id="galeria_3" style="padding: 2%;"><a href="galeria_id_sound"><img src="imagens/galeria_sound9.jpg" class="galeria img-responsive"  id="img_03"><div  id="titulo_03" class="centered1"></div><div id="foto_03" class="centered2">Não existem mais galerias disponíveis</div><div id="data_03"  class="centered3"></div></a> </div></div>  ');
+            } else alert ("Não existem mais galerias disponiveis!")
             }
 
 
