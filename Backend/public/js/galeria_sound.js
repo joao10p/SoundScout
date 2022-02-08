@@ -53,7 +53,8 @@ window.onload = function () {
                 console.log(response);
                 JSON.stringify(response);
                 // changed .value to .innerHTML but you can handle it as you wish
-                const txt = response[0].id;
+                const txt = response[0].id; 
+                document.getElementById("max").value = txt;
 
                 console.log(txt);
                 for (let index = 1; index < txt; index++) {
