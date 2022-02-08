@@ -343,11 +343,11 @@
             Área Reservada
         </button>
 
-        <button type="button" id="ingles" href="/index_en">
+        <button type="button" id="ingles">
             <img src="imagens/ingles.png">
         </button>
 
-        <button type="button" id="portugues">
+        <button type="button" id="portugues" href="/">
             <img src="imagens/portugues.png">
         </button>
 
@@ -405,6 +405,35 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
     <script type="text/javascript" src="js/login.js" crossorigin="anonymous"></script>
+
+    <div id="google_translate_element"></div>
+
+
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'pt'}, 'google_translate_element');
+    }
+    </script>
+    
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+        
+        
+       <style>#google_translate_element,.skiptranslate{display:none;}body{top:0!important;}</style>
+    <div id="google_translate_element"></div>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'pt', 
+                includedLanguages: 'en', 
+                autoDisplay: false
+            }, 'google_translate_element');
+            var a = document.querySelector("#google_translate_element select");
+            a.selectedIndex=1;
+            a.dispatchEvent(new Event('change'));
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
