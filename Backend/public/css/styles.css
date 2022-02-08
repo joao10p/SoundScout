@@ -10426,7 +10426,7 @@ body {
   background-size: cover;
 }
 
-#galeria {
+.galeria {
   filter: brightness(50%);
   height: 30vh;
   width: 30vw;
