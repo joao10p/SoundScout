@@ -35,7 +35,7 @@
 
 </head>
 
-<body data-home-page="Página-Inicial.html" data-home-page-title="Página Inicial" class="u-body">
+<body data-home-page="Página-Inicial.html" data-home-page-title="Página Inicial" class="u-body" onload="apenas_num1();">
   <header class="u-clearfix u-header u-header" id="sec-d667">
     <!-- Navigation-->
 
@@ -410,12 +410,16 @@
         <a class="mx-2" href="https://www.instagram.com/revistascout/"><i class="fab fa-instagram"></i>Scout</a>
       </div>
     </div>
+    <input id="sound" value=""> </input>
     <script>
       var valor_galeria = localStorage.getItem("valor_galeria");
       var apenas_num = valor_galeria.substr(7);
+
+      function apenas_num1(){
       document.getElementById("sound").value = apenas_num;
+      }
     </script>
-    <input id="sound" value=""> </input>
+    
   </section>
   <!-- Footer-->
   <footer class="footer bg-black small text-center text-white-50">
