@@ -20,13 +20,49 @@ exports.read = function (req, res) {
             console.log('Error while performing Query.', err);
     });
 }
-
 exports.readID = function (req, res) {
 
     const id = req.params.id;
 
 
-    con.query('SELECT SUBSTRING(capa, 8) AS capa from galeria_sound WHERE id =?', [id], function (err, rows, fields) {
+    con.query('SELECT SUBSTRING(capa, 8) AS capa from galeria_scout WHERE id =?', [id], function (err, rows, fields) {
+        if (!err) {
+
+            if (rows.length == 0) {
+                res.status(404).send({
+                    "msg": "galeria nao encontrada"
+                });
+            }
+            else {
+                res.status(200).send(rows);
+            }
+        }
+        else
+            res.status(400).send({
+                "msg": err.code
+            });
+        console.log('Error while performing Query.', err);
+    });
+}
+
+exports.readID_FOTOS = function (req, res) {
+    const id = req.params.id;
+    var post = [
+        id,
+        id,
+        id,
+        id,
+        id,
+        id,
+        id,
+        id,
+        id
+
+
+    ];
+
+
+    con.query('SELECT ( SELECT SUBSTRING(foto1, 8) AS foto1 from galeria_sound WHERE id =? ) as foto1,  ( SELECT SUBSTRING(foto2, 8) AS foto2 from galeria_sound WHERE id =? )  AS foto2 , ( SELECT SUBSTRING(foto3, 8) AS foto3 from galeria_sound WHERE id =? )  AS foto3,( SELECT SUBSTRING(foto4, 8) AS foto4 from galeria_sound WHERE id =? )  AS foto4,( SELECT SUBSTRING(foto5, 8) AS foto5 from galeria_sound WHERE id =? )  AS foto5,( SELECT SUBSTRING(foto6, 8) AS foto6 from galeria_sound WHERE id =? )  AS foto6,( SELECT SUBSTRING(foto7, 8) AS foto7 from galeria_sound WHERE id =? )  AS foto7,( SELECT SUBSTRING(foto8, 8) AS foto8 from galeria_sound WHERE id =? )  AS foto8,( SELECT SUBSTRING(foto9, 8) AS foto9 from galeria_sound WHERE id =? )  AS foto9', post, function (err, rows, fields) {
         if (!err) {
 
             if (rows.length == 0) {

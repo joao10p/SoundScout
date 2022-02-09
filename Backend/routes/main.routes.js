@@ -82,6 +82,7 @@ router.post('/AlbumScout/foto9', upload2.single('9'), Album.save9);
 router.get('/galeriaSound', GalerSound.read);
 router.get('/galeriaSoundMax', GalerSound.readMax);
 router.get('/galeriaSound/:id', GalerSound.readID);
+router.get('/galeriaSoundFotos/:id', GalerSound.readID_FOTOS);
 router.get('/galeriaSound2/:id', GalerSound.read_id);
 router.post('/galeriaSound/', GalerSound.save);
 router.post('/galeriaCapaSound/', upload2.single('sound_capa_galeria'), GalerSound.save_capa_galeria);
