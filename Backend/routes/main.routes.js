@@ -63,6 +63,7 @@ router.post('/playlistCapa/', upload.single("capa_playlist"), Play.save_capa);
 router.get('/galeriaScout', Galer.read);
 router.get('/galeria/:id', Galer.readID);   
 router.get('/galeriaScout2/:id', Galer.read_id);
+router.get('/galeriaScoutFotos/:id', Galer.readID_FOTOS);
 router.get('/galeriaScoutMax', Galer.readMax);
 router.post('/galeria/', Galer.save);
 router.post('/galeriaCapaScout/', upload2.single('scout_capa_galeria'), Galer.save_capa_galeria);

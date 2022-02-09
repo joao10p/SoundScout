@@ -578,7 +578,7 @@ window.onload = function () {
                 .catch(err => console.error(err));
         } else {
             fd.append('1', file);
-            fetch('//AlbumScout/foto1', {
+            fetch('/AlbumScout/foto1', {
                 method: 'POST',
                 body: fd
             })
