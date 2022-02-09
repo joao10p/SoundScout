@@ -22,7 +22,6 @@ var MySQLStore = require('express-mysql-session')(session);
 
 //cors
 app.use((req,res,next)=> {
-  console.log("Passou o cors")
   res.header("Access-Control-Allow-Origin", "*");
   app.use(cors());
   next();
@@ -199,35 +198,6 @@ app.get('/login',checkNotAuthenticated, (req,res) => {
 app.use('/', mainRoutes);
 
 
-
-//BANNER TRYYYYYYYYYYYYYYYYYYYYYYY
-app.use(fileUpload({
-  createParentPath: true
-}));
-app.post('/upload', async (req, res) => {
-  try {
-      if(!req.files) {
-          res.send({
-              status: false,
-              message: 'Error: No file uploaded'
-          });
-      } else {
-          let uploadedFile = req.files.uploadedFile;
-          uploadedFile.mv('./uploadedFiles/' + uploadedFile.name);
-          res.json({
-              message: 'File is uploaded',
-              data: {
-                  name: uploadedFile.name,
-                  mimetype: uploadedFile.mimetype,
-                  size: uploadedFile.size
-              }
-          });
-      }
-  } catch (err) {
-      res.json({Error: "Error while uploading file."})
-  }
-});
-
 module.exports = app;
 
 module.exports = app;
@@ -268,14 +238,6 @@ models.sequelize.sync().then(function() {
 });
 
 ////login
-
-
-
-
-
-
-//ver se esta autenticado
-
 
 function checkAuthenticated(req, res , next){
   if(req.isAuthenticated()){

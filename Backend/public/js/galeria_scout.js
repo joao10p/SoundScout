@@ -62,7 +62,7 @@ window.onload = function () {
                 for (let index = 1; index <= txt; index++) {
                     const element = index;
                     console.log(index);
-
+                    const max = txt;
 
                     fetch('http://localhost:3000/galeria/' + element)
                         .then(response => response.json()) // <-- important line
@@ -72,7 +72,7 @@ window.onload = function () {
                             // changed .value to .innerHTML but you can handle it as you wish
                             const txt = response[0].capa;
 
-                            document.getElementById(index).src = txt;
+                            document.getElementById(max + 1 - index).src = txt;
 
                         })
                 }
@@ -93,10 +93,10 @@ window.onload = function () {
 
                 console.log(txt);
                 for (let index = 1; index <= txt; index++) {
-                    const element = index;
+                    const element = txt + 1 - index;
                     console.log(index);
-
-
+                    const max = txt;
+                    
                     fetch('http://localhost:3000/galeriaScout2/' + element)
                         .then(response => response.json()) // <-- important line
                         .then(response => {

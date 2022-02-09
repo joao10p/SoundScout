@@ -69,8 +69,25 @@
             </div>
 
             <div class="row" id="linha1">
-
-                <div class="col-lg-4 col-md-4 galeria_scout_final" id="div_1" style="padding:2%;"><button onclick='f1(this)' id="button_1" style="background-color: transparent;"> <a  href="/galeria_id_scout"> <img style="background-color: black;"
+<script>
+    var max1 = document.getElementById("max").value
+    document.getElementById("div_1").id =  "div_" + count;
+    document.getElementById("1").id =   count;
+    document.getElementById("titulo_1").id =  "titulo_" + count;
+    document.getElementById("foto_1").id =  "foto_" + count;
+    document.getElementById("data_1").id =  "data_" + count;
+    document.getElementById("button_1").id =  "button_" + count;
+    document.getElementById(count).value = count;
+    var max2 = max1 -1;
+    var max3 = max1 -2;
+    var max4 = max1 -3;
+    var max5 = max1 -4;
+    var max6 = max1 -5;
+    var max7 = max1 -6;
+    var max8 = max1 -7;
+    var max9 = max1 -8;
+</script>
+                <div class="col-lg-4 col-md-4 galeria_scout_final" id="div_1"  style="padding:2%;"><button onclick='f1(this)' id="button_1" style="background-color: transparent;"> <a  href="/galeria_id_scout"> <img style="background-color: black;"
                             src="imagens/back.jpg" class="galeria img-responsive" id="1">
                         <div id="titulo_1" class="centered1"></div>
                         <div id="foto_1" class="centered2"> </div>

@@ -61,9 +61,10 @@ window.onload = function () {
                 document.getElementById("max").value = txt;
 
                 console.log(txt);
-                for (let index = 1; index <= txt; index++) {
+                for (let index = txt; index >= 1; index--) {
                     const element = index;
                     console.log(index);
+                    const max = txt;
 
 
                     fetch('http://localhost:3000/galeriaSound/' + element)
@@ -74,7 +75,11 @@ window.onload = function () {
                             // changed .value to .innerHTML but you can handle it as you wish
                             const txt = response[0].capa;
 
-                            document.getElementById(index).src = txt;
+<<<<<<< Updated upstream
+                            document.getElementById(element).src = txt;
+=======
+                            document.getElementById(max + 1 - index).src = txt;
+>>>>>>> Stashed changes
 
                         })
                 }
@@ -95,8 +100,9 @@ window.onload = function () {
 
                 console.log(txt);
                 for (let index = 1; index <= txt; index++) {
-                    const element = index;
+                    const element = txt + 1 - index;
                     console.log(index);
+                    const max = txt;
 
 
                     fetch('http://localhost:3000/galeriaSound2/' + element)
@@ -109,7 +115,7 @@ window.onload = function () {
                             const txt1 = response[0].fotografo;
                             const txt2 = response[0].data;
 
-                            document.getElementById("titulo_"+index).innerHTML = txt;
+                            document.getElementById("titsulo_"+index).innerHTML = txt;
                             document.getElementById("foto_"+index).innerHTML = txt1;
                             document.getElementById("data_"+index).innerHTML = txt2;
 
