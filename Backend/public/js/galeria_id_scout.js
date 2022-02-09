@@ -46,6 +46,7 @@ function show_fotos() {
     const id = valor_galeria.substr(7);
     //const id = document.getElementById("sound").input;
     console.log(id);
+    alert(id);
     fetch('http://localhost:3000/galeriaScoutFotos/' + id)
         .then(response => response.json()) // <-- important line
         .then(response => {
