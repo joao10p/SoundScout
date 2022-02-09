@@ -99,12 +99,24 @@ app.get('/bola', (req,res) => {
   res.sendFile(__dirname + '/views/bola.html')
 })
 
+app.get('/index_en', (req,res) => {
+  res.sendFile(__dirname + '/views/index_en.html')
+})
+
 app.get('/equipa_scout', (req,res) => {
   res.sendFile(__dirname + '/views/equipa_scout.html')
 })
 
+app.get('/equipa_scout_en', (req,res) => {
+  res.sendFile(__dirname + '/views/equipa_scout_en.html')
+})
+
 app.get('/equipa_sound', (req,res) => {
   res.sendFile(__dirname + '/views/equipa_sound.html')
+})
+
+app.get('/equipa_sound_en', (req,res) => {
+  res.sendFile(__dirname + '/views/equipa_sound_en.html')
 })
 
 app.get('/galeria_id', (req,res) => {
