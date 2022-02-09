@@ -1,7 +1,7 @@
 const express = require('express');
 const { router } = require('server');
 const app = express()
-const port = 3000
+const port = 5000
 const mainRoutes = require('./routes/main.routes');
 const multer = require('multer');
 const path = require('path');
