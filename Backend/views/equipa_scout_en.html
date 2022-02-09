@@ -93,7 +93,7 @@
                     <ul class="navbar-nav" ml-auto style="width:100%; ">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color: black;" href="/revista_sound">Revista</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color: black;" href="/galeria_sound">Galeria</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" style="color: black;" href="/bola">+Bola</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger notranslate" style="color: black;" href="/bola">+Ball</a></li>
             
                     </ul>
                 </div>
@@ -273,9 +273,7 @@
 
 
 
-  <div id="voltarBaixo">
-    <a class="js-scroll-trigger" href="/scout" id="subir"><span style="font-size:24px;" class="fas fa-arrow-left"></span></a>  <!-- about, redes, missao, signup -->
-</div>
+
 
   <section class="projects-section bg-light" id="projects">
     <div class="container">
@@ -286,7 +284,7 @@
             <div class="col-xl-8 col-lg-9">
                 <div class="featured-text text-center text-lg-left">
                     <h4>Equipa Scout</h4>
-                    <p class="text-black-50 mb-0">Se quiseres fazer parte deste projeto, contacta-nos via E-mail.
+                    <p class="text-black-50 mb-0 notranslate">If you want to be apart of this project, contact us via E-mail. 
                       
                     </p>
                     <a href="mailto:soundscoutoficial@gmail.com?&subject=Candidatura%20Scout"><p class="text-black-50 mb-0"></p>Soundscoutoficial@gmail.com</p></a>
@@ -356,7 +354,7 @@
                         <div class="card py-4 h-100">
                             <div class="card-body text-center">
                                 <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Sede</h4>
+                                <h4 class="text-uppercase m-0">Localização</h4>
                                 <hr class="my-4" />
                                 <div class="small text-black-50">Guimarães, Braga, Portugal</div>
                             </div>
@@ -470,6 +468,35 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        <div id="google_translate_element"></div>
+
+
+        <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'pt'}, 'google_translate_element');
+        }
+        </script>
+        
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        
+            
+            
+           <style>#google_translate_element,.skiptranslate{display:none;}body{top:0!important;}</style>
+        <div id="google_translate_element"></div>
+        <script>
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'pt', 
+                    includedLanguages: 'en', 
+                    autoDisplay: false
+                }, 'google_translate_element');
+                var a = document.querySelector("#google_translate_element select");
+                a.selectedIndex=1;
+                a.dispatchEvent(new Event('change'));
+            }
+        </script>
+        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </body>
 
 
