@@ -41,8 +41,8 @@ app.set('view engine', 'ejs');
 
 // Navigation
 app.get('',  (req, res) => {
-  console.log(req.user);
-  console.log(req.isAuthenticated());
+  //console.log(req.user);
+  //console.log(req.isAuthenticated());
     res.sendFile(__dirname + '/views/index.html')
 })
 
@@ -118,7 +118,7 @@ app.get('/galeria_scout', (req,res) => {
 app.get('/galeria_sound', (req,res)=> {
   res.sendFile(__dirname + '/views/galeria_sound.html')
 })
-app.get('/menu_diretores', checkAuthenticated, (req,res) => {
+app.get('/menu_diretores',checkAuthenticated, (req,res) => {
 
   res.sendFile(__dirname + '/views/menu_diretores.html')
 })
@@ -180,7 +180,7 @@ app.get('/try', (req,res) => {
   res.sendFile(__dirname + '/views/try.html')
 })
 
-app.get('/login', checkNotAuthenticated, (req,res) => {
+app.get('/login',checkNotAuthenticated, (req,res) => {
   res.sendFile(__dirname + '/views/login.html')
 })
 //USA AS ROTAS PARA IR BUSCAR OS CONTROLLERS E AS PAGINAS
