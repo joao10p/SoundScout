@@ -25,7 +25,7 @@ exports.readID = function (req, res) {
     const id = req.params.id;
 
 
-    con.query('SELECT SUBSTRING(capa, 8) AS capa from galeria_scout WHERE id =?', [id], function (err, rows, fields) {
+    con.query('SELECT SUBSTRING(capa, 8) AS capa from galeria_sound WHERE id =?', [id], function (err, rows, fields) {
         if (!err) {
 
             if (rows.length == 0) {
