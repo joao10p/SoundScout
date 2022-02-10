@@ -189,7 +189,7 @@ exports.read_edicao2 = function (req, res) {
 
 
 exports.read_nome = function (req, res) {
-    con.query('SELECT nome from revista_sound', function (err, rows, fields) {
+    con.query('SELECT nome FROM revista_sound WHERE edicao= ( SELECT max(edicao) FROM revista_sound)', function (err, rows, fields) {
         if (!err) {
 
             if (rows.length == 0) {

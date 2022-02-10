@@ -151,6 +151,7 @@ router.get('/revistaScout2/:id', RevScout.read_id);
 router.get('/revistaScoutEdicao/', RevScout.read_edicao);
 router.get('/revistaScoutEdicao2/', RevScout.read_edicao2);
 router.get('/revistaScoutCapa/:id', RevScout.read_capa);
+router.get('/revistaNome2/', RevScout.read_nome);
 module.exports = router;
 
 
