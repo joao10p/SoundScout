@@ -111,7 +111,7 @@ window.onload = function () {
                             const txt1 = response[0].fotografo;
                             const txt2 = response[0].data;
 
-                            document.getElementById("titsulo_"+index).innerHTML = txt;
+                            document.getElementById("titulo_"+index).innerHTML = txt;
                             document.getElementById("foto_"+index).innerHTML = txt1;
                             document.getElementById("data_"+index).innerHTML = txt2;
 

@@ -5,8 +5,25 @@ show_fotos();
 function show_fotos() {
     var valor_galeria = localStorage.getItem("valor_galeria");
     const id = valor_galeria.substr(7);
+
+
+
+
+    fetch('http://localhost:3000/galeriaSoundMax/')
+    .then(response => response.json()) // <-- important line
+    .then(response => {
+        console.log(response);
+        JSON.stringify(response);
+        // changed .value to .innerHTML but you can handle it as you wish
+        const txt = response[0].id;
+
+
+        const id1 = txt + 1 - id
+
+
+
     //const id = document.getElementById("sound").input;
-    fetch('http://localhost:3000/galeriaScoutFotos/' + id)
+    fetch('http://localhost:3000/galeriaScoutFotos/' + id1)
         .then(response => response.json()) // <-- important line
         .then(response => {
             console.log(response);
@@ -35,6 +52,6 @@ function show_fotos() {
         })
         .catch(error => {
             alert("Nope");
-        })
+        })})
 };
 
