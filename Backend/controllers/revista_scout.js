@@ -137,3 +137,53 @@ exports.save_capa = function (req, res) {
     });
 
 }
+
+exports.read_edicao = function (req, res) {
+    con.query('SELECT id FROM revista_scout WHERE edicao = ( SELECT max(edicao) FROM revista_scout)', function (err, rows, fields) {
+        if (!err) {
+
+            if (rows.length == 0) {
+                res.status(404).send("User not found");
+            }
+            else {
+                res.status(200).send(rows);
+            }
+        }
+        else
+            console.log('Error while performing Query.', err);
+    });
+}
+
+
+exports.read_capa = function (req, res) {
+    const id = req.params.id;
+
+    con.query('SELECT SUBSTRING(capa, 8) AS capa from revista_scout WHERE id =?', [id], function (err, rows, fields) {
+        if (!err) {
+
+            if (rows.length == 0) {
+                res.status(404).send("User not found");
+            }
+            else {
+                res.status(200).send(rows);
+            }
+        }
+        else
+            console.log('Error while performing Query.', err);
+    });
+}
+exports.read_edicao2 = function (req, res) {
+    con.query('SELECT MAX(edicao) from revista_scout', function (err, rows, fields) {
+        if (!err) {
+
+            if (rows.length == 0) {
+                res.status(404).send("User not found");
+            }
+            else {
+                res.status(200).send(rows);
+            }
+        }
+        else
+            console.log('Error while performing Query.', err);
+    });
+}

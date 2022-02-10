@@ -140,12 +140,16 @@ router.get('/revistaSoundMax', RevSound.readMax);
 router.get('/revistaSound2/:id', RevSound.read_id);
 router.get('/revistaSoundCapa/:id', RevSound.read_capa);
 router.get('/revistaSoundEdicao/', RevSound.read_edicao);
+router.get('/revistaSoundEdicao2/', RevSound.read_edicao2);
 //REVISTA SCOUT
 router.post('/scoutRevistas/', RevScout.save);
 router.post('/scoutCapa/', upload2.single('capa_scout'), RevScout.save_capa);
 router.get('/revistaScout/:id', RevScout.readID);
 router.get('/revistaScoutMax', RevScout.readMax);
-router.get('/revistaScout2/:id', RevSound.read_id);
+router.get('/revistaScout2/:id', RevScout.read_id);
+router.get('/revistaScoutEdicao/', RevScout.read_edicao);
+router.get('/revistaScoutEdicao2/', RevScout.read_edicao2);
+router.get('/revistaScoutCapa/:id', RevScout.read_capa);
 module.exports = router;
 
 

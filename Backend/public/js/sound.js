@@ -2,6 +2,7 @@ window.onload = function () {
     getTexto();
     getLink();
     getCapa();
+    getEdicao();
 
     document.getElementById("subs").addEventListener("click", function () {
         save_subs();
@@ -98,7 +99,7 @@ window.onload = function () {
     function getCapa() {
 
 
-        fetch('http://localhost:3000/revistaSoundEdicao/' )
+        fetch('http://localhost:3000/revistaSoundEdicao/')
             .then(response => response.json()) // <-- important line
             .then(response => {
                 console.log(response);
@@ -107,16 +108,16 @@ window.onload = function () {
 
                 const txt = response[0].id;
                 fetch('http://localhost:3000/revistaSoundCapa/' + txt)
-                        .then(response => response.json()) // <-- important line
-                        .then(response => {
-                            console.log(response);
-                            JSON.stringify(response);
-                            // changed .value to .innerHTML but you can handle it as you wish
-                            const txt1 = response[0].capa;
+                    .then(response => response.json()) // <-- important line
+                    .then(response => {
+                        console.log(response);
+                        JSON.stringify(response);
+                        // changed .value to .innerHTML but you can handle it as you wish
+                        const txt1 = response[0].capa;
 
-                            document.getElementById("capa_sound").src = txt1;
+                        document.getElementById("capa_sound").src = txt1;
 
-                        })
+                    })
 
 
             })
@@ -124,6 +125,21 @@ window.onload = function () {
                 alert("Nope");
             })
     };
+    function getEdicao() {
 
+
+        fetch('http://localhost:3000/revistaSoundEdicao2/')
+            .then(response => response.json()) // <-- important line
+            .then(response => {
+                console.log(response);
+                JSON.stringify(response);
+                // changed .value to .innerHTML but you can handle it as you wish
+                const txt = response[0].edicao;
+                document.getElementById("reevista").innerHTML = txt;
+            })
+            .catch(error => {
+                alert("Nope");
+            })
+    };
 
 }

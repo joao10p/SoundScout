@@ -1,6 +1,8 @@
 window.onload = function () {
     getTexto();
     getLink();
+    getCapa();
+    
     document.getElementById("subs").addEventListener("click", function () {
         save_subs();
     });
@@ -90,5 +92,34 @@ window.onload = function () {
             //alert("Submission error");
             console.error(err);
         });
+    }
+    function getCapa() {
+
+
+        fetch('http://localhost:3000/revistaScoutEdicao/')
+            .then(response => response.json()) // <-- important line
+            .then(response => {
+                console.log(response);
+                JSON.stringify(response);
+                // changed .value to .innerHTML but you can handle it as you wish
+
+                const txt = response[0].id;
+                fetch('http://localhost:3000/revistaScoutCapa/' + txt)
+                    .then(response => response.json()) // <-- important line
+                    .then(response => {
+                        console.log(response);
+                        JSON.stringify(response);
+                        // changed .value to .innerHTML but you can handle it as you wish
+                        const txt1 = response[0].capa;
+
+                        document.getElementById("capa_scout").src = txt1;
+
+                    })
+
+
+            })
+            .catch(error => {
+                alert("Nope");
+            })
     }
 }

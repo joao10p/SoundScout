@@ -151,10 +151,28 @@ exports.read_edicao = function (req, res) {
             console.log('Error while performing Query.', err);
     });
 }
+
 exports.read_capa = function (req, res) {
     const id = req.params.id;
 
     con.query('SELECT SUBSTRING(capa, 8) AS capa from revista_sound WHERE id =?', [id], function (err, rows, fields) {
+        if (!err) {
+
+            if (rows.length == 0) {
+                res.status(404).send("User not found");
+            }
+            else {
+                res.status(200).send(rows);
+            }
+        }
+        else
+            console.log('Error while performing Query.', err);
+    });
+}
+
+
+exports.read_edicao2 = function (req, res) {
+    con.query('SELECT MAX(edicao) as edicao from revista_sound', function (err, rows, fields) {
         if (!err) {
 
             if (rows.length == 0) {
