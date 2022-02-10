@@ -126,9 +126,21 @@ app.get('/galeria_id', (req,res) => {
 app.get('/galeria_scout', (req,res) => {
   res.sendFile(__dirname + '/views/galeria_scout.html')
 })
+
+app.get('/galeria_scout_en', (req,res) => {
+  res.sendFile(__dirname + '/views/galeria_scout_en.html')
+})
+
+
 app.get('/galeria_sound', (req,res)=> {
   res.sendFile(__dirname + '/views/galeria_sound.html')
 })
+
+app.get('/galeria_sound_en', (req,res)=> {
+  res.sendFile(__dirname + '/views/galeria_sound_en.html')
+})
+
+
 app.get('/menu_diretores',checkAuthenticated, (req,res) => {
 
   res.sendFile(__dirname + '/views/menu_diretores.html')
@@ -182,9 +194,17 @@ app.get('/galeria_id_sound', (req,res) => {
   res.sendFile(__dirname + '/views/galeria_id_sound.html')
 })
 
+app.get('/galeria_id_sound_en', (req,res) => {
+  res.sendFile(__dirname + '/views/galeria_id_sound_en.html')
+})
+
 
 app.get('/galeria_id_scout', (req,res) => {
   res.sendFile(__dirname + '/views/galeria_id_scout.html')
+})
+
+app.get('/galeria_id_scout_en', (req,res) => {
+  res.sendFile(__dirname + '/views/galeria_id_scout_en.html')
 })
 
 app.get('/try', (req,res) => {
