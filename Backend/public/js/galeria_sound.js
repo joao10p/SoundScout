@@ -75,11 +75,7 @@ window.onload = function () {
                             // changed .value to .innerHTML but you can handle it as you wish
                             const txt = response[0].capa;
 
-<<<<<<< Updated upstream
-                            document.getElementById(element).src = txt;
-=======
                             document.getElementById(max + 1 - index).src = txt;
->>>>>>> Stashed changes
 
                         })
                 }
