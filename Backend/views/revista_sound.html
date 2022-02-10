@@ -94,7 +94,7 @@
 
 
 
-    <div class="row" id="3"> 
+    <div class="row" id="linha3"> 
         <div class="col-lg-4" id="revista7" style="padding:2%;"><a id="link_7" href="/revista_id_sound"> <img id="7" src="imagens/revista_sound7.jpg" class="img-responsive1" id="revista">   <label  class="text_center"
             style="text-align: center;" id="titulo_7">Setembro 2020</label> <label class="text_center" style="text-align: center;" id="num_7">Edição nº12</label>
           </a>
@@ -115,7 +115,7 @@
     var x=3;
     function myFunction() {
 
-var d1 = document.getElementById(x);
+var d1 = document.getElementById("linha"+x);
 x++; 
 console.log(x);
 d1.insertAdjacentHTML('afterend', '<div class="row" id="linha"><div class="col-lg-4" id="revista_1" style="padding:2%;" id="col"><a id="link_01" href="/revista_id_sound"> <img id="01" id="00" src="imagens/revista_sound7.jpg" class="img-responsive1" id="revista"> <label id="titulo_01" class="text_center">Setembro 2020</label> <label class="text_center" style="text-align: center;" id="num_01">Edição nº12</label></a></div> <div class="col-lg-4" id="revista_2" style="padding:2%;" id="col"><a id="link_02" href="/revista_id_sound"> <img id="02" src="imagens/revista_sound7.jpg" class="img-responsive1" id="revista"> <label id="titulo_02" class="text_center">Setembro 2020</label> <label class="text_center" style="text-align: center;" id="num_02">Edição nº12</label></a></div> <div class="col-lg-4" id="revista_3" style="padding:2%;" id="col"><a id="link_03" href="/revista_id_sound"> <img id="03" src="imagens/revista_sound7.jpg" class="img-responsive1" id="revista"> <label id="titulo_03" class="text_center">Setembro 2020</label> <label class="text_center" style="text-align: center;" id="num_03">Edição nº12</label></a></div></div>');
@@ -125,7 +125,7 @@ d1.insertAdjacentHTML('afterend', '<div class="row" id="linha"><div class="col-l
     var count= 10;
 
 function idcontador(){
-document.getElementById("linha").id = linha;
+document.getElementById("linha").id = "linha"+linha;
 linha++;
 document.getElementById("revista_1").id = "revista"+count;
 document.getElementById("01").id =   count;
