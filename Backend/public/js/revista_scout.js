@@ -1,5 +1,5 @@
 window.onload = function () {
-
+    getCapa();
     document.getElementById("subs").addEventListener("click", function () {
         save_subs();
     });
@@ -39,5 +39,39 @@ window.onload = function () {
             //alert("Submission error");
             console.error(err);
         });
+    }
+
+    function getCapa() {
+
+        fetch('http://localhost:3000/revistaScoutMax/')
+            .then(response => response.json()) // <-- important line
+            .then(response => {
+                console.log(response);
+                JSON.stringify(response);
+                // changed .value to .innerHTML but you can handle it as you wish
+                const txt = response[0].id;
+                document.getElementById("max").value = txt;
+
+                console.log(txt);
+                for (let index = 1; index <= txt; index++) {
+                    const element = index;
+                    console.log(index);
+
+
+                    fetch('http://localhost:3000/revistaScout/' + element)
+                        .then(response => response.json()) // <-- important line
+                        .then(response => {
+                            console.log(response);
+                            JSON.stringify(response);
+                            // changed .value to .innerHTML but you can handle it as you wish
+                            const txt = response[0].capa;
+
+                            document.getElementById(index).src = txt;
+
+                        })
+                }
+
+            })
+
     }
 }
