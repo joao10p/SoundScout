@@ -141,6 +141,7 @@ router.get('/revistaSound2/:id', RevSound.read_id);
 router.get('/revistaSoundCapa/:id', RevSound.read_capa);
 router.get('/revistaSoundEdicao/', RevSound.read_edicao);
 router.get('/revistaSoundEdicao2/', RevSound.read_edicao2);
+router.get('/revistaNome/', RevSound.read_nome);
 //REVISTA SCOUT
 router.post('/scoutRevistas/', RevScout.save);
 router.post('/scoutCapa/', upload2.single('capa_scout'), RevScout.save_capa);

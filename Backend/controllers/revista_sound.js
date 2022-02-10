@@ -186,3 +186,20 @@ exports.read_edicao2 = function (req, res) {
             console.log('Error while performing Query.', err);
     });
 }
+
+
+exports.read_nome = function (req, res) {
+    con.query('SELECT nome from revista_sound', function (err, rows, fields) {
+        if (!err) {
+
+            if (rows.length == 0) {
+                res.status(404).send("User not found");
+            }
+            else {
+                res.status(200).send(rows);
+            }
+        }
+        else
+            console.log('Error while performing Query.', err);
+    });
+}

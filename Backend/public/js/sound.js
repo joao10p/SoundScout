@@ -140,6 +140,19 @@ window.onload = function () {
             .catch(error => {
                 alert("Nope");
             })
+
+            fetch('http://localhost:3000/revistaNome/')
+            .then(response => response.json()) // <-- important line
+            .then(response => {
+                console.log(response);
+                JSON.stringify(response);
+                // changed .value to .innerHTML but you can handle it as you wish
+                const txt = response[0].nome;
+                document.getElementById("daaata").innerHTML = txt;
+            })
+            .catch(error => {
+                alert("Nope");
+            })
     };
 
 }
