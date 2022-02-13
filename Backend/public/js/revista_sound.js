@@ -71,7 +71,7 @@ window.onload = function () {
                             JSON.stringify(response);
                             // changed .value to .innerHTML but you can handle it as you wish
                             const txt1 = response[0].capa;
-
+             
                             document.getElementById(index).src = txt1;
 
 
