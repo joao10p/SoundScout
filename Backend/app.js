@@ -98,6 +98,10 @@ app.get('/bola', (req,res) => {
   res.sendFile(__dirname + '/views/bola.html')
 })
 
+app.get('/bola_en', (req,res) => {
+  res.sendFile(__dirname + '/views/bola_en.html')
+})
+
 app.get('/index_en', (req,res) => {
   res.sendFile(__dirname + '/views/index_en.html')
 })
@@ -154,8 +158,16 @@ app.get('/revista_scout', (req,res) => {
   res.sendFile(__dirname + '/views/revista_scout.html')
 })
 
+app.get('/revista_scout_en', (req,res) => {
+  res.sendFile(__dirname + '/views/revista_scout_en.html')
+})
+
 app.get('/revista_sound', (req,res) => {
   res.sendFile(__dirname + '/views/revista_sound.html')
+})
+
+app.get('/revista_sound_en', (req,res) => {
+  res.sendFile(__dirname + '/views/revista_sound_en.html')
 })
 
 app.get('/scout', (req,res) => {
@@ -170,6 +182,11 @@ app.get('/sound', (req,res) => {
 app.get('/musica', (req,res) => {
   res.sendFile(__dirname + '/views/musica.html')
 })
+
+app.get('/musica_en', (req,res) => {
+  res.sendFile(__dirname + '/views/musica_en.html')
+})
+
 
 app.get('/upload', (req,res) => {
   res.sendFile(__dirname + '/views/upload.html')
@@ -186,8 +203,16 @@ app.get('/revista_id_sound', (req,res) => {
   res.sendFile(__dirname + '/views/revista_id_sound.html')
 })
 
+app.get('/revista_id_sound_en', (req,res) => {
+  res.sendFile(__dirname + '/views/revista_id_sound_en.html')
+})
+
 app.get('/revista_id_scout', (req,res) => {
   res.sendFile(__dirname + '/views/revista_id_scout.html')
+})
+
+app.get('/revista_id_scout_en', (req,res) => {
+  res.sendFile(__dirname + '/views/revista_id_scout_en.html')
 })
 
 app.get('/galeria_id_sound', (req,res) => {
