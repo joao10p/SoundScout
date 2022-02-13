@@ -45,7 +45,7 @@ exports.readMax = function (req, res) {
     const id = req.params.id;
 
 
-    con.query('SELECT id FROM revista_scout ORDER BY id DESC LIMIT 0, 1', [id], function (err, rows, fields) {
+    con.query('SELECT MAX(id) as id  from revista_scout', [id], function (err, rows, fields) {
         if (!err) {
 
             if (rows.length == 0) {

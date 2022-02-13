@@ -1,11 +1,13 @@
 
 window.onload = function () {
     getCapa();
+    getTitulos();
     document.getElementById("subs").addEventListener("click", function () {
         save_subs();
     });
     document.getElementById("add").addEventListener("click", function () {
         getCapa();
+        getTitulos();
     });
 
     function save_subs() {
@@ -57,8 +59,9 @@ window.onload = function () {
 
                 console.log(txt);
                 for (let index = 1; index <= txt; index++) {
-                    const element = index;
+                    const element = txt + 1 - index;
                     console.log(index);
+                    const max = txt;
 
 
                     fetch('http://localhost:3000/revistaSound/' + element)
@@ -67,9 +70,10 @@ window.onload = function () {
                             console.log(response);
                             JSON.stringify(response);
                             // changed .value to .innerHTML but you can handle it as you wish
-                            const txt = response[0].capa;
+                            const txt1 = response[0].capa;
 
-                            document.getElementById(index).src = txt;
+                            document.getElementById(index).src = txt1;
+
 
                         })
                 }
@@ -90,8 +94,10 @@ window.onload = function () {
 
                 console.log(txt);
                 for (let index = 1; index <= txt; index++) {
-                    const element = index;
+                    const element = txt + 1 - index;
                     console.log(index);
+                    const max = txt;
+
 
 
                     fetch('http://localhost:3000/revistaSound2/' + element)
@@ -100,13 +106,13 @@ window.onload = function () {
                             console.log(response);
                             JSON.stringify(response);
                             // changed .value to .innerHTML but you can handle it as you wish
-                            const txt = response[0].titulo;
-                            const txt1 = response[0].fotografo;
-                            const txt2 = response[0].data;
+                            const txt = response[0].nome;
+                            const txt1 = response[0].edicao;
+
 
                             document.getElementById("titulo_" + index).innerHTML = txt;
-                            document.getElementById("foto_" + index).innerHTML = txt1;
-                            document.getElementById("data_" + index).innerHTML = txt2;
+                            document.getElementById("num_" + index).innerHTML = txt1;
+
 
                         })
                 }
