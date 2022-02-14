@@ -12,6 +12,7 @@ const Play = require('../controllers/playlist.js');
 const Musica = require('../controllers/musica.js');
 const RevSound = require('../controllers/revista_sound.js');
 const RevScout = require('../controllers/revista_scout.js');
+const Quiz = require('../controllers/quiz_controller.js');
 const multer = require('multer');
 const path = require('path');
 var count = 1;
@@ -152,6 +153,15 @@ router.get('/revistaScoutEdicao/', RevScout.read_edicao);
 router.get('/revistaScoutEdicao2/', RevScout.read_edicao2);
 router.get('/revistaScoutCapa/:id', RevScout.read_capa);
 router.get('/revistaNome2/', RevScout.read_nome);
+
+//QUIZ
+//USERS.
+router.get('/quiz', Quiz.read);
+router.get('/quiz/:id', Quiz.readID);
+router.post('/quiz/', Quiz.save);
+router.put('/quiz/:id', Quiz.update);
+router.delete('/quiz/:id', Quiz.deleteID);
+
 module.exports = router;
 
 

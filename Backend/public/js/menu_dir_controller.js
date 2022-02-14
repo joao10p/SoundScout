@@ -33,6 +33,9 @@ window.onload = function () {
     document.getElementById("confirmar_textos_diretores").onclick = function (e) {
         save_texto();
     }
+    document.getElementById("conf_quiz").onclick = function (e) {
+        savequiz();
+    }
     //TEXTO
     const texto = document.getElementById('confirmar_textos_diretores')
     const input2 = document.getElementById('txt_imagem');
@@ -1190,4 +1193,46 @@ window.onload = function () {
 
 };
 
+
+
+// QUIZZZ
+
+function savequiz() {
+    var data = {};
+    data.id = document.getElementById("quiz_numero").value;
+    data.pergunta = document.getElementById("quiz_pergunta").value;
+    data.resposta1 = document.getElementById("quiz_a").value;
+    data.resposta2 = document.getElementById("quiz_b").value;
+    data.resposta3 = document.getElementById("quiz_c").value;
+    data.resposta4 = document.getElementById("quiz_d").value;
+    data.certa = document.getElementById("quiz_certa").value;
+    console.log(data); //debugging para ver os dados que foram enviados
+    //chamada fetch para envio dos dados para o servior via POST
+    fetch('http://localhost:3000/quiz/', {
+        headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
+        body: JSON.stringify(data)
+    }).then(function(response) {
+        if (!response.ok) {
+            console.log(response.status); //=> number 100–599
+            console.log(response.statusText); //=> String
+            console.log(response.headers); //=> Headers
+            console.log(response.url); //=> String
+            if (response.status === 409) {
+                alert("Duplicated occurrences Code");
+            }
+            else {
+                throw Error(response.statusText);
+            }
+        }
+        else {
+            alert("submitted with success");
+        }
+    }).then(function(result) {
+        console.log(result);
+    }).catch(function(err) {
+        alert("Submission error");
+        console.error(err);
+    });
+}
 
