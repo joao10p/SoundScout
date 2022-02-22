@@ -1236,3 +1236,34 @@ function savequiz() {
     });
 }
 
+function getquiz() {
+            const txt = 2;
+
+            console.log(txt);
+            for (let index = 1; index <= txt; index++) {
+                const element = txt + 1 - index;
+                console.log(index);
+                const max = txt;
+
+
+                fetch('http://localhost:3000/quiz/' + element)
+                    .then(response => response.json()) // <-- important line
+                    .then(response => {
+                        console.log(response);
+                        JSON.stringify(response);
+                        // changed .value to .innerHTML but you can handle it as you wish
+                        const txt = response[0].titulo;
+                        const txt1 = response[0].fotografo;
+                        const txt2 = response[0].data;
+
+                        document.getElementById("titulo_"+index).innerHTML = txt;
+                        document.getElementById("foto_"+index).innerHTML = txt1;
+                        document.getElementById("data_"+index).innerHTML = txt2;
+
+                    })
+            }
+
+        }
+
+
+
