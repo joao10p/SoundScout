@@ -26,9 +26,14 @@ window.onload = function () {
     document.getElementById("add_revistas").onclick = function (e) {
         save_revista();
         show_revista();
+        alert("Revista adicionada com sucesso");
+        reload();
     }
     document.getElementById("add_galeria").onclick = function (e) {
         save_galeria();
+        alert("Revista adicionada com sucesso");
+        show_galeria();
+        reload();
     }
     document.getElementById("confirmar_textos_diretores").onclick = function (e) {
         save_texto();
@@ -116,6 +121,14 @@ window.onload = function () {
     addMusica.addEventListener('click', () => {
         uploadMusica(input11.files[0]);
     })
+
+
+    //--------------------RELOAD DA PAGINA------------------------//
+    function reload() {
+        reload = location.reload();
+    
+
+    }
     //-----------------------------------------------------------------------------------------------------//
 
     //BUSCAR OS NOMES DOS UTILIZADORES

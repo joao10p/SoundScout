@@ -4,6 +4,11 @@ window.onload = function () {
     document.getElementById("subs").addEventListener("click", function () {
         save_subs();
     });
+    document.getElementById("add").addEventListener("click", function () {
+        getCapa();
+        getTitulos();
+    });
+
 
     function save_subs() {
         var data = {};
