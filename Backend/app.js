@@ -21,12 +21,13 @@ var MySQLStore = require('express-mysql-session')(session);
 //var bcrypt = require('bcrypt');
 
 //cors
-app.use((req,res,next)=> {
+app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   app.use(cors());
   next();
 }
 )
+
 // Static Files
 app.use(express.static('public'));
 // Specific folder example
@@ -39,10 +40,10 @@ app.set('views', './views');
 app.set('view engine', 'ejs');
 
 // Navigation
-app.get('',  (req, res) => {
+app.get('', (req, res) => {
   //console.log(req.user);
   //console.log(req.isAuthenticated());
-    res.sendFile(__dirname + '/views/index.html')
+  res.sendFile(__dirname + '/views/index.html')
 })
 
 var options = {
@@ -59,8 +60,8 @@ app.use(require("express-session")({
   store: sessionStore,
   resave: false,
   saveUninitialized: false
- 
-  
+
+
   /*cookie: {
     maxAge: 3600000,
     //secure: true,
@@ -77,166 +78,166 @@ app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 //BODY PARSER
-app.use(bodyParser.json(),bodyParser.urlencoded({extend:true}));
+app.use(bodyParser.json(), bodyParser.urlencoded({ extend: true }));
 app.use(express.urlencoded({ extended: false }))
 
 //Add another Page
 
 app.get('/sound', (req, res) => {
-   res.sendFile(__dirname + '/views/sound.html')
+  res.sendFile(__dirname + '/views/sound.html')
 })
 
-app.get('/scout', (req,res) => {
+app.get('/scout', (req, res) => {
   res.sendFile(__dirname + '/views/scout.html')
 })
 
-app.get('/menu', (req,res) => {
+app.get('/menu', (req, res) => {
   res.sendFile(__dirname + '/views/menu.html')
 })
 
-app.get('/bola', (req,res) => {
+app.get('/bola', (req, res) => {
   res.sendFile(__dirname + '/views/bola.html')
 })
 
-app.get('/bola_en', (req,res) => {
+app.get('/bola_en', (req, res) => {
   res.sendFile(__dirname + '/views/bola_en.html')
 })
 
-app.get('/index_en', (req,res) => {
+app.get('/index_en', (req, res) => {
   res.sendFile(__dirname + '/views/index_en.html')
 })
 
-app.get('/equipa_scout', (req,res) => {
+app.get('/equipa_scout', (req, res) => {
   res.sendFile(__dirname + '/views/equipa_scout.html')
 })
 
-app.get('/equipa_scout_en', (req,res) => {
+app.get('/equipa_scout_en', (req, res) => {
   res.sendFile(__dirname + '/views/equipa_scout_en.html')
 })
 
-app.get('/equipa_sound', (req,res) => {
+app.get('/equipa_sound', (req, res) => {
   res.sendFile(__dirname + '/views/equipa_sound.html')
 })
 
-app.get('/equipa_sound_en', (req,res) => {
+app.get('/equipa_sound_en', (req, res) => {
   res.sendFile(__dirname + '/views/equipa_sound_en.html')
 })
 
-app.get('/galeria_id', (req,res) => {
+app.get('/galeria_id', (req, res) => {
   res.sendFile(__dirname + '/views/galeria_id.html')
 })
 
 
-app.get('/galeria_scout', (req,res) => {
+app.get('/galeria_scout', (req, res) => {
   res.sendFile(__dirname + '/views/galeria_scout.html')
 })
 
-app.get('/galeria_scout_en', (req,res) => {
+app.get('/galeria_scout_en', (req, res) => {
   res.sendFile(__dirname + '/views/galeria_scout_en.html')
 })
 
 
-app.get('/galeria_sound', (req,res)=> {
+app.get('/galeria_sound', (req, res) => {
   res.sendFile(__dirname + '/views/galeria_sound.html')
 })
 
-app.get('/galeria_sound_en', (req,res)=> {
+app.get('/galeria_sound_en', (req, res) => {
   res.sendFile(__dirname + '/views/galeria_sound_en.html')
 })
 
 
-app.get('/menu_diretores',checkAuthenticated, (req,res) => {
+app.get('/menu_diretores', checkAuthenticated, (req, res) => {
 
   res.sendFile(__dirname + '/views/menu_diretores.html')
 })
 
-app.get('/revista_id', (req,res) => {
+app.get('/revista_id', (req, res) => {
   res.sendFile(__dirname + '/views/revista_id.html')
 })
 
-app.get('/revista_scout', (req,res) => {
+app.get('/revista_scout', (req, res) => {
   res.sendFile(__dirname + '/views/revista_scout.html')
 })
 
-app.get('/revista_scout_en', (req,res) => {
+app.get('/revista_scout_en', (req, res) => {
   res.sendFile(__dirname + '/views/revista_scout_en.html')
 })
 
-app.get('/revista_sound', (req,res) => {
+app.get('/revista_sound', (req, res) => {
   res.sendFile(__dirname + '/views/revista_sound.html')
 })
 
-app.get('/revista_sound_en', (req,res) => {
+app.get('/revista_sound_en', (req, res) => {
   res.sendFile(__dirname + '/views/revista_sound_en.html')
 })
 
-app.get('/scout', (req,res) => {
+app.get('/scout', (req, res) => {
   res.sendFile(__dirname + '/views/scout.html')
 })
 
-app.get('/sound', (req,res) => {
+app.get('/sound', (req, res) => {
   res.sendFile(__dirname + '/views/sound.html')
 })
 
 
-app.get('/musica', (req,res) => {
+app.get('/musica', (req, res) => {
   res.sendFile(__dirname + '/views/musica.html')
 })
 
-app.get('/musica_en', (req,res) => {
+app.get('/musica_en', (req, res) => {
   res.sendFile(__dirname + '/views/musica_en.html')
 })
 
 
-app.get('/upload', (req,res) => {
+app.get('/upload', (req, res) => {
   res.sendFile(__dirname + '/views/upload.html')
 })
 
-app.get('/teste', (req,res) => {
+app.get('/teste', (req, res) => {
   res.sendFile(__dirname + '/views/teste.html')
 })
-app.get('/try', (req,res) => {
+app.get('/try', (req, res) => {
   res.sendFile(__dirname + '/views/try.html')
 })
 
-app.get('/revista_id_sound', (req,res) => {
+app.get('/revista_id_sound', (req, res) => {
   res.sendFile(__dirname + '/views/revista_id_sound.html')
 })
 
-app.get('/revista_id_sound_en', (req,res) => {
+app.get('/revista_id_sound_en', (req, res) => {
   res.sendFile(__dirname + '/views/revista_id_sound_en.html')
 })
 
-app.get('/revista_id_scout', (req,res) => {
+app.get('/revista_id_scout', (req, res) => {
   res.sendFile(__dirname + '/views/revista_id_scout.html')
 })
 
-app.get('/revista_id_scout_en', (req,res) => {
+app.get('/revista_id_scout_en', (req, res) => {
   res.sendFile(__dirname + '/views/revista_id_scout_en.html')
 })
 
-app.get('/galeria_id_sound', (req,res) => {
+app.get('/galeria_id_sound', (req, res) => {
   res.sendFile(__dirname + '/views/galeria_id_sound.html')
 })
 
-app.get('/galeria_id_sound_en', (req,res) => {
+app.get('/galeria_id_sound_en', (req, res) => {
   res.sendFile(__dirname + '/views/galeria_id_sound_en.html')
 })
 
 
-app.get('/galeria_id_scout', (req,res) => {
+app.get('/galeria_id_scout', (req, res) => {
   res.sendFile(__dirname + '/views/galeria_id_scout.html')
 })
 
-app.get('/galeria_id_scout_en', (req,res) => {
+app.get('/galeria_id_scout_en', (req, res) => {
   res.sendFile(__dirname + '/views/galeria_id_scout_en.html')
 })
 
-app.get('/try', (req,res) => {
+app.get('/try', (req, res) => {
   res.sendFile(__dirname + '/views/try.html')
 })
 
-app.get('/login',checkNotAuthenticated, (req,res) => {
+app.get('/login', checkNotAuthenticated, (req, res) => {
   res.sendFile(__dirname + '/views/login.html')
 })
 //USA AS ROTAS PARA IR BUSCAR OS CONTROLLERS E AS PAGINAS
@@ -248,25 +249,25 @@ app.use(fileUpload({
 }));
 app.post('/upload', async (req, res) => {
   try {
-      if(!req.files) {
-          res.send({
-              status: false,
-              message: 'Error: No file uploaded'
-          });
-      } else {
-          let uploadedFile = req.files.uploadedFile;
-          uploadedFile.mv('./uploadedFiles/' + uploadedFile.name);
-          res.json({
-              message: 'File is uploaded',
-              data: {
-                  name: uploadedFile.name,
-                  mimetype: uploadedFile.mimetype,
-                  size: uploadedFile.size
-              }
-          });
-      }
+    if (!req.files) {
+      res.send({
+        status: false,
+        message: 'Error: No file uploaded'
+      });
+    } else {
+      let uploadedFile = req.files.uploadedFile;
+      uploadedFile.mv('./uploadedFiles/' + uploadedFile.name);
+      res.json({
+        message: 'File is uploaded',
+        data: {
+          name: uploadedFile.name,
+          mimetype: uploadedFile.mimetype,
+          size: uploadedFile.size
+        }
+      });
+    }
   } catch (err) {
-      res.json({Error: "Error while uploading file."})
+    res.json({ Error: "Error while uploading file." })
   }
 });
 
@@ -274,7 +275,7 @@ module.exports = app;
 
 module.exports = app;
 //cookies 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   var cookie = req.cookies.cookieName;
   if (cookie === undefined) {
     var randomNumber = Math.random().toString();
@@ -302,27 +303,27 @@ app.listen(port, () => console.info(`App listening on port ${port}`))
 require('./routes/auth.routes.js')(app, passport);
 require('./config/passport/passport.js')(passport, models.user);
 //Sync Database
-models.sequelize.sync().then(function() {
+models.sequelize.sync().then(function () {
   console.log('Nice! Database looks fine');
 
-}).catch(function(err) {
+}).catch(function (err) {
   console.log(err, "Something went wrong with the Database Update!");
 });
 
 ////login
 
-function checkAuthenticated(req, res , next){
-  if(req.isAuthenticated()){
-     return next()
+function checkAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next()
   }
   res.redirect('/login')
 }
 
-function checkNotAuthenticated(req, res, next){
-  if(req.isAuthenticated()){
-   return  res.redirect('/menu_diretores')
+function checkNotAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return res.redirect('/menu_diretores')
   }
-   next()
+  next()
 }
 
 
@@ -629,152 +630,152 @@ app.use(function(req, res, next) {
 
   module.exports = app;
   */
-  /*const hostname = process.env.HOST || '127.0.0.1';
-  const port = process.env.PORT || 3000;
-  //const homepage = require('../../startbootstrap-grayscale-gh-pages/index.html');
-  const express = require('express');
-  const app = express();
-  //const port = 3000
-  const cors = require('cors');
-  const cookieParser = require('cookie-parser');
-  const bodyParser = require('body-parser');
-  const expressSanitizer = require('express-sanitizer');
-  //const expressValidator = require('express-validator');
-  const session = require('express-session');
-  const mainRoutes = require('./routes/main.routes.js');
-  //const scnRoutes = require('../../Frontoffice/route/main.routes.js');
-  const helmet = require('helmet');
-  const contentSecurityPolicy = require("helmet-csp");
-  const csrf = require('csurf');
-  const bcrypt = require('bcrypt');
-  const passport = require('passport');
-  const models = require('./models/');
-  const flash = require('express-flash');
-  const http = require('http');
-  
- /* const server = http.createServer(function(req,res){
-    res.writeHead(200,{ 'Content-Type': 'text/html'})
-    fs.readFile('index.html',function(error,data){
-      if(error){
-        res.writeHead(404)
-        res.write('Error: File Not Found')
-      }else {
-        res.write(data);
-      }
-      res.end();
-    })
-  });
-  app.set('view-engine', 'ejs')
-  app.use(express.urlencoded({ extended: false }))
-  app.use(flash())
-  app.use(session({
-    secret: 'our super secret session secret',
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      maxAge: 3600000,
-      secure: true,
-      httpOnly: true
+/*const hostname = process.env.HOST || '127.0.0.1';
+const port = process.env.PORT || 3000;
+//const homepage = require('../../startbootstrap-grayscale-gh-pages/index.html');
+const express = require('express');
+const app = express();
+//const port = 3000
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const expressSanitizer = require('express-sanitizer');
+//const expressValidator = require('express-validator');
+const session = require('express-session');
+const mainRoutes = require('./routes/main.routes.js');
+//const scnRoutes = require('../../Frontoffice/route/main.routes.js');
+const helmet = require('helmet');
+const contentSecurityPolicy = require("helmet-csp");
+const csrf = require('csurf');
+const bcrypt = require('bcrypt');
+const passport = require('passport');
+const models = require('./models/');
+const flash = require('express-flash');
+const http = require('http');
+ 
+/* const server = http.createServer(function(req,res){
+  res.writeHead(200,{ 'Content-Type': 'text/html'})
+  fs.readFile('index.html',function(error,data){
+    if(error){
+      res.writeHead(404)
+      res.write('Error: File Not Found')
+    }else {
+      res.write(data);
     }
-  }));
+    res.end();
+  })
+});
+app.set('view-engine', 'ejs')
+app.use(express.urlencoded({ extended: false }))
+app.use(flash())
+app.use(session({
+  secret: 'our super secret session secret',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 3600000,
+    secure: true,
+    httpOnly: true
+  }
+}));
 
-  app.listen(port, function(err){
-    if (!err) {
-        console.log(`Server running at http://${hostname}:${port}/`);
-    }
-    else {
-        console.log(err);
-    }
+app.listen(port, function(err){
+  if (!err) {
+      console.log(`Server running at http://${hostname}:${port}/`);
+  }
+  else {
+      console.log(err);
+  }
 });
 
 /*app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
+res.header("Access-Control-Allow-Origin", "*");
+res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+next();
 }); 
-  
-  app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }));
-  app.use(expressSanitizer());
-  
-  app.use('/', mainRoutes);
-  
-  
-  
-  
-  app.use(
-    contentSecurityPolicy({
-      defaultSrc: ["'self'"],
-      scriptSrc: ['*.google-analytics.com'],
-      styleSrc: ["'unsafe-inline'"],
-      imgSrc: ['*.google-analytics.com'],
-      connectSrc: ["'none'"],
-      fontSrc: [],
-      objectSrc: [],
-      mediaSrc: [],
-      frameSrc: []
-    })
-  );
-  
-  
-  /*app.listen(port, function() {
-    console.log('Example app listening on port ' + port + '!');
-  });
-  app.get('/', function(req, res) {
-    res.json({status: 'Server is running!'})
+ 
+app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }));
+app.use(expressSanitizer());
+ 
+app.use('/', mainRoutes);
+ 
+ 
+ 
+ 
+app.use(
+  contentSecurityPolicy({
+    defaultSrc: ["'self'"],
+    scriptSrc: ['*.google-analytics.com'],
+    styleSrc: ["'unsafe-inline'"],
+    imgSrc: ['*.google-analytics.com'],
+    connectSrc: ["'none'"],
+    fontSrc: [],
+    objectSrc: [],
+    mediaSrc: [],
+    frameSrc: []
   })
-  //app.use(expressValidator());
-  app.use(cors());
-  app.use(cookieParser());
-  
-  app.use(function(req, res, next) {
-    var cookie = req.cookies.cookieName;
-    if (cookie === undefined) {
-      var randomNumber = Math.random().toString();
-      randomNumber = randomNumber.substring(2, randomNumber.length);
-      res.cookie('cookieName', randomNumber, {
-        maxAge: 900000,
-        httpOnly: true,
-        secure: true
-      });
-      console.log('cookie created successfully');
-    }
-    else {
-      console.log('cookie exists', cookie);
-    }
-    next();
-  });
-  
-  app.use(function(req, res, next) {
-    for (var item in req.body) {
-      //req.sanitize(item).escape();  // FALAR COM O STOR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    }
-    next();
-  });
+);
+ 
+ 
+/*app.listen(port, function() {
+  console.log('Example app listening on port ' + port + '!');
+});
+app.get('/', function(req, res) {
+  res.json({status: 'Server is running!'})
+})
+//app.use(expressValidator());
+app.use(cors());
+app.use(cookieParser());
+ 
+app.use(function(req, res, next) {
+  var cookie = req.cookies.cookieName;
+  if (cookie === undefined) {
+    var randomNumber = Math.random().toString();
+    randomNumber = randomNumber.substring(2, randomNumber.length);
+    res.cookie('cookieName', randomNumber, {
+      maxAge: 900000,
+      httpOnly: true,
+      secure: true
+    });
+    console.log('cookie created successfully');
+  }
+  else {
+    console.log('cookie exists', cookie);
+  }
+  next();
+});
+ 
+app.use(function(req, res, next) {
+  for (var item in req.body) {
+    //req.sanitize(item).escape();  // FALAR COM O STOR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  }
+  next();
+});
 
-  
-  app.use(function(req, res, next) {
-    // check if session exists
-    if (global.sessData === undefined) {
-      global.sessData = req.session;
-      global.sessData.ID = req.sessionID;
-    }
-    else { // yes, cookie was already present
-      console.log('session exists', global.sessData.ID);
-    }
-    next();
-  });
-  
-  app.use(passport.initialize());
-  app.use(passport.session()); // persistent login sessions
-  require('./routes/auth.routes.js')(app, passport);
-  require('./config/passport/passport.js')(passport, models.user);
-  //Sync Database
-  models.sequelize.sync().then(function() {
-    console.log('Nice! Database looks fine');
-  
-  }).catch(function(err) {
-    console.log(err, "Something went wrong with the Database Update!");
-  });
-  
-  module.exports = app;
- */ 
+ 
+app.use(function(req, res, next) {
+  // check if session exists
+  if (global.sessData === undefined) {
+    global.sessData = req.session;
+    global.sessData.ID = req.sessionID;
+  }
+  else { // yes, cookie was already present
+    console.log('session exists', global.sessData.ID);
+  }
+  next();
+});
+ 
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+require('./routes/auth.routes.js')(app, passport);
+require('./config/passport/passport.js')(passport, models.user);
+//Sync Database
+models.sequelize.sync().then(function() {
+  console.log('Nice! Database looks fine');
+ 
+}).catch(function(err) {
+  console.log(err, "Something went wrong with the Database Update!");
+});
+ 
+module.exports = app;
+*/

@@ -1,10 +1,9 @@
 {
     "MySQL": {
-
-        "username": "AOlZ2PiCPa",
-        "password": "c72uob9rs6",
-        "database": "AOlZ2PiCPa",
-        "host": "remotemysql.com",
+        "host": "188.188.188.188",
+        "username": "soun_final",
+        "password": "Bc1tt7vCA3qa6bbg",
+        "database": "soun_final",
         "dialect": "mysql"
     }
 }
