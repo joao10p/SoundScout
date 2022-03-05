@@ -78,10 +78,10 @@
             <div class="row albuns">
               
               <div class="col-md-6">
-                <button onclick="spotify()" style="background: none; border: none"><img src="imagens/img1.jpg" class="img-responsive"></button>
+                <button onclick="spotify()" style="background: none; border: none"><img id="capa1" src="imagens/img1.jpg" class="img-responsive"></button>
               </div>
               <div class="col-md-6">
-                <button onclick="spotify()" style="background: none; border: none"><img src="imagens/img2.jpg" class="img-responsive"></button>
+                <button onclick="spotify()" style="background: none; border: none"><img id="capa2" src="imagens/img2.jpg" class="img-responsive"></button>
               </div>
 
             </div><!-- /row -->
@@ -89,10 +89,10 @@
             <div class="row albuns">
               
               <div class="col-md-6">
-                <button onclick="spotify()" style="background: none; border: none"><img src="imagens/img3.jpg" class="img-responsive"></button>
+                <button onclick="spotify()" style="background: none; border: none"><img id="capa3" src="imagens/img3.jpg" class="img-responsive"></button>
               </div>
               <div class="col-md-6">
-                <button onclick="spotify()" style="background: none; border: none"><img src="imagens/img4.jpg" class="img-responsive"></button>
+                <button onclick="spotify()" style="background: none; border: none"><img id="capa4" src="imagens/img4.jpg" class="img-responsive"></button>
               </div>
 
             </div><!-- /row -->
@@ -101,10 +101,10 @@
              <div class="row albuns">
               
               <div class="col-md-6">
-                <button onclick="spotify()" style="background: none; border: none"><img style="border-style: solid; border-width: 3px;" src="imagens/img5.jpg" class="img-responsive"></button>
+                <button onclick="spotify()" style="background: none; border: none"><img id="capa5" style="border-style: solid; border-width: 3px;" src="imagens/img5.jpg" class="img-responsive"></button>
               </div>
               <div class="col-md-6">
-                <button onclick="spotify()" style="background: none; border: none"><img src="imagens/img6.jpg" class="img-responsive"></button>
+                <button onclick="spotify()" style="background: none; border: none"><img id="capa6" src="imagens/img6.jpg" class="img-responsive"></button>
               </div>
 
             </div><!-- /row -->
@@ -113,7 +113,7 @@
 
           <!-- servicos -->
           <div class="col-md-6">
-            <iframe src="https://open.spotify.com/follow/1/?uri=spotify:user:my0v58fi48y8yepmoma7pct3g&size=detail&theme=light" width="300" height="76" scrolling="no" frameborder="0" style="border:none; overflow:hidden; padding: 10px;" allowtransparency="true"></iframe>
+            <iframe id="link" src="https://open.spotify.com/follow/1/?uri=spotify:user:my0v58fi48y8yepmoma7pct3g&size=detail&theme=light" width="300" height="76" scrolling="no" frameborder="0" style="border:none; overflow:hidden; padding: 10px;" allowtransparency="true"></iframe>
             <h2 id="titulo">As Nossas Playlists</h2>
 
             <h3 id="spotifyin">Do Rock ao Punk</h3>
@@ -137,6 +137,14 @@
     </section>        
     
     <script>
+            function f1(objButton){  
+   localStorage.setItem("valor_playlist", objButton.id);
+
+    var y = localStorage.getItem("valor_galeria");
+
+}
+
+
       function spotify(){
       var w = window.innerWidth;
       var r = w * 0.715;  

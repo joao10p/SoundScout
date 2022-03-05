@@ -153,29 +153,7 @@
 
 
 
-            <div class="row" id="linha3">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-16 galeria_scout_final" id="div_7" style="padding:2%;"><button onclick='f1(this)' id="button_7" style="background-color: transparent;"> <a  href="/galeria_id_scout"> <img style="background-color: black;"
-                            src="imagens/back.jpg" class="galeria img-responsive" id="7">
-                            <div id="titulo_7" class="centered1"></div>
-                            <div id="foto_7" class="centered2"> </div>
-                            <div id="data_7" class="centered3"></div>
-                    </a> </button>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-16 galeria_scout_final" id="div_8" style="padding:2%;"><button onclick='f1(this)' id="button_8" style="background-color: transparent;"> <a  href="/galeria_id_scout"><img style="background-color: black;"
-                            src="imagens/back.jpg" class="galeria img-responsive" id="8">
-                            <div id="titulo_8" class="centered1"></div>
-                            <div id="foto_8" class="centered2"> </div>
-                            <div id="data_8" class="centered3"></div>
-                    </a> </button>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-16 galeria_scout_final" id="div_9" style="padding: 2%;"><button onclick='f1(this)' id="button_9" style="background-color: transparent;"> <a  href="/galeria_id_scout"><img style="background-color: black;"
-                            src="imagens/back.jpg" class="galeria img-responsive" id="9">
-                            <div id="titulo_9" class="centered1"></div>
-                            <div id="foto_9" class="centered2"> </div>
-                            <div id="data_9" class="centered3"></div>
-                    </a> </button>
-                </div>
-            </div>
+         
 
             <input TYPE="hidden" id="max"> </input>
             <div class="row">
@@ -193,24 +171,24 @@
         </div>
 
         <script>
-            var x = 3;
+            var x = 2;
             
 
             function myFunction() {
                 var max1 = document.getElementById("max").value
                 var linhamax = max1 / 3;
-                if(x<=linhamax){
+                if(x<=3 && x<=linhamax){
                 var d1 = document.getElementById("linha"+x);
                 x++;
                 console.log(x);
                 d1.insertAdjacentHTML('afterend', '<div class="row" id="linha"> <div class="col-lg-4 col-md-6 col-sm-6 col-xs-16 galeria_scout_final " value="0" id="galeria_1" style="padding:2%;"><button onclick="f1(this)" id="button_01" style="background-color: transparent;"> <a  href="galeria_id_scout"> <img style="background-color: black;" src="imagens/back.jpg" class="galeria img-responsive" id="img_01"><div id="titulo_01" class="centered1"></div><div id="foto_01" class="centered2">Não existem mais galerias disponíveis</div><div id="data_01" class="centered3"></div></a> </button> </div><div class="col-lg-4 col-md-6 col-sm-6 col-xs-16 galeria_scout_final" value="0" id="galeria_2" style="padding:2%;"><button onclick="f1(this)" id="button_02" style="background-color: transparent;"> <a  href="galeria_id_scout"><img style="background-color: black;"  src="imagens/back.jpg" class="galeria img-responsive"  id="img_02"><div id="titulo_02" class="centered1"></div><div  id="foto_02" class="centered2">Não existem mais galerias disponíveis</div><div  id="data_02" class="centered3"></div></a> </button> </div><div class="col-lg-4 col-md-6 col-sm-6 col-xs-16 galeria_scout_final" value="0" id="galeria_3" style="padding: 2%;"><button onclick="f1(this)" id="button_03" style="background-color: transparent;"> <a  href="galeria_id_scout"><img style="background-color: black;" src="imagens/back.jpg" class="galeria img-responsive"  id="img_03"><div  id="titulo_03" class="centered1"></div><div id="foto_03" class="centered2">Não existem mais galerias disponíveis</div><div id="data_03"  class="centered3"></div></a> </button> </div></div>  ');
-            } else alert ("Não existem mais galerias disponiveis!")
+            } else alert ("Todas as galerias disponíveis no nosso intagram @revistascout, obrigado!")
             }
 
 
 
-            var linha = 4;
-            var count = 10;
+            var linha = 3;
+            var count = 7;
 
             function idcontador() {
                 document.getElementById("linha").id = "linha" + linha;
